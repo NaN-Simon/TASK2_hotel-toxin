@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
@@ -24,12 +25,27 @@ module.exports = {
     assetModuleFilename: 'assets/[hash][ext][query]',
     clean: true,
   },
+  resolve: {
+    alias: {
+      '@base': path.resolve(__dirname, './src/styles/base.scss'),
+      '@fonts': path.resolve(__dirname, './src/styles/fonts.scss'),
+    },
+  },
   plugins: [
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',
     }),
     new HtmlWebpackPlugin({
+      filename: 'index.html',
       template: './src/index.pug',
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'colors-and-type.html',
+      template: './src/pages/ui-kit-colors-and-type/ui-kit-colors-and-type.pug',
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'form-elements.html',
+      template: './src/pages/ui-kit-form-elements/ui-kit-form-elements.pug',
     }),
     new webpack.ProvidePlugin({
       $: 'jquery',
@@ -44,29 +60,6 @@ module.exports = {
         test: /\.html$/i,
         loader: 'html-loader',
       },
-      // {
-      //   test: /\.(sa|sc|c)ss$/,
-      //   use: [
-      //     MiniCssExtractPlugin.loader,
-      //     'css-loader',
-      //     {
-      //       loader: 'postcss-loader',
-      //       options: {
-      //         postcssOptions: {
-      //           plugins: [
-      //             [
-      //               'postcss-preset-env',
-      //               {
-      //                 // Options
-      //               },
-      //             ],
-      //           ],
-      //         },
-      //       },
-      //     },
-      //     'sass-loader',
-      //   ],
-      // },
       {
         test: /\.(sa|sc|c)ss$/,
         use: ['style-loader', 'css-loader', 'sass-loader'],

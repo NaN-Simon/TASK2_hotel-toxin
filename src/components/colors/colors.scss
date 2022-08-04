@@ -1,0 +1,70 @@
+@import '@fonts';
+@import '@base';
+
+.colors {
+  display        : flex;
+  flex-direction : column;
+  justify-content: center;
+  align-items    : center;
+
+  &-item {
+    display        : flex;
+    justify-content: flex-start;
+    align-items    : center;
+    margin-bottom  : 20px;
+    width          : 281px;
+  }
+
+  &-rect {
+    width        : 70px;
+    height       : 70px;
+    border-radius: 6px;
+    margin-right : 40px;
+
+    &_darkest-gray {
+      background-color: $textColor;
+    }
+
+    &_dark-gray {
+      background-color: $textColor_75;
+    }
+
+    &_gray {
+      background-color: $textColor_50;
+    }
+
+    &_light-gray {
+      background-color: $textColor_25;
+    }
+
+    &_lightest-gray {
+      background-color: $textColor_5;
+    }
+
+    &_dark-purple {
+      background-color: $elementColor;
+    }
+
+    &_dark-green {
+      background-color: $elementColor_extra;
+    }
+  }
+}
+
+.title-sup {
+  font-family: 'Montserrat-Bold', sans-serif;
+  font-style : normal;
+  font-weight: 700;
+  font-size  : 19px;
+  line-height: 28px;
+  color      : $textColor;
+}
+
+.title-sub {
+  font-family: 'Montserrat-Regular', sans-serif;
+  font-style : normal;
+  font-weight: 400;
+  font-size  : 19px;
+  line-height: 28px;
+  color      : $textColor;
+}
