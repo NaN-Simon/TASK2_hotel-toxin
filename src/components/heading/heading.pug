@@ -1,0 +1,17 @@
+mixin heading({level="", title="",description=""})
+  -
+    const levelModifier = `heading__title_level_${level}`
+    const caseModifier = "heading__description_lowercase"
+
+  .heading 
+    case level 
+      when 'h1'
+        h1.heading__title(class=levelModifier) #{title}
+      when 'h2'
+        h2.heading__title(class=levelModifier) #{title}
+        if(description)
+          span.heading__description.heading__description_lowercase #{description}
+      when 'h3'
+        h3.heading__title(class=levelModifier) #{title}
+        if(description)
+          span.heading__description #{description}

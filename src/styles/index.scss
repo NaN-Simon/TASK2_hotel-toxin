@@ -1,9 +1,10 @@
 @import '@fonts';
+@import '@base';
 @import '../pages/ui-kit-colors-and-type/ui-kit-colors-and-type.scss';
 @import '../pages/ui-kit-form-elements/ui-kit-form-elements.scss';
 
 html{
-  font: 400, 14px, Monserat-Regular, sans-serif;
+  font: 400, 14px, Montserrat, sans-serif;
   background: #ffffff;
 }
 .main{
@@ -20,7 +21,7 @@ html{
   font-size: 18px;
   gap: 30px 0;
   &_title{
-    font-family: 'Montserrat-Regular';
+    font-family: Montserrat;
     text-decoration: none;
     color: $elementColor;
   }

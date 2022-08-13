@@ -1,8 +1,31 @@
-doctype html
-head
-  meta(charset='UTF-8')
-  meta(http-equiv='X-UA-Compatible' content='IE=edge')
-  meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  title Form Elements
-body 
-  h1 Form Elements
+include ../../components/heading/heading.pug
+include ../../components/text-field/text-field.pug
+
+block content
+  main.form-elements
+    .form-elements__container
+      section.form-elements__text-fields-buttons
+        .form-elements__text-fields
+          .form-elements__text-field-wrapper
+            +heading({ 
+              level: "h3", 
+              title: "text field", 
+              description: "default" 
+              })
+            +text-field({
+              type: "text", 
+              placeholder: "Email", 
+              name: "email",
+            })
+          .form-elements__text-field-wrapper
+            +heading({ 
+              level: "h3", 
+              title: "text field", 
+              description: "hover/focus" 
+              })
+            +text-field({
+              type: "text", 
+              placeholder: "This is pretty awesome", 
+              name: "email",
+              focused: true,
+            })

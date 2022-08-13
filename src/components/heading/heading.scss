@@ -1,0 +1,48 @@
+@import '@base';
+
+.heading {
+  display        : flex;
+  justify-content: space-between;
+
+  &__title_level_h1 {
+    color      : $textColor;
+    font-weight: 700;
+    font-size  : 29px;
+    font-family: $mainFont;
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  &__title_level_h2 {
+    color      : $textColor;
+    font-weight: 700;
+    font-size  : 23px;
+    font-family: $mainFont;
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  &__title_level_h3 {
+    color         : $textColor;
+    font-weight   : 700;
+    font-size     : 15px;
+    font-family   : $mainFont;
+    text-transform: uppercase;
+  }
+
+  &__description {
+    color         : $textColor_75;
+    font-weight   : 400;
+    font-family   : $mainFont;
+    font-size     : 14px;
+    text-transform: uppercase;
+
+    &_lowercase {
+      text-transform: lowercase;
+    }
+  }
+}

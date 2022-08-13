@@ -1,0 +1,19 @@
+.form-elements{
+  &__container{
+    display: block;
+    min-width: 1158px;
+    max-width: 1158px;
+    margin: 0 auto;
+  }
+
+  &__text-fields{
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__text-field-wrapper{
+    margin-bottom: 40px;
+    min-width: 320px;
+    max-width: 320px;
+  }
+}

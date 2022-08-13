@@ -1,0 +1,12 @@
+mixin text-field({type= "", placeholder= "", name= "", focused = false})
+  -
+    const focusedClass = focused ? "text-field_focused" : ""
+    const inputAttributes = { 
+      type: type,
+      placeholder: placeholder,
+      name: name,
+      class: [focusedClass]
+    }
+
+  .text-field
+    input&attributes(inputAttributes).text-field__input

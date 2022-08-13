@@ -7,6 +7,7 @@
 [**quick-start**](https://ru.bem.info/methodology/quick-start/)
 
 [**Компонентная архитектура**](https://fullstack-development.gitbook.io/learn/komponentnaya-arkhitektura)
+
 ## Процедура запуска
 
 1. npm install

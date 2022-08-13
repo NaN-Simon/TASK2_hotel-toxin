@@ -1,17 +1,14 @@
-@import '@fonts';
-@import '../../components/colors/colors.scss';
-@import '../../components/types/types.scss';
+.color-and-types{
+  padding-top: 145px;
 
-.color-and-types-container {
-  display        : flex;
-  flex-direction : row;
-  align-items    : center;
-  justify-content: center;
-  gap            : 0 423px;
-  padding-top    : 145px;
-}
-@media (width < 1140px) {
-  .color-and-types-container{
-    gap: 0 10%;
+  &__container{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    min-width: 1158px;
+    max-width: 1158px;
+    margin: 0 auto;
+    padding: 0 10px;
   }
 }
