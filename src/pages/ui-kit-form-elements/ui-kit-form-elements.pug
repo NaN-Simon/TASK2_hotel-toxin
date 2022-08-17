@@ -1,5 +1,6 @@
 include ../../components/heading/heading.pug
 include ../../components/text-field/text-field.pug
+include ../../components/dropdown/dropdown.pug
 
 block content
   main.form-elements
@@ -21,11 +22,32 @@ block content
             +heading({ 
               level: "h3", 
               title: "text field", 
-              description: "hover/focus" 
+              description: "hover/focus", 
               })
             +text-field({
               type: "text", 
               placeholder: "This is pretty awesome", 
               name: "email",
               focused: true,
+            })
+          .form-elements__text-field-wrapper
+            +heading({ 
+              level: "h3", 
+              title: "dropdown",
+            })
+            +dropdown({
+              id: "text-field-dropdown",
+              isOpen: true,
+              placeholder: "Сколько гостей",
+              maxCount: 10,
+              elements: [
+                { title: "Спальни", id: "bedrooms", startCount: 3 }, 
+                { title: "Кровати", id: "beds", startCount: 2 }, 
+                { title: "Ванные комнаты", id: "bathrooms", startCount: 2 }
+              ],
+              plurals: {
+                bedrooms: ["спальня", "спальни", "спален"],
+                beds: ["кровать", "кровати", "кроватей"],
+                bathrooms: ["ванная комната", "ванных комнаты", "ванных комнат"],
+                },
             })

@@ -6,3 +6,4 @@ import './components/heading';
 import './components/colors';
 import './components/type';
 import './components/text-field';
+import './components/dropdown';

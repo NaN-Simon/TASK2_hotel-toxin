@@ -1,0 +1,21 @@
+mixin dropdown({id="", isOpen= "true", placeholder= "Сколько гостей", maxCount= 6, elements= [], plurals= [] })
+  -
+    const openClassModifier = isOpen ? "dropdown__open" : ""
+    const toggleClassModifier = isOpen ? "expand_more" : "expand_less"
+    
+  section 
+    .dropdown(data-key=`${id}`)
+      .dropdown__input(data-type="input")
+        span(data-type="input") #{placeholder}
+        span(data-type="input").material-icons #{toggleClassModifier}
+      ul&attributes({
+        class: ["dropdown__drop", openClassModifier]
+      })
+        each element in elements 
+          li(id=`${element.id}`, maxcount=`${maxCount}`)&attributes({
+            class: ["dropdown__drop-item"]}) 
+            .dropdown__drop-name #{element.title}
+            .dropdown__drop-counter
+              .dropdown__drop-counter-minus(id=`${element.id}`) -
+              .dropdown__drop-counter-result(id=`${element.id}`) #{element.startCount}
+              .dropdown__drop-counter-plus(id=`${element.id}`) +

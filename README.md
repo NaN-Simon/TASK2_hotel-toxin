@@ -8,6 +8,8 @@
 
 [**Компонентная архитектура**](https://fullstack-development.gitbook.io/learn/komponentnaya-arkhitektura)
 
+[**material-icons library**](https://fonts.google.com/icons)
+
 ## Процедура запуска
 
 1. npm install
