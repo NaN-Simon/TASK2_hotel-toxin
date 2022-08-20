@@ -1,13 +1,10 @@
 class Dropdown {
   constructor(selector) {
     this.$el = document.querySelector(selector);
-    this.$input = this.$el.children[0];
-    this.$placeholder = this.$el.children[0].children[0];
+    [this.$input, this.$drop] = this.$el.children;
+    [this.$placeholder, this.$arrow] = this.$el.children[0].children;
     this.placeholderDefault = this.$placeholder.innerHTML;
-    this.$arrow = this.$el.children[0].children[1];
-    this.$drop = this.$el.children[1];
     this.startValuesObj = this.startValues();
-    this.startCountsLength = Object.keys(this.startValues()).length;
 
     this.#setup();
     this.placeholderRender();
@@ -27,7 +24,7 @@ class Dropdown {
         id: elem.id,
         title: this.$drop.children[index].children[0].innerHTML,
         value: Number(this.$drop.children[index].children[1].children[1].innerHTML),
-        maxCount: parseInt(elem.getAttribute('maxcount'), 10),
+        maxCount: parseInt(elem.dataset.maxcount, 10),
       };
     });
     return templateObj;
@@ -40,47 +37,88 @@ class Dropdown {
       this.toggle();
     }
 
-    this.counter(event);
-    // this.placeholderRender(event)
+    this.dropItemRender(event);
+    this.placeholderRender();
   }
 
-  counter(event) {
+  dropItemRender(event) {
+    const targetCounTitle = event.target.parentNode.parentNode.children[0];
+    const targetCountHTML = event.target.parentNode.children[1];
+    const targetStartValuesObj = this.startValuesObj[`${event.target.id}`];
+
     if (event.target.hasAttribute('id')) {
-      const targetCountHTML = event.target.parentNode.children[1];
-      const targetStartValuesObj = this.startValuesObj[`${event.target.id}`];
       if (event.target.classList[0] === 'dropdown__drop-counter-plus') {
         if (parseInt(targetCountHTML.innerHTML, 10) !== targetStartValuesObj.maxCount) {
           targetStartValuesObj.value++;
           targetCountHTML.innerHTML = targetStartValuesObj.value;
+          targetCounTitle.innerHTML = this.getPluralRelativelyAmount(event, parseInt(targetCountHTML.innerHTML, 10));
         }
       }
+
       if (event.target.classList[0] === 'dropdown__drop-counter-minus') {
         if (parseInt(targetCountHTML.innerHTML, 10) !== 0) {
           targetStartValuesObj.value--;
           targetCountHTML.innerHTML = targetStartValuesObj.value;
+          targetCounTitle.innerHTML = this.getPluralRelativelyAmount(event, parseInt(targetCountHTML.innerHTML, 10));
         }
       }
-
-      this.placeholderRender();
     }
   }
 
   placeholderRender() {
-    // const inputLength = this.$input.offsetWidth;
-    // const placeholderLength = '';
-    const skin = [];
+    const inputLength = this.$input.offsetWidth;
+    const temp = [];
 
-    Object.keys(this.startValuesObj).forEach((item) => {
-      if (this.startValuesObj[item].value !== 0) {
-        skin.push(`${this.startValuesObj[item].title} ${this.startValuesObj[item].value}`);
+    Object.values(this.$drop.children).forEach((item) => {
+      const itemAmount = this.startValuesObj[item.id].value;
+
+      if (this.startValuesObj[item.id].value !== 0 && temp.join(', ').length < inputLength / 30) {
+        temp.push(`${itemAmount} ${item.children[0].innerHTML}`);
       }
     });
 
-    if (skin.length === 0) {
-      skin[0] = this.placeholderDefault;
+    if (temp.length === 0) {
+      temp[0] = this.placeholderDefault;
     }
 
-    this.$placeholder.innerHTML = skin.join(', ');
+    this.$placeholder.innerHTML = temp.join(', ');
+  }
+
+  getPluralRelativelyAmount(event, num) {
+    const pluralOne = this.pluralCycle(1, 100);
+    const pluralTwoFromFour = this.pluralCycle(2, 100)
+      .concat(
+        this.pluralCycle(3, 100),
+        this.pluralCycle(4, 100),
+      );
+    const [singlePluralForm, secondPluralForm, thirdPluralForm] = event
+      .target
+      .parentNode
+      .parentNode
+      .dataset
+      .plurals
+      .substring(1)
+      .replace(/.$/, '')
+      .replace(/"/g, '')
+      .split(',');
+    let titleForRender = this.placeholderDefault;
+
+    if (pluralOne.includes(num)) {
+      titleForRender = singlePluralForm;
+    } else if (pluralTwoFromFour.includes(num)) {
+      titleForRender = secondPluralForm;
+    } else {
+      titleForRender = thirdPluralForm;
+    }
+    return titleForRender;
+  }
+
+  pluralCycle(start, size) {
+    this.temp = [];
+    for (let i = start; i < size; i += 10) {
+      this.temp.push(i);
+    }
+    return this.temp;
   }
 
   get isOpen() {
