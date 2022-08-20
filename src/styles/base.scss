@@ -9,43 +9,44 @@ $textColor_25: rgba(31, 32, 65, 0.25);
 $textColor_5: rgba(31, 32, 65, 0.05);
 $elementColor: #BC9CFF;
 $elementColor_extra: #6FCF97;
+$mainBackground: #fff;
 
 // fonts
 $mainFont: montserrat, arial, sans-serif;
 $mainFont_size: 14px;
 
-.title-h1 {
-  font-family: $mainFont;
-  font-style : normal;
-  font-weight: 400;
-  font-size  : 24px;
-  line-height: 29px;
-  color: $textColor;
-}
+// .title-h1 {
+//   font-family: $mainFont;
+//   font-style : normal;
+//   font-weight: 400;
+//   font-size  : 24px;
+//   line-height: 29px;
+//   color: $textColor;
+// }
 
-.title-h2 {
-  font-family: $mainFont;
-  font-style : normal;
-  font-weight: 400;
-  font-size  : 19px;
-  line-height: 23px;
-  color: $textColor;
-}
+// .title-h2 {
+//   font-family: $mainFont;
+//   font-style : normal;
+//   font-weight: 400;
+//   font-size  : 19px;
+//   line-height: 23px;
+//   color: $textColor;
+// }
 
-.title-h3 {
-  font-family: $mainFont;
-  font-style : normal;
-  font-weight: 700;
-  font-size  : 12px;
-  line-height: 15px;
-  color: $textColor;
-  text-transform: uppercase;
-}
-.title-body {
-  font-family: $mainFont;
-  font-style : normal;
-  font-weight: 400;
-  font-size  : 14px;
-  line-height: 24px;
-  color: $textColor_75;
-}
+// .title-h3 {
+//   font-family: $mainFont;
+//   font-style : normal;
+//   font-weight: 700;
+//   font-size  : 12px;
+//   line-height: 15px;
+//   color: $textColor;
+//   text-transform: uppercase;
+// }
+// .title-body {
+//   font-family: $mainFont;
+//   font-style : normal;
+//   font-weight: 400;
+//   font-size  : 14px;
+//   line-height: 24px;
+//   color: $textColor_75;
+// }

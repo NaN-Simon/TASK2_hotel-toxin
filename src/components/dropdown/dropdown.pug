@@ -5,16 +5,18 @@ mixin dropdown({id="", isOpen= "true", placeholder= "Сколько гостей
 
   section 
     .dropdown(data-key=`${id}`)
-      .dropdown__input(data-type="input")
+      .dropdown__input(data-type="input")&attributes({
+        class: openClassModifier
+      })
         span(data-type="input") #{placeholder}
         span(data-type="input").material-icons #{toggleClassModifier}
       ul&attributes({
-        class: ["dropdown__drop", openClassModifier]
+        class: ["dropdown__drop"]
       })
         each element in elements 
           li(id=element.id, data-maxcount=maxCount, data-plurals=plurals[element.id])&attributes({
             class: ["dropdown__drop-item"]}) 
-            .dropdown__drop-name() #{element.title}
+            .dropdown__drop-name #{element.title}
             .dropdown__drop-counter
               .dropdown__drop-counter-minus(id=element.id) -
               .dropdown__drop-counter-result(id=element.id) #{element.startCount}

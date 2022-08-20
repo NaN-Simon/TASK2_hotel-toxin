@@ -122,16 +122,16 @@ class Dropdown {
   }
 
   get isOpen() {
-    return this.$drop.classList.contains('dropdown__open');
+    return this.$input.classList.contains('dropdown__open');
   }
 
   open() {
-    this.$drop.classList.add('dropdown__open');
+    this.$input.classList.add('dropdown__open');
     this.$arrow.innerHTML = 'expand_more';
   }
 
   close() {
-    this.$drop.classList.remove('dropdown__open');
+    this.$input.classList.remove('dropdown__open');
     this.$arrow.innerHTML = 'expand_less';
   }
 
