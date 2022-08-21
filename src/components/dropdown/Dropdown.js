@@ -86,6 +86,9 @@ class Dropdown {
       temp = temp.join(', ');
     }
     
+    if (temp.length === 0) {
+      temp = this.placeholderDefault;
+    }
     this.$placeholder.innerHTML = temp;
   }
 
