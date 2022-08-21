@@ -67,21 +67,26 @@ class Dropdown {
 
   placeholderRender() {
     const inputLength = this.$input.offsetWidth;
-    const temp = [];
-
+    let temp = [];
+    
     Object.values(this.$drop.children).forEach((item) => {
       const itemAmount = this.startValuesObj[item.id].value;
+      const itemInner = item.children[0].innerHTML;
 
-      if (this.startValuesObj[item.id].value !== 0 && temp.join(', ').length < inputLength / 30) {
-        temp.push(`${itemAmount} ${item.children[0].innerHTML}`);
+      if (itemAmount !== 0) {
+        temp.push(`${itemAmount} ${itemInner}`);
       }
     });
-
-    if (temp.length === 0) {
-      temp[0] = this.placeholderDefault;
+    
+    if (temp.join(', ').length > inputLength / 10) {
+      temp.pop();
+      temp = temp.join(', ');
+      temp += '...';
+    } else {
+      temp = temp.join(', ');
     }
-
-    this.$placeholder.innerHTML = temp.join(', ');
+    
+    this.$placeholder.innerHTML = temp;
   }
 
   getPluralRelativelyAmount(event, num) {
