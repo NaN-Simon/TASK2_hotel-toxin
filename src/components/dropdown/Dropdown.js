@@ -7,12 +7,12 @@ class Dropdown {
     this.startValuesObj = this.startValues();
 
     this.#setup();
-    this.placeholderRender();
   }
-
+  
   #setup() {
     this.clickHandler = this.clickHandler.bind(this);
     this.$el.addEventListener('click', this.clickHandler);
+    this.placeholderRender();
   }
 
   startValues() {
@@ -44,14 +44,24 @@ class Dropdown {
   dropItemRender(event) {
     const targetCounTitle = event.target.parentNode.parentNode.children[0];
     const targetCountHTML = event.target.parentNode.children[1];
+    const targetCountMinus = event.target.parentNode.children[0];
+    const targetCountPlus = event.target.parentNode.children[2];
     const targetStartValuesObj = this.startValuesObj[`${event.target.id}`];
+    const targetStartTitle = this.startValuesObj[event.target.id].title;
 
     if (event.target.hasAttribute('id')) {
       if (event.target.classList[0] === 'dropdown__drop-counter-plus') {
         if (parseInt(targetCountHTML.innerHTML, 10) !== targetStartValuesObj.maxCount) {
           targetStartValuesObj.value++;
           targetCountHTML.innerHTML = targetStartValuesObj.value;
-          targetCounTitle.innerHTML = this.getPluralRelativelyAmount(event, parseInt(targetCountHTML.innerHTML, 10));
+          targetCounTitle.innerHTML = this.getPluralRelativelyAmount(parseInt(targetCountHTML.innerHTML, 10));
+        }
+        
+        if (parseInt(targetCountHTML.innerHTML, 10) !== 0) {
+          targetCountMinus.classList.remove('dropdown__drop-counter-not-available');
+        }
+        if (parseInt(targetCountHTML.innerHTML, 10) === targetStartValuesObj.maxCount) {
+          targetCountPlus.classList.add('dropdown__drop-counter-not-available');
         }
       }
 
@@ -59,9 +69,18 @@ class Dropdown {
         if (parseInt(targetCountHTML.innerHTML, 10) !== 0) {
           targetStartValuesObj.value--;
           targetCountHTML.innerHTML = targetStartValuesObj.value;
-          targetCounTitle.innerHTML = this.getPluralRelativelyAmount(event, parseInt(targetCountHTML.innerHTML, 10));
+          targetCounTitle.innerHTML = this.getPluralRelativelyAmount(parseInt(targetCountHTML.innerHTML, 10));
+
+          if (parseInt(targetCountHTML.innerHTML, 10) === 0) {
+            targetCountMinus.classList.add('dropdown__drop-counter-not-available');
+          }
+          if (parseInt(targetCountHTML.innerHTML, 10) !== targetStartValuesObj.maxCount) {
+            targetCountPlus.classList.remove('dropdown__drop-counter-not-available');
+          }
         }
       }
+
+      this.startValuesObj[event.target.id].title = targetCounTitle.innerHTML;
     }
   }
 
@@ -73,8 +92,31 @@ class Dropdown {
       const itemAmount = this.startValuesObj[item.id].value;
       const itemInner = item.children[0].innerHTML;
 
+      const [singlePluralForm, secondPluralForm, thirdPluralForm] = item
+        .dataset
+        .plurals
+        .substring(1)
+        .replace(/.$/, '')
+        .replace(/"/g, '')
+        .split(',');
+
+      const pluralOne = this.pluralCycle(1, 100);
+      const pluralTwoFromFour = this.pluralCycle(2, 100)
+        .concat(
+          this.pluralCycle(3, 100),
+          this.pluralCycle(4, 100),
+        );
+      let a = '';
+      if (pluralOne.includes(itemAmount)) {
+        a = singlePluralForm;
+      } else if (pluralTwoFromFour.includes(itemAmount)) {
+        a = secondPluralForm;
+      } else {
+        a = thirdPluralForm;
+      }
+
       if (itemAmount !== 0) {
-        temp.push(`${itemAmount} ${itemInner}`);
+        temp.push(`${itemAmount} ${a}`);
       }
     });
     
@@ -92,23 +134,28 @@ class Dropdown {
     this.$placeholder.innerHTML = temp;
   }
 
-  getPluralRelativelyAmount(event, num) {
+  getPluralRelativelyAmount(num) {
     const pluralOne = this.pluralCycle(1, 100);
     const pluralTwoFromFour = this.pluralCycle(2, 100)
       .concat(
         this.pluralCycle(3, 100),
         this.pluralCycle(4, 100),
       );
-    const [singlePluralForm, secondPluralForm, thirdPluralForm] = event
-      .target
-      .parentNode
-      .parentNode
-      .dataset
-      .plurals
-      .substring(1)
-      .replace(/.$/, '')
-      .replace(/"/g, '')
-      .split(',');
+
+    let singlePluralForm = []; 
+    let secondPluralForm = [];
+    let thirdPluralForm = [];
+
+    Object.values(this.$drop.children).forEach((item) => {
+      [singlePluralForm, secondPluralForm, thirdPluralForm] = item
+        .dataset
+        .plurals
+        .substring(1)
+        .replace(/.$/, '')
+        .replace(/"/g, '')
+        .split(',');
+    });
+    
     let titleForRender = this.placeholderDefault;
 
     if (pluralOne.includes(num)) {
@@ -130,16 +177,16 @@ class Dropdown {
   }
 
   get isOpen() {
-    return this.$input.classList.contains('dropdown__open');
+    return this.$el.classList.contains('dropdown__open');
   }
 
   open() {
-    this.$input.classList.add('dropdown__open');
+    this.$el.classList.add('dropdown__open');
     this.$arrow.innerHTML = 'expand_more';
   }
 
   close() {
-    this.$input.classList.remove('dropdown__open');
+    this.$el.classList.remove('dropdown__open');
     this.$arrow.innerHTML = 'expand_less';
   }
 

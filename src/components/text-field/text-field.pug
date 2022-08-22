@@ -1,11 +1,12 @@
-mixin text-field({type= "", placeholder= "", name= "", focused = false})
+mixin text-field({type= "", placeholder= "", name= "", focused = false, dateMask = false})
   -
-    const focusedClass = focused ? "text-field_focused" : ""
+    const focusedClass = focused ? "text-field_focused" : "";
+    const maskClass = dateMask ?  "input-date" : "";
     const inputAttributes = { 
       type: type,
       placeholder: placeholder,
       name: name,
-      class: [focusedClass]
+      class: [focusedClass, maskClass]
     }
 
   .text-field

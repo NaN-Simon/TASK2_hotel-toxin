@@ -41,13 +41,25 @@ block content
               placeholder: "Сколько гостей",
               maxCount: 10,
               elements: [
-                { title: "Спальни", id: "bedrooms", startCount: 3 }, 
-                { title: "Кровати", id: "beds", startCount: 2 }, 
-                { title: "Ванные комнаты", id: "bathrooms", startCount: 2 }
+                { title: "Взрослые", id: "adult", startCount: 1 }, 
+                { title: "Дети", id: "kids", startCount: 6 }, 
+                { title: "Младенцы", id: "baby", startCount: 3 }
               ],
               plurals: {
-                bedrooms: ["Спальня", "Спальни", "Спален"],
-                beds: ["Кровать", "Кровати", "Кроватей"],
-                bathrooms: ["Ванная комната", "Ванных комнаты", "Ванных комнат"],
+                adult: ["Взрослый", "Взрослых", "Взрослых"],
+                kids: ["Ребенок", "Ребенка", "Детей"],
+                baby: ["Младенец", "Младенца", "Младенцев"],
                 },
+            })
+          .form-elements__text-field-wrapper
+            +heading({ 
+              level: "h3", 
+              title: "masked text field",
+            })
+            +text-field({
+              type: "text", 
+              placeholder: "ДД.ММ.ГГГГ", 
+              name: "email",
+              focused: false,
+              dateMask: true,
             })

@@ -4,10 +4,10 @@ mixin dropdown({id="", isOpen= "true", placeholder= "Сколько гостей
     const toggleClassModifier = isOpen ? "expand_more" : "expand_less"
 
   section 
-    .dropdown(data-key=`${id}`)
-      .dropdown__input(data-type="input")&attributes({
+    .dropdown(data-key=`${id}`)&attributes({
         class: openClassModifier
       })
+      .dropdown__input(data-type="input")
         span(data-type="input") #{placeholder}
         span(data-type="input").material-icons #{toggleClassModifier}
       ul&attributes({

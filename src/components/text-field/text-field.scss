@@ -14,10 +14,10 @@
 
     &:hover,
     &:focus{
-      border: 1px solid $textColor_75;
+      border: 1px solid $textColor_50;
     }
   }
   &_focused{
-    border: 1px solid $textColor_75;
+    border: 1px solid $textColor_50;
   }
 }
