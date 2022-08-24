@@ -10,6 +10,8 @@
 
 [**material-icons library**](https://fonts.google.com/icons)
 
+[**air-datepicker**](https://github.com/t1m0n/air-datepicker/tree/master/dist)
+
 ## Процедура запуска
 
 1. npm install
