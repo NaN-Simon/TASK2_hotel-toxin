@@ -1,0 +1,26 @@
+mixin checkbox-list(properties = {})
+
+  -
+    const {
+      listItems = [],
+      title = "",
+      isDropdown = false,
+      isOpen = true,
+    } = properties
+
+    const openClassModifier = isOpen ? "checkbox-list__open" : ""
+    const toggleClassModifier = isOpen ? "expand_more" : "expand_less"
+  section 
+    .checkbox-list&attributes({
+      class: openClassModifier
+    })
+      if isDropdown 
+        .checkbox-list__input(data-type = "input")
+          .checkbox-list__input-title(data-type = "input") #{title}
+          .checkbox-list__input-arrow(data-type = "input").material-icons #{toggleClassModifier} 
+      ul.checkbox-list__items
+        each item in listItems
+          label.checkbox-list__item
+            input.checkbox-list__checkbox.material-icons(type='checkbox' name=item.name checked=item.checked)
+            .checkbox-list__box.material-icons
+            span.checkbox-list__title #{item.title}
