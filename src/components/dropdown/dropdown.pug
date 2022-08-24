@@ -1,10 +1,10 @@
-mixin dropdown({id="", isOpen= "true", placeholder= "Сколько гостей", maxCount= 6, elements= [], plurals= [] })
+mixin dropdown({id="", type="guests", isOpen= "true", placeholder= "Сколько гостей", maxCount= 6, elements= [], plurals= [] })
   -
     const openClassModifier = isOpen ? "dropdown__open" : ""
     const toggleClassModifier = isOpen ? "expand_more" : "expand_less"
 
   section 
-    .dropdown(data-key=`${id}`)&attributes({
+    .dropdown(data-key = `${id}`, data-type = type)&attributes({
         class: openClassModifier
       })
       .dropdown__input(data-type="input")

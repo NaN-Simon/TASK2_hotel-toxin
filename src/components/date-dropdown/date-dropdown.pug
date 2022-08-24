@@ -1,0 +1,52 @@
+include ../text-field/text-field.pug
+include ../heading/heading.pug
+
+mixin date-dropdown(properties = {})
+  -
+    const {
+      type = "",
+      hasTwoInputs = false,
+      inline =  false,
+      dateFormat =  "",
+      dataTypeStart = "",
+      dataTypeEnd = "",
+      startTitle = "",
+      endTitle = "",
+      placeholderStart = "",
+      placeholderEnd = "",
+      name = "",
+      startDate = "",
+      endDate = "",
+      withMask = false,
+    } = properties
+
+    const inlineClassModifire = inline ? "date-dropdown__inline" : ""
+    const dataProperties = JSON.stringify(properties)
+
+  if hasTwoInputs 
+    section.date-dropdown(data-properties = dataProperties)
+      .date-dropdown__couple&attributes({
+      class: inlineClassModifire
+    })
+        .date-dropdown__start
+          +heading({ 
+            level: "h3", 
+            title: startTitle,
+          })
+          +text-field({
+            type: type, 
+            placeholder: placeholderStart, 
+            name: name,
+            dateMask: withMask,
+          })
+        .date-dropdown__end
+          +heading({ 
+            level: "h3", 
+            title: endTitle,
+          })
+          +text-field({
+            type: type, 
+            placeholder: placeholderEnd, 
+            name: name,
+            dateMask: withMask,
+          })

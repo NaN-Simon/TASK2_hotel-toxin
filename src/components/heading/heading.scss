@@ -3,6 +3,7 @@
 .heading {
   display        : flex;
   justify-content: space-between;
+  margin-bottom: 5px;
 
   &__title_level_h1 {
     color      : $textColor;
@@ -29,7 +30,7 @@
   &__title_level_h3 {
     color         : $textColor;
     font-weight   : 700;
-    font-size     : 15px;
+    font-size     : 12px;
     font-family   : $mainFont;
     text-transform: uppercase;
   }

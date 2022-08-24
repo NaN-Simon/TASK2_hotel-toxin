@@ -18,6 +18,9 @@
     border: 1px solid $textColor_25;
     border-radius: 4px;
     font-family: $mainFont;
+    &:hover{
+      border: 1px solid $textColor_50;
+    }
   }
 
   &__open .dropdown__drop{
