@@ -4,12 +4,12 @@ include ../heading/heading.pug
 mixin date-dropdown(properties = {})
   -
     const {
+      id = "",
       type = "",
       hasTwoInputs = false,
+      hasArrow = false,
       inline =  false,
       dateFormat =  "",
-      dataTypeStart = "",
-      dataTypeEnd = "",
       startTitle = "",
       endTitle = "",
       placeholderStart = "",
@@ -24,9 +24,9 @@ mixin date-dropdown(properties = {})
     const dataProperties = JSON.stringify(properties)
 
   if hasTwoInputs 
-    section.date-dropdown(data-properties = dataProperties)
+    section.date-dropdown(data-properties = dataProperties, id = id)
       .date-dropdown__couple&attributes({
-      class: inlineClassModifire
+      class: [inlineClassModifire],
     })
         .date-dropdown__start
           +heading({ 
@@ -35,6 +35,7 @@ mixin date-dropdown(properties = {})
           })
           +text-field({
             type: type, 
+            hasArrow: hasArrow,
             placeholder: placeholderStart, 
             name: name,
             dateMask: withMask,
@@ -46,7 +47,25 @@ mixin date-dropdown(properties = {})
           })
           +text-field({
             type: type, 
+            hasArrow: hasArrow,
             placeholder: placeholderEnd, 
+            name: name,
+            dateMask: withMask,
+          })
+  else 
+    section.date-dropdown(data-properties = dataProperties, id = id)
+      .date-dropdown__couple&attributes({
+      class: [inlineClassModifire],
+    })
+        .date-dropdown__start
+          +heading({ 
+            level: "h3", 
+            title: startTitle,
+          })
+          +text-field({
+            type: type, 
+            hasArrow: hasArrow,
+            placeholder: placeholderStart, 
             name: name,
             dateMask: withMask,
           })

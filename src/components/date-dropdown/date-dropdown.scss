@@ -1,9 +1,35 @@
 .date-dropdown{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // min-width: 100%;
+  //   max-width: 100%;
+  position: relative;
+
   &__couple{
+    display: flex;
+    flex-direction: column;
     gap: 0 20px;
+    min-width: inherit;
+    max-width: inherit;
+    margin-bottom: 5px;
   }
   &__inline{
     display: flex;
     flex-direction: row;
   }
+
+  &__start{
+    min-width: inherit;
+    max-width: inherit;
+  }
+  &__end{
+    min-width: inherit;
+    max-width: inherit;
+  }
+}
+
+.air-datepicker {
+  width: 100%;
+  margin-top: 5px;
 }

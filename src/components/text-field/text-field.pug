@@ -1,7 +1,18 @@
-mixin text-field({type= "", placeholder= "", name= "", focused = false, dateMask = false})
-  -
+mixin text-field(properties = {})
+
+  -    
+    const {
+      type= "", 
+      placeholder= "", 
+      name= "", 
+      focused = false, 
+      dateMask = false, 
+      hasArrow = false,
+    } = properties;
+
     const focusedClass = focused ? "text-field_focused" : "";
-    const maskClass = dateMask ?  "input-date" : "";
+    const maskClass = dateMask ?  "mask-date" : "";
+    const arrowClassModifire = hasArrow ? "text-field__arrow" : "";
     const inputAttributes = { 
       type: type,
       placeholder: placeholder,
@@ -10,4 +21,7 @@ mixin text-field({type= "", placeholder= "", name= "", focused = false, dateMask
     }
 
   .text-field
-    input&attributes(inputAttributes).text-field__input
+    input.text-field__input(data-type="input")&attributes(inputAttributes)
+    if hasArrow
+      span(data-type="input")&attributes({class: arrowClassModifire})
+        .material-icons(data-type="input") expand_more
