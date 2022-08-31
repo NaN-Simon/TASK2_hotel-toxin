@@ -2,64 +2,53 @@ import AirDatepicker from 'air-datepicker';
 import 'air-datepicker/air-datepicker.css';
 import './date-dropdown.scss';
 
+const propertiesDefault = {
+  navTitles: {
+    days: 'MMMM <i>yyyy</i>',
+    months: 'yyyy',
+    years: 'yyyy1 - yyyy2',
+  },
+  prevHtml: '<span class="air-datepicker-nav--action-arrow material-icons">arrow_back</span>',
+  nextHtml: '<span class="air-datepicker-nav--action-arrow material-icons">arrow_forward</span>',
+  buttons: ['clear',
+    {
+      content: 'Применить',
+      onClick: (dp) => dp.hide(),
+    },
+  ],
+
+};
+
 class DateDropdown {
   constructor(selector) {
     this.$el = document.querySelector(selector);
-    this.$start = this.$el.querySelector('.date-dropdown__start').querySelector('.text-field__input');
-    this.$end = this.$el.querySelector('.date-dropdown__end').querySelector('.text-field__input');
+    const { properties } = this.$el.dataset;
+    this.properties = JSON.parse(properties);
+
+    this.$start = this.$el.querySelector('.date-dropdown__start .text-field__input');
     this.datepickerStart = new AirDatepicker(this.$start, {
+
       container: this.$el,
-      // inline: true,
+      ...propertiesDefault,
+      dateFormat: this.properties.dateFormat,
+      startDate: this.properties.startDate,
     });
-    this.datepickerEnd = new AirDatepicker(this.$end, {
-      // inline: true,
-      container: this.$el,
-    });
-    [this.$datepickeInputs, this.$datepickerWrap] = this.$el.children;
-    this.#setup();
-  }
 
-  #setup() {
-    // this.clickHandler = this.clickHandler.bind(this);
-    // this.$el.addEventListener('click', this.clickHandler);
-  }
+    if (this.properties.hasTwoInputs) {
+      this.$end = this.$el.querySelector('.date-dropdown__end .text-field__input');
+      this.datepickerEnd = new AirDatepicker(this.$end, {
 
-  clickHandler(event) {
-    const { type } = (event.target.dataset);
+        container: this.$el,
+        ...propertiesDefault,
+        dateFormat: this.properties.dateFormat,
+        startDate: this.properties.endDate,
 
-    if (type === 'input') {
-      this.toggle();
+      });
     }
-    this.trackEvent(event);
-  }
-
-  trackEvent(event) {
-    console.log(this.datepicker.lastSelectedDate);
-  }
-
-  get isOpen() {
-    return this.$el.contains(this.$datepickerWrap);
-  }
-
-  toggle() {
-    if (this.isOpen) {
-      this.close();
-    } else {
-      this.open();
-    }
-  }
-
-  open() {
-    this.$el.appendChild(this.$datepickerWrap);
-  }
-
-  close() {
-    this.$el.removeChild(this.$datepickerWrap);
   }
 }
 
-const datedropdown = new DateDropdown('#text-field-datepicker');
-const datedropdownTest = new DateDropdown('#text-field-test');
-window.datedropdown = datedropdown;
-
-
+const datedropdown = document.querySelectorAll('.indexjs-date-dropdown');
+datedropdown.forEach((elem) => {
+  new DateDropdown(`#${elem.id}`);
+});

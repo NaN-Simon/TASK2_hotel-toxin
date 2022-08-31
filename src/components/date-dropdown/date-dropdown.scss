@@ -1,17 +1,16 @@
+@import '@base';
+
 .date-dropdown{
   display: flex;
   flex-direction: column;
   align-items: center;
-  // min-width: 100%;
-  //   max-width: 100%;
   position: relative;
 
   &__couple{
     display: flex;
     flex-direction: column;
     gap: 0 20px;
-    min-width: inherit;
-    max-width: inherit;
+    width: 100%;
     margin-bottom: 5px;
   }
   &__inline{
@@ -20,16 +19,83 @@
   }
 
   &__start{
-    min-width: inherit;
-    max-width: inherit;
+    width: 100%;
   }
   &__end{
-    min-width: inherit;
-    max-width: inherit;
+    width: 100%;
   }
 }
 
 .air-datepicker {
+  font-family: $mainFont;
+  --adp-font-size: 14px;
+  color: $textColor_50;
+  --adp-nav-height: 40px;
+  --adp-day-cell-width: 40px;
+  --adp-day-cell-height: 40px;
+  // --adp-cell-background-color-in-range: rgba(92, 196, 239, 0.1);
+  // --adp-cell-background-color-in-range-hover: rgba(92, 196, 239, 0.2);
+  // --adp-cell-border-color-in-range: var(--adp-cell-background-color-selected);
   width: 100%;
   margin-top: 5px;
+
+  &-nav--title {
+    font-family: $mainFont;
+    font-style : normal;
+    font-weight: 700;
+    font-size  : 19px;
+    line-height: 23px;
+    color: $textColor;
+  }
+
+  &-nav--title i {
+    font-family: $mainFont;
+    font-style : normal;
+    font-weight: 700;
+    font-size  : 19px;
+    line-height: 23px;
+    color: $textColor;
+  }
+
+  &-nav--action-arrow{
+    color: $elementColor;
+  }
+
+  &-body--day-names{
+    display: grid;
+    grid-template-columns: repeat(7, var(--adp-day-cell-width));
+    height: 40px;
+  }
+  &-body--day-name{
+    color: $elementColor;
+    font-weight: 700;
+  }
+
+  &-cell.-current-{
+    color: $elementColor;
+    font-size: large;
+  }
+
+  &-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-button{
+    font-family: $mainFont;
+    font-style : normal;
+    font-weight: 700;
+    font-size  : 12px;
+    line-height: 15px;
+    color: $elementColor;
+    text-transform: uppercase;
+    padding: 0 15px 0 15px;
+  }
+}
+
+.air-datepicker-cell.-selected-{
+  background: $elementColor;
+  &:hover{
+    background: $elementColor_extra;
+  }
 }

@@ -20,6 +20,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "air-datepicker": "^3.2.1",
     "jquery": "^3.6.0",
     "jquery-ui": "^1.13.1",
     "material-design-icons-iconfont": "^6.1.1",
@@ -30,7 +31,6 @@
   "devDependencies": {
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.16.4",
-    "air-datepicker": "^3.2.0",
     "babel-loader": "^8.2.3",
     "cross-env": "^7.0.3",
     "css-loader": "^6.5.1",
