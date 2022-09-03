@@ -26,9 +26,6 @@ class DateDropdown {
     this.properties = JSON.parse(properties);
 
     this.setup();
-
-    this.statusDropStart = false;
-    this.statusDropEnd = false;
   }
 
   setup() {
@@ -66,6 +63,3 @@ const datedropdown = document.querySelectorAll('.indexjs-date-dropdown');
 datedropdown.forEach((elem) => {
   new DateDropdown(`#${elem.id}`);
 });
-
-// const datedropdown = new DateDropdown(`#text-field-datepicker`)
-// window.datedropdown = datedropdown

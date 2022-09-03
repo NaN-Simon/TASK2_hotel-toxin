@@ -1,0 +1,23 @@
+mixin radio-buttons(properties = {})
+
+  -
+    const {
+      listItems = [], 
+      name = "", 
+      type = "",
+      inline = ""
+    } = properties 
+
+    const inlineClassModifire = inline ? "checkbox-radio-inline" : ""
+
+  section&attributes({
+    class: ["checkbox-radio", inlineClassModifire]
+  })
+    each item in listItems 
+      input(class = "custom-checkbox-radio", 
+      id = item.id, 
+      type = type, 
+      name = name, 
+      checked = item.checked
+      )
+      label(for= item.id) #{item.title}

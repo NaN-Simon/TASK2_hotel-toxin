@@ -3,6 +3,7 @@ include ../../components/text-field/text-field.pug
 include ../../components/dropdown/dropdown.pug
 include ../../components/date-dropdown/date-dropdown.pug
 include ../../components/checkbox-list/checkbox-list.pug
+include ../../components/radio-buttons/radio-buttons.pug
 
 block content
   main.form-elements
@@ -94,5 +95,19 @@ block content
                 { title: "Можно курить", name: 'smoke-allow' },
                 { title: "Можно с питомцами", name: 'pets-allow' },
                 { title: "Можно пригласить гостей (до 10 человек)", name: 'guests-allow', checked: true }
+              ],
+            })
+          .form-elements__text-checkboxes-wrapper
+            +heading({ 
+              level: "h3", 
+              title: "Radio Buttons"
+            })
+            +radio-buttons({	
+              name: "gender",
+              type: "radio",
+              inline: true,
+              listItems: [
+                { title: "Мужчина", id: "gender-f", checked: "checked"},
+                { title: "Женщина", id: "gender-m"},
               ],
             })

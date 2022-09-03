@@ -9,3 +9,4 @@ import './components/text-field';
 import './components/dropdown';
 import './components/date-dropdown';
 import './components/checkbox-list';
+import './components/radio-buttons';
