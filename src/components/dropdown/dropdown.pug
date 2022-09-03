@@ -3,7 +3,7 @@ mixin dropdown({id="", type="guests", isOpen= "true", placeholder= "Скольк
     const openClassModifier = isOpen ? "dropdown__open" : ""
     const toggleClassModifier = isOpen ? "expand_more" : "expand_less"
 
-  section 
+  section.indexjs-dropdown(id = id)
     .dropdown(data-key = `${id}`, data-type = type)&attributes({
         class: openClassModifier
       })

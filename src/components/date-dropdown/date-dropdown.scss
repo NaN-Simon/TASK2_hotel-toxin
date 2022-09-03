@@ -28,14 +28,8 @@
 
 .air-datepicker {
   font-family: $mainFont;
-  --adp-font-size: 14px;
+  font-size: 14px;
   color: $textColor_50;
-  --adp-nav-height: 40px;
-  --adp-day-cell-width: 40px;
-  --adp-day-cell-height: 40px;
-  // --adp-cell-background-color-in-range: rgba(92, 196, 239, 0.1);
-  // --adp-cell-background-color-in-range-hover: rgba(92, 196, 239, 0.2);
-  // --adp-cell-border-color-in-range: var(--adp-cell-background-color-selected);
   width: 100%;
   margin-top: 5px;
 
@@ -55,17 +49,37 @@
     font-size  : 19px;
     line-height: 23px;
     color: $textColor;
+
   }
 
   &-nav--action-arrow{
     color: $elementColor;
+
+    &:hover{
+      color: $textColor_50;
+    transition: 0.5s;
+    }
   }
 
   &-body--day-names{
-    display: grid;
-    grid-template-columns: repeat(7, var(--adp-day-cell-width));
     height: 40px;
   }
+
+  &-cell.-selected-{
+    background: $elementColor;
+    transition: 0.5s;
+  }
+
+  &-cell.-day-{
+    width: 40px;
+    height: 40px;
+  }
+  &-cell.-day-:hover{
+    background-color: $textColor_50;
+    border-radius: 50%;
+    transition: 0.5s;
+  }
+  
   &-body--day-name{
     color: $elementColor;
     font-weight: 700;
@@ -90,12 +104,9 @@
     color: $elementColor;
     text-transform: uppercase;
     padding: 0 15px 0 15px;
-  }
-}
 
-.air-datepicker-cell.-selected-{
-  background: $elementColor;
-  &:hover{
-    background: $elementColor_extra;
+    &:hover span{
+      color: $textColor_50;
+    }
   }
 }
