@@ -10,3 +10,4 @@ import './components/dropdown';
 import './components/date-dropdown';
 import './components/checkbox-list';
 import './components/radio-buttons';
+import './components/toggle';

@@ -4,13 +4,14 @@ include ../../components/dropdown/dropdown.pug
 include ../../components/date-dropdown/date-dropdown.pug
 include ../../components/checkbox-list/checkbox-list.pug
 include ../../components/radio-buttons/radio-buttons.pug
+include ../../components/toggle/toggle.pug
 
 block content
   main.form-elements
     .form-elements__container
       section.form-elements__text-fields-buttons
         .form-elements__text-fields
-          .form-elements__text-field-wrapper
+          .form-elements__large-wrapper
             +heading({ 
               level: "h3", 
               title: "text field", 
@@ -21,7 +22,7 @@ block content
               placeholder: "Email", 
               name: "email",
             })
-          .form-elements__text-field-wrapper
+          .form-elements__large-wrapper
             +heading({ 
               level: "h3", 
               title: "text field", 
@@ -33,7 +34,7 @@ block content
               name: "email",
               focused: true,
             })
-          .form-elements__text-field-wrapper
+          .form-elements__large-wrapper
             +heading({ 
               level: "h3", 
               title: "dropdown",
@@ -55,7 +56,7 @@ block content
                 baby: "Младенец, Младенца, Младенцев",
                 },
             })
-          .form-elements__text-field-wrapper
+          .form-elements__large-wrapper
             +heading({ 
               level: "h3", 
               title: "masked text field",
@@ -67,7 +68,7 @@ block content
               focused: false,
               dateMask: true,
             })
-          .form-elements__text-field-wrapper
+          .form-elements__large-wrapper
             +date-dropdown({
               id: "text-field-datepicker",
               type:"text",
@@ -85,7 +86,7 @@ block content
               withMask: true
             })
         .form-elements__text-checkboxes
-          .form-elements__text-checkboxes-wrapper
+          .form-elements__medium-wrapper
             +heading({ 
               level: "h3", 
               title: "CHECKBOX BUTTONS",
@@ -97,7 +98,7 @@ block content
                 { title: "Можно пригласить гостей (до 10 человек)", name: 'guests-allow', checked: true }
               ],
             })
-          .form-elements__text-checkboxes-wrapper
+          .form-elements__medium-wrapper
             +heading({ 
               level: "h3", 
               title: "Radio Buttons"
@@ -107,7 +108,21 @@ block content
               type: "radio",
               inline: true,
               listItems: [
-                { title: "Мужчина", id: "gender-f", checked: "checked"},
-                { title: "Женщина", id: "gender-m"},
+                { title: "Мужчина", id: "gender-f", checked: "checked" },
+                { title: "Женщина", id: "gender-m" },
+              ],
+            })
+          .form-elements__large-wrapper
+            +heading({ 
+              level: "h3", 
+              title: "Toggle",
+            })
+            +toggle({	
+              name: "special-offer",
+              type: "checkbox",
+              inline: false,
+              listItems: [
+                { title: "Получать спецпредложения", id: "special-offer1", checked: "checked" },
+                { title: "Получать спецпредложения", id: "special-offer2" },
               ],
             })

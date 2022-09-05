@@ -1,0 +1,59 @@
+@import '@base';
+
+.checkbox-toggle-items{
+  font-family: $mainFont;
+  font-style : normal;
+  font-weight: 400;
+  font-size  : 14px;
+  line-height: 24px;
+  color: $textColor_75;
+}
+.checkbox-toggle-item {
+  display: flex;
+  align-items: center;
+  margin: 13px 0;
+}
+.custom-toggle-botton {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  margin-right: 5px;
+  padding-right: 20px;
+  vertical-align: top;
+  background: $mainBackground;
+  border: 1.5px solid $textColor_25;
+  border-radius: 30px;
+  outline: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  transition: 0.3s;
+
+  &::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: 2px;
+    top: 2.5px;
+    width: 12px;
+    height: 12px;
+    background-color: $textColor_25;
+    border-radius: 50%;
+    transform: translateX(0);
+    transition: 0.3s;
+  }
+
+  &:checked::after {
+    transform: translateX(calc(100% + 8px));
+    background-color: $elementColor;
+  }
+
+  &:checked {
+    background-color: $mainBackground;
+    border: 1.5px solid $elementColor;
+  }
+
+}
+

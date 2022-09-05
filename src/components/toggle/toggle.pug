@@ -1,0 +1,21 @@
+mixin toggle(properties = {})
+
+  -
+    const {
+      listItems = [], 
+      name = "", 
+      type = "",
+      inline = ""
+    } = properties 
+
+    const inlineClassModifire = inline ? "checkbox-toggle-inline" : ""
+
+  section&attributes({
+    class: ["checkbox-toggle-items", inlineClassModifire]
+    })
+    each item in listItems 
+      .checkbox-toggle-item
+        input.custom-toggle-botton(id = item.id, 
+        type = type, 
+        checked = item.checked)
+        label.toggle-botton-text(for = item.id) #{item.title}
