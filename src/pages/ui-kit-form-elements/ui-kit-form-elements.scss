@@ -20,7 +20,14 @@
     min-width: 320px;
     max-width: 320px;
   }
+  
   &__medium-wrapper{
+    margin-bottom: 40px;
+    min-width: 266px;
+    max-width: 266px;
+  }
+
+  &__small-wrapper{
     margin-bottom: 40px;
     min-width: 222px;
     max-width: 222px;

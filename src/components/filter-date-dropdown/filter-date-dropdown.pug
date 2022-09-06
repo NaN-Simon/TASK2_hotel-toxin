@@ -1,0 +1,33 @@
+include ../text-field/text-field.pug
+include ../heading/heading.pug
+
+mixin filter-date-dropdown(properties = {})
+  -
+    const {
+      id = "",
+      type = "",
+      hasArrow = false,
+      dateFormat =  "",
+      title = "",
+      placeholder = "",
+      name = "",
+      startDate = "",
+      endDate = "",
+      withMask = false,
+      datesSeparator = " - "
+    } = properties
+
+    const dataProperties = JSON.stringify(properties)
+
+  section.date-dropdown.indexjs-filter-date-dropdown(data-properties = dataProperties, id = id)
+    +heading({ 
+      level: "h3", 
+      title: title,
+    })
+    +text-field({
+      type: type, 
+      hasArrow: hasArrow,
+      placeholder: placeholder, 
+      name: name,
+      dateMask: withMask,
+    })

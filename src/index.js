@@ -11,3 +11,4 @@ import './components/date-dropdown';
 import './components/checkbox-list';
 import './components/radio-buttons';
 import './components/toggle';
+import './components/filter-date-dropdown';

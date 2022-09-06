@@ -2,6 +2,7 @@ include ../../components/heading/heading.pug
 include ../../components/text-field/text-field.pug
 include ../../components/dropdown/dropdown.pug
 include ../../components/date-dropdown/date-dropdown.pug
+include ../../components/filter-date-dropdown/filter-date-dropdown.pug
 include ../../components/checkbox-list/checkbox-list.pug
 include ../../components/radio-buttons/radio-buttons.pug
 include ../../components/toggle/toggle.pug
@@ -85,8 +86,22 @@ block content
               endDate: "08.19.2019",
               withMask: true
             })
-        .form-elements__text-checkboxes
           .form-elements__medium-wrapper
+            +filter-date-dropdown({
+              id: "filter-text-field-datepicker",
+              type:"text",
+              hasArrow: true,
+              dateFormat: "dd.MM.yyyy",
+              title: "filter date dropdown",
+              placeholder: "ДД.ММ.ГГГГ",
+              name: "date",
+              startDate: "08.10.2019",
+              endDate: "08.19.2019",
+              withMask: true,
+              datesSeparator: " - "
+            })
+        .form-elements__text-checkboxes
+          .form-elements__small-wrapper
             +heading({ 
               level: "h3", 
               title: "CHECKBOX BUTTONS",
@@ -98,7 +113,7 @@ block content
                 { title: "Можно пригласить гостей (до 10 человек)", name: 'guests-allow', checked: true }
               ],
             })
-          .form-elements__medium-wrapper
+          .form-elements__small-wrapper
             +heading({ 
               level: "h3", 
               title: "Radio Buttons"
