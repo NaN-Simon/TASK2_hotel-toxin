@@ -38,8 +38,8 @@ class FilterDateDropdown {
       ...propertiesDefault,
       dateFormat: this.properties.dateFormat,
       startDate: this.properties.startDate,
-      onShow: () => this.$arrowStartIcon.innerHTML = 'expand_less',
-      onHide: () => this.$arrowStartIcon.innerHTML = 'expand_more',
+      onShow: () => this.$arrowStartIcon.innerHTML = 'expand_more',
+      onHide: () => this.$arrowStartIcon.innerHTML = 'expand_less',
       range: true,
       multipleDatesSeparator: this.properties.datesSeparator,
     });

@@ -2,6 +2,7 @@ import './styles/reset.scss';
 import './styles/index.scss';
 import './styles/fonts.scss';
 
+import './components/ui-kit-header'
 import './components/heading';
 import './components/colors';
 import './components/type';

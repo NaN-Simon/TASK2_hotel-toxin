@@ -1,3 +1,4 @@
+extends ../../layouts/ui-kit-layout
 include ../../components/heading/heading.pug
 include ../../components/text-field/text-field.pug
 include ../../components/dropdown/dropdown.pug
@@ -6,6 +7,9 @@ include ../../components/filter-date-dropdown/filter-date-dropdown.pug
 include ../../components/checkbox-list/checkbox-list.pug
 include ../../components/radio-buttons/radio-buttons.pug
 include ../../components/toggle/toggle.pug
+
+block variables
+  - const pageTitle = "Form & Elements"
 
 block content
   main.form-elements
@@ -47,9 +51,9 @@ block content
               placeholder: "Сколько гостей",
               maxCount: 10,
               elements: [
-                { title: "Взрослые", id: "adult", startCount: 5 }, 
-                { title: "Дети", id: "kids", startCount: 3 }, 
-                { title: "Младенцы", id: "baby", startCount: 1 }
+                { title: "Взрослые", id: "adult", startCount: 0 }, 
+                { title: "Дети", id: "kids", startCount: 0 }, 
+                { title: "Младенцы", id: "baby", startCount: 0 }
               ],
               plurals: {
                 adult: "Взрослый, Взрослых, Взрослых",
@@ -99,6 +103,18 @@ block content
               endDate: "08.19.2019",
               withMask: true,
               datesSeparator: " - "
+            })
+          .form-elements__medium-wrapper
+            +heading({ 
+              level: "h3", 
+              title: "SUBSCRIPTION TEXT FIELD",
+            })
+            +text-field({
+              type: "text", 
+              placeholder: "Email", 
+              name: "email",
+              focused: false,
+              hasArrowSubscription: true,
             })
         .form-elements__text-checkboxes
           .form-elements__small-wrapper

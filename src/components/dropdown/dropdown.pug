@@ -8,8 +8,8 @@ mixin dropdown({id="", type="guests", isOpen= "true", placeholder= "Скольк
         class: openClassModifier
       })
       .dropdown__input(data-type="input")
-        span(data-type="input") #{placeholder}
-        span(data-type="input").material-icons #{toggleClassModifier}
+        span(data-type="input").dropdown__input-placeholder #{placeholder}
+        span(data-type="input").dropdown__input-arrow.material-icons #{toggleClassModifier}
       ul&attributes({
         class: ["dropdown__drop"]
       })

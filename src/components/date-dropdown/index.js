@@ -38,8 +38,8 @@ class DateDropdown {
       ...propertiesDefault,
       dateFormat: this.properties.dateFormat,
       startDate: this.properties.startDate,
-      onShow: () => this.$arrowStartIcon.innerHTML = 'expand_less',
-      onHide: () => this.$arrowStartIcon.innerHTML = 'expand_more',
+      onShow: () => this.$arrowStartIcon.innerHTML = 'expand_more',
+      onHide: () => this.$arrowStartIcon.innerHTML = 'expand_less',
     });
   
     if (this.properties.hasTwoInputs) {
@@ -52,8 +52,8 @@ class DateDropdown {
         ...propertiesDefault,
         dateFormat: this.properties.dateFormat,
         startDate: this.properties.endDate,
-        onShow: () => this.$arrowEndIcon.innerHTML = 'expand_less',
-        onHide: () => this.$arrowEndIcon.innerHTML = 'expand_more',
+        onShow: () => this.$arrowEndIcon.innerHTML = 'expand_more',
+        onHide: () => this.$arrowEndIcon.innerHTML = 'expand_less',
       });
     }
   }

@@ -138,6 +138,9 @@ class Dropdown {
         placeholderInner = 'Гостей';
       }
       this.$placeholder.innerHTML = `${placeholderSum} ${placeholderInner}`;
+      if (placeholderSum === 0) {
+        this.$placeholder.innerHTML = 'Сколько гостей'
+      }
     }
   }
 

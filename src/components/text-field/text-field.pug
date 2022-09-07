@@ -8,11 +8,13 @@ mixin text-field(properties = {})
       focused = false, 
       dateMask = false, 
       hasArrow = false,
+      hasArrowSubscription = false,
     } = properties;
 
     const focusedClass = focused ? "text-field_focused" : "";
     const maskClass = dateMask ?  "mask-date" : "";
     const arrowClassModifire = hasArrow ? "text-field__arrow" : "";
+    const arrowSubscriptionClassModifire = hasArrowSubscription ? "text-field__arrow-subscription" : "";
     const inputAttributes = { 
       type: type,
       placeholder: placeholder,
@@ -24,4 +26,8 @@ mixin text-field(properties = {})
     input.text-field__input(data-type="input")&attributes(inputAttributes)
     if hasArrow
       span(data-type="input")&attributes({class: arrowClassModifire})
-        .material-icons(data-type="input") expand_more
+        .material-icons(data-type="input") expand_less
+    if hasArrowSubscription
+      span(data-type="input")&attributes({class: arrowSubscriptionClassModifire})
+        .material-icons(data-type="input") arrow_forward
+

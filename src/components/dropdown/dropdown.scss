@@ -6,6 +6,7 @@
   width: inherit;
   cursor: pointer;
 
+
   &__input{
     display: flex;
     flex-direction: row;
@@ -18,8 +19,17 @@
     border: 1px solid $textColor_25;
     border-radius: 4px;
     font-family: $mainFont;
+    
     &:hover{
       border: 1px solid $textColor_50;
+    }
+
+    &-placeholder{
+      color: $textColor_75;
+    }
+
+    &-arrow{
+      color: $textColor_50;
     }
   }
 

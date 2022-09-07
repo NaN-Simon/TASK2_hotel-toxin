@@ -1,22 +1,25 @@
+extends ../../layouts/ui-kit-layout
 include ../../components/colors/colors.pug
 include ../../components/type/type.pug
 
+block variables
+  - const pageTitle = "Color & Types"
+
 block content
   main.color-and-types
-    .color-and-types__container
-      +colors([
-        { color: "darkest-gray", title: "Dark Shade 100%", colorCode: "#1F2041" },
-        { color: "dark-gray", title: "Dark Shade 75%", colorCode: "#1F2041" },
-        { color: "gray", title: "Dark Shade 50%", colorCode: "#1F2041" },
-        { color: "light-gray", title: "Dark Shade 25%", colorCode: "#1F2041" },
-        { color: "lightest-gray", title: "Dark Shade 5%", colorCode: "#1F2041" },
-        { color: "purple", title: "Purple", colorCode: "#BC9CFF" },
-        { color: "green", title: "Green", colorCode: "#6FCF97" },
-      ])
-      +type([
-         {type: "h1", tag: "H1", description: "This one is the sub-section or widget title" },
-         {type: "h2", tag: "H2", description: "Next one is the item title inside widgets" },
-         {type: "h3", tag: "H3", description: "This is a label or CTA text" },
-         {type: "body", tag: "body", description: "This is the body text which is used for most of the design, like paragraphs, lists, etc." },
-      ])
+    +colors([
+      { color: "darkest-gray", title: "Dark Shade 100%", colorCode: "#1F2041" },
+      { color: "dark-gray", title: "Dark Shade 75%", colorCode: "#1F2041" },
+      { color: "gray", title: "Dark Shade 50%", colorCode: "#1F2041" },
+      { color: "light-gray", title: "Dark Shade 25%", colorCode: "#1F2041" },
+      { color: "lightest-gray", title: "Dark Shade 5%", colorCode: "#1F2041" },
+      { color: "purple", title: "Purple", colorCode: "#BC9CFF" },
+      { color: "green", title: "Green", colorCode: "#6FCF97" },
+    ])
+    +type([
+        {type: "h1", tag: "H1", description: "This one is the sub-section or widget title" },
+        {type: "h2", tag: "H2", description: "Next one is the item title inside widgets" },
+        {type: "h3", tag: "H3", description: "This is a label or CTA text" },
+        {type: "body", tag: "body", description: "This is the body text which is used for most of the design, like paragraphs, lists, etc." },
+    ])
     
