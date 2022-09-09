@@ -13,3 +13,6 @@ import './components/checkbox-list';
 import './components/radio-buttons';
 import './components/toggle';
 import './components/filter-date-dropdown';
+import './components/like-button';
+import './components/rate-button';
+import './components/range-slider';

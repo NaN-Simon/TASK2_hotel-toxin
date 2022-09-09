@@ -25,6 +25,11 @@
     margin-bottom: 40px;
     min-width: 266px;
     max-width: 266px;
+
+    &-couple{
+      display: flex;
+      justify-content: space-between;
+    }
   }
 
   &__small-wrapper{

@@ -1,0 +1,11 @@
+@import '@base';
+
+.rate-button{
+  cursor: pointer;
+  user-select: none;
+
+  &__star{
+    color: $elementColor;
+  }
+  
+}

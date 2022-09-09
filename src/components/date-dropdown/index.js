@@ -33,7 +33,7 @@ class DateDropdown {
     this.$arrowStart = this.$start.nextSibling;
     [this.$arrowStartIcon] = this.$arrowStart.children;
     this.datepickerStart = new AirDatepicker(this.$start, {
-  
+
       container: this.$el,
       ...propertiesDefault,
       dateFormat: this.properties.dateFormat,
@@ -41,13 +41,13 @@ class DateDropdown {
       onShow: () => this.$arrowStartIcon.innerHTML = 'expand_more',
       onHide: () => this.$arrowStartIcon.innerHTML = 'expand_less',
     });
-  
+
     if (this.properties.hasTwoInputs) {
       this.$end = this.$el.querySelector('.date-dropdown__end .text-field__input');
       this.$arrowEnd = this.$end.nextSibling;
       [this.$arrowEndIcon] = this.$arrowEnd.children;
       this.datepickerEnd = new AirDatepicker(this.$end, {
-  
+
         container: this.$el,
         ...propertiesDefault,
         dateFormat: this.properties.dateFormat,

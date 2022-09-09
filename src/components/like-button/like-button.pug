@@ -1,0 +1,25 @@
+mixin like-button(properties = {})
+  -
+    const {
+      listItems = [], 
+      name = "", 
+      type = "",
+      inline = ""
+    } = properties 
+
+    const inlineClassModifire = inline ? "like-button-inline" : ""
+
+  section&attributes({
+    class: ["like-button", inlineClassModifire]
+  })
+    each item in listItems
+      - const colorClassModifire = item.checked ? "like-button__title-blue" : ""
+
+      .like-button__item 
+        input.like-button__input.material-icons(type = type,
+        id = item.id,
+        name = name, 
+        checked = item.checked)
+        label(for = item.id)&attributes({
+          class: ["like-button__title", colorClassModifire]
+        }) #{item.number}

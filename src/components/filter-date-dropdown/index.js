@@ -33,7 +33,7 @@ class FilterDateDropdown {
     this.$arrowStart = this.$start.nextSibling;
     [this.$arrowStartIcon] = this.$arrowStart.children;
     this.datepickerStart = new AirDatepicker(this.$start, {
-  
+
       container: this.$el.children[1],
       ...propertiesDefault,
       dateFormat: this.properties.dateFormat,

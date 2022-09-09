@@ -7,6 +7,9 @@ include ../../components/filter-date-dropdown/filter-date-dropdown.pug
 include ../../components/checkbox-list/checkbox-list.pug
 include ../../components/radio-buttons/radio-buttons.pug
 include ../../components/toggle/toggle.pug
+include ../../components/like-button/like-button.pug
+include ../../components/rate-button/rate-button.pug
+include ../../components/range-slider/range-slider.pug
 
 block variables
   - const pageTitle = "Form & Elements"
@@ -156,4 +159,48 @@ block content
                 { title: "Получать спецпредложения", id: "special-offer1", checked: "checked" },
                 { title: "Получать спецпредложения", id: "special-offer2" },
               ],
+            })
+          .form-elements__small-wrapper
+            +heading({ 
+              level: "h3", 
+              title: "like button"
+            })
+            +like-button({	
+              name: "like",
+              type: "checkbox",
+              inline: true,
+              listItems: [
+                { number: 2, id: "like-button1" },
+                { number: 12, id: "like-button2", checked: "checked" },
+              ],
+            })
+          .form-elements__medium-wrapper
+            +heading({ 
+              level: "h3", 
+              title: "rate button",
+            })
+            .form-elements__medium-wrapper-couple
+              +rate-button({
+                id: 'rate-button1',
+                maxRate: 5,
+                selectedRate: 4,
+              })
+              +rate-button({
+                id: 'rate-button2',
+                maxRate: 5,
+                selectedRate: 5,
+              })
+        .form-elements__text-buttons
+          .form-elements__large-wrapper
+            +heading({ 
+              level: "h3", 
+              title: "Range Slider",
+              description: "5000₽ - 10000₽" 
+            })
+            +range-slider({
+              id: "range-slider",
+              sliderMin: 0,
+              sliderMax: 15000,
+              startMin: 5000,
+              startMax: 10000,
             })
