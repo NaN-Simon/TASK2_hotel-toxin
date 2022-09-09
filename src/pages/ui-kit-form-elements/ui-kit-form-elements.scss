@@ -1,4 +1,7 @@
+@import '@base';
+
 .form-elements{
+  background: $mainBackground;
   &__container{
     display: block;
     min-width: 1158px;

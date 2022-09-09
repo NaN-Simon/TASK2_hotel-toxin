@@ -65,14 +65,14 @@
     width: 20px;
     height: 20px;
     font-size: 14px;
-    background-color: #fff;
+    background: $mainBackground;
   }
 
   &__checkbox:checked + .checkbox-list__box::before {
     content            : "done";
     border-color: $elementColor;
     color: $elementColor;
-    background-color: #fff;
+    background: $mainBackground;
   }
 
   &__title{

@@ -1,6 +1,7 @@
 @import '@base';
 
 .text-field{
+  background: $mainBackground;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -8,6 +9,7 @@
   width: 100%;
 
   &__input{
+    background: inherit;
     width: inherit;
     height: 44px;
     padding: 0 15px 0 15px;
