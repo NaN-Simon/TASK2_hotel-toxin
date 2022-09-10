@@ -1,26 +1,53 @@
+@import '@base';
+
 .range-slider{
   margin-top: 23px;
-}
-// .range-slider-box {
-//   display: flex;
-//   justify-content: space-between;
-// }
-// .range-slider {
-//   width: 266px;
-//   height: 6px;
-// }
-// input#amount {
-//   width: 102px;
-// }
-// .range-slider .ui-slider-handle.ui-corner-all.ui-state-default {
-//   width: 12px;
-//   height: 12px;
-//   border-radius: 50%;
-//   top: -0.25em;
-//   background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
-// }
 
-// .range-slider .ui-slider-range.ui-corner-all.ui-widget-header {
-//   background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
-//   border-radius: 3px;
-// }
+  &.noUi-horizontal {
+    height: 6px;
+    border: 1px solid $textColor_25;
+  }
+  
+  &.noUi-connects{
+    height: 6px;
+  }
+
+  &.noUi-horizontal .noUi-handle {
+    width: 12px;
+    height: 12px;
+    border: none;
+    border-radius: 50%;
+    right: -2px;
+    top: -4px;
+  }
+  &.noUi-horizontal .noUi-touch-area {
+    background: $elementGradient;
+    border-radius: 50%;
+    border: 1px solid $mainBackground;
+  }
+  & .noUi-connect{
+    background: $elementGradient;
+  }
+
+  &:hover .noUi-tooltip{
+    display: block;
+  }
+
+  & .noUi-tooltip{
+    display: none;
+    border: none;
+    font-family: $mainFont;
+    font-size: $mainFont_size - 4;
+    padding: 0;
+    color: $textColor_75;
+    background: none;
+  }
+
+  & .noUi-handle::before,
+  & .noUi-handle::after {
+    content: none
+  }
+
+}
+
+

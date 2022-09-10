@@ -1,30 +1,42 @@
 import './range-slider.scss';
 
-require('webpack-jquery-ui');
-require('webpack-jquery-ui/css');
+import * as noUiSlider from 'nouislider';
+import 'nouislider/dist/nouislider.css';
+import * as wNumb from 'wnumb';
 
 class RangeSlider {
   constructor(selector) {
     this.$el = document.querySelector(selector);
     const { properties } = this.$el.dataset;
+    this.$headingDescription = this.$el.parentElement.querySelector('.heading__description');
+
     this.properties = JSON.parse(properties);
+    this.minSlider = this.properties.sliderMin;
+    this.maxSlider = this.properties.sliderMax;
+    this.startMin = this.properties.startMin;
+    this.startMax = this.properties.startMax;
 
     this.setup();
   }
 
   setup() {
-    $('#slider-range').slider({
-      range: true,
-      min: this.properties.sliderMin,
-      max: this.properties.sliderMax,
-      values: [this.properties.startMin, this.properties.startMax],
-      slide(event, ui) {
-        $('#range-slider').parent().find('.heading__description').html(`${ui.values[0]}₽ - ${ui.values[1]}₽ `);
+    noUiSlider.create(this.$el, {
+      start: [this.startMin, this.properties.startMax],
+      connect: true,
+      range: {
+        min: this.minSlider,
+        max: this.maxSlider,
       },
+      tooltips: [wNumb({ decimals: 0 }), wNumb({ decimals: 0 })],
     });
-    $('#amount').val(`${$('#slider-range').slider('values', 0)}₽ - ${$('#slider-range').slider('values', 1)}₽`);
+    this.$el.noUiSlider.on('update.one', () => {
+      const [first, second] = (this.$el.noUiSlider.get());
+      this.$headingDescription.innerHTML = `${Math.round(first)}₽ - ${Math.round(second)}₽ `;
+    });
   }
 }
 
-const rangeslider = new RangeSlider('#range-slider');
-window.rangeslider = rangeslider;
+const rangeslider = document.querySelectorAll('.range-slider');
+rangeslider.forEach((elem) => {
+  new RangeSlider(`#${elem.id}`);
+});
