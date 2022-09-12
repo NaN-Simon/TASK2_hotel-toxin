@@ -10,6 +10,7 @@ include ../../components/toggle/toggle.pug
 include ../../components/like-button/like-button.pug
 include ../../components/rate-button/rate-button.pug
 include ../../components/range-slider/range-slider.pug
+include ../../components/button/button.pug
 
 block variables
   - const pageTitle = "Form & Elements"
@@ -203,4 +204,61 @@ block content
               sliderMax: 15000,
               startMin: 5000,
               startMax: 10000,
+            })
+          .form-elements__large-wrapper
+            +heading({ 
+              level: "h3", 
+              title: "Buttons",
+            })
+            .form-elements__small-wrapper-couple
+              +button({
+                buttonName: "click me",
+                buttonType: "ButtonDefault",
+                size: "small",
+                isTransparentBackground: false,
+                disabled: false,
+              })
+              +button({
+                buttonName: "click me",
+                buttonType: "ButtonDefault",
+                size: "small",
+                isTransparentBackground: false,
+                disabled: true,
+              })
+            .form-elements__small-wrapper-couple
+              +button({
+                buttonName: "click me",
+                buttonType: "ButtonDefault",
+                size: "small",
+                isTransparentBackground: true,
+                disabled: false,
+              })
+              +button({
+                buttonName: "click me",
+                buttonType: "ButtonDefault",
+                size: "small",
+                isTransparentBackground: true,
+                disabled: true,
+            })
+            .form-elements__small-wrapper-couple
+              +button({
+                buttonName: "click me",
+                buttonType: "ButtonLink",
+                size: "small",
+                isTransparentBackground: false,
+                disabled: false,
+              })
+              +button({
+                buttonName: "click me",
+                buttonType: "ButtonLink",
+                size: "small",
+                isTransparentBackground: false,
+                disabled: true,
+              })
+            .form-elements__large-wrapper-couple
+              +button({
+                buttonName: "перейти к оплате",
+                buttonType: "ButtonDefault",
+                size: "large",
+                hasArrow: true,
             })

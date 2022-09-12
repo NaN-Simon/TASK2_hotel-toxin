@@ -16,3 +16,4 @@ import './components/filter-date-dropdown';
 import './components/like-button';
 import './components/rate-button';
 import './components/range-slider';
+import './components/button';

@@ -1,0 +1,36 @@
+mixin button(properties = {})
+  -
+    const {
+      buttonName = "buttonName",
+      buttonType = "ButtonDefault",
+      size = "small",
+      isTransparentBackground = false,
+      hasArrow = false,
+      disabled = false,
+    } = properties
+
+    const isDisableModifire = disabled ? "button__inner-disable" : ""
+    const isTransparentBackgroundModifire = isTransparentBackground ? "button__inner-transparent" : ""
+    const hasArrowModifire = hasArrow ? "button__inner-center" : ""
+    const sizeModifire = size === "large" ? "button__inner-large" : ""
+
+  section.button
+    if buttonType === "ButtonDefault"
+      button.button__inner-default&attributes({
+        class: [
+          isDisableModifire, 
+          isTransparentBackgroundModifire, 
+          hasArrowModifire,
+          sizeModifire
+        ]
+      }) #{buttonName}
+        if hasArrow
+          .button__inner-arrow
+            .material-icons arrow_forward
+    if buttonType === "ButtonLink"
+      button.button__inner-link&attributes({
+        class: [isDisableModifire, hasArrowModifire]
+      }) #{buttonName}
+        if hasArrow
+          .button__inner-arrow
+            .material-icons arrow_forward

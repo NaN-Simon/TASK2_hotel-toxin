@@ -1,0 +1,74 @@
+@import '@base';
+
+.button__inner{
+  &-default {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5px;
+    width: 99px;
+    height: 44px;
+    border-radius: 22px;
+    font-family: $mainFont;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    background: $elementColor;
+    color: $mainBackground;
+    text-transform: uppercase;
+    transition: 0.5s;
+    cursor: pointer;
+    outline: none;
+    border: none;
+  
+    &:hover{
+      opacity: 0.5;
+    }
+  }
+
+  &-link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5px;
+    font-family: $mainFont;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: $elementColor;
+    transition: 0.5s;
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+  
+    &:hover{
+      opacity: 0.5;
+    }
+  }
+
+  &-arrow{
+    position: absolute;
+    right: 6px;
+    top: 10px;
+  }
+
+  &-disable {
+    opacity: 0.5;
+  }
+
+  &-transparent{
+    background: transparent;
+    color: $elementColor;
+    border: 2px solid $elementColor;
+  }
+
+  &-large{
+    width: 320px;
+  }
+
+}
