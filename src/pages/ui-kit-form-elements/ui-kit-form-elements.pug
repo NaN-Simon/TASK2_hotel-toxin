@@ -11,6 +11,7 @@ include ../../components/like-button/like-button.pug
 include ../../components/rate-button/rate-button.pug
 include ../../components/range-slider/range-slider.pug
 include ../../components/button/button.pug
+include ../../components/pagination/pagination.pug
 
 block variables
   - const pageTitle = "Form & Elements"
@@ -261,4 +262,14 @@ block content
                 buttonType: "ButtonDefault",
                 size: "large",
                 hasArrow: true,
+            })
+          .form-elements__medium-wrapper
+            +heading({ 
+              level: "h3", 
+              title: "Pagination",
+            })
+            +pagination({
+              id: 'pagination',
+              entries: 180,
+              pages: 15,
             })

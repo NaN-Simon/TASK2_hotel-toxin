@@ -1,0 +1,12 @@
+mixin pagination(properties = {})
+  -
+    const {
+      id = "",
+      entries = 0,
+      pages = 0,
+    } = properties 
+
+    const dataProperties = JSON.stringify(properties)
+
+  section
+    div(id = id, data-properties = dataProperties )

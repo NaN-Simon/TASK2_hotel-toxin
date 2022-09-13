@@ -43,6 +43,7 @@
     "jquery-mask-plugin": "^1.14.16",
     "mini-css-extract-plugin": "^2.4.5",
     "nouislider": "^15.6.1",
+    "paginationjs": "^2.1.5",
     "postcss": "^8.4.3",
     "postcss-loader": "^6.2.1",
     "postcss-preset-env": "^7.0.1",

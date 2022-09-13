@@ -17,3 +17,4 @@ import './components/like-button';
 import './components/rate-button';
 import './components/range-slider';
 import './components/button';
+import './components/pagination';
