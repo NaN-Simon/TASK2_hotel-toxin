@@ -1,7 +1,6 @@
-import './pagination.scss';
-
 import 'paginationjs/dist/pagination';
 import 'paginationjs/dist/pagination.css';
+import './pagination.scss';
 
 class Pagination {
   constructor(selector) {
@@ -25,8 +24,10 @@ class Pagination {
       autoHidePrevious: true,
       autoHideNext: true,
       showNavigator: true,
+      showPrevious: false,
       pageRange: 1,
       formatNavigator: this.setFormatNavigator,
+      nextText: '<span class="material-icons">arrow_forward</span>',
     };
 
     this.$root.pagination(params);
@@ -47,4 +48,7 @@ class Pagination {
   }
 }
 
-const pagination = new Pagination('#pagination');
+const pagination = document.querySelectorAll('.pagination');
+pagination.forEach((elem) => {
+  new Pagination(`#${elem.id}`);
+});

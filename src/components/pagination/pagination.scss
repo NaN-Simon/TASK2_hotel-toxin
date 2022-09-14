@@ -1,11 +1,68 @@
 @import '@base';
 
-.paginationjs-pages{
+.paginationjs {
+  display: flex;
+  flex-direction: column;
   font-family: $mainFont;
   font-style : normal;
   font-weight: 400;
   font-size  : 14px;
   line-height: 14px;
+  
+  & .paginationjs-pages li {
+    border: none;
+  }
+
+  & .paginationjs-pages li > a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: $textColor_50;
+    font-size: $mainFont_size;
+    background: $mainBackground;
+  }
+  
+}
+
+.paginationjs-next > a > span {
+  color: $mainBackground;
+  line-height: 40px;
+}
+
+.paginationjs .paginationjs-pages li > a:hover {
+  background: $textColor_25;
+  border-radius: 50%;
+}
+
+.paginationjs .paginationjs-pages li.active > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-weight: 700;
+  background: $elementColor;
+  color: $mainBackground;
+}
+
+.paginationjs .paginationjs-pages li:first-child,
+.paginationjs .paginationjs-pages li:first-child > a {
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.paginationjs .paginationjs-pages li:last-child {
+  border: none;
+  border-radius: 22px;
+}
+
+.paginationjs .paginationjs-pages li:last-child > a {
+  background: $elementGradient;
+  border-radius: 50%;
+  font-weight: 700;
 }
 
 .paginationjs-nav {
