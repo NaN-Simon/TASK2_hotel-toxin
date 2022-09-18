@@ -1,23 +1,51 @@
-mixin dropdown({id="", type="guests", isOpen= "true", placeholder= "Сколько гостей", maxCount= 6, elements= [], plurals= [] })
+mixin dropdown(properties = {})
   -
+    const {
+      id="", 
+      type="guests", 
+      isOpen= "true",
+      hasButtons = "false", 
+      placeholder= "Сколько гостей", 
+      maxCount= 6, 
+      elements= [], 
+      plurals= [] 
+    } = properties
+    
+    let startCountSum = 0
+    for(let i = 0; i< elements.length;i++){
+      startCountSum += elements[i].startCount
+    }
+
+    const dataProperties = JSON.stringify(properties)
     const openClassModifier = isOpen ? "dropdown__open" : ""
     const toggleClassModifier = isOpen ? "expand_more" : "expand_less"
+    const buttonHideModifier = hasButtons ? "" : "dropdown__drop-buttons-clear--hide"
+    const clearButtonHideModifier = startCountSum === 0 ? "dropdown__drop-buttons-clear--hide" : ""
+    const buttonRightModifier = startCountSum === 0 ? "dropdown__drop-buttons--right" : ""
 
-  section.indexjs-dropdown(id = id)
+
+  section.indexjs-dropdown(id = id, data-properties = dataProperties)
     .dropdown(data-key = `${id}`, data-type = type)&attributes({
         class: openClassModifier
       })
       .dropdown__input(data-type="input")
         span(data-type="input").dropdown__input-placeholder #{placeholder}
         span(data-type="input").dropdown__input-arrow.material-icons #{toggleClassModifier}
-      ul&attributes({
-        class: ["dropdown__drop"]
-      })
-        each element in elements 
-          li(id=element.id, data-maxcount=maxCount, data-plurals=plurals[element.id])&attributes({
-            class: ["dropdown__drop-item"]}) 
-            .dropdown__drop-name #{element.title}
-            .dropdown__drop-counter
-              .dropdown__drop-counter-minus(id=element.id) -
-              .dropdown__drop-counter-result(id=element.id) #{element.startCount}
-              .dropdown__drop-counter-plus(id=element.id) +
+      ul.dropdown__drop
+        .dropdown__drop-items
+          each element in elements 
+            li(id=element.id, data-maxcount=maxCount, data-plurals=plurals[element.id])&attributes({
+              class: ["dropdown__drop-item"]}) 
+              .dropdown__drop-name #{element.title}
+              .dropdown__drop-counter
+                .dropdown__drop-counter-minus(id = element.id, data-type = 'minus') -
+                .dropdown__drop-counter-result(id = element.id) #{element.startCount}
+                .dropdown__drop-counter-plus(id = element.id, data-type = 'plus') +
+        if hasButtons 
+          .dropdown__drop-buttons&attributes({
+            class: [buttonRightModifier, buttonHideModifier]
+          }) 
+            .dropdown__drop-buttons-clear(data-type="button")&attributes({
+              class: clearButtonHideModifier
+            }) Очистить
+            .dropdown__drop-buttons-accept(data-type="button") Принять

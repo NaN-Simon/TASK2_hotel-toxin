@@ -57,6 +57,10 @@
     font-family: $mainFont;
     cursor: default;
 
+    &-items{
+      padding-bottom: 7px;
+    }
+
     &-item{
       display: flex;
       flex-direction: row;
@@ -64,8 +68,8 @@
       justify-content: space-between;
       padding-left: 15px;
       padding-right: 7px;
-      padding-top: 11px;
-      padding-bottom: 11px;
+      padding-top: 6px;
+      padding-bottom: 0px;
       list-style-type: none;      
     }
 
@@ -114,6 +118,35 @@
         border: 1px solid $textColor_25;
         color: $textColor_25;
         transition: 0.7s;
+      }
+    }
+
+    &-buttons{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: inherit;
+      padding-top: 20px;
+      padding-bottom: 13px;
+      padding-left: 15px;
+      padding-right: 7px;
+      color: $elementColor;
+      font-family: $mainFont;
+      font-weight: 700;
+      cursor: default;
+      transition: 0.7s;
+      
+      &--right{
+        justify-content: end;
+      }
+      &-clear{
+        cursor: pointer;
+      }
+      &-accept{
+        cursor: pointer;
+      }
+      &-clear--hide{
+        display: none;
       }
     }
   }

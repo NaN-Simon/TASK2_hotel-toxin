@@ -51,13 +51,14 @@ block content
             })
             +dropdown({
               id: "text-field-dropdown",
-              isOpen: false,
-              type: "guests1",
+              isOpen: true,
+              hasButtons: true,
+              type: "not-guests",
               placeholder: "Сколько гостей",
               maxCount: 10,
               elements: [
-                { title: "Взрослые", id: "adult", startCount: 0 }, 
-                { title: "Дети", id: "kids", startCount: 0 }, 
+                { title: "Взрослые", id: "adult", startCount: 9 }, 
+                { title: "Дети", id: "kids", startCount: 5 }, 
                 { title: "Младенцы", id: "baby", startCount: 0 }
               ],
               plurals: {
@@ -128,6 +129,7 @@ block content
               title: "CHECKBOX BUTTONS",
             })
             +checkbox-list({	
+              id: "checkbox-list",
               listItems: [
                 { title: "Можно курить", name: 'smoke-allow' },
                 { title: "Можно с питомцами", name: 'pets-allow' },
@@ -272,4 +274,99 @@ block content
               id: 'pagination',
               entries: 180,
               pages: 15,
+            })
+      section.form-elements__dropdowns
+        .form-elements__rooms
+          .form-elements__large-wrapper
+            +heading({ 
+              level: "h3", 
+              title: "dropdown",
+            })
+            +dropdown({
+              id: "dropdowns-dropdown-default",
+              isOpen: false,
+              type: "guests",
+              placeholder: "Сколько гостей",
+              maxCount: 10,
+              elements: [
+                { title: "Спальни", id: "bedrooms", startCount: 2 }, 
+                { title: "Кровати", id: "beds", startCount: 2 }, 
+                { title: "Ванные комнаты", id: "bathrooms", startCount: 0 }
+              ],
+              plurals: {
+                bedrooms: "спальня, спальни, спален",
+                beds: "кровать, кровати, кроватей",
+                bathrooms: "ванная комната, ванные комнаты, ванных комнат",
+                },
+            })
+          .form-elements__large-wrapper
+            +heading({ 
+              level: "h3", 
+              title: "dropdown",
+            })
+            +dropdown({
+              id: "dropdowns-dropdown-expanded",
+              isOpen: true,
+              hasButtons: false,
+              type: "guests",
+              placeholder: "Сколько гостей",
+              maxCount: 10,
+              elements: [
+                { title: "Спальни", id: "bedrooms", startCount: 2 }, 
+                { title: "Кровати", id: "beds", startCount: 2 }, 
+                { title: "Ванные комнаты", id: "bathrooms", startCount: 0 }
+              ],
+              plurals: {
+                bedrooms: "спальня, спальни, спален",
+                beds: "кровать, кровати, кроватей",
+                bathrooms: "ванная комната, ванные комнаты, ванных комнат",
+                },
+            })
+        .form-elements__guests
+          .form-elements__large-wrapper
+            +heading({ 
+              level: "h3", 
+              title: "dropdown",
+            })
+            +dropdown({
+              id: "dropdowns-dropdown-guests-no-value",
+              isOpen: true,
+              hasButtons: true,
+              type: "not-guests",
+              placeholder: "Сколько гостей",
+              maxCount: 10,
+              elements: [
+                { title: "Взрослые", id: "adult", startCount: 0 }, 
+                { title: "Дети", id: "kids", startCount: 0 }, 
+                { title: "Младенцы", id: "baby", startCount: 0 }
+              ],
+              plurals: {
+                adult: "Взрослый, Взрослых, Взрослых",
+                kids: "Ребенок, Ребенка, Детей",
+                baby: "Младенец, Младенца, Младенцев",
+                },
+            })
+        .form-elements__guests
+          .form-elements__large-wrapper
+            +heading({ 
+              level: "h3", 
+              title: "dropdown",
+            })
+            +dropdown({
+              id: "dropdowns-dropdown-guests-with-value",
+              isOpen: true,
+              hasButtons: true,
+              type: "not-guests",
+              placeholder: "Сколько гостей",
+              maxCount: 10,
+              elements: [
+                { title: "Взрослые", id: "adult", startCount: 2 }, 
+                { title: "Дети", id: "kids", startCount: 1 }, 
+                { title: "Младенцы", id: "baby", startCount: 0 }
+              ],
+              plurals: {
+                adult: "Взрослый, Взрослых, Взрослых",
+                kids: "Ребенок, Ребенка, Детей",
+                baby: "Младенец, Младенца, Младенцев",
+                },
             })

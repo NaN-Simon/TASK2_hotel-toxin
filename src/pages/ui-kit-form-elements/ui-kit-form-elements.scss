@@ -2,17 +2,26 @@
 
 .form-elements{
   background: $mainBackground;
+
   &__container{
     display: block;
     min-width: 1158px;
     max-width: 1158px;
     margin: 0 auto;
   }
+
   &__text-fields-buttons{
     display: flex;
     flex-direction: row;
-    gap: 0 50px;
+    justify-content: space-between;
   }
+
+  &__dropdowns{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
   &__text-fields{
     display: flex;
     flex-direction: column;

@@ -44,6 +44,7 @@ class CheckboxList {
   }
 }
 
-const checkboxDropdownList = new CheckboxList('.checkbox-list');
-
-window.checkboxDropdownList = checkboxDropdownList;
+const checkboxDropdownList = document.querySelectorAll('.checkbox-list');
+checkboxDropdownList.forEach((elem) => {
+  new CheckboxList(`#${elem.id}`);
+});
