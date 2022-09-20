@@ -3,8 +3,8 @@ mixin dropdown(properties = {})
     const {
       id="", 
       type="guests", 
-      isOpen= "true",
-      hasButtons = "false", 
+      isOpen= true,
+      hasButtons = false, 
       placeholder= "Сколько гостей", 
       maxCount= 6, 
       elements= [], 
@@ -41,11 +41,10 @@ mixin dropdown(properties = {})
                 .dropdown__drop-counter-minus(id = element.id, data-type = 'minus') -
                 .dropdown__drop-counter-result(id = element.id) #{element.startCount}
                 .dropdown__drop-counter-plus(id = element.id, data-type = 'plus') +
-        if hasButtons 
-          .dropdown__drop-buttons&attributes({
-            class: [buttonRightModifier, buttonHideModifier]
-          }) 
-            .dropdown__drop-buttons-clear(data-type="button")&attributes({
-              class: clearButtonHideModifier
-            }) Очистить
-            .dropdown__drop-buttons-accept(data-type="button") Принять
+        .dropdown__drop-buttons&attributes({
+          class: [buttonRightModifier, buttonHideModifier]
+        }) 
+          .dropdown__drop-buttons-clear(data-type="button")&attributes({
+            class: clearButtonHideModifier
+          }) Очистить
+          .dropdown__drop-buttons-accept(data-type="button") Принять

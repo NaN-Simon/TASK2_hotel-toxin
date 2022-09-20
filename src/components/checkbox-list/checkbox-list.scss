@@ -4,45 +4,87 @@
   display       : flex;
   flex-direction: column;
 
+  &__items{
+    display: none;
+  }
+
   &__open .checkbox-list__items{
     display: flex;
+    flex-direction: column;
   }
 
   &__input {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-  }
-
-  &__title {
     margin-bottom: 7px;
-  }
-
-  &__container{
-    display: flex;
-    flex-direction: column;
-  }
-  &__input {
-    color         : $textColor;
-    font-weight   : 700;
-    font-size     : 15px;
-    font-family   : $mainFont;
+    color: $textColor;
+    font-weight: 700;
+    font-size: 12px;
+    font-family: $mainFont;
     text-transform: uppercase;
+    cursor: pointer;
 
     &-arrow{
       color: $textColor_50;
     }
-  }
-  &__items{
-    display: none;
-    flex-direction: column;
+
+    &-title{
+      display: flex;
+      align-items: center;
+    }
   }
   
+  /* rich listItems */
+
+  &__richItem {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-top: 10px;
+    cursor: pointer;
+}
+
+  &__rich-container{
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__rich-title{
+    font-family: $mainFont;
+    font-size: 14px;
+    color: $textColor_75;
+    font-weight: 700;
+    padding-bottom: 5px;
+  }
+  
+  &__rich-description{
+    font-family: $mainFont;
+    font-size: 14px;
+    color: $textColor_50;
+    font-weight: 400;
+    padding-bottom: 5px;
+  }
+
+
+  /* default listItems */
+
   &__item{
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    margin-bottom: 5px;
+    padding-bottom: 10px;
+    cursor: pointer;
+  }
+
+  &__title{
+    font-family: $mainFont;
+    font-style : normal;
+    font-weight: 400;
+    font-size  : 14px;
+    line-height: 14px;
+    color: $textColor_50;
+    margin: 0;
   }
 
   &__checkbox {
@@ -56,12 +98,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    content            : "";
-    flex-shrink        : 0;
-    flex-grow          : 0;
-    border             : 1px solid $textColor_25;
-    border-radius      : 0.25em;
-    margin-right       : 0.5em;
+    content: "";
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid $textColor_25;
+    border-radius: 0.25em;
+    margin-right: 0.5em;
     width: 20px;
     height: 20px;
     font-size: 14px;
@@ -69,19 +111,10 @@
   }
 
   &__checkbox:checked + .checkbox-list__box::before {
-    content            : "done";
+    content: "done";
     border-color: $elementColor;
     color: $elementColor;
     background: $mainBackground;
   }
 
-  &__title{
-    font-family: $mainFont;
-    font-style : normal;
-    font-weight: 400;
-    font-size  : 14px;
-    line-height: 14px;
-    color: $textColor_50;
-    margin: 0;
-  }
 }

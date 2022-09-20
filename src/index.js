@@ -18,3 +18,4 @@ import './components/rate-button';
 import './components/range-slider';
 import './components/button';
 import './components/pagination';
+import './components/bullet-items';

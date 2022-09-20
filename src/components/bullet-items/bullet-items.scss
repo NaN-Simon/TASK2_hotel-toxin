@@ -1,0 +1,27 @@
+@import '@base';
+
+.bullet-list{
+  display: flex;
+  flex-direction: column;
+  font-family: $mainFont;
+  font-style: normal;
+  color: $textColor_75;
+  font-size: 14px;
+  
+  &__title{
+    position: relative;
+    padding-top: 10px;
+    padding-left: 20px;
+
+    &::before{
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: $textColor_25;
+      position: absolute;
+      left: 0;
+      top: 14px;
+    }
+  }
+}

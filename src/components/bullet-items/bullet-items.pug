@@ -1,0 +1,9 @@
+mixin bullet-items(properties = {})
+  -
+    const {
+      listItems = [],
+    } = properties
+
+  section.bullet-list
+    each item in listItems
+      span.bullet-list__title #{item.title}

@@ -41,15 +41,15 @@ class Dropdown {
 
   clickHandler(event) {
     const { type } = (event.target.dataset);
-
+    
     if (type === 'input') {
       this.toggle();
     }
-
+    
     if (this.properties.hasButtons && type === 'button') {
       this.buttonsEvents(event);
     }
-
+    
     if (type === 'plus' || type === 'minus') {
       this.dropItemRender(event);
     }
@@ -76,8 +76,9 @@ class Dropdown {
         {
           totalItems: 0,
         },
-      );
-      if (totalItems !== 0) {
+        );
+        if (totalItems !== 0) {
+        console.log(event.target)
         buttonsDiv.classList.remove('dropdown__drop-buttons--right');
         clearButton.classList.remove('dropdown__drop-buttons-clear--hide');
       } else {

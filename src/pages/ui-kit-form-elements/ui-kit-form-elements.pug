@@ -12,6 +12,7 @@ include ../../components/rate-button/rate-button.pug
 include ../../components/range-slider/range-slider.pug
 include ../../components/button/button.pug
 include ../../components/pagination/pagination.pug
+include ../../components/bullet-items/bullet-items.pug
 
 block variables
   - const pageTitle = "Form & Elements"
@@ -280,7 +281,8 @@ block content
           .form-elements__large-wrapper
             +heading({ 
               level: "h3", 
-              title: "dropdown",
+              title: "dropdown", 
+              description: "default"
             })
             +dropdown({
               id: "dropdowns-dropdown-default",
@@ -289,8 +291,8 @@ block content
               placeholder: "Сколько гостей",
               maxCount: 10,
               elements: [
-                { title: "Спальни", id: "bedrooms", startCount: 2 }, 
-                { title: "Кровати", id: "beds", startCount: 2 }, 
+                { title: "Спальни", id: "bedrooms", startCount: 0 }, 
+                { title: "Кровати", id: "beds", startCount: 0 }, 
                 { title: "Ванные комнаты", id: "bathrooms", startCount: 0 }
               ],
               plurals: {
@@ -303,11 +305,11 @@ block content
             +heading({ 
               level: "h3", 
               title: "dropdown",
+              description: "expanded"
             })
             +dropdown({
               id: "dropdowns-dropdown-expanded",
               isOpen: true,
-              hasButtons: false,
               type: "guests",
               placeholder: "Сколько гостей",
               maxCount: 10,
@@ -369,4 +371,68 @@ block content
                 kids: "Ребенок, Ребенка, Детей",
                 baby: "Младенец, Младенца, Младенцев",
                 },
+            })
+      section.form-elements__lists
+        .form-elements__lists-checkboxes-lists
+          .form-elements__medium-wrapper
+            +checkbox-list({	
+              title: "EXPANDABLE CHECKBOX LIST",
+              isDropdown: true,
+              isOpen: false,
+              id: "checkbox-list-expandable-close",
+              listItems: [
+                { title: "Завтрак", name: 'breakfast' },
+                { title: "Письменный стол", name: 'desk', checked: true },
+                { title: "Стул для кормления", name: 'table', checked: true },
+                { title: "Кроватка", name: 'bed', checked: true },
+                { title: "Телевизор", name: 'tv'},
+                { title: "Шампунь", name: 'shampoo'},
+                { title: "Телевизор", name: 'tv2'},
+                { title: "Шампунь", name: 'shampoo2'},
+              ],
+            })
+          .form-elements__medium-wrapper
+            +checkbox-list({	
+              title: "EXPANDABLE CHECKBOX LIST",
+              isDropdown: true,
+              isOpen: true,
+              id: "checkbox-list-expandable-open",
+              listItems: [
+                { title: "Завтрак", name: 'breakfast' },
+                { title: "Письменный стол", name: 'desk', checked: true },
+                { title: "Стул для кормления", name: 'table', checked: true },
+                { title: "Кроватка", name: 'bed', checked: true },
+                { title: "Телевизор", name: 'tv'},
+                { title: "Шампунь", name: 'shampoo'},
+                { title: "Телевизор", name: 'tv2'},
+                { title: "Шампунь", name: 'shampoo2'},
+              ],
+            })
+        .form-elements__lists-checkboxes-rich-list
+          .form-elements__medium-wrapper
+            +heading({ 
+              level: "h3", 
+              title: "RICH CHECKBOX BUTTONS",
+            })
+            +checkbox-list({	
+              title: "RICH CHECKBOX BUTTONS",
+              isOpen: true,
+              id: "checkbox-list-rich",
+              richListItems: [
+                { title: "Широкий коридор", description: "Ширина коридоров в номере не менее 91 см.", name: 'corridor', checked: true },
+                { title: "Помощник для инвалидов", description: "На 1 этаже вас встретит специалист и проводит до номера.", name: 'helper' },
+              ],
+            })
+        .form-elements__lists-checkboxes-bullet-list
+          .form-elements__medium-wrapper
+            +heading({ 
+              level: "h3", 
+              title: "bullet list",
+            })
+            +bullet-items({
+              listItems: [
+                { title: "Нельзя с питомцами"},
+                { title: "Без вечеринок и мероприятий"},
+                { title: "Время прибытия — после 13:00, а выезд до 12:00"},
+              ]
             })
