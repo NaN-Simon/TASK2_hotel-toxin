@@ -15,7 +15,7 @@
     justify-content: space-between;
     width: inherit;
     height: 44px;
-    padding: 0 15px 0 15px;
+    padding: 0px 9px 4px 14px;
     background-color: $mainBackground;
     border: 1px solid $textColor_25;
     border-radius: 4px;
@@ -26,6 +26,7 @@
     }
 
     &-placeholder{
+      font-size: 14px;
       color: $textColor_75;
     }
 

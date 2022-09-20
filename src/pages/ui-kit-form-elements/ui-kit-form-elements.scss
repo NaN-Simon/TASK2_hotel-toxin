@@ -14,17 +14,26 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    min-height: 734px;
   }
 
   &__dropdowns{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
+    &-guests-clear{
+      padding-left: 108px;
+    }
   }
 
   &__text-fields{
     display: flex;
     flex-direction: column;
+  }
+
+  &__checkboxes{
+    padding-left: 55px;
   }
 
   &__lists{
@@ -38,15 +47,20 @@
     
   }
   &__large-wrapper{
-    margin-bottom: 40px;
     min-width: 320px;
     max-width: 320px;
-
+    margin-bottom: 18px;
+    
     &-couple{
       display: flex;
       padding-bottom: 30px;
       gap: 0 20px;
     }
+    
+    &--extra-padding{
+      padding-bottom: 17px;
+    }
+
   }
   
   &__medium-wrapper{
@@ -58,6 +72,10 @@
       display: flex;
       padding-bottom: 30px;
       gap: 0 20px;
+    }
+
+    &--extra-padding{
+      padding-bottom: 0px;
     }
   }
 

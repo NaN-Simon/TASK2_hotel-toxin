@@ -1,9 +1,11 @@
 @import '@base';
 
 .heading {
-  display        : flex;
+  display: flex;
   justify-content: space-between;
-  margin-bottom: 5px;
+  align-items: flex-start;
+  margin-top: 2px;
+  margin-bottom: 6px;
 
   &__title_level_h1 {
     color      : $textColor;
@@ -39,8 +41,9 @@
     color         : $textColor_75;
     font-weight   : 400;
     font-family   : $mainFont;
-    font-size     : 14px;
+    font-size     : 12px;
     text-transform: uppercase;
+    letter-spacing: 0.3px;
 
     &_lowercase {
       text-transform: lowercase;
