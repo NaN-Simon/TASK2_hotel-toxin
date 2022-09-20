@@ -13,6 +13,8 @@ include ../../components/range-slider/range-slider.pug
 include ../../components/button/button.pug
 include ../../components/pagination/pagination.pug
 include ../../components/bullet-items/bullet-items.pug
+include ../../components/dignity/dignity.pug
+include ../../components/review/review.pug
 
 block variables
   - const pageTitle = "Form & Elements"
@@ -435,4 +437,30 @@ block content
                 { title: "Без вечеринок и мероприятий"},
                 { title: "Время прибытия — после 13:00, а выезд до 12:00"},
               ]
+            })
+      section.form-elements__feedback
+        .form-elements__grade
+          .form-elements__medium-wrapper
+            +dignity({
+              materialIconsCode: "insert_emoticon",
+              title: "Комфорт",
+              description: "Шумопоглощающие стены",
+            })
+            +dignity({
+              materialIconsCode: "location_city",
+              title: "Удобство",
+              description: "Окно в каждой из спален",
+            })
+        .form-elements__review
+          .form-elements__extra-large-wrapper
+            +review({
+              jpgSrc: "murad_sarafanov",
+              numberLikeButton: 12,   
+              checkedLikeButton: "checked",  
+              idLikeButton: "feedback-like-button", 
+              nameLikeButton: "feedback-like-button", 
+              typeLikeButton: "checkbox",
+              namePerson: "Мурад Сарафанов",
+              statusPerson: "5 дней назад",
+              description: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",
             })

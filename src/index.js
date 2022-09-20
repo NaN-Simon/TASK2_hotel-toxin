@@ -2,6 +2,7 @@ import './styles/reset.scss';
 import './styles/index.scss';
 import './styles/fonts.scss';
 
+import './components/image';
 import './components/ui-kit-header';
 import './components/heading';
 import './components/colors';
@@ -19,3 +20,5 @@ import './components/range-slider';
 import './components/button';
 import './components/pagination';
 import './components/bullet-items';
+import './components/dignity';
+import './components/review';

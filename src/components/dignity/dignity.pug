@@ -1,0 +1,32 @@
+include ../../components/image/image.pug
+
+mixin dignity(properties = {})
+  -
+    const {
+      materialIconsCode = "",
+      svgSrc = "",
+      pngSrc = "",
+      jpgSrc = "",
+      title = "",
+      description = "",
+    } = properties
+
+    const hasMaterialIconsCode = materialIconsCode === "" ? false : true
+    const hasSvgSrc = svgSrc === "" ? false : true
+    const hasPngSrc = pngSrc === "" ? false : true
+    const hasJpgSrc = jpgSrc === "" ? false : true
+
+  section.dignity
+    .dignity__image 
+      if hasMaterialIconsCode
+        span.material-icons #{materialIconsCode}
+      if hasSvgSrc
+        +image-svg(svgSrc)
+      if hasPngSrc
+        +image-png(pngSrc)
+      if hasJpgSrc
+        +image-jpg(jpgSrc)
+    .dignity__text
+      .dignity__text-title #{title}
+      .dignity__text-description #{description}
+

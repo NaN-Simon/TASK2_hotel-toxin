@@ -32,7 +32,11 @@
     flex-direction: row;
     justify-content: space-between;
   }
-
+  &__extra-large-wrapper{
+    min-width: 712px;
+    max-width: 712px;
+    
+  }
   &__large-wrapper{
     margin-bottom: 40px;
     min-width: 320px;
@@ -67,5 +71,11 @@
       padding-bottom: 30px;
       gap: 0 20px;
     }
+  }
+
+  &__feedback{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
 }

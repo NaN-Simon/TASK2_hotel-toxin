@@ -1,2 +1,8 @@
 mixin image-svg(name)
   img(src=require(`../../assets/svg/${name}.svg`) alt=name)
+
+mixin image-png(name)
+  img.deafult-img(src=require(`../../assets/img/${name}.png`) alt=name)
+
+mixin image-jpg(name)
+  img.deafult-img(src=require(`../../assets/img/${name}.jpg`) alt=name)

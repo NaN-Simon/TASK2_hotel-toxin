@@ -1,0 +1,52 @@
+@import '@base';
+
+.review{
+  display: flex;
+  flex-direction: column;
+  font-family: $mainFont;
+
+  &__data{
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 10px;
+
+    &-photo{
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+    }
+
+    &-info{
+      display: flex;
+      flex-direction: column;
+      padding-left: 10px;
+
+      &-name{
+        font-size: 14px;
+        font-weight: 700;
+        color: $textColor;
+      }
+
+      &-status{
+        font-size: 14px;
+        font-weight: 400;
+        color: $textColor_75;
+      }
+    }
+  }
+
+  &__feedback{
+    display: flex;
+    flex-direction: row;
+
+    &__feedback{
+      padding-left: 10px;
+    }
+
+    &-description{
+      font-weight: 400;
+      color: $textColor_75;
+      line-height: 24px;
+    }
+  }
+}

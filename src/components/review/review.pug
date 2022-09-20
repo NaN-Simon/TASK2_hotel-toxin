@@ -1,0 +1,36 @@
+include ../../components/like-button/like-button.pug
+
+mixin review(properties = {})
+  -
+    const {
+      jpgSrc = "",
+      numberLikeButton = 0,   
+      checkedLikeButton = "",  
+      idLikeButton = "", 
+      nameLikeButton = "", 
+      typeLikeButton = "",
+      namePerson = "",
+      statusPerson = "",
+      description = "", 
+    } = properties
+
+  section.review
+    .review__data
+      .review__data-photo
+        +image-jpg(jpgSrc)
+      .review__data-info 
+        .review__data-info-name #{namePerson}
+        .review__data-info-status #{statusPerson}
+    .review__feedback
+      .review__feedback-like
+        +like-button({	
+          name: nameLikeButton,
+          type: typeLikeButton,
+          listItems: 
+          [
+            { number: numberLikeButton, 
+            id: idLikeButton, 
+            checked: checkedLikeButton },
+          ],
+        }) 
+      .review__feedback-description #{description}
