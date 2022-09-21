@@ -1,0 +1,25 @@
+include ../heading/heading.pug
+include ../date-dropdown/date-dropdown.pug
+include ../dropdown/dropdown.pug
+include ../button/button.pug
+
+mixin card-room-search(properties = {})
+
+  -
+    const {
+      title = '',
+      dateDropdown = {},
+      dropdown = {},
+      headingDropdown = {},
+      button = {}
+    } = properties
+
+  section.card-room-search
+    .card-room-search__title #{title}
+    .card-room-search__date-dropdown 
+      +date-dropdown(dateDropdown)
+    .card-room-search__dropdown 
+      +heading(headingDropdown)
+      +dropdown(dropdown)
+    .card-room-search__button
+      +button(button)

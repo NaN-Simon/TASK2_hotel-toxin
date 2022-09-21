@@ -22,3 +22,7 @@ import './components/pagination';
 import './components/bullet-items';
 import './components/dignity';
 import './components/review';
+import './components/room-number';
+import './components/room-price';
+import './components/card-room-search';
+import './components/card-room-booking';

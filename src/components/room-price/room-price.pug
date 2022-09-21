@@ -1,0 +1,14 @@
+mixin room-price(properties = {})
+
+  -
+    const {
+      price = 0,
+      currency = "₽",
+      text = "в сутки",
+    } = properties
+    
+  section.room-price
+    .room-price__price #{price}
+    .room-price__currency #{currency}
+    .room-price__text #{text}
+  

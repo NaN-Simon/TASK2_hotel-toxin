@@ -1,0 +1,20 @@
+@import '@base';
+
+.card-room-booking{
+  max-width: 380px;
+  min-width: 380px;
+  height: 515px;
+  padding: 39px 30px 30px 29px;
+  border-radius: 4px;
+  font-family: $mainFont;
+  color: $textColor;
+  background: $mainBackground;
+  box-shadow: 0 0 25px rgb(0 0 0 / 20%);
+
+  &__number-price{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

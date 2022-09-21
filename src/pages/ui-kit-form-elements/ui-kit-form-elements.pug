@@ -292,17 +292,17 @@ block content
             +heading({ 
               level: "h3", 
               title: "dropdown", 
-              description: "default"
+              description: "expanded"
             })
             +dropdown({
               id: "dropdowns-dropdown-default",
-              isOpen: false,
+              isOpen: true,
               type: "guests",
               placeholder: "Сколько гостей",
               maxCount: 10,
               elements: [
-                { title: "Спальни", id: "bedrooms", startCount: 0 }, 
-                { title: "Кровати", id: "beds", startCount: 0 }, 
+                { title: "Спальни", id: "bedrooms", startCount: 2 }, 
+                { title: "Кровати", id: "beds", startCount: 2 }, 
                 { title: "Ванные комнаты", id: "bathrooms", startCount: 0 }
               ],
               plurals: {
@@ -315,11 +315,11 @@ block content
             +heading({ 
               level: "h3", 
               title: "dropdown",
-              description: "expanded"
+              description: "default"
             })
             +dropdown({
               id: "dropdowns-dropdown-expanded",
-              isOpen: true,
+              isOpen: false,
               type: "guests",
               placeholder: "Сколько гостей",
               maxCount: 10,

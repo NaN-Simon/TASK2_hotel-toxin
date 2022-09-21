@@ -22,6 +22,11 @@
     flex-direction: row;
     justify-content: space-between;
 
+    &-rooms{
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
     &-guests-clear{
       padding-left: 108px;
     }

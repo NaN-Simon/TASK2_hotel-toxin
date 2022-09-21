@@ -1,0 +1,12 @@
+mixin room-number(properties = {})
+
+  -
+    const {
+      symbol = "№",
+      number = 0,
+      text = "ЛЮКС",
+    } = properties
+  section.room-number
+    .room-number__symbol #{symbol}
+    .room-number__number #{number}
+    .room-number__text #{text}

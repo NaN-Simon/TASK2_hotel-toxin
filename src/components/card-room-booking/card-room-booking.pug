@@ -1,0 +1,15 @@
+include ../room-number/room-number.pug
+include ../room-price/room-price.pug
+
+mixin card-room-booking(properties = {})
+
+  -
+    const {
+      roomNumbers = {},
+      roomPrice = {}
+    } = properties 
+
+  section.card-room-booking
+    .card-room-booking__number-price
+      +room-number(roomNumbers)
+      +room-price(roomPrice)

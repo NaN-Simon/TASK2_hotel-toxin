@@ -1,0 +1,71 @@
+extends ../../layouts/ui-kit-layout
+include ../../components/card-room-search/card-room-search.pug
+include ../../components/card-room-booking/card-room-booking.pug
+
+block variables
+  - const pageTitle = "Cards"
+
+block content
+  main.cards
+    .cards__container
+      .cards__first-column
+        +card-room-search({
+          title: "Найдём номера под ваши пожелания",
+          dateDropdown: {
+            id: "card-date-dropdown",
+            type:"text",
+            hasTwoInputs: true,
+            hasArrow: true,
+            inline: true,
+            dateFormat: "dd.MM.yyyy",
+            startTitle: "Прибытие",
+            endTitle: "Выезд",
+            placeholderStart: "ДД.ММ.ГГГГ",
+            placeholderEnd: "ДД.ММ.ГГГГ",
+            name: "date",
+            startDate: "08.10.2019",
+            endDate: "08.19.2019",
+            withMask: true
+          },
+          headingDropdown: {
+            level: "h3", 
+            title: "Гости", 
+          },
+          dropdown: {
+            id: "card-dropdown",
+            isOpen: false,
+            hasButtons: true,
+            type: "not-guests",
+            placeholder: "Сколько гостей",
+            maxCount: 10,
+            elements: [
+              { title: "Взрослые", id: "adult", startCount: 0 }, 
+              { title: "Дети", id: "kids", startCount: 0 }, 
+              { title: "Младенцы", id: "baby", startCount: 0 }
+            ],
+            plurals: {
+              adult: "Взрослый, Взрослых, Взрослых",
+              kids: "Ребенок, Ребенка, Детей",
+              baby: "Младенец, Младенца, Младенцев",
+              },
+          },
+          button: {
+              buttonName: "подобрать номер",
+              buttonType: "ButtonDefault",
+              size: "large",
+              hasArrow: true,
+          }
+        })
+      .cards__second-column
+        +card-room-booking({
+          roomNumbers: {
+            symbol: "№",
+            number: 888,
+            text: "ЛЮКС",
+          },
+          roomPrice: {
+            price: "9 999",
+            currency: "₽",
+            text: "в сутки",
+          }
+        })

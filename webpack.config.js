@@ -47,6 +47,10 @@ module.exports = {
       filename: 'form-elements.html',
       template: './src/pages/ui-kit-form-elements/ui-kit-form-elements.pug',
     }),
+    new HtmlWebpackPlugin({
+      filename: 'cards.html',
+      template: './src/pages/ui-kit-cards/ui-kit-cards.pug',
+    }),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',

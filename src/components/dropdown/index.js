@@ -78,7 +78,6 @@ class Dropdown {
         },
         );
         if (totalItems !== 0) {
-        console.log(event.target)
         buttonsDiv.classList.remove('dropdown__drop-buttons--right');
         clearButton.classList.remove('dropdown__drop-buttons-clear--hide');
       } else {

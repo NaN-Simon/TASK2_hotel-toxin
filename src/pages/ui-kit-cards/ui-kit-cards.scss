@@ -1,0 +1,12 @@
+.cards{
+  background: $mainBackground;
+
+  &__container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    min-width: 1158px;
+    max-width: 1158px;
+    margin: 0 auto;
+  }
+}
