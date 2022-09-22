@@ -40,6 +40,8 @@ class DateDropdown {
       startDate: this.properties.startDate,
       onShow: () => this.$arrowStartIcon.innerHTML = 'expand_more',
       onHide: () => this.$arrowStartIcon.innerHTML = 'expand_less',
+      inline: this.isOpenCheck(),
+
     });
 
     if (this.properties.hasTwoInputs) {
@@ -54,8 +56,26 @@ class DateDropdown {
         startDate: this.properties.endDate,
         onShow: () => this.$arrowEndIcon.innerHTML = 'expand_more',
         onHide: () => this.$arrowEndIcon.innerHTML = 'expand_less',
+        inline: this.isOpenCheck(),
       });
+      if (this.properties.isHideInput) {
+        this.$end.style.display = 'none';
+      }
     }
+
+    if (this.properties.isHideInput) {
+      this.$el.querySelector('.heading').display = 'none';
+      this.$el.querySelector('.heading').style.margin = '0px';
+      this.$el.querySelector('.air-datepicker').style.margin = '0px';
+      this.$start.style.display = 'none';
+    }
+  }
+
+  isOpenCheck() {
+    if (this.properties.isOpen) {
+      return true;
+    }
+    return false;
   }
 }
 

@@ -1,0 +1,1 @@
+import './price-result.scss';

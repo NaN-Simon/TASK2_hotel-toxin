@@ -1,15 +1,37 @@
 include ../room-number/room-number.pug
 include ../room-price/room-price.pug
+include ../heading/heading.pug
+include ../date-dropdown/date-dropdown.pug
+include ../dropdown/dropdown.pug
+include ../price-list/price-list.pug
+include ../price-result/price-result.pug
 
 mixin card-room-booking(properties = {})
 
   -
     const {
       roomNumbers = {},
-      roomPrice = {}
+      roomPrice = {},
+      dateDropdown = {},
+      dropdown = {},
+      headingDropdown = {},
+      button = {},
+      priceList = {},
+      priceResult = {}
     } = properties 
 
   section.card-room-booking
     .card-room-booking__number-price
       +room-number(roomNumbers)
       +room-price(roomPrice)
+    .card-room-booking__date-dropdown 
+      +date-dropdown(dateDropdown)
+    .card-room-booking__dropdown 
+      +heading(headingDropdown)
+      +dropdown(dropdown)
+    .card-room-booking__price-list 
+      +price-list(priceList)
+    .card-room-booking__price-result 
+      +price-result(priceResult)
+    .card-room-booking__button
+      +button(button)

@@ -3,6 +3,7 @@
 .room-number{
   display: flex;
   flex-direction: row;
+  align-items: end;
   font-family: $mainFont;
 
   &__symbol{
@@ -24,7 +25,7 @@
   &__text{
     font-style: normal;
     font-weight: 700;
-    font-size: $mainFont_size;
+    font-size: 10px;
     line-height: 15px;
     text-transform: uppercase;
     color: $elementColor;

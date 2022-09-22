@@ -1,0 +1,15 @@
+mixin price-list(properties = {})
+
+  -
+    const {
+      elements = [],
+    } = properties 
+
+  section.price-list
+    each element in elements
+        .price-list__text-item
+          .price-list__text-info
+            span.price-list__text-title #{element.title}
+            if element.hasInfoButton
+              span.price-list__text-button i
+          span.price-list__text-price #{element.price}

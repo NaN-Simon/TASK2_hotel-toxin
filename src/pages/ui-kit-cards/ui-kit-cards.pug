@@ -1,6 +1,7 @@
 extends ../../layouts/ui-kit-layout
 include ../../components/card-room-search/card-room-search.pug
 include ../../components/card-room-booking/card-room-booking.pug
+include ../../components/filter-date-dropdown/filter-date-dropdown.pug
 
 block variables
   - const pageTitle = "Cards"
@@ -12,7 +13,7 @@ block content
         +card-room-search({
           title: "Найдём номера под ваши пожелания",
           dateDropdown: {
-            id: "card-date-dropdown",
+            id: "card-room-search-date-dropdown",
             type:"text",
             hasTwoInputs: true,
             hasArrow: true,
@@ -32,7 +33,7 @@ block content
             title: "Гости", 
           },
           dropdown: {
-            id: "card-dropdown",
+            id: "card-room-search-dropdown",
             isOpen: false,
             hasButtons: true,
             type: "not-guests",
@@ -67,5 +68,74 @@ block content
             price: "9 999",
             currency: "₽",
             text: "в сутки",
+          },
+          dateDropdown: {
+            id: "card-room-booking-date-dropdown",
+            type:"text",
+            hasTwoInputs: true,
+            hasArrow: true,
+            inline: true,
+            dateFormat: "dd.MM.yyyy",
+            startTitle: "Прибытие",
+            endTitle: "Выезд",
+            placeholderStart: "ДД.ММ.ГГГГ",
+            placeholderEnd: "ДД.ММ.ГГГГ",
+            name: "date",
+            startDate: "08.10.2019",
+            endDate: "08.19.2019",
+            withMask: true
+          },
+          headingDropdown: {
+            level: "h3", 
+            title: "Гости", 
+          },
+          dropdown: {
+            id: "card-room-booking-dropdown",
+            isOpen: false,
+            hasButtons: true,
+            type: "not-guests",
+            placeholder: "Сколько гостей",
+            maxCount: 10,
+            elements: [
+              { title: "Взрослые", id: "adult", startCount: 3 }, 
+              { title: "Дети", id: "kids", startCount: 0 }, 
+              { title: "Младенцы", id: "baby", startCount: 0 }
+            ],
+            plurals: {
+              adult: "Взрослый, Взрослых, Взрослых",
+              kids: "Ребенок, Ребенка, Детей",
+              baby: "Младенец, Младенца, Младенцев",
+              },
+          },
+          priceList: {
+            elements: [
+              { title: "9 990₽ х 4 суток", price: "39 960₽" }, 
+              { title: "Сбор за услуги: скидка 2 179₽", hasInfoButton: true, price: "0₽" }, 
+              { title: "Сбор за дополнительные услуги", hasInfoButton: true, price: "300₽" }, 
+            ]
+          },
+          priceResult: {
+            title: "Итого",
+            between: "........................................................",
+            price: "38 081₽",
+          },
+          button: {
+              buttonName: "Забронировать",
+              buttonType: "ButtonDefault",
+              size: "large",
+              hasArrow: true,
           }
+        })
+      .cards__third-column
+        +filter-date-dropdown({
+          id: "card-room-filter-date-dropdown",
+          type:"text",
+          isOpen: true,
+          isHideInput: true,
+          hasTwoInputs: false,
+          hasArrow: true,
+          dateFormat: "dd.MM.yyyy",
+          name: "date",
+          selectedDates: ['2019-08-19', '2019-08-23'],
+          withMask: true
         })

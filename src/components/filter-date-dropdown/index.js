@@ -40,9 +40,25 @@ class FilterDateDropdown {
       startDate: this.properties.startDate,
       onShow: () => this.$arrowStartIcon.innerHTML = 'expand_more',
       onHide: () => this.$arrowStartIcon.innerHTML = 'expand_less',
+      inline: this.isOpenCheck(),
+      selectedDates: this.properties.selectedDates,
       range: true,
       multipleDatesSeparator: this.properties.datesSeparator,
     });
+
+    if (this.properties.isHideInput) {
+      this.$el.querySelector('.heading').display = 'none';
+      this.$el.querySelector('.heading').style.margin = '0px';
+      this.$el.querySelector('.air-datepicker').style.margin = '0px';
+      this.$start.style.display = 'none';
+    }
+  }
+
+  isOpenCheck() {
+    if (this.properties.isOpen) {
+      return true;
+    }
+    return false;
   }
 }
 

@@ -16,5 +16,24 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    padding-bottom: 20px;
   }
+
+  &__date-dropdown{
+    padding-bottom: 20px;
+  }
+
+  &__dropdown{
+    padding-bottom: 20px;
+  }
+
+  &__price-list{
+    padding-bottom: 20px;
+  }
+  
+  &__price-result{
+    padding-bottom: 20px;
+
+  }
+
 }
