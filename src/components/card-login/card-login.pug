@@ -1,0 +1,28 @@
+include ../text-field/text-field.pug
+include ../heading/heading.pug
+include ../button/button.pug
+
+mixin card-login(properties = {})
+
+  -
+    const {
+      cardLoginHeading = {},
+      cardLoginEmail = {},
+      cardLoginPassword = {},
+      cardLoginSignInButton = {},
+      cardLoginButton = {},
+    } = properties 
+
+  section.card-login
+    .card-login__heading
+      +heading(cardLoginHeading)
+    .card-login__email
+      +text-field(cardLoginEmail)
+    .card-login__password 
+      +text-field(cardLoginPassword)
+    .card-login__signin 
+      +button(cardLoginSignInButton)
+    .card-login__login
+      .card-login__login-title Нет аккаунта на Toxin?
+      .card-login__login-button
+        +button(cardLoginButton)

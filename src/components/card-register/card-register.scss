@@ -1,0 +1,57 @@
+@import '@base';
+
+.card-register{
+  max-width: 380px;
+  min-width: 380px;
+  height: 647px;
+  padding: 39px 30px 30px 29px;
+  border-radius: 4px;
+  font-family: $mainFont;
+  color: $textColor;
+  background: $mainBackground;
+  box-shadow: 0 0 25px rgb(0 0 0 / 20%);
+
+  &__name {
+    padding-bottom: 10px;
+  }
+  &__second-name {
+    padding-bottom: 10px;
+    
+  }
+  &__gender {
+    width: 200px;
+    padding-bottom: 10px;
+    
+  }
+  &__birthday {
+    padding-bottom: 15px;
+    
+  }
+  &__signin{
+    padding-bottom: 7px;
+    
+    &-mail{
+      padding-bottom: 7px;
+    }
+  }
+
+  &__spec-offers{
+    padding-bottom: 10px;
+  }
+
+  &__to-pay{
+    padding-bottom: 15px;
+  }
+
+  &__login{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    &-title{
+      font-size: 14px;
+      color: $textColor;
+    }
+  }
+}

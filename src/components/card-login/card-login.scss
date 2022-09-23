@@ -1,40 +1,40 @@
 @import '@base';
 
-.card-room-booking{
+.card-login{
   max-width: 380px;
   min-width: 380px;
-  height: 515px;
+  height: 355px;
   padding: 39px 30px 30px 29px;
-  margin-bottom: 40px;
   border-radius: 4px;
   font-family: $mainFont;
   color: $textColor;
   background: $mainBackground;
   box-shadow: 0 0 25px rgb(0 0 0 / 20%);
 
-  &__number-price{
+  &__heading{
+    padding-bottom: 10px;
+  }
+  &__email{
+    padding-bottom: 10px;
+  }
+  &__password{
+    padding-bottom: 17px;
+  } 
+  &__signin{
+    padding-bottom: 25px;
+  } 
+  &__login{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 20px;
-  }
 
-  &__date-dropdown{
-    padding-bottom: 20px;
-  }
+    &-title{
+      font-size: 14px;
+      color: $textColor;
+    }
 
-  &__dropdown{
-    padding-bottom: 20px;
+    &-button{
+    }
   }
-
-  &__price-list{
-    padding-bottom: 20px;
-  }
-  
-  &__price-result{
-    padding-bottom: 20px;
-
-  }
-
 }

@@ -28,3 +28,5 @@ import './components/price-list';
 import './components/price-result';
 import './components/card-room-search';
 import './components/card-room-booking';
+import './components/card-register';
+import './components/card-login';

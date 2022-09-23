@@ -1,8 +1,13 @@
 const webpack = require('webpack');
 const path = require('path');
+const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+const PAGES_DIR = path.resolve(__dirname, 'src/pages');
+const PAGES = fs.readdirSync(PAGES_DIR);
+
+console.log('pages--->', PAGES);
 let mode = 'development';
 if (process.env.NODE_ENV === 'production') {
   mode = 'production';
@@ -35,22 +40,19 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',
     }),
+
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: './src/index.pug',
     }),
-    new HtmlWebpackPlugin({
-      filename: 'colors-and-type.html',
-      template: './src/pages/ui-kit-colors-and-type/ui-kit-colors-and-type.pug',
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'form-elements.html',
-      template: './src/pages/ui-kit-form-elements/ui-kit-form-elements.pug',
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'cards.html',
-      template: './src/pages/ui-kit-cards/ui-kit-cards.pug',
-    }),
+
+    ...PAGES.map(
+      (page) => new HtmlWebpackPlugin({
+        filename: `${page}.html`,
+        template: `${PAGES_DIR}/${page}/${page}.pug`,
+      }),
+    ),
+
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
@@ -59,6 +61,7 @@ module.exports = {
       'window.$': 'jquery',
     }),
   ],
+
   module: {
     rules: [
       {

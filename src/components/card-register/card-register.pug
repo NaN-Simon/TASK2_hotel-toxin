@@ -1,0 +1,50 @@
+include ../text-field/text-field.pug
+include ../radio-buttons/radio-buttons.pug
+include ../toggle/toggle.pug
+include ../heading/heading.pug
+include ../button/button.pug
+
+mixin card-register(properties = {})
+
+  -
+    const {
+      cardRegisterHeading = {},
+      cardRegisterName = {},
+      cardRegisterSecondName = {},
+      cardRegisterRadio = {},
+      cardRegisterBirthdayHeading = {},
+      cardRegisterBirthday = {},
+      cardRegisterSignInHeading = {},
+      cardRegisterSignInMail = {},
+      cardRegisterSignInPassword = {},
+      cardRegisterSpecOffers = {},
+      cardRegisterPayButton = {},
+      cardRegisterLoginButton = {},
+    } = properties 
+
+  section.card-register
+    .card-register__heading
+      +heading(cardRegisterHeading)
+    .card-register__name 
+      +text-field(cardRegisterName)
+    .card-register__second-name 
+      +text-field(cardRegisterSecondName)
+    .card-register__gender 
+      +radio-buttons(cardRegisterRadio)
+    .card-register__birthday 
+      +heading(cardRegisterBirthdayHeading)
+      +text-field(cardRegisterBirthday)
+    .card-register__signin 
+      +heading(cardRegisterSignInHeading)
+      .card-register__signin-mail 
+        +text-field(cardRegisterSignInMail)
+      .card-register__signin-password 
+        +text-field(cardRegisterSignInPassword)
+    .card-register__spec-offers
+      +toggle(cardRegisterSpecOffers)
+    .card-register__to-pay 
+      +button(cardRegisterPayButton)
+    .card-register__login
+      .card-register__login-title Уже есть аккаунт на Toxin?
+      .card-register__login-button
+        +button(cardRegisterLoginButton)
