@@ -51,6 +51,7 @@
     "pug-loader": "^2.4.0",
     "sass": "^1.43.5",
     "sass-loader": "^12.3.0",
+    "slick-carousel": "^1.8.1",
     "style-loader": "^3.3.1",
     "webpack-dev-server": "^4.6.0",
     "wnumb": "^1.2.0"

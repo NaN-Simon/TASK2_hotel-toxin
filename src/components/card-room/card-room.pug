@@ -1,0 +1,35 @@
+include ../carousel/carousel.pug
+include ../room-number/room-number.pug
+include ../room-price/room-price.pug
+include ../rate-button/rate-button.pug
+
+mixin card-room(properties = {})
+
+  -
+    const {
+      id = 'dont-id',
+      carouselProperties = {},
+      roomNumberProperties = {},
+      roomPriceProperties = {},
+      rateButtonProperties = {},
+      cardRoomReviewNumber = 0,
+      cardRoomReviewText = "Отзывов",
+    } = properties 
+
+  section.card-room(id = properties.id)
+    .card-room__carousel
+      +carousel(carouselProperties)
+    .card-room__description 
+      .card-room__number-price 
+        .card-room__room-number
+          +room-number(roomNumberProperties)
+        .card-room__room-price
+          +room-price(roomPriceProperties)
+      .card-room__line 
+      .card-room__about 
+        .card-room__rate-button  
+          +rate-button(rateButtonProperties)
+        .card-room__review
+          .card-room__review-number #{cardRoomReviewNumber}
+          .card-room__review-space &nbsp
+          .card-room__review-text #{cardRoomReviewText} 

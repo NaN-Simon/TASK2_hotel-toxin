@@ -1,6 +1,4 @@
 .cards{
-  background: $mainBackground;
-
   &__container{
     display: flex;
     flex-direction: row;
@@ -9,4 +7,12 @@
     max-width: 1158px;
     margin: 0 auto;
   }
+
+  &__card-room{
+    padding-bottom: 40px;
+  }
+}
+
+.card-calendar{
+  padding-bottom: 40px;
 }

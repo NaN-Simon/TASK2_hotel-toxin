@@ -3,6 +3,7 @@ include ../../components/card-room-search/card-room-search.pug
 include ../../components/card-room-booking/card-room-booking.pug
 include ../../components/card-register/card-register.pug
 include ../../components/card-login/card-login.pug
+include ../../components/card-room/card-room.pug
 include ../../components/filter-date-dropdown/filter-date-dropdown.pug
 
 block variables
@@ -225,15 +226,74 @@ block content
           },
         })
       .cards__third-column
-        +filter-date-dropdown({
-          id: "card-room-filter-date-dropdown",
-          type:"text",
-          isOpen: true,
-          isHideInput: true,
-          hasTwoInputs: false,
-          hasArrow: true,
-          dateFormat: "dd.MM.yyyy",
-          name: "date",
-          selectedDates: ['2019-08-19', '2019-08-23'],
-          withMask: true
+        .card-calendar
+          +filter-date-dropdown({
+            id: "card-room-filter-date-dropdown",
+            type:"text",
+            isOpen: true,
+            isHideInput: true,
+            hasTwoInputs: false,
+            hasArrow: true,
+            dateFormat: "dd.MM.yyyy",
+            name: "date",
+            selectedDates: ['2019-08-19', '2019-08-23'],
+            withMask: true
+          })
+        .cards__card-room
+          +card-room({
+            id: "ui-kit-room-card-1",
+            carouselProperties: {
+              id: "ui-kit-room-card-1-carousel",
+              imgList: [
+                "page-room-img-0.jpg",
+                "page-room-img-1.jpg",
+                "page-room-img-2.jpg",
+                "page-room-img-3.jpg",
+              ],
+            },
+            roomNumberProperties: {
+              symbol: "№",
+              number: 888,
+              text: "ЛЮКС",
+            },
+            roomPriceProperties: {
+              price: "9 900",
+              currency: "₽",
+              text: "в сутки",
+            },
+            rateButtonProperties: {
+              id: 'card-carusel-rate1',
+              maxRate: 5,
+              selectedRate: 5,
+            },
+              cardRoomReviewNumber: 145,
+              cardRoomReviewText: "Отзывов",
+          })
+        +card-room({
+          id: "ui-kit-room-card-2",
+          carouselProperties: {
+            id: "ui-kit-room-card-2-carousel",
+            imgList: [
+              "page-room-img-1.jpg",
+              "page-room-img-2.jpg",
+              "page-room-img-3.jpg",
+              "page-room-img-4.jpg",
+            ],
+          },
+          roomNumberProperties: {
+            symbol: "№",
+            number: 840,
+          },
+          roomPriceProperties: {
+            price: "9 900",
+            currency: "₽",
+            text: "в сутки",
+          },
+          rateButtonProperties: {
+            id: 'card-carusel-rate2',
+            maxRate: 5,
+            selectedRate: 4,
+          },
+            cardRoomReviewNumber: 65,
+            cardRoomReviewText: "Отзывов",
         })
