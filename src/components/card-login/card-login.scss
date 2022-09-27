@@ -21,8 +21,11 @@
     padding-bottom: 17px;
   } 
   &__signin{
-    padding-bottom: 25px;
+    margin-bottom: 25px;
+    width: 319px;
+    height: 44px;
   } 
+
   &__login{
     display: flex;
     flex-direction: row;
@@ -35,6 +38,9 @@
     }
 
     &-button{
+      width: 100px;
+      height: 44px;
     }
+
   }
 }

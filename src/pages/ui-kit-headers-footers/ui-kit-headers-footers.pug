@@ -1,0 +1,104 @@
+extends ../../layouts/ui-kit-layout
+include ../../components/image/image.pug
+include ../../components/navigation/navigation.pug
+include ../../components/button/button.pug
+include ../../components/header/header.pug
+
+block variables
+  - const pageTitle = "Headers and Footers"
+  - const bodyProperties = "background: #F4F4F6"
+
+block content
+  main.headers-footers
+    .headers-footers__container
+      .headers-footers__no-login
+        +header({
+          headerLogo: "color-logo",
+          headerNavigation: {
+            id: "headers-footers-login-navigation",
+            direction: "row",
+            linkItems: [
+              { title: "О нас", activePage: true },
+              {
+                title: "Услуги", 
+                hasDropdown: true,
+                subLinkItems: [
+                  {subTitle: "link1"},
+                  {subTitle: "link2"},
+                  {subTitle: "link3"},
+                  {subTitle: "link4"},
+                ]},
+                {title: "Вакансии"},
+                {title: "Новости"},
+              {
+                title: "Соглашения",
+                hasDropdown: true,
+                subLinkItems: [
+                  {subTitle: "link5"},
+                  {subTitle: "link6"},
+                  {subTitle: "link7"},
+                  {subTitle: "link8"},
+                  ]
+                },
+            ],
+          },
+          headerButtonLogin: {
+            buttonName: "Войти",
+            buttonType: "ButtonDefault",
+            size: "small",
+            isTransparentBackground: true,
+          },
+          headerButtonSignIn: {
+            buttonName: "зарегистрироваться",
+            buttonType: "ButtonDefault",
+            size: "large",
+          }
+        })
+      .headers-footers__logined 
+        +header({
+          isLogined: true,
+          userName: "Юлий Цезарь",
+          headerLogo: "color-logo",
+          headerNavigation: {
+            id: "headers-footers-login-navigation1",
+            direction: "row",
+            linkItems: [
+              { title: "О нас", activePage: true },
+              {
+                title: "Услуги", 
+                hasDropdown: true,
+                subLinkItems: [
+                  {subTitle: "link1"},
+                  {subTitle: "link2"},
+                  {subTitle: "link3"},
+                  {subTitle: "link4"},
+                ]},
+                {title: "Вакансии"},
+                {title: "Новости"},
+              {
+                title: "Соглашения",
+                hasDropdown: true,
+                subLinkItems: [
+                  {subTitle: "link5"},
+                  {subTitle: "link6"},
+                  {subTitle: "link7"},
+                  {subTitle: "link8"},
+                  ]
+                },
+            ],
+          },
+          headerButtonLogin: {
+            buttonName: "Войти",
+            buttonType: "ButtonDefault",
+            size: "small",
+            isTransparentBackground: true,
+          },
+          headerButtonSignIn: {
+            buttonName: "зарегистрироваться",
+            buttonType: "ButtonDefault",
+            size: "large",
+          }
+        })
+
+        
+

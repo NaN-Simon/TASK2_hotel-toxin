@@ -32,3 +32,5 @@ import './components/card-room-booking';
 import './components/card-register';
 import './components/card-login';
 import './components/card-room';
+import './components/navigation';
+import './components/header';

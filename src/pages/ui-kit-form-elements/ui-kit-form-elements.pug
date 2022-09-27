@@ -18,6 +18,7 @@ include ../../components/review/review.pug
 
 block variables
   - const pageTitle = "Form & Elements"
+  - const bodyProperties = "background: white"
 
 block content
   main.form-elements
@@ -225,57 +226,64 @@ block content
               title: "Buttons",
             })
             .form-elements__small-wrapper-couple
-              +button({
-                buttonName: "click me",
-                buttonType: "ButtonDefault",
-                size: "small",
-                isTransparentBackground: false,
-                disabled: false,
-              })
-              +button({
-                buttonName: "click me",
-                buttonType: "ButtonDefault",
-                size: "small",
-                isTransparentBackground: false,
-                disabled: true,
+              .form-elements__button-small
+                +button({
+                  buttonName: "click me",
+                  buttonType: "ButtonDefault",
+                  size: "small",
+                  isTransparentBackground: false,
+                  disabled: false,
+                })
+              .form-elements__button-small
+                +button({
+                  buttonName: "click me",
+                  buttonType: "ButtonDefault",
+                  size: "small",
+                  isTransparentBackground: false,
+                  disabled: true,
+                })
+            .form-elements__small-wrapper-couple
+              .form-elements__button-small
+                +button({
+                  buttonName: "click me",
+                  buttonType: "ButtonDefault",
+                  size: "small",
+                  isTransparentBackground: true,
+                  disabled: false,
+                })
+              .form-elements__button-small
+                +button({
+                  buttonName: "click me",
+                  buttonType: "ButtonDefault",
+                  size: "small",
+                  isTransparentBackground: true,
+                  disabled: true,
               })
             .form-elements__small-wrapper-couple
-              +button({
-                buttonName: "click me",
-                buttonType: "ButtonDefault",
-                size: "small",
-                isTransparentBackground: true,
-                disabled: false,
-              })
-              +button({
-                buttonName: "click me",
-                buttonType: "ButtonDefault",
-                size: "small",
-                isTransparentBackground: true,
-                disabled: true,
-            })
-            .form-elements__small-wrapper-couple
-              +button({
-                buttonName: "click me",
-                buttonType: "ButtonLink",
-                size: "small",
-                isTransparentBackground: false,
-                disabled: false,
-              })
-              +button({
-                buttonName: "click me",
-                buttonType: "ButtonLink",
-                size: "small",
-                isTransparentBackground: false,
-                disabled: true,
-              })
+              .form-elements__button-small
+                +button({
+                  buttonName: "click me",
+                  buttonType: "ButtonLink",
+                  size: "small",
+                  isTransparentBackground: false,
+                  disabled: false,
+                })
+              .form-elements__button-small
+                +button({
+                  buttonName: "click me",
+                  buttonType: "ButtonLink",
+                  size: "small",
+                  isTransparentBackground: false,
+                  disabled: true,
+                })
             .form-elements__large-wrapper-couple
-              +button({
-                buttonName: "перейти к оплате",
-                buttonType: "ButtonDefault",
-                size: "large",
-                hasArrow: true,
-            })
+              .form-elements__button-large
+                +button({
+                  buttonName: "перейти к оплате",
+                  buttonType: "ButtonDefault",
+                  size: "large",
+                  hasArrow: true,
+              })
           .form-elements__large-wrapper
             +heading({ 
               level: "h3", 

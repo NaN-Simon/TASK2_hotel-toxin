@@ -1,0 +1,31 @@
+include ../../components/image/image.pug
+include ../../components/navigation/navigation.pug
+include ../../components/button/button.pug
+
+mixin header(properties = {})
+
+  -
+    const {
+      isLogined = false,
+      userName = "default",
+      headerLogo = {},
+      headerNavigation = {},
+      headerButtonLogin = {},
+      headerButtonSignIn = {},
+    } = properties
+
+
+  .header__logo
+    +image-png(headerLogo)
+  .header__menu
+    .header__nav
+      +navigation(headerNavigation)
+    if isLogined
+        .header__space-beetween
+        .header__user
+          span.header__user-name #{userName}
+    else
+      .header__button-login
+        +button(headerButtonLogin)
+      .header__button-register
+        +button(headerButtonSignIn)

@@ -40,7 +40,9 @@
   }
 
   &__to-pay{
-    padding-bottom: 15px;
+    margin-bottom: 15px;
+    width: 319px;
+    height: 44px;
   }
 
   &__login{
@@ -52,6 +54,11 @@
     &-title{
       font-size: 14px;
       color: $textColor;
+    }
+
+    &-button{
+    width: 100px;
+    height: 44px;
     }
   }
 }

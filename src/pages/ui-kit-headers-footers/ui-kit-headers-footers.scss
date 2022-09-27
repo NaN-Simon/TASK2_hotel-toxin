@@ -1,0 +1,29 @@
+@import '@base';
+
+.headers-footers{
+
+  &__container{
+    display: flex;
+    flex-direction: column;
+    min-width: 1158px;
+    max-width: 1158px;
+    margin: 0 auto;
+  }
+
+  &__no-login{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1160px;
+    padding-bottom: 40px;
+  }
+  
+  &__logined{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1160px;
+    gap: 0 40px;
+  }
+
+}

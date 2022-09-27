@@ -1,14 +1,21 @@
 @import '@base';
 
+.button{
+  width: inherit;
+  height: inherit;
+}
 .button__inner{
+  
   &-default {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0 5px;
-    width: 99px;
-    height: 44px;
+    // width: 99px;
+    // height: 44px;
+    width: inherit;
+    height: inherit;
     border-radius: 22px;
     font-family: $mainFont;
     font-style: normal;
@@ -68,7 +75,8 @@
   }
 
   &-large{
-    width: 320px;
+    width: inherit;
+    height: inherit;
   }
 
 }

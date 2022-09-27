@@ -1,0 +1,44 @@
+@import '@base';
+
+.header{
+
+  &__menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0 20px;
+  }
+
+  &__nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__space-beetween{
+    width: 1px;
+    height: 30px;
+    background: rgba(31, 32, 65, 0.1);
+  }
+  
+  &__user-name{
+    font-family: $mainFont;
+    font-style: normal;
+    font-weight: 400;
+    font-size: $mainFont_size;
+    line-height: 17px;
+    color: $textColor_50;
+    cursor: pointer;
+  }
+
+  &__button-login{
+    width: 87px;
+    height: 34px;
+  }
+
+  &__button-register{
+    width: 196px;
+    height: 34px;
+  }
+
+}

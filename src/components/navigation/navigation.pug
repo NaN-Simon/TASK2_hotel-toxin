@@ -1,0 +1,35 @@
+mixin navigation(properties = {})
+
+  -
+    const {
+      id = 'dont-id',
+      activePage = false,
+      linkItems = [],
+      direction = "row"
+    } = properties 
+
+    const rowClassModifire = direction === "row" ? "navigation__list--row" : ""
+
+  section.navigation(id = id)
+    ul.navigation__list&attributes({
+      class: rowClassModifire
+    })
+      each link in linkItems
+
+        -
+          const arrowDropdownClassModifire = link.hasDropdown ? "material-icons navigation__item-arrow" : ""
+          const hasDropdownClassModifire = link.hasDropdown ? "navigation__item-has-dropdown" : ""
+          const activePageClassModifire = link.activePage ? "navigation__item-active-page" : ""
+
+        li.navigation__item&attributes({
+            class: [hasDropdownClassModifire, activePageClassModifire]
+          })
+          a.navigation__item-link #{link.title}
+          if link.hasDropdown
+            span&attributes({
+            class: [arrowDropdownClassModifire]
+          }) expand_more
+            ul.navigation__subItems
+              each subLink in link.subLinkItems
+                li.navigation__subitem
+                  a.navigation__subitem-sublink #{subLink.subTitle}
