@@ -1,6 +1,12 @@
 @import '@base';
 
 .header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1160px;
+  height: 70px;
+  gap: 0 40px;
 
   &__menu{
     display: flex;

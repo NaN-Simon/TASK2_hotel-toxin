@@ -3,12 +3,17 @@ mixin navigation(properties = {})
   -
     const {
       id = 'dont-id',
-      activePage = false,
+      boldTitle = false,
       linkItems = [],
-      direction = "row"
+      direction = "row",
+      fontColor = "50%",
     } = properties 
 
-    const rowClassModifire = direction === "row" ? "navigation__list--row" : ""
+    const rowClassModifire = direction === "row" ? "navigation__list--row" : "navigation__list--column"
+    let colorClassModifire = fontColor === "100%" ? "navigation__item--color-100" : ""
+        colorClassModifire = fontColor === "75%" ? "navigation__item--color-75" : ""
+        colorClassModifire = fontColor === "50%" ? "navigation__item--color-50" : ""
+        colorClassModifire = fontColor === "25%" ? "navigation__item--color-25" : ""
 
   section.navigation(id = id)
     ul.navigation__list&attributes({
@@ -19,10 +24,10 @@ mixin navigation(properties = {})
         -
           const arrowDropdownClassModifire = link.hasDropdown ? "material-icons navigation__item-arrow" : ""
           const hasDropdownClassModifire = link.hasDropdown ? "navigation__item-has-dropdown" : ""
-          const activePageClassModifire = link.activePage ? "navigation__item-active-page" : ""
+          const boldTitleClassModifire = link.boldTitle ? "navigation__item-active-page" : ""
 
         li.navigation__item&attributes({
-            class: [hasDropdownClassModifire, activePageClassModifire]
+            class: [hasDropdownClassModifire, boldTitleClassModifire, colorClassModifire]
           })
           a.navigation__item-link #{link.title}
           if link.hasDropdown

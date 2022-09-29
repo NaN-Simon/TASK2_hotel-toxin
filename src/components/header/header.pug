@@ -14,18 +14,18 @@ mixin header(properties = {})
       headerButtonSignIn = {},
     } = properties
 
-
-  .header__logo
-    +image-png(headerLogo)
-  .header__menu
-    .header__nav
-      +navigation(headerNavigation)
-    if isLogined
-        .header__space-beetween
-        .header__user
-          span.header__user-name #{userName}
-    else
-      .header__button-login
-        +button(headerButtonLogin)
-      .header__button-register
-        +button(headerButtonSignIn)
+  .header
+    .header__logo
+      +image-png(headerLogo)
+    .header__menu
+      .header__nav
+        +navigation(headerNavigation)
+      if isLogined
+          .header__space-beetween
+          .header__user
+            span.header__user-name #{userName}
+      else
+        .header__button-login
+          +button(headerButtonLogin)
+        .header__button-register
+          +button(headerButtonSignIn)

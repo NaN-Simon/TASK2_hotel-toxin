@@ -3,6 +3,7 @@ include ../../components/image/image.pug
 include ../../components/navigation/navigation.pug
 include ../../components/button/button.pug
 include ../../components/header/header.pug
+include ../../components/footer/footer.pug
 
 block variables
   - const pageTitle = "Headers and Footers"
@@ -10,15 +11,15 @@ block variables
 
 block content
   main.headers-footers
-    .headers-footers__container
-      .headers-footers__no-login
+    .headers-footers__header-container
+      .headers-footers__header-no-login
         +header({
           headerLogo: "color-logo",
           headerNavigation: {
             id: "headers-footers-login-navigation",
             direction: "row",
             linkItems: [
-              { title: "О нас", activePage: true },
+              { title: "О нас", boldTitle: true },
               {
                 title: "Услуги", 
                 hasDropdown: true,
@@ -54,7 +55,7 @@ block content
             size: "large",
           }
         })
-      .headers-footers__logined 
+      .headers-footers__header-logined 
         +header({
           isLogined: true,
           userName: "Юлий Цезарь",
@@ -63,7 +64,7 @@ block content
             id: "headers-footers-login-navigation1",
             direction: "row",
             linkItems: [
-              { title: "О нас", activePage: true },
+              { title: "О нас", boldTitle: true },
               {
                 title: "Услуги", 
                 hasDropdown: true,
@@ -99,6 +100,52 @@ block content
             size: "large",
           }
         })
+      .headers-footers__footer-default
+        +footer({
+          headerLogo: "color-logo",
+          footerDescription: "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»",
+          navigationNav: {
+            direction: "column",
+            linkItems: [
+              { title: "Навигация", boldTitle: true },
+              { title: "О нас"},
+              { title: "Новости"},
+              { title: "Служба поддержки"},
+              { title: "Услуги"},
+              ]
+            },
+          navigationAbout: {
+            direction: "column",
+            linkItems: [
+              { title: "о нас", boldTitle: true },
+              { title: "О сервисе"},
+              { title: "Наша команда"},
+              { title: "Вакансии"},
+              { title: "Инвесторы"},
+              ]
+            },
+          navigationSupport: {
+            direction: "column",
+            linkItems: [
+              { title: "Служба поддержки", boldTitle: true },
+              { title: "Соглашения"},
+              { title: "Сообщества"},
+              { title: "Связь с нами"},
+              ]
+            },
+          navigationSub: {
+            direction: "column",
+            fontColor: "75%",
+            linkItems: [
+              { title: "Подписка", boldTitle: true },
+              { title: "Получайте специальные предложения и новости сервиса"},
+              ]
+            },
+          socialImage1: 'twitter',
+          socialImage2: 'facebook',
+          socialImage3: 'instagram',
+        })
+
 
         
 

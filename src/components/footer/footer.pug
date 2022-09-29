@@ -1,0 +1,47 @@
+include ../../components/image/image.pug
+include ../../components/navigation/navigation.pug
+include ../../components/text-field/text-field.pug
+
+mixin footer(properties = {})
+
+  -
+    const {
+      headerLogo = {},
+      footerDescription = "default",
+      navigationNav = {},
+      navigationAbout = {},
+      navigationSupport = {},
+      navigationSub = {},
+      socialImage1 = {},
+      socialImage2 = {},
+      socialImage3 = {},
+    } = properties
+
+  .footer
+    .footer__wrapper
+      .footer__booking
+        .footer__booking-logo
+          +image-png(headerLogo)
+        p.footer__booking-description #{footerDescription}
+      .footer__navigation 
+        .footer__navigation-nav
+          +navigation(navigationNav)
+        .footer__navigation-about
+          +navigation(navigationAbout)
+        .footer__navigation-support
+          +navigation(navigationSupport)
+      .footer__navigation-sub
+        +navigation(navigationSub)
+        +text-field({
+          type: "text", 
+          placeholder: "Email", 
+          name: "email",
+          focused: false,
+          hasArrowSubscription: true,
+        })
+    .footer__wrapper
+      span.footer__copyright-text Copyright © 2018 Toxin отель. Все права защищены.
+      .footer__social
+        +image-svg(socialImage1)
+        +image-svg(socialImage2)
+        +image-svg(socialImage3)

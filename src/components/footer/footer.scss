@@ -1,0 +1,60 @@
+@import '@base';
+
+.footer{
+
+  &__wrapper{
+    display: flex;
+    justify-content: space-between;
+    width: 1440px;
+    padding: 104px 140px;
+    gap: 20px;
+  }
+
+  &__booking{
+    display: flex;
+    flex-direction: column;
+
+    &-description{
+      display: flex;
+      width: 260px;
+      font-family: $mainFont;
+      font-style: normal;
+      font-weight: 400;
+      font-size: $mainFont_size;
+      line-height: 24px;
+    }
+  }
+
+  &__navigation{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 560px;
+    gap: 40px;
+
+    &-sub{
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 260px;
+      color: $textColor_75;
+    }
+
+  }
+
+  &__copyright-text{
+    font-family: $mainFont;
+    font-style: normal;
+    font-weight: 400;
+    font-size: $mainFont_size;
+    line-height: 24px;
+    color: $textColor_75;
+  }
+
+  &__social{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+}
