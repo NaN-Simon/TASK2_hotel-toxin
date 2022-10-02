@@ -319,7 +319,7 @@ block content
                 bathrooms: "ванная комната, ванные комнаты, ванных комнат",
                 },
             })
-          .form-elements__medium-wrapper
+          .form-elements__medium-wrapper.form-elements__medium-wrapper--margin-botton14
             +heading({ 
               level: "h3", 
               title: "dropdown",
@@ -405,8 +405,6 @@ block content
                 { title: "Кроватка", name: 'bed', checked: true },
                 { title: "Телевизор", name: 'tv'},
                 { title: "Шампунь", name: 'shampoo'},
-                { title: "Телевизор", name: 'tv2'},
-                { title: "Шампунь", name: 'shampoo2'},
               ],
             })
           .form-elements__medium-wrapper
@@ -422,8 +420,6 @@ block content
                 { title: "Кроватка", name: 'bed', checked: true },
                 { title: "Телевизор", name: 'tv'},
                 { title: "Шампунь", name: 'shampoo'},
-                { title: "Телевизор", name: 'tv2'},
-                { title: "Шампунь", name: 'shampoo2'},
               ],
             })
         .form-elements__lists-checkboxes-rich-list
@@ -437,8 +433,8 @@ block content
               isOpen: true,
               id: "checkbox-list-rich",
               richListItems: [
-                { title: "Широкий коридор", description: "Ширина коридоров в номере не менее 91 см.", name: 'corridor', checked: true },
-                { title: "Помощник для инвалидов", description: "На 1 этаже вас встретит специалист и проводит до номера.", name: 'helper' },
+                { title: "Широкий коридор", description: "Ширина коридоров в номере не\u00A0менее 91 см.", name: 'corridor', checked: true },
+                { title: "Помощник для инвалидов", description: "На 1 этаже вас встретит специалист и\u00A0проводит до номера.", name: 'helper' },
               ],
             })
         .form-elements__lists-checkboxes-bullet-list
@@ -451,7 +447,7 @@ block content
               listItems: [
                 { title: "Нельзя с питомцами"},
                 { title: "Без вечеринок и мероприятий"},
-                { title: "Время прибытия — после 13:00, а выезд до 12:00"},
+                { title: "Время прибытия — после 13:00, а\u00A0выезд до 12:00"},
               ]
             })
       section.form-elements__feedback

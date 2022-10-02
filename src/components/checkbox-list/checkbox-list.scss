@@ -3,6 +3,7 @@
 .checkbox-list {
   display       : flex;
   flex-direction: column;
+  // padding-top: 13px;
 
   &__items{
     display: none;
@@ -11,13 +12,13 @@
   &__open .checkbox-list__items{
     display: flex;
     flex-direction: column;
+    padding-top: 10px;
   }
 
   &__input {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 7px;
     color: $textColor;
     font-weight: 700;
     font-size: 12px;
@@ -27,6 +28,7 @@
 
     &-arrow{
       color: $textColor_50;
+      padding-right: 9px;
     }
 
     &-title{
@@ -41,7 +43,7 @@
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    padding-top: 10px;
+    padding-bottom: 10px;
     cursor: pointer;
 }
 
@@ -55,15 +57,17 @@
     font-size: 14px;
     color: $textColor_75;
     font-weight: 700;
-    padding-bottom: 5px;
+    padding-bottom: 7px;
+    padding-left: 3px;
   }
   
   &__rich-description{
     font-family: $mainFont;
-    font-size: 14px;
+    font-size: 12px;
+    line-height: 14px;
     color: $textColor_50;
     font-weight: 400;
-    padding-bottom: 5px;
+    // padding-bottom: 5px;
   }
 
 
@@ -71,8 +75,6 @@
 
   &__item{
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
     padding-bottom: 10px;
     cursor: pointer;
   }
@@ -82,7 +84,7 @@
     font-style : normal;
     font-weight: 400;
     font-size  : 14px;
-    line-height: 14px;
+    line-height: 18px;
     color: $textColor_50;
     margin: 0;
   }

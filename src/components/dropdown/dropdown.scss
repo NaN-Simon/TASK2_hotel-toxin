@@ -66,6 +66,8 @@
 
     &-items{
       padding-bottom: 7px;
+      font-size: 15px;
+      line-height: 18px;
     }
 
     &-item{
@@ -73,17 +75,17 @@
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
-      padding-left: 15px;
+      height: 37px;
+      padding-left: 13px;
       padding-right: 7px;
-      padding-top: 6px;
-      padding-bottom: 0px;
-      list-style-type: none;      
+      list-style-type: none;    
     }
 
     &-name{
       font-family: $mainFont;
       font-weight: 700;
       color: $textColor;
+      letter-spacing: -0.4px;
     }
 
     &-counter{
@@ -91,7 +93,7 @@
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
-      width: 95px;
+      width: 92px;
       transition: 0.7s;
 
       &-result{
@@ -132,16 +134,19 @@
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+      align-items: center;
       width: inherit;
-      padding-top: 20px;
-      padding-bottom: 13px;
+      height: 37px;
       padding-left: 15px;
       padding-right: 7px;
+      padding-bottom: 4px;
       color: $elementColor;
       font-family: $mainFont;
       font-weight: 700;
+      font-size: 14px;
       cursor: default;
       transition: 0.7s;
+      letter-spacing: -0.2px;
       
       &--right{
         justify-content: end;
