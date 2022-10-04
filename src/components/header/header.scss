@@ -1,5 +1,6 @@
 @import '@base';
 
+
 .header{
   display: flex;
   justify-content: space-between;
@@ -7,20 +8,31 @@
   width: 1160px;
   height: 70px;
   gap: 0 40px;
-
+  
   &__menu{
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     gap: 0 20px;
   }
-
-  &__nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  
+  &__burger{
+    display: none;
+    font-size: 36px;
+  }
+  &__burger .material-icons{
+    font-size: inherit;
   }
 
+  &__navigation{
+    display: flex;
+    flex-direction: inherit;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+  
   &__space-beetween{
     width: 1px;
     height: 30px;
@@ -36,15 +48,53 @@
     color: $textColor_50;
     cursor: pointer;
   }
-
+  
   &__button-login{
     width: 87px;
     height: 34px;
   }
-
+  
   &__button-register{
     width: 196px;
     height: 34px;
   }
+  
+}
 
+@media(max-width: 1024px){
+  .header{
+    &__burger{
+      display: flex;
+      cursor: pointer;
+    }
+
+    &__navigation--burger-open{
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      background: $mainBackground;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    &__menu--burger{
+      display: flex;
+      flex-direction: column;
+    }
+    &__button-login--burger{
+      display: none;
+    }
+    &__button-register--burger{
+      display: none;
+    }
+    &__space-beetween--burger{
+      display: none;
+    }
+    &__user--burger{
+      display: none;
+    }
+  }
 }

@@ -14,7 +14,11 @@ class Navigation {
 
   clickHandler(event) {
     this.toggleSubMenu(event);
+
   }
+  
+
+  /* subItems */
 
   toggleSubMenu(event) {
     const targetClasses = event.target.closest('.navigation__item').className.split(' ');

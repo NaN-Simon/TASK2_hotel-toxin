@@ -1,5 +1,10 @@
 @import '@base';
 
+.navigation{
+  display: flex;
+  flex-direction: inherit;
+}
+
 .navigation__subItems{
   display: none;
   position: absolute;
@@ -8,19 +13,24 @@
   list-style-type: none;
 
   &--open{
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    min-width: 70px;
+    z-index: 7;
   }
 }
 
 .navigation__list{
   display: flex;
+  flex-direction: inherit;
   justify-content: space-between;
+  align-items: center;
   gap: 20px;
   list-style-type: none;
   
-  &--row{
-    flex-direction: row;
-  }
   &--column{
     flex-direction: column;
   }
@@ -58,5 +68,15 @@
     font-size: $mainFont_size;
     line-height: 17px;
     color: $textColor_75;
+  }
+}
+
+@media(max-width: 1024px){
+  .navigation--burger{
+    display: none;
+  }
+  .navigation--burger-open{
+
+
   }
 }

@@ -6,26 +6,37 @@ mixin header(properties = {})
 
   -
     const {
+      id = 'no-id',
       isLogined = false,
       userName = "default",
       headerLogo = {},
       headerNavigation = {},
-      headerButtonLogin = {},
       headerButtonSignIn = {},
     } = properties
 
-  .header
+  .header.header-js(id = id)
     .header__logo
       +image-png(headerLogo)
-    .header__menu
-      .header__nav
+    .header__menu.header__menu--burger
+      .header__navigation.header__navigation--burger
+        .header__burger
+          .material-icons menu
         +navigation(headerNavigation)
-      if isLogined
-          .header__space-beetween
-          .header__user
-            span.header__user-name #{userName}
-      else
-        .header__button-login
-          +button(headerButtonLogin)
-        .header__button-register
-          +button(headerButtonSignIn)
+        if isLogined
+            .header__space-beetween.header__space-beetween--burger
+            .header__user.header__user--burger
+              span.header__user-name #{userName}
+        else
+          .header__button-login.header__button-login--burger
+            +button({
+              buttonName: "Войти",
+              buttonType: "ButtonDefault",
+              size: "small",
+              isTransparentBackground: true,
+            })
+          .header__button-register.header__button-register--burger
+            +button({
+              buttonName: "зарегистрироваться",
+              buttonType: "ButtonDefault",
+              size: "large",
+            })

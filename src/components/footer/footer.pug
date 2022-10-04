@@ -45,3 +45,22 @@ mixin footer(properties = {})
         +image-svg(socialImage1)
         +image-svg(socialImage2)
         +image-svg(socialImage3)
+
+mixin footer-small(properties = {})
+
+  -
+    const {
+      headerLogo = {},
+      socialImage1 = {},
+      socialImage2 = {},
+      socialImage3 = {},
+    } = properties
+
+  .footer__small
+    .footer__small-logo
+      +image-png(headerLogo)
+    span.footer__small-copyright-text Copyright © 2018 Toxin отель. Все права защищены.
+    .footer__small-social
+      +image-svg(socialImage1)
+      +image-svg(socialImage2)
+      +image-svg(socialImage3)
