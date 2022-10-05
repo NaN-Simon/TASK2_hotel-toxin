@@ -3,4 +3,11 @@
 .ui-kit-header{
   height: 140px;
   padding: 30px 30px 0;
+
+  &__container{
+    display: block;
+    min-width: 1158px;
+    max-width: 1158px;
+    margin: 0 auto;
+  }
 }

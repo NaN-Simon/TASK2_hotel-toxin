@@ -198,11 +198,13 @@ block content
             .form-elements__medium-wrapper-couple
               +rate-button({
                 id: 'rate-button1',
+                changable: true,
                 maxRate: 5,
                 selectedRate: 4,
               })
               +rate-button({
                 id: 'rate-button2',
+                changable: true,
                 maxRate: 5,
                 selectedRate: 5,
               })
@@ -396,7 +398,7 @@ block content
             +checkbox-list({	
               title: "EXPANDABLE CHECKBOX LIST",
               isDropdown: true,
-              isOpen: false,
+              isOpen: true,
               id: "checkbox-list-expandable-close",
               listItems: [
                 { title: "Завтрак", name: 'breakfast' },
@@ -411,7 +413,7 @@ block content
             +checkbox-list({	
               title: "EXPANDABLE CHECKBOX LIST",
               isDropdown: true,
-              isOpen: true,
+              isOpen: false,
               id: "checkbox-list-expandable-open",
               listItems: [
                 { title: "Завтрак", name: 'breakfast' },

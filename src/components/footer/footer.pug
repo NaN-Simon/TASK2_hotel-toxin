@@ -1,5 +1,5 @@
 include ../../components/image/image.pug
-include ../../components/navigation/navigation.pug
+include ../../components/item-list/item-list.pug
 include ../../components/text-field/text-field.pug
 
 mixin footer(properties = {})
@@ -8,10 +8,10 @@ mixin footer(properties = {})
     const {
       headerLogo = {},
       footerDescription = "default",
-      navigationNav = {},
-      navigationAbout = {},
-      navigationSupport = {},
-      navigationSub = {},
+      itemListNav = {},
+      itemListAbout = {},
+      itemListSupport = {},
+      itemListSub = {},
       socialImage1 = {},
       socialImage2 = {},
       socialImage3 = {},
@@ -25,13 +25,13 @@ mixin footer(properties = {})
         p.footer__booking-description #{footerDescription}
       .footer__navigation 
         .footer__navigation-nav
-          +navigation(navigationNav)
+          +item-list(itemListNav)
         .footer__navigation-about
-          +navigation(navigationAbout)
+          +item-list(itemListAbout)
         .footer__navigation-support
-          +navigation(navigationSupport)
+          +item-list(itemListSupport)
       .footer__navigation-sub
-        +navigation(navigationSub)
+        +item-list(itemListSub)
         +text-field({
           type: "text", 
           placeholder: "Email", 

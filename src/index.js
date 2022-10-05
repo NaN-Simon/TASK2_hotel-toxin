@@ -35,3 +35,4 @@ import './components/card-room';
 import './components/navigation';
 import './components/header';
 import './components/footer';
+import './components/item-list';

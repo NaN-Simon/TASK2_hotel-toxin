@@ -1,0 +1,16 @@
+mixin item-list(properties = {})
+
+  -
+
+    const {
+      linkItems = [],
+    } = properties 
+
+  ul.item-list 
+    each item in linkItems
+      -
+        const boldTitleClassModifire = item.boldTitle ? "item-list__item--bold" : ""
+
+      li.item-list__item&attributes({
+            class: [boldTitleClassModifire]
+          }) #{item.title}

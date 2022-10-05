@@ -1,0 +1,21 @@
+@import '@base';
+
+.item-list{
+  list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+  &__item{
+    min-width: 155px;
+    font-family: $mainFont;
+    font-size: 14px;
+    color: $textColor_50;
+
+    &--bold{
+      color: $textColor;
+      font-weight: 700;
+    }
+
+  }
+}

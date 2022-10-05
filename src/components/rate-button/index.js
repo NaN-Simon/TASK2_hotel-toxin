@@ -2,15 +2,23 @@ import './rate-button.scss';
 
 class RateButton {
   constructor(selector) {
-    this.$el = document.querySelector(selector);
+    this.$el = selector;
     this.$starArray = this.$el.querySelectorAll('.rate-button__star');
+
+    const { properties } = this.$el.dataset;
+    this.properties = JSON.parse(properties);
 
     this.setup();
   }
 
   setup() {
     this.clickHandler = this.clickHandler.bind(this);
-    this.$el.addEventListener('click', this.clickHandler);
+
+    if (this.properties.changable){
+      this.$el.classList.add('rate-button--pointer')
+      this.$el.addEventListener('click', this.clickHandler);
+    }
+
   }
 
   clickHandler(event) {
@@ -25,9 +33,5 @@ class RateButton {
   }
 }
 
-// const rateButton = new RateButton("#rate-button1")
-
-const rateButton = document.querySelectorAll('.rate-button');
-rateButton.forEach((elem) => {
-  new RateButton(`#${elem.id}`);
-});
+const rateButton = document.querySelectorAll('.rate-button-js');
+rateButton.forEach((selector) => new RateButton(selector));

@@ -3,6 +3,7 @@
 .checkbox-list {
   display       : flex;
   flex-direction: column;
+  position: relative;
   // padding-top: 13px;
 
   &__items{
@@ -12,7 +13,9 @@
   &__open .checkbox-list__items{
     display: flex;
     flex-direction: column;
-    padding-top: 10px;
+    position: absolute;
+    margin-top: 35px;
+    background: $mainBackground;
   }
 
   &__input {
