@@ -3,12 +3,12 @@
 .like-button{
   display: flex;
   flex-direction: column;
+  padding-top: 10px;
 
   &__item{
     display: block;
     position: relative;
-    margin-right: 6px;
-    margin-bottom: 6px;
+    margin-right: 10px;
   }
 
   &-inline{

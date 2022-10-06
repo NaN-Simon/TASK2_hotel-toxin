@@ -135,7 +135,7 @@ block content
               hasArrowSubscription: true,
             })
         .form-elements__checkboxes
-          .form-elements__small-wrapper
+          .form-elements__small-wrapper.form-elements__text-fields-buttons--checkbox-list
             +heading({ 
               level: "h3", 
               title: "CHECKBOX BUTTONS",
@@ -148,7 +148,7 @@ block content
                 { title: "Можно пригласить гостей (до 10 человек)", name: 'guests-allow', checked: true }
               ],
             })
-          .form-elements__small-wrapper
+          .form-elements__small-wrapper.form-elements__text-fields-buttons--radio-buttons
             +heading({ 
               level: "h3", 
               title: "Radio Buttons"
@@ -162,7 +162,7 @@ block content
                 { title: "Женщина", id: "gender-m" },
               ],
             })
-          .form-elements__large-wrapper
+          .form-elements__large-wrapper.form-elements__text-fields-buttons--special-offer
             +heading({ 
               level: "h3", 
               title: "Toggle",
@@ -176,7 +176,7 @@ block content
                 { title: "Получать спецпредложения", id: "special-offer2" },
               ],
             })
-          .form-elements__small-wrapper
+          .form-elements__small-wrapper.form-elements__text-fields-buttons--like-button
             +heading({ 
               level: "h3", 
               title: "like button"
@@ -195,7 +195,7 @@ block content
               level: "h3", 
               title: "rate button",
             })
-            .form-elements__medium-wrapper-couple
+            .form-elements__medium-wrapper-couple.form-elements__text-fields-buttons--rate-buttons
               +rate-button({
                 id: 'rate-button1',
                 changable: true,
@@ -209,7 +209,7 @@ block content
                 selectedRate: 5,
               })
         .form-elements__buttons
-          .form-elements__medium-wrapper
+          .form-elements__medium-wrapper.form-elements__buttons--ranger-slider
             +heading({ 
               level: "h3", 
               title: "Range Slider",
@@ -227,65 +227,66 @@ block content
               level: "h3", 
               title: "Buttons",
             })
-            .form-elements__small-wrapper-couple
-              .form-elements__button-small
-                +button({
-                  buttonName: "click me",
-                  buttonType: "ButtonDefault",
-                  size: "small",
-                  isTransparentBackground: false,
-                  disabled: false,
+            .form-elements__buttons--button-container
+              .form-elements__small-wrapper-couple
+                .form-elements__button-small
+                  +button({
+                    buttonName: "click me",
+                    buttonType: "ButtonDefault",
+                    size: "small",
+                    isTransparentBackground: false,
+                    disabled: false,
+                  })
+                .form-elements__button-small
+                  +button({
+                    buttonName: "click me",
+                    buttonType: "ButtonDefault",
+                    size: "small",
+                    isTransparentBackground: false,
+                    disabled: true,
+                  })
+              .form-elements__small-wrapper-couple
+                .form-elements__button-small
+                  +button({
+                    buttonName: "click me",
+                    buttonType: "ButtonDefault",
+                    size: "small",
+                    isTransparentBackground: true,
+                    disabled: false,
+                  })
+                .form-elements__button-small
+                  +button({
+                    buttonName: "click me",
+                    buttonType: "ButtonDefault",
+                    size: "small",
+                    isTransparentBackground: true,
+                    disabled: true,
                 })
-              .form-elements__button-small
-                +button({
-                  buttonName: "click me",
-                  buttonType: "ButtonDefault",
-                  size: "small",
-                  isTransparentBackground: false,
-                  disabled: true,
+              .form-elements__small-wrapper-couple.form-elements__buttons--button-links
+                .form-elements__button-small.form-elements__buttons--button-link
+                  +button({
+                    buttonName: "click me",
+                    buttonType: "ButtonLink",
+                    size: "small",
+                    isTransparentBackground: false,
+                    disabled: false,
+                  })
+                .form-elements__button-small.form-elements__buttons--button-link
+                  +button({
+                    buttonName: "click me",
+                    buttonType: "ButtonLink",
+                    size: "small",
+                    isTransparentBackground: false,
+                    disabled: true,
+                  })
+              .form-elements__large-wrapper-couple
+                .form-elements__button-large
+                  +button({
+                    buttonName: "перейти к оплате",
+                    buttonType: "ButtonDefault",
+                    size: "large",
+                    hasArrow: true,
                 })
-            .form-elements__small-wrapper-couple
-              .form-elements__button-small
-                +button({
-                  buttonName: "click me",
-                  buttonType: "ButtonDefault",
-                  size: "small",
-                  isTransparentBackground: true,
-                  disabled: false,
-                })
-              .form-elements__button-small
-                +button({
-                  buttonName: "click me",
-                  buttonType: "ButtonDefault",
-                  size: "small",
-                  isTransparentBackground: true,
-                  disabled: true,
-              })
-            .form-elements__small-wrapper-couple
-              .form-elements__button-small
-                +button({
-                  buttonName: "click me",
-                  buttonType: "ButtonLink",
-                  size: "small",
-                  isTransparentBackground: false,
-                  disabled: false,
-                })
-              .form-elements__button-small
-                +button({
-                  buttonName: "click me",
-                  buttonType: "ButtonLink",
-                  size: "small",
-                  isTransparentBackground: false,
-                  disabled: true,
-                })
-            .form-elements__large-wrapper-couple
-              .form-elements__button-large
-                +button({
-                  buttonName: "перейти к оплате",
-                  buttonType: "ButtonDefault",
-                  size: "large",
-                  hasArrow: true,
-              })
           .form-elements__large-wrapper
             +heading({ 
               level: "h3", 

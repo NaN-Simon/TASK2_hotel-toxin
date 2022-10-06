@@ -9,29 +9,6 @@
     margin: 0 auto;
   }
 
-  &__text-fields-buttons{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    min-height: 734px;
-  }
-
-  &__dropdowns{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding-bottom: 132px;
-
-    &-rooms{
-      display: flex;
-      flex-direction: column-reverse;
-    }
-
-    &-guests-clear{
-      padding-left: 108px;
-    }
-  }
-
   &__text-fields{
     display: flex;
     flex-direction: column;
@@ -45,7 +22,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-bottom: 100px;
+    padding-bottom: 160px;
 
     &-checkboxes-rich-list{
       padding-left: 53px;
@@ -105,7 +82,7 @@
   }
 
   &__small-wrapper{
-    margin-bottom: 40px;
+    // margin-bottom: 40px;
     min-width: 222px;
     max-width: 222px;
 
@@ -131,4 +108,70 @@
     width: 100px;
     height: 44px;
   }
+
+  &__review{
+    padding-top: 27px;
+  }
+
+  
+  &__text-fields-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    min-height: 734px;
+
+    &--checkbox-list{
+      min-height: 169px;
+    }
+    
+    &--radio-buttons{
+      min-height: 89px;
+    }
+    
+    &--special-offer{
+      min-height: 112px;
+    }
+
+    &--like-button{
+      min-height: 89px;
+    }
+
+    &--rate-buttons{
+      padding-top: 10px;
+    }
+  }
+
+  &__dropdowns{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 132px;
+
+    &-rooms{
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
+    &-guests-clear{
+      padding-left: 108px;
+    }
+  }
+
+  &__buttons{
+    &--ranger-slider{
+      min-height: 49px;
+    }
+
+    &--button-container{
+      padding-top: 10px;
+    }
+
+    &--button-links{
+      gap: 20px;
+    }
+    &--button-link{
+      width: 61px;
+    }
+  }
+
 }

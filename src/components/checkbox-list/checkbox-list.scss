@@ -10,11 +10,15 @@
     display: none;
   }
 
+  &__container{
+    position: relative;
+  }
+
   &__open .checkbox-list__items{
     display: flex;
     flex-direction: column;
     position: absolute;
-    margin-top: 35px;
+    margin-top: 12px;
     background: $mainBackground;
   }
 
