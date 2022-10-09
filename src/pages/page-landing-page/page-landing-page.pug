@@ -1,0 +1,61 @@
+extends ../../layouts/ui-kit-layout
+include ../../components/header/header.pug
+include ../../components/heading/heading.pug
+include ../../components/filter-date-dropdown/filter-date-dropdown.pug
+include ../../components/range-slider/range-slider.pug
+include ../../components/checkbox-list/checkbox-list.pug
+include ../../components/dropdown/dropdown.pug
+
+block variables
+  - const pageTitle = "Landing page"
+  - const bodyProperties = "background: white"
+
+block content
+  .landing-page
+    .landing-page__container
+      header.landing-page__header 
+        +header({
+          headerLogo: "color-logo",
+          headerNavigation: {
+            id: "headers-footers-login-navigation",
+            direction: "row",
+            linkItems: [
+              { title: "О нас", boldTitle: true },
+              {
+                title: "Услуги", 
+                hasDropdown: true,
+                subLinkItems: [
+                  {subTitle: "Услуги 1"},
+                  {subTitle: "Услуги 2"},
+                  {subTitle: "Услуги 3"},
+                  {subTitle: "Услуги 4"},
+                ]},
+                {title: "Вакансии"},
+                {title: "Новости"},
+              {
+                title: "Соглашения",
+                hasDropdown: true,
+                subLinkItems: [
+                  {subTitle: "Соглашения 1"},
+                  {subTitle: "Соглашения 2"},
+                  {subTitle: "Соглашения 3"},
+                  {subTitle: "Соглашения 4"},
+                  ]
+                },
+            ],
+          }
+        })
+      main.landing-page__main
+        .landing-page__filters
+          .landing-page__filters-day-of-stay
+          .landing-page__filters-guests
+          .landing-page__filters-price
+          .landing-page__filters-rules
+          .landing-page__filters-accessibility
+          .landing-page__filters-facilities
+          .landing-page__filters-additional-facilities
+        .landing-page__room-cards
+          .landing-page__room-cards-title
+          .landing-page__room-cards-list
+
+      

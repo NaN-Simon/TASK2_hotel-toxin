@@ -17,7 +17,7 @@
     width: 100vw;
     margin-bottom: 40px;
     background: $mainBackground;
-    box-shadow: 0 0 25px rgb(0 0 0 / 20%);
+    box-shadow: $elementBoxShadow;
   }
   
   &__header-logined{
@@ -26,7 +26,7 @@
     width: 100vw;
     margin-bottom: 40px;
     background: $mainBackground;
-    box-shadow: 0 0 25px rgb(0 0 0 / 20%);
+    box-shadow: $elementBoxShadow;
   }
 
   &__footer-default{
@@ -35,7 +35,7 @@
     width: 100vw;
     margin-bottom: 40px;
     background: $mainBackground;
-    box-shadow: 0 0 25px rgb(0 0 0 / 20%);
+    box-shadow: $elementBoxShadow;
   }
 
   &__footer-small{

@@ -13,7 +13,8 @@ html(lang="ru")
     style: bodyProperties
     }) 
     block header
-      +ui-kit-header()
+      if (isUI)
+        +ui-kit-header()
     block content
 
   
