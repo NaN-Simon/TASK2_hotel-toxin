@@ -1,7 +1,6 @@
 mixin pagination(properties = {})
   -
     const {
-      id = "",
       entries = 0,
       pages = 0,
     } = properties 
@@ -9,4 +8,4 @@ mixin pagination(properties = {})
     const dataProperties = JSON.stringify(properties)
 
   section
-    .pagination(id = id, data-properties = dataProperties )
+    .pagination(data-properties = dataProperties )

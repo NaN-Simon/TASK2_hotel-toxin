@@ -6,11 +6,11 @@ import * as wNumb from 'wnumb';
 
 class RangeSlider {
   constructor(selector) {
-    this.$el = document.querySelector(selector);
-    const { properties } = this.$el.dataset;
-    this.$headingDescription = this.$el.parentElement.querySelector('.heading__description');
+    this.$domElement = selector;
+    this.$el = this.$domElement;
 
-    this.properties = JSON.parse(properties);
+    this.properties = JSON.parse(this.$el.dataset.properties);
+    this.$headingDescription = this.$el.parentElement.querySelector('.heading__description');
     this.minSlider = this.properties.sliderMin;
     this.maxSlider = this.properties.sliderMax;
     this.startMin = this.properties.startMin;
@@ -36,7 +36,5 @@ class RangeSlider {
   }
 }
 
-const rangeslider = document.querySelectorAll('.range-slider');
-rangeslider.forEach((elem) => {
-  new RangeSlider(`#${elem.id}`);
-});
+const rangeslider = document.querySelectorAll('.range-slider-js');
+rangeslider.forEach((selector) => { new RangeSlider(selector); });

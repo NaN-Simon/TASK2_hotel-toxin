@@ -2,11 +2,10 @@ mixin carousel(properties = {})
 
   -
     const {
-      id = 'not-id',
       imgList = [],
     } = properties 
   
-  section.carousel(id = id)
+  section.carousel.carousel-js
     each item in imgList
       img(
         class = carousel__image

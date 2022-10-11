@@ -4,8 +4,8 @@ import './carousel.scss';
 
 class Carousel {
   constructor(selector) {
-    this.$el = document.querySelector(selector);
-    this.$root = $(this.$el);
+    this.$el = selector.querySelector('.carousel');
+    this.$root = $(selector);
 
     this.setup();
   }
@@ -20,7 +20,5 @@ class Carousel {
   }
 }
 
-const carusel = document.querySelectorAll('.carousel');
-carusel.forEach((elem) => {
-  new Carousel(`#${elem.id}`);
-});
+const carusel = document.querySelectorAll('.carousel-js');
+carusel.forEach((selector) => new Carousel(selector));

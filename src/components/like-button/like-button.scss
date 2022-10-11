@@ -8,7 +8,7 @@
   &__item{
     display: block;
     position: relative;
-    margin-right: 10px;
+    cursor: pointer;
   }
 
   &-inline{
@@ -25,6 +25,7 @@
     font-family: $mainFont;
     color: $textColor_25;
     transition: 0.5s;
+    cursor: pointer;
 
     &-blue{
       color: $elementColor;
@@ -89,6 +90,9 @@
 
   }
 
+  &-blue{
+    border: 1px solid $elementColor;
+  }
 }
 
 

@@ -6,7 +6,6 @@ mixin header(properties = {})
 
   -
     const {
-      id = 'no-id',
       isLogined = false,
       userName = "default",
       headerLogo = {},
@@ -14,7 +13,7 @@ mixin header(properties = {})
       headerButtonSignIn = {},
     } = properties
 
-  .header.header-js(id = id)
+  .header.header-js
     .header__logo
       +image-png(headerLogo)
     .header__menu.header__menu--burger

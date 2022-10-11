@@ -57,7 +57,6 @@ block content
               title: "dropdown",
             })
             +dropdown({
-              id: "text-field-dropdown",
               isOpen: false,
               hasButtons: true,
               type: "not-guests",
@@ -92,7 +91,6 @@ block content
           .form-elements__large-wrapper
             .form-elements__large-wrapper--extra-padding
               +date-dropdown({
-                id: "text-field-datepicker",
                 type:"text",
                 hasTwoInputs: true,
                 hasArrow: true,
@@ -111,7 +109,6 @@ block content
           .form-elements__medium-wrapper
             .form-elements__medium-wrapper--extra-padding
               +filter-date-dropdown({
-                id: "filter-text-field-datepicker",
                 type:"text",
                 hasArrow: true,
                 dateFormat: "dd.MM.yyyy",
@@ -141,8 +138,7 @@ block content
               level: "h3", 
               title: "CHECKBOX BUTTONS",
             })
-            +checkbox-list({	
-              id: "checkbox-list",
+            +checkbox-list({
               listItems: [
                 { title: "Можно курить", name: 'smoke-allow' },
                 { title: "Можно с питомцами", name: 'pets-allow' },
@@ -182,15 +178,22 @@ block content
               level: "h3", 
               title: "like button"
             })
-            +like-button({	
-              name: "like",
-              type: "checkbox",
-              inline: true,
-              listItems: [
-                { number: 2, id: "like-button1" },
-                { number: 12, id: "like-button2", checked: "checked" },
-              ],
-            })
+            .form-elements__small-wrapper-couple--like-button
+              +like-button({	
+                name: "like",
+                type: "checkbox",
+                inline: true,
+                number: 2, 
+                id: "like-button1",
+              })
+              +like-button({	
+                name: "like",
+                type: "checkbox",
+                inline: true,
+                number: 12, 
+                id: "like-button2", 
+                checked: "checked",
+              })
           .form-elements__medium-wrapper
             +heading({ 
               level: "h3", 
@@ -198,13 +201,11 @@ block content
             })
             .form-elements__medium-wrapper-couple.form-elements__text-fields-buttons--rate-buttons
               +rate-button({
-                id: 'rate-button1',
                 changable: true,
                 maxRate: 5,
                 selectedRate: 4,
               })
               +rate-button({
-                id: 'rate-button2',
                 changable: true,
                 maxRate: 5,
                 selectedRate: 5,
@@ -217,7 +218,6 @@ block content
               description: "5000₽ - 10000₽" 
             })
             +range-slider({
-              id: "indexjs-range-slider",
               sliderMin: 0,
               sliderMax: 15000,
               startMin: 5000,
@@ -294,7 +294,6 @@ block content
               title: "Pagination",
             })
             +pagination({
-              id: 'pagination',
               entries: 180,
               pages: 15,
             })
@@ -307,7 +306,6 @@ block content
               description: "expanded"
             })
             +dropdown({
-              id: "dropdowns-dropdown-default",
               isOpen: true,
               type: "guests",
               placeholder: "Сколько гостей",
@@ -330,7 +328,6 @@ block content
               description: "default"
             })
             +dropdown({
-              id: "dropdowns-dropdown-expanded",
               isOpen: false,
               type: "guests",
               placeholder: "Сколько гостей",
@@ -353,7 +350,6 @@ block content
               title: "dropdown",
             })
             +dropdown({
-              id: "dropdowns-dropdown-guests-no-value",
               isOpen: true,
               hasButtons: true,
               type: "not-guests",
@@ -377,7 +373,6 @@ block content
               title: "dropdown",
             })
             +dropdown({
-              id: "dropdowns-dropdown-guests-with-value",
               isOpen: true,
               hasButtons: true,
               type: "not-guests",
@@ -401,7 +396,6 @@ block content
               title: "EXPANDABLE CHECKBOX LIST",
               isDropdown: true,
               isOpen: true,
-              id: "checkbox-list-expandable-close",
               listItems: [
                 { title: "Завтрак", name: 'breakfast' },
                 { title: "Письменный стол", name: 'desk', checked: true },
@@ -416,7 +410,6 @@ block content
               title: "EXPANDABLE CHECKBOX LIST",
               isDropdown: true,
               isOpen: false,
-              id: "checkbox-list-expandable-open",
               listItems: [
                 { title: "Завтрак", name: 'breakfast' },
                 { title: "Письменный стол", name: 'desk', checked: true },
@@ -435,7 +428,6 @@ block content
             +checkbox-list({	
               title: "RICH CHECKBOX BUTTONS",
               isOpen: true,
-              id: "checkbox-list-rich",
               richListItems: [
                 { title: "Широкий коридор", description: "Ширина коридоров в номере не\u00A0менее 91 см.", name: 'corridor', checked: true },
                 { title: "Помощник для инвалидов", description: "На 1 этаже вас встретит специалист и\u00A0проводит до номера.", name: 'helper' },

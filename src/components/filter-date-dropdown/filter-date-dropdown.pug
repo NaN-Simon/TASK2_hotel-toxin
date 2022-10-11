@@ -4,7 +4,6 @@ include ../heading/heading.pug
 mixin filter-date-dropdown(properties = {})
   -
     const {
-      id = "",
       type = "",
       hasArrow = false,
       dateFormat =  "",
@@ -20,7 +19,7 @@ mixin filter-date-dropdown(properties = {})
 
     const dataProperties = JSON.stringify(properties)
 
-  section.date-dropdown.indexjs-filter-date-dropdown(data-properties = dataProperties, id = id)
+  section.date-dropdown.filter-date-dropdown(data-properties = dataProperties)
     +heading({ 
       level: "h3", 
       title: title,

@@ -2,7 +2,6 @@ mixin checkbox-list(properties = {})
 
   -
     const {
-      id = "",
       listItems = [],
       richListItems = [],
       title = "",
@@ -13,7 +12,7 @@ mixin checkbox-list(properties = {})
     const openClassModifier = isOpen ? "checkbox-list__open" : ""
     const toggleClassModifier = isOpen ? "expand_more" : "expand_less"
 
-  section.checkbox-list(id = id)&attributes({
+  section.checkbox-list.checkbox-list-js&attributes({
       class: openClassModifier
     }) 
     if isDropdown 

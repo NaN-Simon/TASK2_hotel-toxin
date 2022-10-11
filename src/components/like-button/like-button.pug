@@ -1,25 +1,22 @@
 mixin like-button(properties = {})
   -
     const {
-      listItems = [], 
+      number = 0,
+      checked = false,
       name = "", 
       type = "",
-      inline = ""
     } = properties 
 
-    const inlineClassModifire = inline ? "like-button-inline" : ""
+    const dataProperties = JSON.stringify(properties)
+    const colorClassModifire = checked ? "like-button__title-blue" : ""
 
-  section&attributes({
-    class: ["like-button", inlineClassModifire]
-  })
-    each item in listItems
-      - const colorClassModifire = item.checked ? "like-button__title-blue" : ""
-
-      .like-button__item 
-        input.like-button__input.material-icons(type = type,
-        id = item.id,
+  section.like-button.like-button-js(data-properties = dataProperties)
+    .like-button__item 
+      input.like-button__input.material-icons(
+        type = type,
         name = name, 
-        checked = item.checked)
-        label(for = item.id)&attributes({
-          class: ["like-button__title", colorClassModifire]
-        }) #{item.number}
+        checked = checked,
+        )
+      label(for = id)&attributes({
+        class: ["like-button__title", colorClassModifire]
+      }) #{number}

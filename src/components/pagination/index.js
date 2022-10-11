@@ -4,7 +4,7 @@ import './pagination.scss';
 
 class Pagination {
   constructor(selector) {
-    this.$el = document.querySelector(selector);
+    this.$el = selector;
     this.$root = $(this.$el);
 
     const { properties } = this.$el.dataset;
@@ -49,6 +49,4 @@ class Pagination {
 }
 
 const pagination = document.querySelectorAll('.pagination');
-pagination.forEach((elem) => {
-  new Pagination(`#${elem.id}`);
-});
+pagination.forEach((selector) => {new Pagination(selector)});

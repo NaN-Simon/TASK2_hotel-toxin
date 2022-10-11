@@ -2,7 +2,7 @@ import './checkbox-list.scss';
 
 class CheckboxList {
   constructor(selector) {
-    this.$el = document.querySelector(selector);
+    this.$el = selector;
     [, this.$arrow] = this.$el.children[0].children;
 
     this.#setup();
@@ -44,7 +44,5 @@ class CheckboxList {
   }
 }
 
-const checkboxDropdownList = document.querySelectorAll('.checkbox-list');
-checkboxDropdownList.forEach((elem) => {
-  new CheckboxList(`#${elem.id}`);
-});
+const checkboxDropdownList = document.querySelectorAll('.checkbox-list-js');
+checkboxDropdownList.forEach((selector) => new CheckboxList(selector));

@@ -72,17 +72,12 @@
       gap: 0 20px;
     }
 
-    &--extra-padding{
-      padding-bottom: 0px;
-    }
-
     &--margin-botton14{
       margin-bottom: 14px;
     }
   }
 
   &__small-wrapper{
-    // margin-bottom: 40px;
     min-width: 222px;
     max-width: 222px;
 
@@ -90,6 +85,12 @@
       display: flex;
       padding-bottom: 30px;
       gap: 0 20px;
+      
+      &--like-button{
+        display: flex;
+        padding-bottom: 30px;
+        gap: 10px;
+      }
     }
   }
 

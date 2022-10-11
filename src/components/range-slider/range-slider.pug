@@ -2,7 +2,6 @@ mixin range-slider(properties = {})
 
   -
     const {
-      id = "",
       sliderMin = "0",
       sliderMax = "100",
       currentMin = "0",
@@ -11,5 +10,5 @@ mixin range-slider(properties = {})
 
     const dataProperties = JSON.stringify(properties)
 
-  section.range-slider(id = id, data-properties = dataProperties)
+  section.range-slider.range-slider-js(data-properties = dataProperties)
 

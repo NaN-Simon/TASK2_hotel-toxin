@@ -25,12 +25,9 @@ mixin review(properties = {})
       .review__feedback-like
         +like-button({	
           name: nameLikeButton,
-          type: typeLikeButton,
-          listItems: 
-          [
-            { number: numberLikeButton, 
-            id: idLikeButton, 
-            checked: checkedLikeButton },
-          ],
+          type: typeLikeButton, 
+          number: numberLikeButton, 
+          id: idLikeButton, 
+          checked: checkedLikeButton
         }) 
       .review__feedback-description #{description}

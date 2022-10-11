@@ -2,13 +2,14 @@ import './dropdown.scss';
 
 class Dropdown {
   constructor(selector) {
-    [this.$el] = document.querySelector(selector).children;
-    [this.$input, this.$drop] = this.$el.children;
+    this.$el = selector.querySelector('.dropdown');
+    this.$input = this.$el.children[0];
+    this.$drop = this.$el.children[1];
     this.$listItems = this.$drop.children[0].children;
     [this.$placeholder, this.$arrow] = this.$el.children[0].children;
     this.placeholderDefault = this.$placeholder.innerHTML;
 
-    const { properties } = document.querySelector(selector).dataset;
+    const { properties } = selector.dataset;
     this.properties = JSON.parse(properties);
 
     this.dataArray = this.startValues();
@@ -41,15 +42,15 @@ class Dropdown {
 
   clickHandler(event) {
     const { type } = (event.target.dataset);
-    
+
     if (type === 'input') {
       this.toggle();
     }
-    
+
     if (this.properties.hasButtons && type === 'button') {
       this.buttonsEvents(event);
     }
-    
+
     if (type === 'plus' || type === 'minus') {
       this.dropItemRender(event);
     }
@@ -76,8 +77,8 @@ class Dropdown {
         {
           totalItems: 0,
         },
-        );
-        if (totalItems !== 0) {
+      );
+      if (totalItems !== 0) {
         buttonsDiv.classList.remove('dropdown__drop-buttons--right');
         clearButton.classList.remove('dropdown__drop-buttons-clear--hide');
       } else {
@@ -257,7 +258,5 @@ class Dropdown {
   }
 }
 
-const dropdown = document.querySelectorAll('.indexjs-dropdown');
-dropdown.forEach((elem) => {
-  new Dropdown(`#${elem.id}`);
-});
+const dropdown = document.querySelectorAll('.dropdown-js');
+dropdown.forEach((selector) => { new Dropdown(selector); });

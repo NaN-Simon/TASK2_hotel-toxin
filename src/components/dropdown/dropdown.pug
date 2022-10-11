@@ -1,7 +1,6 @@
 mixin dropdown(properties = {})
   -
     const {
-      id="", 
       type="guests", 
       isOpen= true,
       hasButtons = false, 
@@ -24,8 +23,8 @@ mixin dropdown(properties = {})
     const buttonRightModifier = startCountSum === 0 ? "dropdown__drop-buttons--right" : ""
 
 
-  section.indexjs-dropdown(id = id, data-properties = dataProperties)
-    .dropdown(data-key = `${id}`, data-type = type)&attributes({
+  section.dropdown-js(data-properties = dataProperties)
+    .dropdown(data-type = type)&attributes({
         class: openClassModifier
       })
       .dropdown__input(data-type="input")

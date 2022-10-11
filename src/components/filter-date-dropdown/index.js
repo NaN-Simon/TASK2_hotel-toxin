@@ -21,7 +21,7 @@ const propertiesDefault = {
 
 class FilterDateDropdown {
   constructor(selector) {
-    this.$el = document.querySelector(selector);
+    this.$el = selector;
     const { properties } = this.$el.dataset;
     this.properties = JSON.parse(properties);
 
@@ -62,7 +62,5 @@ class FilterDateDropdown {
   }
 }
 
-const filterDatedropdown = document.querySelectorAll('.indexjs-filter-date-dropdown');
-filterDatedropdown.forEach((elem) => {
-  new FilterDateDropdown(`#${elem.id}`);
-});
+const filterDatedropdown = document.querySelectorAll('.filter-date-dropdown');
+filterDatedropdown.forEach((selector) => {new FilterDateDropdown(selector)});
