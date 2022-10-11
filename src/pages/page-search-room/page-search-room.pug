@@ -1,1 +1,61 @@
 extends ../../layouts/ui-kit-layout
+include ../../components/header/header.pug
+include ../../components/heading/heading.pug
+include ../../components/filter-date-dropdown/filter-date-dropdown.pug
+include ../../components/range-slider/range-slider.pug
+include ../../components/checkbox-list/checkbox-list.pug
+include ../../components/dropdown/dropdown.pug
+
+block variables
+  - const pageTitle = "Search room/Filter"
+  - const bodyProperties = "background: white"
+
+block content
+  .search-room
+    .search-room__container
+      header.search-room__header 
+        +header({
+          headerLogo: "color-logo",
+          headerNavigation: {
+            id: "headers-footers-login-navigation",
+            direction: "row",
+            linkItems: [
+              { title: "О нас", boldTitle: true },
+              {
+                title: "Услуги", 
+                hasDropdown: true,
+                subLinkItems: [
+                  {subTitle: "Услуги 1"},
+                  {subTitle: "Услуги 2"},
+                  {subTitle: "Услуги 3"},
+                  {subTitle: "Услуги 4"},
+                ]},
+                {title: "Вакансии"},
+                {title: "Новости"},
+              {
+                title: "Соглашения",
+                hasDropdown: true,
+                subLinkItems: [
+                  {subTitle: "Соглашения 1"},
+                  {subTitle: "Соглашения 2"},
+                  {subTitle: "Соглашения 3"},
+                  {subTitle: "Соглашения 4"},
+                  ]
+                },
+            ],
+          }
+        })
+      main.search-room__main
+        .search-room__filters
+          .search-room__filters-day-of-stay
+          .search-room__filters-guests
+          .search-room__filters-price
+          .search-room__filters-rules
+          .search-room__filters-accessibility
+          .search-room__filters-facilities
+          .search-room__filters-additional-facilities
+        .search-room__room-cards
+          .search-room__room-cards-title
+          .search-room__room-cards-list
+
+      

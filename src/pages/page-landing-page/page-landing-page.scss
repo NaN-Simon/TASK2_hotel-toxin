@@ -20,8 +20,18 @@
     box-shadow: $elementBoxShadow;
   }
 
-  &_filters{
-    display: flex;
-    flex-direction: column;
+  &__main{
+    position: relative;
+  }
+  &__background{
+    min-width: 1440px;
+    min-height: 830px;
+    background: url("../pages/page-landing-page/image/image.jpg");
+    background-size: cover;
+  }
+
+  &__search{
+    padding-left: 140px;
+    padding-top: 70px;
   }
 }

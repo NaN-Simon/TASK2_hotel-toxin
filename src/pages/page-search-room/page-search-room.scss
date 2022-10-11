@@ -1,0 +1,27 @@
+@import '@base';
+
+.search-room{
+
+  &__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 320px;
+    max-width: 1158px;
+    margin: 0 auto;
+  }
+
+  &__header{
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    margin-bottom: 40px;
+    background: $mainBackground;
+    box-shadow: $elementBoxShadow;
+  }
+
+  &_filters{
+    display: flex;
+    flex-direction: column;
+  }
+}

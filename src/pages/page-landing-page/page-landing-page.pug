@@ -1,10 +1,8 @@
 extends ../../layouts/ui-kit-layout
 include ../../components/header/header.pug
-include ../../components/heading/heading.pug
-include ../../components/filter-date-dropdown/filter-date-dropdown.pug
-include ../../components/range-slider/range-slider.pug
-include ../../components/checkbox-list/checkbox-list.pug
-include ../../components/dropdown/dropdown.pug
+include ../../components/image/image.pug
+include ../../components/card-room-search/card-room-search.pug
+
 
 block variables
   - const pageTitle = "Landing page"
@@ -46,16 +44,53 @@ block content
           }
         })
       main.landing-page__main
-        .landing-page__filters
-          .landing-page__filters-day-of-stay
-          .landing-page__filters-guests
-          .landing-page__filters-price
-          .landing-page__filters-rules
-          .landing-page__filters-accessibility
-          .landing-page__filters-facilities
-          .landing-page__filters-additional-facilities
-        .landing-page__room-cards
-          .landing-page__room-cards-title
-          .landing-page__room-cards-list
+        .landing-page__background
+          .landing-page__search
+            +card-room-search({
+              title: "Найдём номера под ваши пожелания",
+              dateDropdown: {
+                type:"text",
+                hasTwoInputs: true,
+                hasArrow: true,
+                inline: true,
+                dateFormat: "dd.MM.yyyy",
+                startTitle: "Прибытие",
+                endTitle: "Выезд",
+                placeholderStart: "ДД.ММ.ГГГГ",
+                placeholderEnd: "ДД.ММ.ГГГГ",
+                name: "date",
+                startDate: "08.10.2019",
+                endDate: "08.19.2019",
+                withMask: true
+              },
+              headingDropdown: {
+                level: "h3", 
+                title: "Гости", 
+              },
+              dropdown: {
+                id: "card-room-search-dropdown",
+                isOpen: false,
+                hasButtons: true,
+                type: "not-guests",
+                placeholder: "Сколько гостей",
+                maxCount: 10,
+                elements: [
+                  { title: "Взрослые", id: "adult", startCount: 0 }, 
+                  { title: "Дети", id: "kids", startCount: 0 }, 
+                  { title: "Младенцы", id: "baby", startCount: 0 }
+                ],
+                plurals: {
+                  adult: "Взрослый, Взрослых, Взрослых",
+                  kids: "Ребенок, Ребенка, Детей",
+                  baby: "Младенец, Младенца, Младенцев",
+                  },
+              },
+              button: {
+                  buttonName: "подобрать номер",
+                  buttonType: "ButtonDefault",
+                  size: "large",
+                  hasArrow: true,
+              }
+            })
 
-      
+          
