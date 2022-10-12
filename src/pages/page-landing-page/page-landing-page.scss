@@ -1,37 +1,43 @@
 @import '@base';
 
 .landing-page{
+  background: url("../pages/page-landing-page/image/image.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 1440px;
+  height: 830px;
+  margin: 0 auto;
 
-  &__container{
+  &__wrapper{
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    // min-width: 320px;
+    // max-width: 1158px;
+    // margin: 0 auto;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-width: 320px;
-    max-width: 1158px;
+    justify-content: space-between;
+    height: inherit;
+    padding: 70px 0 0 140px;
     margin: 0 auto;
+    max-width: 1440px;
+    min-width: 320px;
   }
 
-  &__header{
-    display: flex;
-    justify-content: center;
-    width: 100vw;
-    margin-bottom: 40px;
-    background: $mainBackground;
-    box-shadow: $elementBoxShadow;
+  &__title{
+    max-width: 445px;
+    padding: 0px 132px 20px 0;
+    align-self: end;
+    text-align: end;
+
+    & p{
+      font-family: $mainFont;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 24px;
+    }
   }
 
-  &__main{
-    position: relative;
-  }
-  &__background{
-    min-width: 1440px;
-    min-height: 830px;
-    background: url("../pages/page-landing-page/image/image.jpg");
-    background-size: cover;
-  }
-
-  &__search{
-    padding-left: 140px;
-    padding-top: 70px;
-  }
 }

@@ -2,12 +2,22 @@
 
 
 .header{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 1160px;
-  height: 70px;
-  gap: 0 40px;
+  width: 100%;
+  
+  &__container{
+    margin: 0 auto;
+    max-width: 1440px;
+    min-width: 320px;
+  }
+
+  &__body{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    gap: 0 40px;
+    padding: 0 140px;
+  }
   
   &__menu{
     display: flex;
@@ -61,20 +71,26 @@
   
 }
 
+@media (min-width: 1280px) {
+  .header__body {
+    padding: 0 140px;
+  }
+}
+
 @media(max-width: 1024px){
   .header{
     &__burger{
       display: flex;
       cursor: pointer;
     }
-
+    
     &__navigation--burger-open{
       position: fixed;
       z-index: 90;
       left: 0;
+      right: 0;
       top: 0;
-      width: 100vw;
-      height: 100vh;
+      bottom: 0;
       overflow: hidden;
       background: $mainBackground;
       display: flex;

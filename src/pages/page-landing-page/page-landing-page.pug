@@ -9,88 +9,55 @@ block variables
   - const bodyProperties = "background: white"
 
 block content
-  .landing-page
-    .landing-page__container
-      header.landing-page__header 
-        +header({
-          headerLogo: "color-logo",
-          headerNavigation: {
-            id: "headers-footers-login-navigation",
-            direction: "row",
-            linkItems: [
-              { title: "О нас", boldTitle: true },
-              {
-                title: "Услуги", 
-                hasDropdown: true,
-                subLinkItems: [
-                  {subTitle: "Услуги 1"},
-                  {subTitle: "Услуги 2"},
-                  {subTitle: "Услуги 3"},
-                  {subTitle: "Услуги 4"},
-                ]},
-                {title: "Вакансии"},
-                {title: "Новости"},
-              {
-                title: "Соглашения",
-                hasDropdown: true,
-                subLinkItems: [
-                  {subTitle: "Соглашения 1"},
-                  {subTitle: "Соглашения 2"},
-                  {subTitle: "Соглашения 3"},
-                  {subTitle: "Соглашения 4"},
-                  ]
-                },
+  main.landing-page
+    .landing-page__wrapper
+      .landing-page__search
+        +card-room-search({
+          title: "Найдём номера под ваши пожелания",
+          dateDropdown: {
+            type:"text",
+            hasTwoInputs: true,
+            hasArrow: true,
+            inline: true,
+            dateFormat: "dd.MM.yyyy",
+            startTitle: "Прибытие",
+            endTitle: "Выезд",
+            placeholderStart: "ДД.ММ.ГГГГ",
+            placeholderEnd: "ДД.ММ.ГГГГ",
+            name: "date",
+            startDate: "08.10.2019",
+            endDate: "08.19.2019",
+            withMask: true
+          },
+          headingDropdown: {
+            level: "h3", 
+            title: "Гости", 
+          },
+          dropdown: {
+            id: "card-room-search-dropdown",
+            isOpen: false,
+            hasButtons: true,
+            type: "not-guests",
+            placeholder: "Сколько гостей",
+            maxCount: 10,
+            elements: [
+              { title: "Взрослые", id: "adult", startCount: 0 }, 
+              { title: "Дети", id: "kids", startCount: 0 }, 
+              { title: "Младенцы", id: "baby", startCount: 0 }
             ],
+            plurals: {
+              adult: "Взрослый, Взрослых, Взрослых",
+              kids: "Ребенок, Ребенка, Детей",
+              baby: "Младенец, Младенца, Младенцев",
+              },
+          },
+          button: {
+              buttonName: "подобрать номер",
+              buttonType: "ButtonDefault",
+              size: "large",
+              hasArrow: true,
           }
         })
-      main.landing-page__main
-        .landing-page__background
-          .landing-page__search
-            +card-room-search({
-              title: "Найдём номера под ваши пожелания",
-              dateDropdown: {
-                type:"text",
-                hasTwoInputs: true,
-                hasArrow: true,
-                inline: true,
-                dateFormat: "dd.MM.yyyy",
-                startTitle: "Прибытие",
-                endTitle: "Выезд",
-                placeholderStart: "ДД.ММ.ГГГГ",
-                placeholderEnd: "ДД.ММ.ГГГГ",
-                name: "date",
-                startDate: "08.10.2019",
-                endDate: "08.19.2019",
-                withMask: true
-              },
-              headingDropdown: {
-                level: "h3", 
-                title: "Гости", 
-              },
-              dropdown: {
-                id: "card-room-search-dropdown",
-                isOpen: false,
-                hasButtons: true,
-                type: "not-guests",
-                placeholder: "Сколько гостей",
-                maxCount: 10,
-                elements: [
-                  { title: "Взрослые", id: "adult", startCount: 0 }, 
-                  { title: "Дети", id: "kids", startCount: 0 }, 
-                  { title: "Младенцы", id: "baby", startCount: 0 }
-                ],
-                plurals: {
-                  adult: "Взрослый, Взрослых, Взрослых",
-                  kids: "Ребенок, Ребенка, Детей",
-                  baby: "Младенец, Младенца, Младенцев",
-                  },
-              },
-              button: {
-                  buttonName: "подобрать номер",
-                  buttonType: "ButtonDefault",
-                  size: "large",
-                  hasArrow: true,
-              }
-            })
-
-          
+      .landing-page__title
+        p Лучшие номера для вашей работы, отдыха и просто вдохновения
+block footer

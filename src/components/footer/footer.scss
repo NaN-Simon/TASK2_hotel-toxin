@@ -1,13 +1,14 @@
 @import '@base';
 
 .footer{
-
+  margin: 0 auto;
+  
   &__wrapper{
     display: flex;
     justify-content: space-between;
     max-width: 1440px;
     min-width: 320px;
-    padding: 104px 140px 40px 140px;
+    padding: 100px 140px 27px 140px;
     gap: 20px;
 
   }

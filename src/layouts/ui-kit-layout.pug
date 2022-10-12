@@ -1,4 +1,6 @@
 include ../components/ui-kit-header/ui-kit-header.pug
+include ../components/header/header.pug
+include ../components/footer/footer.pug
 
 block variables
 
@@ -12,9 +14,84 @@ html(lang="ru")
   body.body&attributes({
     style: bodyProperties
     }) 
-    block header
-      if (isUI)
-        +ui-kit-header()
-    block content
+    .page-wrapper
+      block header
+        if (isUI)
+          +ui-kit-header()
+        else
+          +header({
+              headerLogo: "color-logo",
+              headerNavigation: {
+                id: "headers-footers-login-navigation",
+                direction: "row",
+                linkItems: [
+                  { title: "О нас", boldTitle: true },
+                  {
+                    title: "Услуги", 
+                    hasDropdown: true,
+                    subLinkItems: [
+                      {subTitle: "Услуги 1"},
+                      {subTitle: "Услуги 2"},
+                      {subTitle: "Услуги 3"},
+                      {subTitle: "Услуги 4"},
+                    ]},
+                    {title: "Вакансии"},
+                    {title: "Новости"},
+                  {
+                    title: "Соглашения",
+                    hasDropdown: true,
+                    subLinkItems: [
+                      {subTitle: "Соглашения 1"},
+                      {subTitle: "Соглашения 2"},
+                      {subTitle: "Соглашения 3"},
+                      {subTitle: "Соглашения 4"},
+                      ]
+                    },
+                ],
+              }
+            })
+      block content
 
-  
+      block footer
+      if !isUI
+        .footer
+          +footer({
+            headerLogo: "color-logo",
+            footerDescription: "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»",
+            itemListNav: {
+              linkItems: [
+                { title: "Навигация", boldTitle: true },
+                { title: "О нас"},
+                { title: "Новости"},
+                { title: "Служба поддержки"},
+                { title: "Услуги"},
+                ]
+              },
+            itemListAbout: {
+              linkItems: [
+                { title: "о нас", boldTitle: true },
+                { title: "О сервисе"},
+                { title: "Наша команда"},
+                { title: "Вакансии"},
+                { title: "Инвесторы"},
+                ]
+              },
+            itemListSupport: {
+              linkItems: [
+                { title: "Служба поддержки", boldTitle: true },
+                { title: "Соглашения"},
+                { title: "Сообщества"},
+                { title: "Связь с нами"},
+                ]
+              },
+            itemListSub: {
+              fontColor: "75%",
+              linkItems: [
+                { title: "Подписка", boldTitle: true },
+                { title: "Получайте специальные предложения и новости сервиса"},
+                ]
+              },
+            socialImage1: 'twitter',
+            socialImage2: 'facebook',
+            socialImage3: 'instagram',
+          })
