@@ -108,3 +108,11 @@
 
   }
 }
+
+@media (max-width: 425px){
+  .footer{
+    &__wrapper{
+      padding: 0;
+    }
+  }
+}

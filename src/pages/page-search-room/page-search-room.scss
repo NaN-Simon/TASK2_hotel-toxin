@@ -1,11 +1,13 @@
 @import '@base';
 
 .search-room{
+  width: 100%;
+  padding-top: 20px;
 
   &__container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
     min-width: 320px;
     max-width: 1158px;
     margin: 0 auto;
@@ -20,8 +22,56 @@
     box-shadow: $elementBoxShadow;
   }
 
-  &_filters{
+  &__main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 58px
+  }
+
+  &__filters{
     display: flex;
     flex-direction: column;
+    width: 280px;
+
+    &-day-of-stay{
+      width: 266px;
+      padding-bottom: 40px;
+    }
+
+    &-guests{
+      width: 266px;
+      padding-bottom: 40px;
+    }
+    
+    &-price{
+      padding-bottom: 40px;
+
+    }
+
+    &-rules{
+      padding-bottom: 140px;
+    }
+
+    &-accessibility{
+      padding-bottom: 160px;
+    }
+
+    &-facilities{
+      padding-bottom: 40px;
+    }
+
+    &-additional-facilities{
+      padding-bottom: 40px;
+    }
+
+  }
+
+  &__room-cards{
+    &-list{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px 12px;
+    }
   }
 }

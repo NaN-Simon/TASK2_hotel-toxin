@@ -5,6 +5,7 @@ include ../../components/filter-date-dropdown/filter-date-dropdown.pug
 include ../../components/range-slider/range-slider.pug
 include ../../components/checkbox-list/checkbox-list.pug
 include ../../components/dropdown/dropdown.pug
+include ../../components/card-room/card-room.pug
 
 block variables
   - const pageTitle = "Search room/Filter"
@@ -13,49 +14,389 @@ block variables
 block content
   .search-room
     .search-room__container
-      header.search-room__header 
-        +header({
-          headerLogo: "color-logo",
-          headerNavigation: {
-            id: "headers-footers-login-navigation",
-            direction: "row",
-            linkItems: [
-              { title: "О нас", boldTitle: true },
-              {
-                title: "Услуги", 
-                hasDropdown: true,
-                subLinkItems: [
-                  {subTitle: "Услуги 1"},
-                  {subTitle: "Услуги 2"},
-                  {subTitle: "Услуги 3"},
-                  {subTitle: "Услуги 4"},
-                ]},
-                {title: "Вакансии"},
-                {title: "Новости"},
-              {
-                title: "Соглашения",
-                hasDropdown: true,
-                subLinkItems: [
-                  {subTitle: "Соглашения 1"},
-                  {subTitle: "Соглашения 2"},
-                  {subTitle: "Соглашения 3"},
-                  {subTitle: "Соглашения 4"},
-                  ]
-                },
-            ],
-          }
-        })
       main.search-room__main
         .search-room__filters
           .search-room__filters-day-of-stay
+            +filter-date-dropdown({
+              type:"text",
+              hasArrow: true,
+              dateFormat: "dd.MM.yyyy",
+              title: "Даты пребывания в отеле",
+              placeholder: "ДД.ММ.ГГГГ",
+              name: "date",
+              startDate: "08.10.2019",
+              endDate: "08.19.2019",
+              withMask: true,
+              datesSeparator: " - "
+            })
           .search-room__filters-guests
+            +heading({ 
+              level: "h3", 
+              title: "гости",
+            })
+            +dropdown({
+              isOpen: false,
+              hasButtons: true,
+              type: "not-guests",
+              placeholder: "Сколько гостей",
+              maxCount: 10,
+              elements: [
+                { title: "Взрослые", id: "adult", startCount: 0 }, 
+                { title: "Дети", id: "kids", startCount: 0 }, 
+                { title: "Младенцы", id: "baby", startCount: 0 }
+              ],
+              plurals: {
+                adult: "Взрослый, Взрослых, Взрослых",
+                kids: "Ребенок, Ребенка, Детей",
+                baby: "Младенец, Младенца, Младенцев",
+                },
+            })
           .search-room__filters-price
+            +heading({ 
+              level: "h3", 
+              title: "Диапазон цены",
+              description: "5000₽ - 10000₽" 
+            })
+            +range-slider({
+              sliderMin: 0,
+              sliderMax: 15000,
+              startMin: 5000,
+              startMax: 10000,
+            })
           .search-room__filters-rules
+            +heading({ 
+              level: "h3", 
+              title: "Правила дома",
+            })
+            +checkbox-list({
+              listItems: [
+                { title: "Можно курить", name: 'smoke-allow' },
+                { title: "Можно с питомцами", name: 'pets-allow' },
+                { title: "Можно пригласить гостей (до 10 человек)", name: 'guests-allow', checked: true }
+              ],
+            })
           .search-room__filters-accessibility
+            +heading({ 
+              level: "h3", 
+              title: "Доступность",
+            })
+            +checkbox-list({	
+              title: "RICH CHECKBOX BUTTONS",
+              isOpen: true,
+              richListItems: [
+                { title: "Широкий коридор", description: "Ширина коридоров в номере не\u00A0менее 91 см.", name: 'corridor', checked: true },
+                { title: "Помощник для инвалидов", description: "На 1 этаже вас встретит специалист и\u00A0проводит до номера.", name: 'helper' },
+              ],
+            })
           .search-room__filters-facilities
+            +heading({ 
+              level: "h3", 
+              title: "Удобства номера",
+            })
+            +dropdown({
+              isOpen: false,
+              type: "guests",
+              placeholder: "Удобства номера",
+              maxCount: 10,
+              elements: [
+                { title: "Спальни", id: "bedrooms", startCount: 2 }, 
+                { title: "Кровати", id: "beds", startCount: 2 }, 
+                { title: "Ванные комнаты", id: "bathrooms", startCount: 0 }
+              ],
+              plurals: {
+                bedrooms: "спальня, спальни, спален",
+                beds: "кровать, кровати, кроватей",
+                bathrooms: "ванная комната, ванные комнаты, ванных комнат",
+                },
+            })
           .search-room__filters-additional-facilities
+            +checkbox-list({	
+              title: "Дополнительные удобства",
+              isDropdown: true,
+              isOpen: false,
+              listItems: [
+                { title: "Завтрак", name: 'breakfast' },
+                { title: "Письменный стол", name: 'desk', checked: true },
+                { title: "Стул для кормления", name: 'table', checked: true },
+                { title: "Кроватка", name: 'bed', checked: true },
+                { title: "Телевизор", name: 'tv'},
+                { title: "Шампунь", name: 'shampoo'},
+              ],
+            })
         .search-room__room-cards
           .search-room__room-cards-title
+            +heading({ 
+              level: "h1", 
+              title: "Номера, которые мы для вас подобрали",
+            })
           .search-room__room-cards-list
+            +card-room({
+              carouselProperties: {
+                imgList: [
+                  "page-room-img-1.jpg",
+                  "page-room-img-2.jpg",
+                  "page-room-img-3.jpg",
+                  "page-room-img-4.jpg",
+                ],
+              },
+              roomNumberProperties: {
+                number: 888,
+              },
+              roomPriceProperties: {
+                price: "9 900",
+              },
+              rateButtonProperties: {
+                maxRate: 5,
+                selectedRate: 5,
+              },
+                cardRoomReviewNumber: 145,
+            })
+            +card-room({
+              carouselProperties: {
+                imgList: [
+                  "page-room-img-2.jpg",
+                  "page-room-img-3.jpg",
+                  "page-room-img-4.jpg",
+                  "page-room-img-5.jpg",
+                ],
+              },
+              roomNumberProperties: {
+                number: 840,
+              },
+              roomPriceProperties: {
+                price: "9 900",
+              },
+              rateButtonProperties: {
+                maxRate: 5,
+                selectedRate: 4,
+              },
+                cardRoomReviewNumber: 65,
+            })
+            +card-room({
+              carouselProperties: {
+                imgList: [
+                  "page-room-img-3.jpg",
+                  "page-room-img-4.jpg",
+                  "page-room-img-5.jpg",
+                  "page-room-img-6.jpg",
+                ],
+              },
+              roomNumberProperties: {
+                number: 980,
+              },
+              roomPriceProperties: {
+                price: "8 500",
+              },
+              rateButtonProperties: {
+                maxRate: 5,
+                selectedRate: 3,
+              },
+                cardRoomReviewNumber: 35,
+            })
+            +card-room({
+              carouselProperties: {
+                imgList: [
+                  "page-room-img-4.jpg",
+                  "page-room-img-5.jpg",
+                  "page-room-img-6.jpg",
+                  "page-room-img-7.jpg",
+                ],
+              },
+              roomNumberProperties: {
+                number: 856,
+              },
+              roomPriceProperties: {
+                price: "7 300",
+              },
+              rateButtonProperties: {
+                maxRate: 5,
+                selectedRate: 5,
+              },
+                cardRoomReviewNumber: 19,
+            })
 
-      
+        
+            +card-room({
+              carouselProperties: {
+                imgList: [
+                  "page-room-img-4.jpg",
+                  "page-room-img-5.jpg",
+                  "page-room-img-6.jpg",
+                  "page-room-img-7.jpg",
+                ],
+              },
+              roomNumberProperties: {
+                number: 856,
+              },
+              roomPriceProperties: {
+                price: "7 300",
+              },
+              rateButtonProperties: {
+                maxRate: 5,
+                selectedRate: 5,
+              },
+                cardRoomReviewNumber: 19,
+            })
+
+        
+            +card-room({
+              carouselProperties: {
+                imgList: [
+                  "page-room-img-4.jpg",
+                  "page-room-img-5.jpg",
+                  "page-room-img-6.jpg",
+                  "page-room-img-7.jpg",
+                ],
+              },
+              roomNumberProperties: {
+                number: 856,
+              },
+              roomPriceProperties: {
+                price: "7 300",
+              },
+              rateButtonProperties: {
+                maxRate: 5,
+                selectedRate: 5,
+              },
+                cardRoomReviewNumber: 19,
+            })
+
+        
+            +card-room({
+              carouselProperties: {
+                imgList: [
+                  "page-room-img-4.jpg",
+                  "page-room-img-5.jpg",
+                  "page-room-img-6.jpg",
+                  "page-room-img-7.jpg",
+                ],
+              },
+              roomNumberProperties: {
+                number: 856,
+              },
+              roomPriceProperties: {
+                price: "7 300",
+              },
+              rateButtonProperties: {
+                maxRate: 5,
+                selectedRate: 5,
+              },
+                cardRoomReviewNumber: 19,
+            })
+
+        
+            +card-room({
+              carouselProperties: {
+                imgList: [
+                  "page-room-img-4.jpg",
+                  "page-room-img-5.jpg",
+                  "page-room-img-6.jpg",
+                  "page-room-img-7.jpg",
+                ],
+              },
+              roomNumberProperties: {
+                number: 856,
+              },
+              roomPriceProperties: {
+                price: "7 300",
+              },
+              rateButtonProperties: {
+                maxRate: 5,
+                selectedRate: 5,
+              },
+                cardRoomReviewNumber: 19,
+            })
+
+        
+            +card-room({
+              carouselProperties: {
+                imgList: [
+                  "page-room-img-4.jpg",
+                  "page-room-img-5.jpg",
+                  "page-room-img-6.jpg",
+                  "page-room-img-7.jpg",
+                ],
+              },
+              roomNumberProperties: {
+                number: 856,
+              },
+              roomPriceProperties: {
+                price: "7 300",
+              },
+              rateButtonProperties: {
+                maxRate: 5,
+                selectedRate: 5,
+              },
+                cardRoomReviewNumber: 19,
+            })
+
+        
+            +card-room({
+              carouselProperties: {
+                imgList: [
+                  "page-room-img-4.jpg",
+                  "page-room-img-5.jpg",
+                  "page-room-img-6.jpg",
+                  "page-room-img-7.jpg",
+                ],
+              },
+              roomNumberProperties: {
+                number: 856,
+              },
+              roomPriceProperties: {
+                price: "7 300",
+              },
+              rateButtonProperties: {
+                maxRate: 5,
+                selectedRate: 5,
+              },
+                cardRoomReviewNumber: 19,
+            })
+
+        
+            +card-room({
+              carouselProperties: {
+                imgList: [
+                  "page-room-img-4.jpg",
+                  "page-room-img-5.jpg",
+                  "page-room-img-6.jpg",
+                  "page-room-img-7.jpg",
+                ],
+              },
+              roomNumberProperties: {
+                number: 856,
+              },
+              roomPriceProperties: {
+                price: "7 300",
+              },
+              rateButtonProperties: {
+                maxRate: 5,
+                selectedRate: 5,
+              },
+                cardRoomReviewNumber: 19,
+            })
+
+        
+            +card-room({
+              carouselProperties: {
+                imgList: [
+                  "page-room-img-4.jpg",
+                  "page-room-img-5.jpg",
+                  "page-room-img-6.jpg",
+                  "page-room-img-7.jpg",
+                ],
+              },
+              roomNumberProperties: {
+                number: 856,
+              },
+              roomPriceProperties: {
+                price: "7 300",
+              },
+              rateButtonProperties: {
+                maxRate: 5,
+                selectedRate: 5,
+              },
+                cardRoomReviewNumber: 19,
+            })
+
+        
