@@ -36,23 +36,6 @@
 
 }
 
-@media (max-width: 425px){
-  .landing-page {
-    width: 425px;
-    height: 265px;
-    margin-bottom: 530px;
-
-    &__wrapper{
-      padding-top: 520px;
-      flex-wrap: nowrap;
-    }
-  }
-}
-@media (max-width: 786px){
-  .landing-page{
-    
-  }
-}
 
 @media (max-width: 1440px){
   .landing-page{
@@ -81,3 +64,30 @@
   }
 }
 
+@media (max-width: 786px){
+  .landing-page{
+    background: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+
+    &__wrapper{
+      // padding-top: 520px;
+      flex-wrap: nowrap;
+    }
+
+    &__title{
+      padding: 0 20px;
+      // margin-bottom: 100px;
+    }
+  }
+}
+
+@media (max-width: 425px){
+  .landing-page {
+    margin-bottom: 60px;
+  }
+}

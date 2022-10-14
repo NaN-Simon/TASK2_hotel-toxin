@@ -9,6 +9,8 @@
     display: block;
     position: relative;
     cursor: pointer;
+    border-radius: 30px;
+
   }
 
   &-inline{
@@ -25,6 +27,7 @@
     font-family: $mainFont;
     color: $textColor_25;
     transition: 0.5s;
+    pointer-events: none;
     cursor: pointer;
 
     &-blue{

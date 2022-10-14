@@ -3,7 +3,7 @@
 .card-room-search{
   max-width: 380px;
   min-width: 380px;
-  height: 374px;
+  // height: 374px;
   padding: 39px 30px 30px 29px;
   margin-bottom: 40px;
   border-radius: 4px;
@@ -29,5 +29,25 @@
   &__button{
     width: 319px;
     height: 44px;
+  }
+}
+
+@media (max-width: 380px){
+  .card-room-search{
+    max-width: 320px;
+    min-width: 320px;
+
+    &__title{
+      font-size: 1em;
+    }
+
+    &__date-dropdown{
+      width: 260px;
+    }
+    
+    &__button{
+      width: 260px;
+    }
+
   }
 }

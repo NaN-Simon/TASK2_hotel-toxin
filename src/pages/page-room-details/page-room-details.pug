@@ -1,0 +1,34 @@
+
+extends ../../layouts/ui-kit-layout
+include ../../components/dignity/dignity.pug
+
+block variables
+  - const pageTitle = "Room details"
+  - const bodyProperties = "background: white"
+
+block content
+  .room-details
+    .room-details__container
+      main.room-details__main
+        .room-details__gallery
+          p тут будет галлерея
+        .room-details__room-description
+          .room-details__room-description-info
+            .room-details__room-description-info-about 
+              +dignity({
+                materialIconsCode: "insert_emoticon",
+                title: "Комфорт",
+                description: "Шумопоглощающие стены",
+              })
+              +dignity({
+                materialIconsCode: "location_city",
+                title: "Удобство",
+                description: "Окно в каждой из спален",
+              })
+              +dignity({
+                materialIconsCode: "location_city",
+                title: "Уют",
+                description: "Шумопоглощающие стены",
+              })
+
+          .room-details__room-description-booking

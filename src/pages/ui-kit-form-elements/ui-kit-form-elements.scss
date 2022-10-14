@@ -12,6 +12,10 @@
   &__text-fields{
     display: flex;
     flex-direction: column;
+
+    &--filter-date{
+      width: 264px;
+    }
   }
 
   &__checkboxes{
