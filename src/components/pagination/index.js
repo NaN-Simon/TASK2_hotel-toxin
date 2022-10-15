@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 import 'paginationjs/dist/pagination';
 import 'paginationjs/dist/pagination.css';
 import './pagination.scss';
@@ -29,18 +30,19 @@ class Pagination {
       formatNavigator: this.setFormatNavigator,
       nextText: '<span class="material-icons">arrow_forward</span>',
     };
-
+    this.totalNumber = this.properties.entries;
     this.$root.pagination(params);
   }
 
   setFormatNavigator(currentPage, totalNumber) {
+    console.log(this.totalNumber)
     const endPage = currentPage * 12;
 
     let startPage = currentPage;
     currentPage > 1 ? startPage = endPage / 2 : false;
 
-    let countEntries = totalNumber;
-    totalNumber >= 100 ? countEntries = '100+' : false;
+    let countEntries = this.totalNumber;
+    this.totalNumber >= 100 ? countEntries = '100+' : false;
 
     return `
     ${startPage} - ${endPage} из 

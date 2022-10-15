@@ -211,7 +211,7 @@ block content
                 selectedRate: 5,
               })
         .form-elements__buttons
-          .form-elements__medium-wrapper.form-elements__buttons--ranger-slider
+          .form-elements__medium-wrapper.form-elements__buttons--range-slider
             +heading({ 
               level: "h3", 
               title: "Range Slider",
@@ -280,19 +280,19 @@ block content
                     isTransparentBackground: false,
                     disabled: true,
                   })
-              .form-elements__large-wrapper-couple
-                .form-elements__button-large
-                  +button({
-                    buttonName: "перейти к оплате",
-                    buttonType: "ButtonDefault",
-                    size: "large",
-                    hasArrow: true,
+              .form-elements__button-large
+                +button({
+                  buttonName: "перейти к оплате",
+                  buttonType: "ButtonDefault",
+                  size: "large",
+                  hasArrow: true,
                 })
-          .form-elements__large-wrapper
-            +heading({ 
-              level: "h3", 
-              title: "Pagination",
-            })
+          .form-elements__pagination-container
+            .form-elements__pagination-container--heading
+              +heading({ 
+                level: "h3", 
+                title: "Pagination",
+              })
             +pagination({
               entries: 180,
               pages: 15,

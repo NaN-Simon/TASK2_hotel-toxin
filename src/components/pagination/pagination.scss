@@ -30,7 +30,9 @@
   color: $mainBackground;
   line-height: 40px;
 }
-
+.paginationjs-pages{
+  padding-bottom: 4px;
+}
 .paginationjs .paginationjs-pages li > a:hover {
   background: $textColor_25;
   border-radius: 50%;
@@ -71,4 +73,5 @@
   font-weight: 400;
   font-size  : 14px;
   line-height: 14px;
+  margin-left: 6px;
 }

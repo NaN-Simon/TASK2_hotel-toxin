@@ -26,7 +26,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-bottom: 160px;
+    padding-bottom: 174px;
 
     &-checkboxes-rich-list{
       padding-left: 53px;
@@ -92,6 +92,7 @@
       
       &--like-button{
         display: flex;
+        padding-top: 10px;
         padding-bottom: 30px;
         gap: 10px;
       }
@@ -115,7 +116,7 @@
   }
 
   &__review{
-    padding-top: 27px;
+    padding-top: 11px;
   }
 
   
@@ -163,20 +164,27 @@
   }
 
   &__buttons{
-    &--ranger-slider{
+    &--range-slider{
       min-height: 49px;
     }
 
     &--button-container{
       padding-top: 10px;
+      padding-bottom: 23px;
     }
 
     &--button-links{
       gap: 20px;
     }
     &--button-link{
+      height: 15px;
       width: 61px;
     }
   }
 
+  &__pagination-container{
+    &--heading{
+      padding-bottom: 10px;
+    }
+  }
 }
