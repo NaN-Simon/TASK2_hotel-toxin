@@ -1,2 +1,39 @@
 @import '@base';
 
+.room-details{
+  margin: 0 auto;
+
+  &__wrapper{
+    min-width: 320px;
+    max-width: 1158px;
+    margin: 0 auto;
+  }
+  &__description{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+
+    &-info{
+      display: flex;
+      flex-direction: column;
+
+      &-about{
+        display: flex;
+        flex-direction: revert;
+        justify-content: space-between;
+        gap: 99px;
+
+        &-impression{
+          max-width: 311px;
+        }
+      }
+      &-review{
+        &-container{
+          display: flex;
+          flex-direction: column;
+          gap: 22px;
+        }
+      }
+    }
+  }
+}

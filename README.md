@@ -23,3 +23,5 @@
 [**air-datepicker**](https://github.com/t1m0n/air-datepicker/tree/master/dist)
 
 [**slick-carousel**](https://www.npmjs.com/package/slick-carousel)
+
+[**chart-js**](https://www.chartjs.org/docs/latest/)

@@ -1,6 +1,9 @@
 
 extends ../../layouts/ui-kit-layout
 include ../../components/dignity/dignity.pug
+include ../../components/heading/heading.pug
+include ../../components/review/review.pug
+include ../../components/card-room-booking/card-room-booking.pug
 
 block variables
   - const pageTitle = "Room details"
@@ -8,27 +11,134 @@ block variables
 
 block content
   .room-details
-    .room-details__container
+    .room-details__wrapper
       main.room-details__main
         .room-details__gallery
           p тут будет галлерея
-        .room-details__room-description
-          .room-details__room-description-info
-            .room-details__room-description-info-about 
-              +dignity({
-                materialIconsCode: "insert_emoticon",
-                title: "Комфорт",
-                description: "Шумопоглощающие стены",
+        .room-details__description
+          .room-details__description-info
+            .room-details__description-info-about 
+              .room-details__description-info-about-markers
+                +heading({ 
+                  level: "h3", 
+                  title: "Сведения о номере",
+                })
+                +dignity({
+                  materialIconsCode: "insert_emoticon",
+                  title: "Комфорт",
+                  description: "Шумопоглощающие стены",
+                })
+                +dignity({
+                  materialIconsCode: "location_city",
+                  title: "Удобство",
+                  description: "Окно в каждой из спален",
+                })
+                +dignity({
+                  materialIconsCode: "location_city",
+                  title: "Уют",
+                  description: "Шумопоглощающие стены",
+                })
+              .room-details__description-info-about-impression
+                +heading({ 
+                  level: "h3", 
+                  title: "Впечатления от номера",
+                })
+                .chartBox
+                  canvas#myChart(width='120' height='120')
+            .room-details__description-info-review
+              +heading({ 
+                level: "h3", 
+                title: "Отзывы посетителей номера",
               })
-              +dignity({
-                materialIconsCode: "location_city",
-                title: "Удобство",
-                description: "Окно в каждой из спален",
-              })
-              +dignity({
-                materialIconsCode: "location_city",
-                title: "Уют",
-                description: "Шумопоглощающие стены",
-              })
-
-          .room-details__room-description-booking
+              .room-details__description-info-review-container
+                +review({
+                  jpgSrc: "murad_sarafanov",
+                  numberLikeButton: 12,   
+                  checkedLikeButton: "checked",  
+                  idLikeButton: "feedback-like-button", 
+                  nameLikeButton: "feedback-like-button", 
+                  typeLikeButton: "checkbox",
+                  namePerson: "Мурад Сарафанов",
+                  statusPerson: "5 дней назад",
+                  description: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",
+                })
+                +review({
+                  jpgSrc: "image2",
+                  numberLikeButton: 2,  
+                  idLikeButton: "feedback-like-button", 
+                  nameLikeButton: "feedback-like-button", 
+                  typeLikeButton: "checkbox",
+                  namePerson: "Патрисия Стёклышкова",
+                  statusPerson: "Неделю назад",
+                  description: "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент",
+                })
+            .room-details__description-info-rules
+          .room-details__booking
+            +card-room-booking({
+              roomNumbers: {
+                symbol: "№",
+                number: 888,
+                text: "ЛЮКС",
+              },
+              roomPrice: {
+                price: "9 999",
+                currency: "₽",
+                text: "в сутки",
+              },
+              dateDropdown: {
+                id: "card-room-booking-date-dropdown",
+                type:"text",
+                hasTwoInputs: true,
+                hasArrow: true,
+                inline: true,
+                dateFormat: "dd.MM.yyyy",
+                startTitle: "Прибытие",
+                endTitle: "Выезд",
+                placeholderStart: "ДД.ММ.ГГГГ",
+                placeholderEnd: "ДД.ММ.ГГГГ",
+                name: "date",
+                startDate: "08.10.2019",
+                endDate: "08.19.2019",
+                withMask: true
+              },
+              headingDropdown: {
+                level: "h3", 
+                title: "Гости", 
+              },
+              dropdown: {
+                id: "card-room-booking-dropdown",
+                isOpen: false,
+                hasButtons: true,
+                type: "not-guests",
+                placeholder: "Сколько гостей",
+                maxCount: 10,
+                elements: [
+                  { title: "Взрослые", id: "adult", startCount: 3 }, 
+                  { title: "Дети", id: "kids", startCount: 0 }, 
+                  { title: "Младенцы", id: "baby", startCount: 0 }
+                ],
+                plurals: {
+                  adult: "Взрослый, Взрослых, Взрослых",
+                  kids: "Ребенок, Ребенка, Детей",
+                  baby: "Младенец, Младенца, Младенцев",
+                  },
+              },
+              priceList: {
+                elements: [
+                  { title: "9 990₽ х 4 суток", price: "39 960₽" }, 
+                  { title: "Сбор за услуги: скидка 2 179₽", hasInfoButton: true, price: "0₽" }, 
+                  { title: "Сбор за дополнительные услуги", hasInfoButton: true, price: "300₽" }, 
+                ]
+              },
+              priceResult: {
+                title: "Итого",
+                between: "........................................................",
+                price: "38 081₽",
+              },
+              button: {
+                  buttonName: "Забронировать",
+                  buttonType: "ButtonDefault",
+                  size: "large",
+                  hasArrow: true,
+              }
+            })

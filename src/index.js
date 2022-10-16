@@ -36,4 +36,5 @@ import './components/navigation';
 import './components/header';
 import './components/footer';
 import './components/item-list';
+import './components/chart';
 import './layouts/ui-kit-layout.scss';
