@@ -1,3 +1,75 @@
-.chartBox {
-  width: 120px;
+@import '@base';
+
+.chart{
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+
+  &__canvas{
+    position: relative;
+    margin-right: 30px;
+    font-family: $mainFont;
+    color: $elementColor;
+    font-style : normal;
+
+    &-total{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+      height: 50%;
+      margin: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      font-size: 44px;
+      z-index: 9;
+    }
+
+    &-dougnut{
+      position: relative;
+      z-index: 10;
+    }
+  }
+  &__discription{
+    display: flex;
+    flex-direction: column-reverse;
+    font-family: $mainFont;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    list-style-type: none;
+
+    &-item{
+      position: relative;
+      padding-left: 20px;
+    }
+    &-item::before{
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      position: absolute;
+      left: 0;
+      top: 7px;
+    }
+
+    & :nth-child(4)::before{
+      background-color: #FFE39C;
+    }
+    & :nth-child(3)::before{
+      background-color: #6FCF97;
+    }
+    & :nth-child(2)::before{
+      background-color: #BC9CFF;
+    }
+    & :nth-child(1)::before{
+      background-color: #919191;
+    }
+  }
 }
+
+

@@ -1,0 +1,21 @@
+mixin chart(properties = {})
+
+  -
+    const {
+      totalNumber = 0,
+      width = 120,
+      height = 120,
+      radius = 60,
+      cutout = '89%',
+      itemList = [],
+    } = properties 
+
+    const dataProperties = JSON.stringify(properties)
+
+  .chart.chart-js(data-properties = dataProperties)
+    .chart__canvas(style=`width: ${width}px; height: ${height}px`)
+      .chart__canvas-total #{totalNumber}
+      canvas.chart__canvas-dougnut#myChart(width=width height=heigth)
+    ul.chart__discription
+      each item in itemList 
+        li.chart__discription-item #{item.name}

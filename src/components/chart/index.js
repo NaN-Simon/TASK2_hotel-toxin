@@ -1,49 +1,50 @@
 import './chart.scss';
+import Chart from 'chart.js/dist/chart';
 
-import Chart from 'chart.js/dist/chart'
+class ChartDoughnut {
+  constructor(selector) {
+    this.$el = selector;
+    this.ctx = this.$el.querySelector('#myChart');
 
-const ctx = document.getElementById('myChart');
-const myChart = new Chart(ctx, {
-  type: 'doughnut',
-  data: {
-    // labels: ['Green', 'Blue', 'Red'],
-    datasets: [{
-      label: '# of Votes',
-      data: [25, 25, 50],
-      backgroundColor: [
-        '#BC9CFF',
-        '#6FCF97',
-        '#FFE39C',
-      ],
-      borderColor: [
-        '#FFFFFF',
-        '#FFFFFF',
-        '#FFFFFF',
-      ],
-      borderWidth: 2,
-      cutout: '89%',
-      radius: 60,
-    }],
-  },
-  options: {
-    plugins: {
-      legend: {
-        display: false,
+    const { properties } = this.$el.dataset;
+    this.properties = JSON.parse(properties);
+    this.setup();
+  }
+
+  setup() {
+    const data = [];
+    const bg = [];
+    const bgBorder = [];
+
+    this.properties.itemList.forEach((el) => {
+      data.push(el.data);
+      bg.push(el.bg);
+      bgBorder.push(el.bgBorder);
+    });
+
+    const myChart = new Chart(this.ctx, {
+      type: 'doughnut',
+      data: {
+        datasets: [{
+          label: '# of Votes',
+          data,
+          backgroundColor: bg,
+          borderColor: bgBorder,
+          borderWidth: 2,
+          cutout: this.properties.cutout,
+          radius: this.properties.radius,
+        }],
       },
-    },
-    scales: {
-      // y: {
-      //   beginAtZero: false,
-      //   ticks: {
-      //     padding: 0,
-      //   },
-      // },
-      // x: {
-      //   beginAtZero: false,
-      //   ticks: {
-      //     padding: 0,
-      //   },
-      // },
-    },
-  },
-});
+      options: {
+        plugins: {
+          legend: {
+            display: false,
+          },
+        },
+      },
+    });
+  }
+}
+
+const chart = document.querySelectorAll('.chart-js');
+chart.forEach((selector) => { new ChartDoughnut(selector) });

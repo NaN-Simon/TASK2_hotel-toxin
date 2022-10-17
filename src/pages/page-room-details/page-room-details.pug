@@ -3,6 +3,7 @@ extends ../../layouts/ui-kit-layout
 include ../../components/dignity/dignity.pug
 include ../../components/heading/heading.pug
 include ../../components/review/review.pug
+include ../../components/chart/chart.pug
 include ../../components/card-room-booking/card-room-booking.pug
 
 block variables
@@ -14,13 +15,28 @@ block content
     .room-details__wrapper
       main.room-details__main
         .room-details__gallery
-          p тут будет галлерея
+          img&attributes({
+            class: "room-details__gallery-photo-item",
+            src: require("./images/room-details.jpg"),
+            alt: "room photo",
+          })
+          .room-details__gallery-inside
+            img&attributes({
+              class: "room-details__gallery-photo-item",
+              src: require("./images/room-details1.jpg"),
+              alt: "room photo",
+            })
+            img&attributes({
+              class: "room-details__gallery-photo-item",
+              src: require("./images/room-details2.jpg"),
+              alt: "room photo",
+            })
         .room-details__description
           .room-details__description-info
             .room-details__description-info-about 
               .room-details__description-info-about-markers
                 +heading({ 
-                  level: "h3", 
+                  level: "h2", 
                   title: "Сведения о номере",
                 })
                 +dignity({
@@ -40,14 +56,25 @@ block content
                 })
               .room-details__description-info-about-impression
                 +heading({ 
-                  level: "h3", 
+                  level: "h2", 
                   title: "Впечатления от номера",
                 })
-                .chartBox
-                  canvas#myChart(width='120' height='120')
+                +chart({
+                  totalNumber: 460,
+                  width: 120,
+                  height: 120,
+                  radius: 60,
+                  cutout: '89%',
+                  itemList: [
+                    {name: 'Разочарован', data: 0, bg: '#919191', bgBorder: '#FFFFFF'},
+                    {name: 'Удоволетворительно', data: 25, bg: '#BC9CFF', bgBorder: '#FFFFFF'},
+                    {name: 'Хорошо', data: 25, bg: '#6FCF97', bgBorder: '#FFFFFF'},
+                    {name: 'Великолепно', data: 50, bg: '#FFE39C', bgBorder: '#FFFFFF'},
+                  ],
+                })
             .room-details__description-info-review
               +heading({ 
-                level: "h3", 
+                level: "h2", 
                 title: "Отзывы посетителей номера",
               })
               .room-details__description-info-review-container
@@ -102,7 +129,7 @@ block content
                 withMask: true
               },
               headingDropdown: {
-                level: "h3", 
+                level: "h2", 
                 title: "Гости", 
               },
               dropdown: {

@@ -21,7 +21,8 @@
   &__title_level_h2 {
     color      : $textColor;
     font-weight: 700;
-    font-size  : 23px;
+    font-size  : 19px;
+    line-height: 23px;
     font-family: $mainFont;
 
     &::first-letter {

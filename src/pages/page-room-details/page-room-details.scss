@@ -5,13 +5,39 @@
 
   &__wrapper{
     min-width: 320px;
-    max-width: 1158px;
+    max-width: 1440px;
     margin: 0 auto;
   }
+
+  &__main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__gallery{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 485px;
+    padding-bottom: 70px;
+
+    &-photo-item{
+      height: 100%;
+    }
+
+    &-inside{
+      display: grid;
+      grid-template-columns: 461px;
+      grid-template-rows: 243px;
+    }
+  }
+
+
   &__description{
     display: flex;
     justify-content: space-between;
     flex-direction: row;
+    width: 1160px;
 
     &-info{
       display: flex;
