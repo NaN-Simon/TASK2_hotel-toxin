@@ -9,6 +9,7 @@ mixin dignity(properties = {})
       jpgSrc = "",
       title = "",
       description = "",
+      hasSubline = true,
     } = properties
 
     const hasMaterialIconsCode = materialIconsCode === "" ? false : true
@@ -29,5 +30,6 @@ mixin dignity(properties = {})
     .dignity__text
       .dignity__text-title #{title}
       .dignity__text-description #{description}
-  .dignity__subline
+  if hasSubline
+    .dignity__subline
 

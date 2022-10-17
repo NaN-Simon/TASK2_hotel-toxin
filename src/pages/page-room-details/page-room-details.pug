@@ -4,6 +4,7 @@ include ../../components/dignity/dignity.pug
 include ../../components/heading/heading.pug
 include ../../components/review/review.pug
 include ../../components/chart/chart.pug
+include ../../components/bullet-items/bullet-items.pug
 include ../../components/card-room-booking/card-room-booking.pug
 
 block variables
@@ -35,10 +36,11 @@ block content
           .room-details__description-info
             .room-details__description-info-about 
               .room-details__description-info-about-markers
-                +heading({ 
-                  level: "h2", 
-                  title: "Сведения о номере",
-                })
+                .room-details--padding-bottom
+                  +heading({ 
+                    level: "h2", 
+                    title: "Сведения о номере",
+                  })
                 +dignity({
                   materialIconsCode: "insert_emoticon",
                   title: "Комфорт",
@@ -50,15 +52,17 @@ block content
                   description: "Окно в каждой из спален",
                 })
                 +dignity({
-                  materialIconsCode: "location_city",
+                  materialIconsCode: "local_fire_department",
                   title: "Уют",
                   description: "Шумопоглощающие стены",
+                  hasSubline: false,
                 })
               .room-details__description-info-about-impression
-                +heading({ 
-                  level: "h2", 
-                  title: "Впечатления от номера",
-                })
+                .room-details--padding-bottom
+                  +heading({ 
+                    level: "h2", 
+                    title: "Впечатления от номера",
+                  })
                 +chart({
                   totalNumber: 460,
                   width: 120,
@@ -73,10 +77,11 @@ block content
                   ],
                 })
             .room-details__description-info-review
-              +heading({ 
-                level: "h2", 
-                title: "Отзывы посетителей номера",
-              })
+              .room-details--padding-bottom
+                +heading({ 
+                  level: "h2", 
+                  title: "Отзывы посетителей номера",
+                })
               .room-details__description-info-review-container
                 +review({
                   jpgSrc: "murad_sarafanov",
@@ -100,6 +105,28 @@ block content
                   description: "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент",
                 })
             .room-details__description-info-rules
+              .room-details__description-info-rules-bullet
+                .room-details--padding-bottom
+                  +heading({ 
+                    level: "h2", 
+                    title: "Правила",
+                  })
+                .room-details__description-info-rules-bullet--wrapper
+                  +bullet-items({
+                    listItems: [
+                      { title: "Нельзя с питомцами"},
+                      { title: "Без вечеринок и мероприятий"},
+                      { title: "Время прибытия — после 13:00, а\u00A0выезд до 12:00"},
+                    ]
+                  })
+              .room-details__description-info-rules-cancel
+                .room-details--padding-bottom
+                  +heading({ 
+                    level: "h2", 
+                    title: "Отмена",
+                  })
+                p.room-details__description-info-rules-cancel-procedure Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+
           .room-details__booking
             +card-room-booking({
               roomNumbers: {

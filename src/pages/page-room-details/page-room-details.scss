@@ -15,6 +15,10 @@
     align-items: center;
   }
 
+  &--padding-bottom{
+    padding-bottom: 20px;
+  }
+
   &__gallery{
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -58,6 +62,25 @@
           display: flex;
           flex-direction: column;
           gap: 22px;
+          padding-bottom: 30px;
+        }
+      }
+      &-rules{
+        display: flex;
+        &-bullet{
+          &--wrapper{
+            min-width: 292px;
+          }
+        }
+        &-cancel{
+          &-procedure{
+            font-family: $mainFont;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 24px;
+            color: $textColor_75;
+          }
         }
       }
     }
