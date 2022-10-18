@@ -12,39 +12,39 @@
   font-size: 14px;
   color: $textColor_75;
 
-  &-item{
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 10px;
-  }
+    &-item{
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 18px;
+    }
 
-  &-info{
-    display: flex;
-    align-content: center;
-    color: $textColor_75;
-  }
+    &-info{
+      display: flex;
+      align-content: center;
+      color: $textColor_75;
+    }
 
-  &-title{
-    padding-right: 5px;
-    line-height: 14px;
-    width: 220px;
-  }
+    &-title{
+      padding-right: 5px;
+      line-height: 14px;
+      width: 220px;
+    }
 
-  &-button{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 14px;
-    height: 14px;
-    border: 1px solid $textColor_25;
-    color: $textColor_25;
-    border-radius: 50%;
-    font-size: 9px;
-    font-weight: 700;
-  }
+    &-button{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 14px;
+      height: 14px;
+      border: 1px solid $textColor_25;
+      color: $textColor_25;
+      border-radius: 50%;
+      font-size: 9px;
+      font-weight: 700;
+    }
 
-  &-price{
-    color: $textColor_75;
-  }
+    &-price{
+      color: $textColor_75;
+    }
 }
 }

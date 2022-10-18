@@ -54,7 +54,7 @@ block content
                 +dignity({
                   materialIconsCode: "local_fire_department",
                   title: "Уют",
-                  description: "Шумопоглощающие стены",
+                  description: "Номер оснащён камином",
                   hasSubline: false,
                 })
               .room-details__description-info-about-impression
@@ -64,16 +64,16 @@ block content
                     title: "Впечатления от номера",
                   })
                 +chart({
-                  totalNumber: 460,
+                  totalNumber: 260,
                   width: 120,
                   height: 120,
                   radius: 60,
                   cutout: '89%',
                   itemList: [
-                    {name: 'Разочарован', data: 0, bg: '#919191', bgBorder: '#FFFFFF'},
-                    {name: 'Удоволетворительно', data: 25, bg: '#BC9CFF', bgBorder: '#FFFFFF'},
-                    {name: 'Хорошо', data: 25, bg: '#6FCF97', bgBorder: '#FFFFFF'},
-                    {name: 'Великолепно', data: 50, bg: '#FFE39C', bgBorder: '#FFFFFF'},
+                    {name: 'Разочарован', data: 0, bg: ['#919191', '#3d4975'], bgBorder: '#FFFFFF'},
+                    {name: 'Удовлетворительно', data: 25, bg: ['#BC9CFF', '#8BA4F9'], bgBorder: '#FFFFFF'},
+                    {name: 'Хорошо', data: 25, bg: ['#6FCF97', '#66D2EA'], bgBorder: '#FFFFFF'},
+                    {name: 'Великолепно', data: 50, bg: ['#FFE39C', '#FFBA9C'], bgBorder: '#FFFFFF'},
                   ],
                 })
             .room-details__description-info-review
@@ -81,6 +81,7 @@ block content
                 +heading({ 
                   level: "h2", 
                   title: "Отзывы посетителей номера",
+                  description: "2 отзыва" 
                 })
               .room-details__description-info-review-container
                 +review({
@@ -106,7 +107,7 @@ block content
                 })
             .room-details__description-info-rules
               .room-details__description-info-rules-bullet
-                .room-details--padding-bottom
+                .room-details--padding-bottom.room-details--padding-left
                   +heading({ 
                     level: "h2", 
                     title: "Правила",
@@ -148,15 +149,15 @@ block content
                 dateFormat: "dd.MM.yyyy",
                 startTitle: "Прибытие",
                 endTitle: "Выезд",
-                placeholderStart: "ДД.ММ.ГГГГ",
-                placeholderEnd: "ДД.ММ.ГГГГ",
+                placeholderStart: "19.08.2019",
+                placeholderEnd: "19.08.2019",
                 name: "date",
                 startDate: "08.10.2019",
                 endDate: "08.19.2019",
                 withMask: true
               },
               headingDropdown: {
-                level: "h2", 
+                level: "h3", 
                 title: "Гости", 
               },
               dropdown: {

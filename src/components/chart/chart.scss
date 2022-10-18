@@ -12,8 +12,9 @@
     color: $elementColor;
     font-style : normal;
 
-    &-total{
+    &-votes{
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       width: 50%;
@@ -22,10 +23,18 @@
       position: absolute;
       top: 0;
       left: 0;
-      bottom: 0;
+      bottom: 8px;
       right: 0;
-      font-size: 44px;
       z-index: 9;
+      &-total{
+        font-size: 24px;
+        font-weight: 700;
+      }
+      &-title{
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 15px;
+      }
     }
 
     &-dougnut{
@@ -41,11 +50,13 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 24px;
+    padding-top: 27px;
     list-style-type: none;
+    color: $textColor_75;
 
     &-item{
       position: relative;
-      padding-left: 20px;
+      padding-left: 15px;
     }
     &-item::before{
       content: "";
@@ -58,16 +69,16 @@
     }
 
     & :nth-child(4)::before{
-      background-color: #FFE39C;
+      background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
     }
     & :nth-child(3)::before{
-      background-color: #6FCF97;
+      background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
     }
     & :nth-child(2)::before{
-      background-color: #BC9CFF;
+      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
     }
     & :nth-child(1)::before{
-      background-color: #919191;
+      background: linear-gradient(180deg, #919191 0%, #3d4975 100%);
     }
   }
 }

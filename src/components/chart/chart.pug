@@ -14,7 +14,9 @@ mixin chart(properties = {})
 
   .chart.chart-js(data-properties = dataProperties)
     .chart__canvas(style=`width: ${width}px; height: ${height}px`)
-      .chart__canvas-total #{totalNumber}
+      .chart__canvas-votes
+        .chart__canvas-votes-total #{totalNumber}
+        .chart__canvas-votes-title Голосов
       canvas.chart__canvas-dougnut#myChart(width=width height=heigth)
     ul.chart__discription
       each item in itemList 

@@ -8,10 +8,11 @@
   margin-bottom: 6px;
 
   &__title_level_h1 {
-    color      : $textColor;
-    font-weight: 700;
-    font-size  : 29px;
     font-family: $mainFont;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 29px;
+    color: $textColor;
 
     &::first-letter {
       text-transform: uppercase;
@@ -19,11 +20,12 @@
   }
 
   &__title_level_h2 {
-    color      : $textColor;
-    font-weight: 700;
-    font-size  : 19px;
-    line-height: 23px;
     font-family: $mainFont;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 23px;
+    color: $textColor;
 
     &::first-letter {
       text-transform: uppercase;
@@ -31,20 +33,23 @@
   }
 
   &__title_level_h3 {
-    color         : $textColor;
-    font-weight   : 700;
-    font-size     : 12px;
-    font-family   : $mainFont;
+    color: $textColor;
+    font-family: $mainFont;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
     text-transform: uppercase;
   }
 
   &__description {
-    color         : $textColor_75;
-    font-weight   : 400;
-    font-family   : $mainFont;
-    font-size     : 12px;
+    font-family: $mainFont;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
     text-transform: uppercase;
     letter-spacing: 0.3px;
+    color: $textColor_75;
 
     &_lowercase {
       text-transform: lowercase;
