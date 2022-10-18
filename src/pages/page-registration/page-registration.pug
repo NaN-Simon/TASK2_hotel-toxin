@@ -1,0 +1,79 @@
+extends ../../layouts/ui-kit-layout
+include ../../components/card-register/card-register.pug
+
+block variables
+  - const pageTitle = "Registration"
+  - const bodyProperties = "background: white"
+
+block content
+  main.registration-page
+    .registration-page__wrapper
+      .registration-page__register 
+        +card-register({
+          cardRegisterHeading: {
+            level: "h2", 
+            title: "Регистрация аккаунта"
+          },
+          cardRegisterName: {
+            type: "text", 
+            placeholder: "Имя", 
+            name: "name",
+          },
+          cardRegisterSecondName: {
+            type: "text", 
+            placeholder: "Фамилия", 
+            name: "secondName",
+          },
+          cardRegisterRadio: {
+            name: "gender",
+            type: "radio",
+            inline: true,
+            listItems: [
+              { title: "Мужчина", id: "gender-f", checked: "checked" },
+              { title: "Женщина", id: "gender-m" },
+            ],
+          },
+          cardRegisterBirthdayHeading: {
+            level: "h2", 
+            title: "дата рождения"
+          },
+          cardRegisterBirthday: {
+            type: "text", 
+            placeholder: "ДД.ММ.ГГГГ", 
+            name: "birthday",
+            dateMask: true,
+          },
+          cardRegisterSignInHeading: {
+            level: "h3", 
+            title: "данные для входа в сервис"
+          },
+          cardRegisterSignInMail: {
+            type: "text", 
+            placeholder: "Email", 
+            name: "email",
+          },
+          cardRegisterSignInPassword: {
+            type: "text", 
+            placeholder: "Пароль", 
+            name: "password",
+          },
+          cardRegisterSpecOffers: {
+            listItems: [
+              { title: "Получать спецпредложения", id: "special-offer3" }
+            ], 
+            name: "special-offer", 
+            type: "checkbox",
+          },
+          cardRegisterPayButton: {
+            buttonName: "Зарегистрироваться",
+            buttonType: "ButtonDefault",
+            size: "large",
+            hasArrow: true,
+          },
+          cardRegisterLoginButton: {
+            buttonName: "Войти",
+            buttonType: "ButtonDefault",
+            size: "small",
+            isTransparentBackground: true,
+          }
+        })

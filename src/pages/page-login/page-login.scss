@@ -1,0 +1,24 @@
+@import '@base';
+
+.login-page{
+  background: url("../pages/page-login/images/image.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 1440px auto;
+  background-position-y: -70px;
+  width: 1440px;
+  min-height: 684px;
+  max-height: 684px;
+  margin: 0 auto;
+
+  &__wrapper{
+    display: flex;
+    justify-content: space-between;
+    height: inherit;
+    padding: 172px 0 0 533px;
+    margin: 0 auto;
+    max-width: 1440px;
+    min-width: 320px;
+  }
+
+}

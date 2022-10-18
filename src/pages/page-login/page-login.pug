@@ -1,0 +1,39 @@
+extends ../../layouts/ui-kit-layout
+include ../../components/card-login/card-login.pug
+
+block variables
+  - const pageTitle = "Login"
+  - const bodyProperties = "background: white"
+
+block content
+  main.login-page
+    .login-page__wrapper
+      .login-page__register 
+        +card-login({
+          cardLoginHeading: {
+            level: "h1", 
+            title: "Войти"
+          },
+          cardLoginEmail: {
+            type: "text", 
+            placeholder: "Email", 
+            name: "email",
+          },
+          cardLoginPassword: {
+            type: "text", 
+            placeholder: "Пароль", 
+            name: "password",
+          },
+          cardLoginSignInButton: {
+            buttonName: "Войти",
+            buttonType: "ButtonDefault",
+            size: "large",
+            hasArrow: true,
+          },
+          cardLoginButton: {
+            buttonName: "Создать",
+            buttonType: "ButtonDefault",
+            size: "small",
+            isTransparentBackground: true,
+          },
+        })
