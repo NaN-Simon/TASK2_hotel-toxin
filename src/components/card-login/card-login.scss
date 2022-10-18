@@ -3,8 +3,7 @@
 .card-login{
   max-width: 380px;
   min-width: 380px;
-  height: 355px;
-  padding: 39px 30px 30px 29px;
+  padding: 39px 30px 32px 29px;
   border-radius: 4px;
   font-family: $mainFont;
   color: $textColor;
@@ -12,16 +11,16 @@
   box-shadow: 0 0 25px rgb(0 0 0 / 20%);
 
   &__heading{
-    padding-bottom: 10px;
+    padding-bottom: 13px;
   }
   &__email{
     padding-bottom: 10px;
   }
   &__password{
-    padding-bottom: 17px;
+    padding-bottom: 21px;
   } 
   &__signin{
-    margin-bottom: 25px;
+    padding-bottom: 74px;
     width: 319px;
     height: 44px;
   } 

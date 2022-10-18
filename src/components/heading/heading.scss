@@ -3,7 +3,7 @@
 .heading {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   margin-top: 2px;
   margin-bottom: 6px;
 
@@ -11,7 +11,8 @@
     font-family: $mainFont;
     font-style: normal;
     font-weight: 700;
-    font-size: 29px;
+    font-size: 24px;
+    line-height: 29px;
     color: $textColor;
 
     &::first-letter {
@@ -45,7 +46,7 @@
     font-family: $mainFont;
     font-style: normal;
     font-weight: 400;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 14px;
     text-transform: uppercase;
     letter-spacing: 0.3px;

@@ -1,16 +1,25 @@
+@import '@base';
+
 .price-result{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px dotted $textColor_25;
+  height: 22px;
 
   &__title{
-    font-size: 18px;
     font-weight: 700;
+    font-size: 19px;
+    line-height: 23px;  
+    border-bottom: 2px solid $mainBackground;
+    font-style: normal;
   }
   
   &__price{
-    font-size: 18px;
     font-weight: 700;
+    font-size: 19px;
+    line-height: 23px;  
+    border-bottom: 2px solid $mainBackground;
   }
 }

@@ -11,24 +11,25 @@
   background: $mainBackground;
   box-shadow: 0 0 25px rgb(0 0 0 / 20%);
 
+  &__heading{
+    padding-bottom: 15px;
+  }
+
   &__name {
     padding-bottom: 10px;
   }
-  &__second-name {
-    padding-bottom: 10px;
-    
-  }
+
   &__gender {
     width: 200px;
-    padding-bottom: 10px;
+    padding-bottom: 21px;
     
   }
   &__birthday {
-    padding-bottom: 15px;
+    padding-bottom: 17px;
     
   }
   &__signin{
-    padding-bottom: 7px;
+    padding-bottom: 9px;
     
     &-mail{
       padding-bottom: 7px;
@@ -36,11 +37,11 @@
   }
 
   &__spec-offers{
-    padding-bottom: 10px;
+    padding-bottom: 23px;
   }
 
   &__to-pay{
-    margin-bottom: 15px;
+    padding-bottom: 74px;
     width: 319px;
     height: 44px;
   }

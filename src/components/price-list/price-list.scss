@@ -15,7 +15,7 @@
     &-item{
       display: flex;
       justify-content: space-between;
-      padding-bottom: 18px;
+      padding-bottom: 15px;
     }
 
     &-info{
@@ -26,20 +26,23 @@
 
     &-title{
       padding-right: 5px;
-      line-height: 14px;
       width: 220px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 18px;
     }
 
     &-button{
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 14px;
-      height: 14px;
-      border: 1px solid $textColor_25;
-      color: $textColor_25;
+      width: 18px;
+      height: 18px;
+      border: 1px solid rgba(31, 32, 65, 0.25);
+      color: rgba(31, 32, 65, 0.25);
       border-radius: 50%;
-      font-size: 9px;
+      font-size: 10px;
       font-weight: 700;
     }
 

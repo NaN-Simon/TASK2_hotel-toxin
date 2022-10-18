@@ -4,12 +4,12 @@
   max-width: 380px;
   min-width: 380px;
   min-height: 510px;
-  padding: 43px 30px 30px 29px;
+  padding: 44px 30px 31px 31px;
   margin-bottom: 40px;
   border-radius: 4px;
-  font-family: $mainFont;
-  color: $textColor;
-  background: $mainBackground;
+  font-family: montserrat, arial, sans-serif;
+  color: #1f2041;
+  background: #ffffff;
   box-shadow: 0 0 25px rgb(0 0 0 / 20%);
 
   &__number-price{
@@ -21,11 +21,11 @@
   }
 
   &__date-dropdown{
-    padding-bottom: 14px;
+    padding-bottom: 12px;
   }
 
   &__dropdown{
-    padding-bottom: 20px;
+    padding-bottom: 22px;
   }
 
   &__price-list{
