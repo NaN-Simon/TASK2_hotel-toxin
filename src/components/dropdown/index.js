@@ -3,8 +3,7 @@ import './dropdown.scss';
 class Dropdown {
   constructor(selector) {
     this.$el = selector.querySelector('.dropdown');
-    this.$input = this.$el.children[0];
-    this.$drop = this.$el.children[1];
+    [this.$input, this.$drop] = this.$el.children;
     this.$listItems = this.$drop.children[0].children;
     [this.$placeholder, this.$arrow] = this.$el.children[0].children;
     this.placeholderDefault = this.$placeholder.innerHTML;
@@ -20,7 +19,6 @@ class Dropdown {
     this.clickHandler = this.clickHandler.bind(this);
     this.$el.addEventListener('click', this.clickHandler);
     this.placeholderRender();
-    this.dropFirstLoad();
   }
 
   startValues() {
@@ -97,34 +95,17 @@ class Dropdown {
       Object.values(this.dataArray).forEach((elem) => {
         elem.value = 0;
       });
-      this.dropFirstLoad();
     }
-  }
-
-  dropFirstLoad() {
-    Object.values(this.$listItems).forEach((item) => {
-      item.children[0].innerHTML = this.renderTitlePlural(this.dataArray[item.id].value, item.dataset.plurals.split(','));
-      if (this.dataArray[item.id].value === 0) {
-        this.$listItems[item.id].children[1].children[1].innerHTML = 0;
-        this.$listItems[item.id].children[1].children[0].classList.add('dropdown__drop-counter-not-available');
-      }
-      if (this.dataArray[item.id].value === this.dataArray[item.id].maxCount) {
-        this.$listItems[item.id].children[1].children[2].classList.add('dropdown__drop-counter-not-available');
-      }
-    });
   }
 
   dropItemRender(event) {
     const eventTarget = event.target;
     const targetItem = eventTarget.closest('.dropdown__drop-item');
-    const targetTitle = targetItem.querySelector('.dropdown__drop-name');
     const targetMinus = targetItem.querySelector('.dropdown__drop-counter-minus');
     const targetPlus = targetItem.querySelector('.dropdown__drop-counter-plus');
     const targetResult = targetItem.querySelector('.dropdown__drop-counter-result');
     const targetID = targetItem.id;
     const targetMaxCount = this.dataArray[targetID].maxCount;
-    const targetPlurals = this.dataArray[targetID].plurals;
-    let dataArrayTitle = this.dataArray[targetID].title;
 
     /* dropdownChanger */
     if (eventTarget === targetPlus && this.dataArray[targetID].value !== targetMaxCount) {
@@ -144,8 +125,6 @@ class Dropdown {
     }
 
     targetResult.innerHTML = this.dataArray[targetID].value;
-    dataArrayTitle = this.renderTitlePlural(this.dataArray[targetID].value, targetPlurals);
-    targetTitle.innerHTML = dataArrayTitle;
   }
 
   placeholderRender() {
@@ -166,12 +145,12 @@ class Dropdown {
 
       if (placeholderArray.join(', ').length > inputLength / 10) {
         placeholderArray.pop();
-        placeholderArray = placeholderArray.join(', ');
-        placeholderArray += '...';
-      } else {
-        placeholderArray = placeholderArray.join(', ');
       }
+      placeholderArray = placeholderArray.join(', ');
 
+      if (placeholderArray.length !== 0) {
+        placeholderArray += '...';
+      }
       if (placeholderArray.length === 0) {
         placeholderArray = this.placeholderDefault;
       }
