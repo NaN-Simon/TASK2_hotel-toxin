@@ -11,6 +11,7 @@
 }
 .slick-prev{
   position: absolute;
+  width: 43px;
   z-index: 5;
   height: 100%;
   background: none;
@@ -27,10 +28,11 @@
 .slick-arrow{
   border-bottom-left-radius: 0px !important;
   border-bottom-right-radius: 0px !important;
-
+  
 }
 .slick-next{
   position: absolute;
+  width: 43px;
   z-index: 5;
   height: 100%;
   background: none;
@@ -51,8 +53,7 @@
   flex-direction: row;
   position: absolute;
   right: 10px;
-  top: 122px;
-  gap: 3.5px;
+  top: 128px;
 }
 
 .slick-list{

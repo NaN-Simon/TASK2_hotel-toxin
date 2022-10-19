@@ -2,6 +2,7 @@
 
 .range-slider{
   margin-top: 23px;
+  margin-bottom: 14px;
 
   &.noUi-horizontal {
     height: 6px;
@@ -13,12 +14,12 @@
   }
 
   &.noUi-horizontal .noUi-handle {
-    width: 12px;
-    height: 12px;
+    width: 15px;
+    height: 15px;
     border: none;
     border-radius: 50%;
     right: -2px;
-    top: -4px;
+    top: -6px;
   }
   &.noUi-horizontal .noUi-touch-area {
     background: $elementGradient;
@@ -50,4 +51,11 @@
 
 }
 
-
+.slider__discription{
+  font-family: $mainFont;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.2px;
+}

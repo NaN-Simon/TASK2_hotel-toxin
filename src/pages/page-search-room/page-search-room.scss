@@ -2,31 +2,23 @@
 
 .search-room{
   width: 100%;
-  padding-top: 20px;
+  padding-top: 28px;
+  padding-bottom: 71px;
 
   &__container{
     // display: flex;
     // flex-direction: column;
     // align-items: center;
     min-width: 320px;
-    max-width: 1158px;
+    max-width: 1160px;
     margin: 0 auto;
-  }
-
-  &__header{
-    display: flex;
-    justify-content: center;
-    width: 100vw;
-    margin-bottom: 40px;
-    background: $mainBackground;
-    box-shadow: $elementBoxShadow;
   }
 
   &__main{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 58px
+    gap: 60px
   }
 
   &__filters{
@@ -36,29 +28,29 @@
 
     &-day-of-stay{
       width: 266px;
-      padding-bottom: 40px;
+      padding-bottom: 18px;
     }
 
     &-guests{
       width: 266px;
-      padding-bottom: 40px;
+      padding-bottom: 29px;
     }
     
     &-price{
-      padding-bottom: 40px;
+      padding-bottom: 27px;
 
     }
 
     &-rules{
-      padding-bottom: 140px;
+      padding-bottom: 139px;
     }
 
     &-accessibility{
-      padding-bottom: 160px;
+      padding-bottom: 154px;
     }
 
     &-facilities{
-      padding-bottom: 40px;
+      padding-bottom: 26px;
     }
 
     &-additional-facilities{
@@ -68,10 +60,21 @@
   }
 
   &__room-cards{
+    display: flex;
+    flex-direction: column;
+
+    &-title{
+      padding-bottom: 16px;
+    }
     &-list{
       display: flex;
       flex-wrap: wrap;
       gap: 20px 12px;
+      padding-bottom: 39px;
+    }
+    &-pagination{
+      margin: 0 auto;
+      padding-right: 10px;
     }
   }
 }

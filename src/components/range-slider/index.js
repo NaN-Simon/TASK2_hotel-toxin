@@ -10,7 +10,7 @@ class RangeSlider {
     this.$el = this.$domElement;
 
     this.properties = JSON.parse(this.$el.dataset.properties);
-    this.$headingDescription = this.$el.parentElement.querySelector('.heading__description');
+    this.$headingDescription = this.$el.parentElement.parentElement.querySelector('.heading__description');
     this.minSlider = this.properties.sliderMin;
     this.maxSlider = this.properties.sliderMax;
     this.startMin = this.properties.startMin;

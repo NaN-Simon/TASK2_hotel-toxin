@@ -1,11 +1,11 @@
 extends ../../layouts/ui-kit-layout
-include ../../components/header/header.pug
 include ../../components/heading/heading.pug
 include ../../components/filter-date-dropdown/filter-date-dropdown.pug
 include ../../components/range-slider/range-slider.pug
 include ../../components/checkbox-list/checkbox-list.pug
 include ../../components/dropdown/dropdown.pug
 include ../../components/card-room/card-room.pug
+include ../../components/pagination/pagination.pug
 
 block variables
   - const pageTitle = "Search room"
@@ -62,6 +62,8 @@ block content
               sliderMax: 15000,
               startMin: 5000,
               startMax: 10000,
+              hasDiscritpion: true,
+              discriptionText: "Стоимость за сутки пребывания в номер",
             })
           .search-room__filters-rules
             +heading({ 
@@ -72,7 +74,7 @@ block content
               listItems: [
                 { title: "Можно курить", name: 'smoke-allow' },
                 { title: "Можно с питомцами", name: 'pets-allow' },
-                { title: "Можно пригласить гостей (до 10 человек)", name: 'guests-allow', checked: true }
+                { title: "Можно пригласить гостей (до\u00A010\u00A0человек)", name: 'guests-allow', checked: true }
               ],
             })
           .search-room__filters-accessibility
@@ -133,7 +135,7 @@ block content
             +card-room({
               carouselProperties: {
                 imgList: [
-                  "page-room-img-1.jpg",
+                  "page-room-img-0.jpg",
                   "page-room-img-2.jpg",
                   "page-room-img-3.jpg",
                   "page-room-img-4.jpg",
@@ -146,7 +148,6 @@ block content
                 price: "9 900",
               },
               rateButtonProperties: {
-                maxRate: 5,
                 selectedRate: 5,
               },
                 cardRoomReviewNumber: 145,
@@ -154,10 +155,10 @@ block content
             +card-room({
               carouselProperties: {
                 imgList: [
+                  "page-room-img-1.jpg",
                   "page-room-img-2.jpg",
                   "page-room-img-3.jpg",
                   "page-room-img-4.jpg",
-                  "page-room-img-5.jpg",
                 ],
               },
               roomNumberProperties: {
@@ -167,7 +168,6 @@ block content
                 price: "9 900",
               },
               rateButtonProperties: {
-                maxRate: 5,
                 selectedRate: 4,
               },
                 cardRoomReviewNumber: 65,
@@ -175,10 +175,10 @@ block content
             +card-room({
               carouselProperties: {
                 imgList: [
+                  "page-room-img-7.jpg",
+                  "page-room-img-2.jpg",
                   "page-room-img-3.jpg",
                   "page-room-img-4.jpg",
-                  "page-room-img-5.jpg",
-                  "page-room-img-6.jpg",
                 ],
               },
               roomNumberProperties: {
@@ -188,7 +188,6 @@ block content
                 price: "8 500",
               },
               rateButtonProperties: {
-                maxRate: 5,
                 selectedRate: 3,
               },
                 cardRoomReviewNumber: 35,
@@ -196,10 +195,10 @@ block content
             +card-room({
               carouselProperties: {
                 imgList: [
+                  "page-room-img-8.jpg",
+                  "page-room-img-2.jpg",
+                  "page-room-img-3.jpg",
                   "page-room-img-4.jpg",
-                  "page-room-img-5.jpg",
-                  "page-room-img-6.jpg",
-                  "page-room-img-7.jpg",
                 ],
               },
               roomNumberProperties: {
@@ -209,7 +208,6 @@ block content
                 price: "7 300",
               },
               rateButtonProperties: {
-                maxRate: 5,
                 selectedRate: 5,
               },
                 cardRoomReviewNumber: 19,
@@ -219,23 +217,110 @@ block content
             +card-room({
               carouselProperties: {
                 imgList: [
+                  "page-room-img-9.jpg",
+                  "page-room-img-2.jpg",
+                  "page-room-img-3.jpg",
                   "page-room-img-4.jpg",
-                  "page-room-img-5.jpg",
-                  "page-room-img-6.jpg",
-                  "page-room-img-7.jpg",
                 ],
               },
               roomNumberProperties: {
-                number: 856,
+                number: 740,
               },
               roomPriceProperties: {
-                price: "7 300",
+                price: "6 000",
               },
               rateButtonProperties: {
-                maxRate: 5,
+                selectedRate: 4,
+              },
+                cardRoomReviewNumber: 44,
+            })
+
+        
+            +card-room({
+              carouselProperties: {
+                imgList: [
+                  "page-room-img-10.jpg",
+                  "page-room-img-2.jpg",
+                  "page-room-img-3.jpg",
+                  "page-room-img-4.jpg",
+                ],
+              },
+              roomNumberProperties: {
+                number: 982,
+              },
+              roomPriceProperties: {
+                price: "5 000",
+              },
+              rateButtonProperties: {
+                selectedRate: 3,
+              },
+                cardRoomReviewNumber: 56,
+            })
+
+        
+            +card-room({
+              carouselProperties: {
+                imgList: [
+                  "page-room-img-11.jpg",
+                  "page-room-img-2.jpg",
+                  "page-room-img-3.jpg",
+                  "page-room-img-4.jpg",
+                ],
+              },
+              roomNumberProperties: {
+                number: 678,
+              },
+              roomPriceProperties: {
+                price: "5 500",
+              },
+              rateButtonProperties: {
                 selectedRate: 5,
               },
-                cardRoomReviewNumber: 19,
+                cardRoomReviewNumber: 45,
+            })
+
+        
+            +card-room({
+              carouselProperties: {
+                imgList: [
+                  "page-room-img-2.jpg",
+                  "page-room-img-2.jpg",
+                  "page-room-img-3.jpg",
+                  "page-room-img-4.jpg",
+                ],
+              },
+              roomNumberProperties: {
+                number: 450,
+              },
+              roomPriceProperties: {
+                price: "5 300",
+              },
+              rateButtonProperties: {
+                selectedRate: 4,
+              },
+                cardRoomReviewNumber: 39,
+            })
+
+        
+            +card-room({
+              carouselProperties: {
+                imgList: [
+                  "page-room-img-3.jpg",
+                  "page-room-img-2.jpg",
+                  "page-room-img-3.jpg",
+                  "page-room-img-4.jpg",
+                ],
+              },
+              roomNumberProperties: {
+                number: 350,
+              },
+              roomPriceProperties: {
+                price: "5 000",
+              },
+              rateButtonProperties: {
+                selectedRate: 3,
+              },
+                cardRoomReviewNumber: 77,
             })
 
         
@@ -243,160 +328,70 @@ block content
               carouselProperties: {
                 imgList: [
                   "page-room-img-4.jpg",
-                  "page-room-img-5.jpg",
-                  "page-room-img-6.jpg",
-                  "page-room-img-7.jpg",
+                  "page-room-img-2.jpg",
+                  "page-room-img-3.jpg",
+                  "page-room-img-4.jpg",
                 ],
               },
               roomNumberProperties: {
-                number: 856,
+                number: 666,
               },
               roomPriceProperties: {
-                price: "7 300",
+                price: "5 000",
               },
               rateButtonProperties: {
-                maxRate: 5,
                 selectedRate: 5,
               },
-                cardRoomReviewNumber: 19,
+                cardRoomReviewNumber: 25,
             })
 
         
             +card-room({
               carouselProperties: {
                 imgList: [
-                  "page-room-img-4.jpg",
                   "page-room-img-5.jpg",
-                  "page-room-img-6.jpg",
-                  "page-room-img-7.jpg",
+                  "page-room-img-2.jpg",
+                  "page-room-img-3.jpg",
+                  "page-room-img-4.jpg",
                 ],
               },
               roomNumberProperties: {
-                number: 856,
+                number: 444,
               },
               roomPriceProperties: {
-                price: "7 300",
+                price: "5 000",
               },
               rateButtonProperties: {
-                maxRate: 5,
-                selectedRate: 5,
+                selectedRate: 3,
               },
-                cardRoomReviewNumber: 19,
+                cardRoomReviewNumber: 15,
             })
 
         
             +card-room({
               carouselProperties: {
                 imgList: [
-                  "page-room-img-4.jpg",
+                  "page-room-img-6.jpg",
                   "page-room-img-5.jpg",
                   "page-room-img-6.jpg",
                   "page-room-img-7.jpg",
                 ],
               },
               roomNumberProperties: {
-                number: 856,
+                number: 352,
               },
               roomPriceProperties: {
-                price: "7 300",
+                price: "5 000",
               },
               rateButtonProperties: {
-                maxRate: 5,
-                selectedRate: 5,
+                selectedRate: 3,
               },
-                cardRoomReviewNumber: 19,
+                cardRoomReviewNumber: 55,
             })
-
-        
-            +card-room({
-              carouselProperties: {
-                imgList: [
-                  "page-room-img-4.jpg",
-                  "page-room-img-5.jpg",
-                  "page-room-img-6.jpg",
-                  "page-room-img-7.jpg",
-                ],
-              },
-              roomNumberProperties: {
-                number: 856,
-              },
-              roomPriceProperties: {
-                price: "7 300",
-              },
-              rateButtonProperties: {
-                maxRate: 5,
-                selectedRate: 5,
-              },
-                cardRoomReviewNumber: 19,
-            })
-
-        
-            +card-room({
-              carouselProperties: {
-                imgList: [
-                  "page-room-img-4.jpg",
-                  "page-room-img-5.jpg",
-                  "page-room-img-6.jpg",
-                  "page-room-img-7.jpg",
-                ],
-              },
-              roomNumberProperties: {
-                number: 856,
-              },
-              roomPriceProperties: {
-                price: "7 300",
-              },
-              rateButtonProperties: {
-                maxRate: 5,
-                selectedRate: 5,
-              },
-                cardRoomReviewNumber: 19,
-            })
-
-        
-            +card-room({
-              carouselProperties: {
-                imgList: [
-                  "page-room-img-4.jpg",
-                  "page-room-img-5.jpg",
-                  "page-room-img-6.jpg",
-                  "page-room-img-7.jpg",
-                ],
-              },
-              roomNumberProperties: {
-                number: 856,
-              },
-              roomPriceProperties: {
-                price: "7 300",
-              },
-              rateButtonProperties: {
-                maxRate: 5,
-                selectedRate: 5,
-              },
-                cardRoomReviewNumber: 19,
-            })
-
-        
-            +card-room({
-              carouselProperties: {
-                imgList: [
-                  "page-room-img-4.jpg",
-                  "page-room-img-5.jpg",
-                  "page-room-img-6.jpg",
-                  "page-room-img-7.jpg",
-                ],
-              },
-              roomNumberProperties: {
-                number: 856,
-              },
-              roomPriceProperties: {
-                price: "7 300",
-              },
-              rateButtonProperties: {
-                maxRate: 5,
-                selectedRate: 5,
-              },
-                cardRoomReviewNumber: 19,
+          .search-room__room-cards-pagination 
+            +pagination({
+              entries: 180,
+              pages: 15,
             })
 
         

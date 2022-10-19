@@ -6,9 +6,14 @@ mixin range-slider(properties = {})
       sliderMax = "100",
       currentMin = "0",
       currentMax = "100",
+      hasDiscritpion = false,
+      discriptionText = "",
     } = properties
 
     const dataProperties = JSON.stringify(properties)
 
-  section.range-slider.range-slider-js(data-properties = dataProperties)
+  section.slider
+    .range-slider.range-slider-js(data-properties = dataProperties)
+    if hasDiscritpion
+      p.slider__discription #{discriptionText}
 
