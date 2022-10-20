@@ -437,13 +437,14 @@ block content
               level: "h3", 
               title: "bullet list",
             })
-            +bullet-items({
-              listItems: [
-                { title: "Нельзя с питомцами"},
-                { title: "Без вечеринок и мероприятий"},
-                { title: "Время прибытия — после 13:00, а\u00A0выезд до 12:00"},
-              ]
-            })
+            .form-elements__lists-checkboxes-bullet-list--wrapper
+              +bullet-items({
+                listItems: [
+                  { title: "Нельзя с питомцами"},
+                  { title: "Без вечеринок и мероприятий"},
+                  { title: "Время прибытия — после 13:00, а\u00A0выезд до 12:00"},
+                ]
+              })
       section.form-elements__feedback
         .form-elements__grade
           .form-elements__medium-wrapper

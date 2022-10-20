@@ -33,6 +33,7 @@ module.exports = {
   resolve: {
     alias: {
       '@base': path.resolve(__dirname, './src/styles/base.scss'),
+      '@mixins': path.resolve(__dirname, './src/styles/mixins.scss'),
       '@fonts': path.resolve(__dirname, './src/styles/fonts.scss'),
     },
   },

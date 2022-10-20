@@ -1,4 +1,5 @@
 @import '@base';
+@import '@mixins';
 
 .type{
   display: flex;
@@ -11,35 +12,25 @@
   &__h1 {
     display: flex;
     margin-bottom: 52px;
-    color: $textColor;
-    font: 700 24px $mainFont;
-    line-height: 29px;
-    letter-spacing: 0.8;
+    @include h1
   }
 
   &__h2 {
     display: flex;
     margin-right: 20px;
     margin-bottom: 52px;
-    color: $textColor;
-    font: 700 19px $mainFont;
-    line-height: 23px;
+    @include h2
   }
 
   &__h3 {
     display: flex;
     margin-bottom: 51px;
-    color: $textColor;
-    font: 700 12px $mainFont;
-    line-height: 15px;
-    text-transform: uppercase;
+    @include h3
   }
 
   &__body {
     display: flex;
-    color: $textColor_75;
-    font: 400 14px $mainFont; 
-    line-height: 24px;
+    @include body
   }
 
   &__tag{

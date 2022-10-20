@@ -1,12 +1,9 @@
 @import '@base';
+@import '@mixins';
 
 .bullet-list{
   display: flex;
   flex-direction: column;
-  font-family: $mainFont;
-  font-style: normal;
-  color: $textColor_75;
-  font-size: 14px;
 
   &__items{
     list-style-type: none;
@@ -16,7 +13,7 @@
     position: relative;
     padding-left: 20px;
     padding-bottom: 10px;
-    line-height: 24px;
+    @include body;
 
     &::before{
       content: "";
@@ -26,7 +23,7 @@
       background: $textColor_25;
       position: absolute;
       left: 0;
-      top: 5px;
+      top: 7px;
     }
   }
 }
