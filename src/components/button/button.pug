@@ -7,6 +7,7 @@ mixin button(properties = {})
       isTransparentBackground = false,
       hasArrow = false,
       disabled = false,
+      href = "#",
     } = properties
 
     const isDisableModifire = disabled ? "button__inner-disable" : ""
@@ -14,14 +15,14 @@ mixin button(properties = {})
     const hasArrowModifire = hasArrow ? "button__inner-center" : ""
     const sizeModifire = size === "large" ? "button__inner-large" : ""
 
-  section.button
+  a.button(href = href)
     if buttonType === "ButtonDefault"
       button.button__inner-default&attributes({
         class: [
           isDisableModifire, 
           isTransparentBackgroundModifire, 
           hasArrowModifire,
-          sizeModifire
+          sizeModifire,
         ]
       }) #{buttonName}
         if hasArrow

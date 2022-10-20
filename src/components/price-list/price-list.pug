@@ -7,9 +7,9 @@ mixin price-list(properties = {})
 
   section.price-list
     each element in elements
-        .price-list__text-item
-          .price-list__text-info
-            span.price-list__text-title #{element.title}
+        .price-list__item
+          .price-list__title #{element.title}
+          .price-list__button-and-price
             if element.hasInfoButton
-              span.price-list__text-button i
-          span.price-list__text-price #{element.price}
+              .price-list__button i
+            .price-list__price #{element.price}

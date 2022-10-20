@@ -41,7 +41,6 @@ class DateDropdown {
       onShow: () => this.$arrowStartIcon.innerHTML = 'expand_more',
       onHide: () => this.$arrowStartIcon.innerHTML = 'expand_less',
       inline: this.isOpenCheck(),
-      // inline: true,
 
     });
 

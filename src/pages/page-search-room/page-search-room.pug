@@ -12,119 +12,121 @@ block variables
   - const bodyProperties = "background: white"
 
 block content
-  .search-room
+  .search-room.search-room-js
     .search-room__container
       main.search-room__main
         .search-room__filters
-          .search-room__filters-day-of-stay
-            +filter-date-dropdown({
-              type:"text",
-              hasArrow: true,
-              dateFormat: "dd.MM.yyyy",
-              title: "Даты пребывания в отеле",
-              placeholder: "ДД.ММ.ГГГГ",
-              name: "date",
-              startDate: "08.10.2019",
-              endDate: "08.19.2019",
-              withMask: true,
-              datesSeparator: " - "
-            })
-          .search-room__filters-guests
-            +heading({ 
-              level: "h3", 
-              title: "гости",
-            })
-            +dropdown({
-              isOpen: false,
-              hasButtons: true,
-              type: "not-guests",
-              placeholder: "Сколько гостей",
-              maxCount: 10,
-              elements: [
-                { title: "Взрослые", id: "adult", startCount: 0 }, 
-                { title: "Дети", id: "kids", startCount: 0 }, 
-                { title: "Младенцы", id: "baby", startCount: 0 }
-              ],
-              plurals: {
-                adult: "Взрослый, Взрослых, Взрослых",
-                kids: "Ребенок, Ребенка, Детей",
-                baby: "Младенец, Младенца, Младенцев",
-                },
-            })
-          .search-room__filters-price
-            +heading({ 
-              level: "h3", 
-              title: "Диапазон цены",
-              description: "5000₽ - 10000₽" 
-            })
-            +range-slider({
-              sliderMin: 0,
-              sliderMax: 15000,
-              startMin: 5000,
-              startMax: 10000,
-              hasDiscritpion: true,
-              discriptionText: "Стоимость за сутки пребывания в номер",
-            })
-          .search-room__filters-rules
-            +heading({ 
-              level: "h3", 
-              title: "Правила дома",
-            })
-            +checkbox-list({
-              listItems: [
-                { title: "Можно курить", name: 'smoke-allow' },
-                { title: "Можно с питомцами", name: 'pets-allow' },
-                { title: "Можно пригласить гостей (до\u00A010\u00A0человек)", name: 'guests-allow', checked: true }
-              ],
-            })
-          .search-room__filters-accessibility
-            +heading({ 
-              level: "h3", 
-              title: "Доступность",
-            })
-            +checkbox-list({	
-              title: "RICH CHECKBOX BUTTONS",
-              isOpen: true,
-              richListItems: [
-                { title: "Широкий коридор", description: "Ширина коридоров в номере не\u00A0менее 91 см.", name: 'corridor', checked: true },
-                { title: "Помощник для инвалидов", description: "На 1 этаже вас встретит специалист и\u00A0проводит до номера.", name: 'helper' },
-              ],
-            })
-          .search-room__filters-facilities
-            +heading({ 
-              level: "h3", 
-              title: "Удобства номера",
-            })
-            +dropdown({
-              isOpen: false,
-              type: "guests",
-              placeholder: "Удобства номера",
-              maxCount: 10,
-              elements: [
-                { title: "Спальни", id: "bedrooms", startCount: 2 }, 
-                { title: "Кровати", id: "beds", startCount: 2 }, 
-                { title: "Ванные комнаты", id: "bathrooms", startCount: 0 }
-              ],
-              plurals: {
-                bedrooms: "спальня, спальни, спален",
-                beds: "кровать, кровати, кроватей",
-                bathrooms: "ванная комната, ванные комнаты, ванных комнат",
-                },
-            })
-          .search-room__filters-additional-facilities
-            +checkbox-list({	
-              title: "Дополнительные удобства",
-              isDropdown: true,
-              isOpen: false,
-              listItems: [
-                { title: "Завтрак", name: 'breakfast' },
-                { title: "Письменный стол", name: 'desk', checked: true },
-                { title: "Стул для кормления", name: 'table', checked: true },
-                { title: "Кроватка", name: 'bed', checked: true },
-                { title: "Телевизор", name: 'tv'},
-                { title: "Шампунь", name: 'shampoo'},
-              ],
-            })
+          .search-room__filters-button
+          .search-room__filters-container
+            .search-room__filters-day-of-stay
+              +filter-date-dropdown({
+                type:"text",
+                hasArrow: true,
+                dateFormat: "dd.MM.yyyy",
+                title: "Даты пребывания в отеле",
+                placeholder: "ДД.ММ.ГГГГ",
+                name: "date",
+                startDate: "08.10.2019",
+                endDate: "08.19.2019",
+                withMask: true,
+                datesSeparator: " - "
+              })
+            .search-room__filters-guests
+              +heading({ 
+                level: "h3", 
+                title: "гости",
+              })
+              +dropdown({
+                isOpen: false,
+                hasButtons: true,
+                type: "not-guests",
+                placeholder: "Сколько гостей",
+                maxCount: 10,
+                elements: [
+                  { title: "Взрослые", id: "adult", startCount: 0 }, 
+                  { title: "Дети", id: "kids", startCount: 0 }, 
+                  { title: "Младенцы", id: "baby", startCount: 0 }
+                ],
+                plurals: {
+                  adult: "Взрослый, Взрослых, Взрослых",
+                  kids: "Ребенок, Ребенка, Детей",
+                  baby: "Младенец, Младенца, Младенцев",
+                  },
+              })
+            .search-room__filters-price
+              +heading({ 
+                level: "h3", 
+                title: "Диапазон цены",
+                description: "5000₽ - 10000₽" 
+              })
+              +range-slider({
+                sliderMin: 0,
+                sliderMax: 15000,
+                startMin: 5000,
+                startMax: 10000,
+                hasDiscritpion: true,
+                discriptionText: "Стоимость за сутки пребывания в номер",
+              })
+            .search-room__filters-rules
+              +heading({ 
+                level: "h3", 
+                title: "Правила дома",
+              })
+              +checkbox-list({
+                listItems: [
+                  { title: "Можно курить", name: 'smoke-allow' },
+                  { title: "Можно с питомцами", name: 'pets-allow' },
+                  { title: "Можно пригласить гостей (до\u00A010\u00A0человек)", name: 'guests-allow', checked: true }
+                ],
+              })
+            .search-room__filters-accessibility
+              +heading({ 
+                level: "h3", 
+                title: "Доступность",
+              })
+              +checkbox-list({	
+                title: "RICH CHECKBOX BUTTONS",
+                isOpen: true,
+                richListItems: [
+                  { title: "Широкий коридор", description: "Ширина коридоров в номере не\u00A0менее 91 см.", name: 'corridor', checked: true },
+                  { title: "Помощник для инвалидов", description: "На 1 этаже вас встретит специалист и\u00A0проводит до номера.", name: 'helper' },
+                ],
+              })
+            .search-room__filters-facilities
+              +heading({ 
+                level: "h3", 
+                title: "Удобства номера",
+              })
+              +dropdown({
+                isOpen: false,
+                type: "guests",
+                placeholder: "Удобства номера",
+                maxCount: 10,
+                elements: [
+                  { title: "Спальни", id: "bedrooms", startCount: 2 }, 
+                  { title: "Кровати", id: "beds", startCount: 2 }, 
+                  { title: "Ванные комнаты", id: "bathrooms", startCount: 0 }
+                ],
+                plurals: {
+                  bedrooms: "спальня, спальни, спален",
+                  beds: "кровать, кровати, кроватей",
+                  bathrooms: "ванная комната, ванные комнаты, ванных комнат",
+                  },
+              })
+            .search-room__filters-additional-facilities
+              +checkbox-list({	
+                title: "Дополнительные удобства",
+                isDropdown: true,
+                isOpen: false,
+                listItems: [
+                  { title: "Завтрак", name: 'breakfast' },
+                  { title: "Письменный стол", name: 'desk', checked: true },
+                  { title: "Стул для кормления", name: 'table', checked: true },
+                  { title: "Кроватка", name: 'bed', checked: true },
+                  { title: "Телевизор", name: 'tv'},
+                  { title: "Шампунь", name: 'shampoo'},
+                ],
+              })
         .search-room__room-cards
           .search-room__room-cards-title
             +heading({ 

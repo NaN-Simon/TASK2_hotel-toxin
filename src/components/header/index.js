@@ -37,7 +37,6 @@ class Header {
     });
     this.$burger.nextElementSibling.classList.toggle('navigation--burger');
     const headerNav = this.$el.querySelector('.header__navigation');
-    console.log(headerNav)
     headerNav.classList.toggle('header__navigation--burger-open');
     if (this.$burger.children[0].innerHTML === 'menu') {
       this.$burger.children[0].innerHTML = 'close';

@@ -1,9 +1,11 @@
 @import '@base';
 
 .room-details{
-  margin: 0 auto;
 
   &__main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding-bottom: 62px;
   }
   &__wrapper{
@@ -12,15 +14,10 @@
     margin: 0 auto;
   }
 
-  &__main{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
   &--padding-bottom{
     padding-bottom: 13px;
   }
+
   &--padding-left{
     padding-left: 19px;
   }
@@ -52,13 +49,14 @@
     &-info{
       display: flex;
       flex-direction: column;
+      max-width: 710px;
 
       &-about{
         display: flex;
         flex-direction: revert;
         justify-content: space-between;
         max-width: 672px;
-        padding-bottom: 6px;
+        padding-bottom: 7px;
 
         &-impression{
           max-width: 311px;
@@ -91,6 +89,80 @@
             color: $textColor_75;
           }
         }
+      }
+    }
+  }
+
+  &__booking{
+    max-width: 380px;
+  }
+}
+
+@media (max-width: 1439px){
+  .room-details{
+    
+    &__main{
+      padding-bottom: 30px;
+    }
+
+    &__gallery{
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+
+      &-inside{
+        display: flex;
+        justify-content: space-evenly;
+      }
+
+      &-photo-item{
+        height: auto;
+        max-width: 100%;
+        object-fit: cover;
+        &--bottom{
+          width: 50%;
+        }
+      }
+    }
+
+    &__description{
+      flex-direction: column-reverse;
+      align-items: center;
+      width: auto;
+    }
+  }
+}
+@media (max-width: 786px){
+  .room-details{
+
+    &__gallery{
+
+      &-inside{
+        flex-direction: column;
+      }
+
+      &-photo-item--bottom{
+        width: 100%;
+      }
+    }
+
+    &__description-info{
+      justify-content: center;
+      align-items: center;
+  
+      &-about{
+        flex-direction: column;
+
+        &-impression{
+          padding-bottom: 20px;
+        }
+      }
+  
+      &-review-container{
+        max-width: 420px;
+      }
+  
+      &-rules{
+        flex-direction: column;
       }
     }
   }

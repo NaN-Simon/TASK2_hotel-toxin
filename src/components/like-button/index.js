@@ -18,14 +18,12 @@ class LikeButton {
 
   clickHandler() {
     if (this.properties.checked) {
-      console.log('-', this.$input);
       this.$title.classList.remove('like-button__title-blue');
       this.$title.innerHTML--;
       this.$input.removeAttribute('checked');
       this.$input.classList.remove('like-button__input-blue');
       this.properties.checked = '';
     } else {
-      console.log('+', this.$input);
       this.$title.classList.add('like-button__title-blue');
       this.$title.innerHTML++;
       this.$input.setAttribute('checked', 'checked');

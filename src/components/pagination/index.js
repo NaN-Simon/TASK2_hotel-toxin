@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-expressions */
 import 'paginationjs/dist/pagination';
 import 'paginationjs/dist/pagination.css';
 import './pagination.scss';
@@ -34,8 +33,7 @@ class Pagination {
     this.$root.pagination(params);
   }
 
-  setFormatNavigator(currentPage, totalNumber) {
-    console.log(this.totalNumber)
+  setFormatNavigator(currentPage) {
     const endPage = currentPage * 12;
 
     let startPage = currentPage;

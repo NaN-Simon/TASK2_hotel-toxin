@@ -17,7 +17,8 @@ mixin header(properties = {})
     .header__container
       .header__body
         .header__logo
-          +image-png(headerLogo)
+          a(href='http://localhost:8080/')
+            +image-png(headerLogo)
         .header__menu.header__menu--burger
           .header__navigation.header__navigation--burger
             .header__burger
@@ -34,10 +35,12 @@ mixin header(properties = {})
                   buttonType: "ButtonDefault",
                   size: "small",
                   isTransparentBackground: true,
+                  href: "./page-login.html",
                 })
               .header__button-register.header__button-register--burger
                 +button({
                   buttonName: "зарегистрироваться",
                   buttonType: "ButtonDefault",
                   size: "large",
+                  href: "./page-registration.html",
                 })
