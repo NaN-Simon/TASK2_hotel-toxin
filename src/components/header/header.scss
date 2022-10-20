@@ -83,6 +83,10 @@
       display: flex;
       cursor: pointer;
     }
+
+    &__body{
+      padding: 0 20px;
+    }
     
     &__navigation--burger-open{
       position: fixed;

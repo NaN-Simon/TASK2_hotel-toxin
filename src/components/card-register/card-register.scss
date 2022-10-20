@@ -3,7 +3,6 @@
 .card-register{
   max-width: 380px;
   min-width: 380px;
-  height: 647px;
   padding: 39px 30px 30px 29px;
   border-radius: 4px;
   font-family: $mainFont;
@@ -42,7 +41,7 @@
 
   &__to-pay{
     padding-bottom: 74px;
-    width: 319px;
+    width: 100%;
     height: 44px;
   }
 
@@ -61,5 +60,12 @@
     width: 100px;
     height: 44px;
     }
+  }
+}
+
+@media (max-width: 380px){
+  .card-register{
+    max-width: 320px;
+    min-width: 320px;
   }
 }

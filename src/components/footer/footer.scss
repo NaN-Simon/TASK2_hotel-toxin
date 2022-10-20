@@ -156,9 +156,14 @@
     &__wrapper{
       padding: 0;
     }
+    
     &__navigation{
       flex-direction: column;
       gap: 0;
+    }
+
+    &__copyright-text{
+      text-align: center;
     }
   }
 }

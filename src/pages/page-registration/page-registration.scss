@@ -22,3 +22,47 @@
   }
 
 }
+
+@media (max-width: 1439px){
+  .registration-page{
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: auto;
+    width: 768px;
+    height: 688px;
+    margin: 0 auto;
+    
+    &__wrapper{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: inherit;
+      margin: 0 auto;
+      padding: 0;
+      max-width: none;
+      min-width: auto;
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+    
+    &__title{
+      max-width: auto;
+      padding: 0;
+      align-self: auto;
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: 786px){
+  .registration-page{
+    background: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}

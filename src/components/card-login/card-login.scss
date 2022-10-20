@@ -21,7 +21,7 @@
   } 
   &__signin{
     padding-bottom: 74px;
-    width: 319px;
+    width: 100%;
     height: 44px;
   } 
 
@@ -41,5 +41,12 @@
       height: 44px;
     }
 
+  }
+}
+
+@media (max-width: 380px){
+  .card-login{
+    max-width: 320px;
+    min-width: 320px;
   }
 }

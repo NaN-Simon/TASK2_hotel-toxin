@@ -46,3 +46,15 @@ html{
     font-family: inherit;
   }
 }
+
+@media (max-width: 380px){
+  .main{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .menu__ui-kit,
+  .menu__site{
+    text-align: center;
+  }
+}
