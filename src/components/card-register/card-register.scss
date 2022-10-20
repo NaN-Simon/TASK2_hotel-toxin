@@ -8,7 +8,7 @@
   font-family: $mainFont;
   color: $textColor;
   background: $mainBackground;
-  box-shadow: 0 0 25px rgb(0 0 0 / 20%);
+  box-shadow: $elementBoxShadow;
 
   &__heading{
     padding-bottom: 15px;

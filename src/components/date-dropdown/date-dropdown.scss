@@ -110,6 +110,18 @@
       color: $textColor_50;
     }
   }
+
+  &--pointer {
+    display: none;
+  }
+}
+
+.air-datepicker.-inline- {
+  box-shadow: $elementBoxShadow;
+}
+
+.air-datepicker.-bottom-left-.-from-bottom-.-active- {
+  box-shadow: $elementBoxShadow;;
 }
 
 @media (max-width: 380px){

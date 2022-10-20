@@ -9,7 +9,8 @@
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   background: $mainBackground;
-
+  box-shadow: $elementBoxShadow;
+  
   &__description {
     padding-left: 20px;
     padding-right: 20px;

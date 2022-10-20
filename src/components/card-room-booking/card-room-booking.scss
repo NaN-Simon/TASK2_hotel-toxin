@@ -10,7 +10,7 @@
   font-family: montserrat, arial, sans-serif;
   color: #1f2041;
   background: #ffffff;
-  box-shadow: 0 0 25px rgb(0 0 0 / 20%);
+  box-shadow: $elementBoxShadow;
 
   &__number-price{
     display: flex;
