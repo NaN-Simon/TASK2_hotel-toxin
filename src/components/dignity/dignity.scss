@@ -1,4 +1,5 @@
 @import '@base';
+@import '@mixins';
 
 .dignity{
   display: flex;
@@ -26,9 +27,8 @@
     padding-left: 17px;
 
     &-title{
-      font-size: 14px;
+      @include font-body;
       font-weight: 700;
-      line-height: 27px;
       color: $textColor_75;
     }
     

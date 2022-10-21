@@ -1,4 +1,5 @@
 @import '@base';
+@import '@mixins';
 
 .review{
   display: flex;
@@ -47,10 +48,7 @@
     &-description{
       max-width: 670px;
       padding-left: 18px;
-      font-style: normal;
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 24px;
+      @include font-body;
       color: $textColor_75;
     }
   }

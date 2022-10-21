@@ -1,11 +1,11 @@
 @import '@base';
+@import '@mixins';
 
 .checkbox-toggle-items{
-  font-family: $mainFont;
-  font-style : normal;
-  font-weight: 400;
-  font-size  : 14px;
-  line-height: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px 0;
+  @include font-body;
   color: $textColor_75;
 }
 .checkbox-toggle-item {

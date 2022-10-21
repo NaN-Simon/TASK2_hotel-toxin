@@ -1,12 +1,10 @@
 @import '@base';
+@import '@mixins';
 
 .paginationjs {
   display: flex;
   flex-direction: column;
-  font-family: $mainFont;
-  font-style : normal;
-  font-weight: 400;
-  font-size  : 14px;
+  @include font-body;
   line-height: 14px;
   
   & .paginationjs-pages li {

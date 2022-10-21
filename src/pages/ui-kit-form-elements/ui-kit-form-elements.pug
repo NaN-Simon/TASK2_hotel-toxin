@@ -164,15 +164,16 @@ block content
               level: "h3", 
               title: "Toggle",
             })
-            +toggle({	
-              name: "special-offer",
-              type: "checkbox",
-              inline: false,
-              listItems: [
-                { title: "Получать спецпредложения", id: "special-offer1", checked: "checked" },
-                { title: "Получать спецпредложения", id: "special-offer2" },
-              ],
-            })
+            .form-elements__text-fields-buttons--toggles
+              +toggle({	
+                name: "special-offer",
+                type: "checkbox",
+                inline: false,
+                listItems: [
+                  { title: "Получать спецпредложения", id: "special-offer1", checked: "checked" },
+                  { title: "Получать спецпредложения", id: "special-offer2" },
+                ],
+              })
           .form-elements__small-wrapper.form-elements__text-fields-buttons--like-button
             +heading({ 
               level: "h3", 

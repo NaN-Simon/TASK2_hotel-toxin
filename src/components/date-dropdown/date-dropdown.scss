@@ -1,4 +1,5 @@
 @import '@base';
+@import '@mixins';
 
 .date-dropdown{
   display: flex;
@@ -35,20 +36,13 @@
   margin-top: 5px;
 
   &-nav--title {
-    font-family: $mainFont;
-    font-style : normal;
-    font-weight: 700;
-    font-size  : 19px;
-    line-height: 23px;
+    height: 57px;
+    @include font-h2;
     color: $textColor;
   }
 
   &-nav--title i {
-    font-family: $mainFont;
-    font-style : normal;
-    font-weight: 700;
-    font-size  : 19px;
-    line-height: 23px;
+    @include font-h2;
     color: $textColor;
 
   }
@@ -64,6 +58,7 @@
 
   &-body--day-names{
     height: 40px;
+    margin: 8px 0 1px;
   }
 
   &-cell.-selected-{
@@ -94,16 +89,15 @@
   &-buttons {
     display: flex;
     justify-content: space-between;
+    padding-top: 17px;
+    padding-bottom: 8px;
+  
+    
   }
 
   &-button{
-    font-family: $mainFont;
-    font-style : normal;
-    font-weight: 700;
-    font-size  : 12px;
-    line-height: 15px;
+    @include font-h3;
     color: $elementColor;
-    text-transform: uppercase;
     padding: 0 15px 0 15px;
 
     &:hover span{
@@ -118,10 +112,25 @@
 
 .air-datepicker.-inline- {
   box-shadow: $elementBoxShadow;
+  border: none;
 }
 
+nav.air-datepicker-nav {
+  border: none;
+}
+
+.air-datepicker--buttons {
+  border: none;
+}
+.air-datepicker--content {
+  padding: 0;
+}
 .air-datepicker.-bottom-left-.-from-bottom-.-active- {
   box-shadow: $elementBoxShadow;;
+}
+
+.air-datepicker-nav--action {
+  padding: 0 30px;
 }
 
 @media (max-width: 380px){
@@ -137,6 +146,6 @@
       scale(0.8) 
       translateY(-41px) 
       translateX(-37px) 
-      !important;;
+      !important;
   }
 }

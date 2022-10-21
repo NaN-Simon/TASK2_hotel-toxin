@@ -1,4 +1,5 @@
 @import '@base';
+@import '@mixins';
 
 .footer{
   margin: 0 auto;
@@ -22,11 +23,8 @@
       display: flex;
       width: 260px;
       padding-top: 11px;
-      font-family: $mainFont;
-      font-style: normal;
+      @include font-body;
       font-weight: 400;
-      font-size: $mainFont_size;
-      line-height: 24px;
       color: $textColor_75;
     }
   }
@@ -57,11 +55,8 @@
   }
 
   &__copyright-text{
-    font-family: $mainFont;
-    font-style: normal;
+    @include font-body;
     font-weight: 400;
-    font-size: $mainFont_size;
-    line-height: 24px;
     color: $textColor_75;
   }
 
@@ -85,11 +80,8 @@
 
 
     &-copyright-text{
-      font-family: $mainFont;
-      font-style: normal;
+      @include font-body;
       font-weight: 400;
-      font-size: $mainFont_size;
-      line-height: 24px;
       color: $textColor_75;
     }
 

@@ -1,23 +1,30 @@
 @import '@base';
+@import '@mixins';
 
 .checkbox-list {
   display       : flex;
   flex-direction: column;
   position: relative;
+  
+  &__container{
+    position: relative;
+  }
 
   &__items{
     display: none;
   }
 
-  &__container{
-    position: relative;
+  &__item{
+    display: flex;
+    padding-bottom: 10px;
+    cursor: pointer;
   }
 
   &__open .checkbox-list__items{
     display: flex;
     flex-direction: column;
     position: absolute;
-    margin-top: 10px;
+    padding-top: 11px;
     background: $mainBackground;
   }
 
@@ -26,11 +33,8 @@
     flex-direction: row;
     justify-content: space-between;
     color: $textColor;
-    font-weight: 700;
-    font-size: 12px;
-    font-family: $mainFont;
-    text-transform: uppercase;
     cursor: pointer;
+    @include font-h3;
 
     &-arrow{
       color: $textColor_50;
@@ -49,47 +53,35 @@
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    padding-bottom: 10px;
+    padding-bottom: 6px;
     cursor: pointer;
 }
 
   &__rich-container{
     display: flex;
     flex-direction: column;
+    margin-top: -2px;
   }
 
   &__rich-title{
-    font-family: $mainFont;
-    font-size: 14px;
-    color: $textColor_75;
+    padding-bottom: 2px;
+    padding-left: 4px;
+    @include font-body;
     font-weight: 700;
-    padding-bottom: 7px;
-    padding-left: 3px;
   }
   
   &__rich-description{
-    font-family: $mainFont;
-    font-size: 12px;
-    line-height: 14px;
-    color: $textColor_50;
+    padding-left: 4px;
+    @include font-h3;
     font-weight: 400;
-  }
-
-  /* default listItems */
-
-  &__item{
-    display: flex;
-    padding-bottom: 10px;
-    cursor: pointer;
+    text-transform: none;
+    color: $textColor_75;
   }
 
   &__title{
-    font-family: $mainFont;
-    font-style : normal;
-    font-weight: 400;
-    font-size  : 14px;
-    line-height: 18px;
+    @include font-body;
     color: $textColor_50;
+    line-height: 18px;
     margin: 0;
   }
 

@@ -1,7 +1,6 @@
 $material-design-icons-font-directory-path: '~material-design-icons-iconfont/dist/fonts/';
 @import '~material-design-icons-iconfont/src/material-design-icons';
 
-//colors
 $textColor: #1f2041;
 $textColor_75: rgba(31, 32, 65, 0.75);
 $textColor_50: rgba(31, 32, 65, 0.50);
@@ -13,43 +12,5 @@ $elementGradient: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
 $elementGradientHover: linear-gradient(180deg, #6FCF97 0%, #66d2ea80 100%);
 $elementBoxShadow: 0 0 25px rgb(0 0 0 / 20%);
 $mainBackground: #ffffff;
-
-// fonts
 $mainFont: montserrat, arial, sans-serif;
 $mainFont_size: 14px;
-
-// .title-h1 {
-//   font-family: $mainFont;
-//   font-style : normal;
-//   font-weight: 400;
-//   font-size  : 24px;
-//   line-height: 29px;
-//   color: $textColor;
-// }
-
-// .title-h2 {
-//   font-family: $mainFont;
-//   font-style : normal;
-//   font-weight: 400;
-//   font-size  : 19px;
-//   line-height: 23px;
-//   color: $textColor;
-// }
-
-// .title-h3 {
-//   font-family: $mainFont;
-//   font-style : normal;
-//   font-weight: 700;
-//   font-size  : 12px;
-//   line-height: 15px;
-//   color: $textColor;
-//   text-transform: uppercase;
-// }
-// .title-body {
-//   font-family: $mainFont;
-//   font-style : normal;
-//   font-weight: 400;
-//   font-size  : 14px;
-//   line-height: 24px;
-//   color: $textColor_75;
-// }

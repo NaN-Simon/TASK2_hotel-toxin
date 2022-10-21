@@ -1,12 +1,11 @@
 @import '@base';
+@import '@mixins';
 
 .card-register{
   max-width: 380px;
   min-width: 380px;
   padding: 39px 30px 30px 29px;
   border-radius: 4px;
-  font-family: $mainFont;
-  color: $textColor;
   background: $mainBackground;
   box-shadow: $elementBoxShadow;
 
@@ -52,8 +51,7 @@
     align-items: center;
 
     &-title{
-      font-size: 14px;
-      color: $textColor;
+      @include font-body;
     }
 
     &-button{

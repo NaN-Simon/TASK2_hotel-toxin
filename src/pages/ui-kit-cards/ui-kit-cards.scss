@@ -1,10 +1,12 @@
 .cards{
+  padding-top: 10px;
+
   &__container{
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
-    min-width: 1158px;
-    max-width: 1158px;
+    min-width: 320px;
+    max-width: 1160px;
     margin: 0 auto;
   }
 

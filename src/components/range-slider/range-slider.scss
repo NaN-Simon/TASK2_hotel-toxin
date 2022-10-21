@@ -1,4 +1,5 @@
 @import '@base';
+@import '@mixins';
 
 .range-slider{
   margin-top: 23px;
@@ -38,7 +39,7 @@
     display: none;
     border: none;
     font-family: $mainFont;
-    font-size: $mainFont_size - 4;
+    font-size: 10px;
     padding: 0;
     color: $textColor_75;
     background: none;
@@ -48,14 +49,4 @@
   & .noUi-handle::after {
     content: none
   }
-
-}
-
-.slider__discription{
-  font-family: $mainFont;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 14px;
-  letter-spacing: 0.2px;
 }

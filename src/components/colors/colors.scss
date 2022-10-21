@@ -1,4 +1,5 @@
 @import '@base';
+@import '@mixins';
 
 .colors{
   display: flex;
@@ -14,8 +15,8 @@
   }
 
   &__rect{
-    width        : 70px;
-    height       : 70px;
+    width: 70px;
+    height: 70px;
     border-radius: 6px;
     &_darkest-gray{
       background-color: $textColor;
@@ -48,17 +49,13 @@
     padding-left: 40px;
   }
   &__title{
+    padding-bottom: 5px;
+    @include font-h2;
     color      : $textColor;
-    font-weight: 700;
-    font-size: 19px;
-    font-family: $mainFont;
-    line-height: 28px;
-    letter-spacing: 0.9px;
   }
   &__code{
+    @include font-h2;
     color      : $textColor;
     font-weight: 400;
-    font-size  : 18px;
-    font-family: $mainFont;
   }
 }

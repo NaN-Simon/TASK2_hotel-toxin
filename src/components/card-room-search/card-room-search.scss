@@ -1,9 +1,10 @@
 @import '@base';
+@import '@mixins';
 
 .card-room-search{
   max-width: 380px;
   min-width: 380px;
-  padding: 39px 30px 30px 29px;
+  padding: 40px 30px 30px 29px;
   margin-bottom: 40px;
   border-radius: 4px;
   font-family: $mainFont;
@@ -12,18 +13,17 @@
   box-shadow: $elementBoxShadow;
 
   &__title{
-    font-size: 29px;
-    font-weight: 700;
-    padding-bottom: 15px;
+    @include font-h1;
+    padding-bottom: 20px;
   }
   
   &__date-dropdown{
     width: 320px;
-    padding-bottom: 15px;
+    padding-bottom: 13px;
   }
 
   &__dropdown{
-    padding-bottom: 20px;
+    padding-bottom: 30px;
   }
   &__button{
     width: 319px;

@@ -1,4 +1,5 @@
 @import '@base';
+@import '@mixins';
 
 .landing-page{
   background: url("../pages/page-landing-page/image/image.jpg");
@@ -26,11 +27,7 @@
     text-align: end;
 
     & p{
-      font-family: $mainFont;
-      font-style: normal;
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 24px;
+      @include font-body
     }
   }
 

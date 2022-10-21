@@ -1,4 +1,5 @@
 @import '@base';
+@import '@mixins';
 
 .card-room{
   width: 270px;
@@ -53,22 +54,15 @@
     flex-direction: row;
 
     &-number{
-      font-family: $mainFont;
-      font-style: normal;
-      font-weight: 700;
-      font-size: $mainFont_size;
-      line-height: 18px;
+      @include font-body;
       color: $textColor_50;
+      font-weight: 700;
     }
     
     &-text{
-      font-family: $mainFont;
-      font-style: normal;
-      font-weight: 400;
-      font-size: $mainFont_size;
-      line-height: 18px;
-      color: $textColor_50;
 
+      color: $textColor_50;
+      @include font-body;
     }
   }
 }

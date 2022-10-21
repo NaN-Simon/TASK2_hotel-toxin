@@ -1,4 +1,5 @@
 @import '@base';
+@import '@mixins';
 
 .chart{
   display: flex;
@@ -45,14 +46,10 @@
   &__discription{
     display: flex;
     flex-direction: column-reverse;
-    font-family: $mainFont;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 24px;
     padding-top: 27px;
     list-style-type: none;
     color: $textColor_75;
+    @include font-body;
 
     &-item{
       position: relative;

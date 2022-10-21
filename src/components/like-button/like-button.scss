@@ -34,68 +34,63 @@
 
   }
 
-}
-
-.like-button__input {
-  position: relative;
-  display: inline-block;
-  width: 40px;
-  height: 20px;
-  vertical-align: top;
-  border: 1px solid $textColor_25;
-  color: $textColor_25;
-  border-radius: 30px;
-  outline: none;
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  transition: 0.5s;
-
-  &::after {
-    content: "favorite_border";
-    display: inline-block;
-    transition: 0.5s;
-    font-size: 10px;
-    position: absolute;
-    left: 4px;
-    top: 4px;
-    color: $textColor_25;
-    transition: 0.5s;
-  }
-
-  &:checked {
+  &__input {
     position: relative;
     display: inline-block;
     width: 40px;
     height: 20px;
     vertical-align: top;
-    border: 1px solid $elementColor;
-    color: $elementColor;
+    border: 1px solid $textColor_25;
+    color: $textColor_25;
     border-radius: 30px;
     outline: none;
     cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
     appearance: none;
     transition: 0.5s;
-
+  
     &::after {
-      content: "favorite";
+      content: "favorite_border";
       display: inline-block;
       transition: 0.5s;
       font-size: 10px;
       position: absolute;
       left: 4px;
       top: 4px;
-      color: $elementColor;
+      color: $textColor_25;
+      transition: 0.5s;
     }
-
-  }
-
-  &-blue{
-    border: 1px solid $elementColor;
+  
+    &:checked {
+      position: relative;
+      display: inline-block;
+      width: 40px;
+      height: 20px;
+      vertical-align: top;
+      border: 1px solid $elementColor;
+      color: $elementColor;
+      border-radius: 30px;
+      outline: none;
+      cursor: pointer;
+      appearance: none;
+      transition: 0.5s;
+  
+      &::after {
+        content: "favorite";
+        display: inline-block;
+        transition: 0.5s;
+        font-size: 10px;
+        position: absolute;
+        left: 4px;
+        top: 4px;
+        color: $elementColor;
+      }
+  
+    }
+  
+    &-blue{
+      border: 1px solid $elementColor;
+    }
   }
 }
-
-
-
-

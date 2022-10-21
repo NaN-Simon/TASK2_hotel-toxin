@@ -1,13 +1,15 @@
 @import '@base';
 
 .ui-kit-header{
-  height: 140px;
-  padding: 30px 30px 0;
-
+  width: 100%;
+  
   &__container{
     display: block;
-    min-width: 1158px;
-    max-width: 1158px;
+    min-width: 320px;
+    max-width: 1440px;
+    height: 140px;
+    padding-top: 30px;
+    padding-left: 30px;
     margin: 0 auto;
   }
 }
