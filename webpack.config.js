@@ -22,7 +22,14 @@ module.exports = {
   devtool: 'source-map',
   optimization: {
     splitChunks: {
-      chunks: 'all',
+      cacheGroups: {
+        vendor: {
+          name: 'vendors',
+          test: '/node_modules/',
+          chunks: 'all',
+          enforce: true,
+        },
+      },
     },
   },
   output: {
@@ -51,6 +58,7 @@ module.exports = {
       (page) => new HtmlWebpackPlugin({
         filename: `${page}.html`,
         template: `${PAGES_DIR}/${page}/${page}.pug`,
+
       }),
     ),
 
@@ -71,7 +79,12 @@ module.exports = {
       },
       {
         test: /\.(sa|sc|c)ss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader',
+          'sass-loader',
+        ],
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
