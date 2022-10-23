@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: column;
   font-family: $mainFont;
+  padding-left: 3px;
 
   &__data{
     display: flex;
@@ -42,12 +43,12 @@
     flex-direction: row;
 
     &-like{
-      padding-top: 4px;
+      padding-top: 1px;
     }
 
     &-description{
-      max-width: 670px;
-      padding-left: 18px;
+      max-width: 653px;
+      margin-left: 15px;
       @include font-body;
       color: $textColor_75;
     }

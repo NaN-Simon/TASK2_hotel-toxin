@@ -89,7 +89,7 @@ block content
               })
 
           .form-elements__large-wrapper
-            .form-elements__large-wrapper--extra-padding
+            .form-elements__text-fields--date-dropdown
               +date-dropdown({
                 type:"text",
                 hasTwoInputs: true,
@@ -107,13 +107,13 @@ block content
               })
 
           .form-elements__medium-wrapper
-            .form-elements__medium-wrapper--extra-padding.form-elements__text-fields--filter-date
+            .form-elements__text-fields--filter-date
               +filter-date-dropdown({
                 type:"text",
                 hasArrow: true,
                 dateFormat: "dd.MM.yyyy",
                 title: "filter date dropdown",
-                placeholder: "ДД.ММ.ГГГГ",
+                placeholder: "19 авг - 23 авг",
                 name: "date",
                 startDate: "08.10.2019",
                 endDate: "08.19.2019",

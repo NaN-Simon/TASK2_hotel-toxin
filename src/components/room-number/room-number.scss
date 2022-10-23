@@ -1,4 +1,5 @@
 @import '@base';
+@import '@mixins';
 
 .room-number{
   display: flex;
@@ -7,7 +8,7 @@
   font-family: $mainFont;
 
   &__symbol{
-    padding-right: 5px;
+    padding-right: 4px;
     font-style: normal;
     font-weight: 700;
     font-size: 14px;
@@ -17,11 +18,13 @@
 
   &__number{
     padding-right: 8px;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 20px;
+    @include font-h1;
     color: $textColor;
+
+    &--small{
+      @include font-h2;
+      padding: 0;
+    }
     
     &--high{
       font-size: 20px;

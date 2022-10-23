@@ -10,8 +10,17 @@
     max-width: 1440px;
     min-width: 320px;
     padding-top: 100px;
-    padding-bottom: 25px;
-
+    padding-bottom: 100px;
+    border-bottom: 1px solid $textColor_5;
+  }
+  &__sub-wrapper{
+    display: flex;
+    justify-content: space-between;
+    max-width: 1440px;
+    min-width: 320px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    // box-shadow: $elementBoxShadowDown;
   }
 
   &__booking{

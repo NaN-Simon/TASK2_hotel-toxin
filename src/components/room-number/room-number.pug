@@ -4,10 +4,15 @@ mixin room-number(properties = {})
     const {
       symbol = "№",
       number = 0,
+      numberSize = "",
       text = "",
     } = properties
+    
+    const numberSizeModifire = numberSize === "small" ? "room-number__number--small" : ""
 
   section.room-number
     .room-number__symbol #{symbol}
-    .room-number__number #{number}
+    .room-number__number&attributes({
+      class: numberSizeModifire
+    }) #{number}
     .room-number__text #{text}
