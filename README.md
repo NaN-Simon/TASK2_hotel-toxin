@@ -1,6 +1,6 @@
 # MetaLamp 2 task - Hotel website layout and UI Kit
 
-[**Deploy проекта (15.10.2022)**](https://nan-simon-hotel-toxin-15-10-2022.netlify.app/)
+[**Deploy проекта (24.10.2022)**](https://nan-simon-hotel-toxin-24-10-2022.netlify.app/)
 
 
 ## Процедура запуска
