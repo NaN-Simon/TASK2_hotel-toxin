@@ -1,12 +1,12 @@
-@import '@base';
-@import '@mixins';
+@import "@base";
+@import "@mixins";
 
-.colors{
+.colors {
   display: flex;
   flex-direction: column;
   width: 100%;
 
-  &__item{
+  &__item {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -14,48 +14,57 @@
     margin-bottom: 20px;
   }
 
-  &__rect{
+  &__rect {
     width: 70px;
     height: 70px;
     border-radius: 6px;
-    &_darkest-gray{
+
+    &_darkest-gray {
       background-color: $textColor;
     }
-    &_dark-gray{
+
+    &_dark-gray {
       background-color: $textColor_75;
     }
-    &_gray{
+
+    &_gray {
       background-color: $textColor_50;
     }
-    
-    &_light-gray{
+
+    &_light-gray {
       background-color: $textColor_25;
     }
-    
-    &_lightest-gray{
+
+    &_lightest-gray {
       background-color: $textColor_5;
     }
-    
-    &_purple{
+
+    &_purple {
       background-color: $elementColor;
     }
-    
-    &_green{
+
+    &_green {
       background-color: $elementColor_extra;
     }
   }
 
-  &__about{
+  &__about {
     padding-left: 40px;
   }
-  &__title{
+
+  &__title {
     padding-bottom: 5px;
     @include font-h2;
-    color      : $textColor;
+
+    color: $textColor;
   }
-  &__code{
-    @include font-h2;
-    color      : $textColor;
+
+  &__code {
+    color: $textColor;
     font-weight: 400;
+    font-size: 1.3572rem;
+    font-family: $mainFont;
+    font-style: normal;
+    line-height: 23px;
   }
 }

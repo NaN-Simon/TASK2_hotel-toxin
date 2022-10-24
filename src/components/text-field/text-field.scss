@@ -1,64 +1,57 @@
-@import '@base';
+@import "@base";
 
-.text-field{
-  background: $mainBackground;
+.text-field {
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: inherit;
+  background: $mainBackground;
   border-radius: 4px;
 
-  &__input{
-    background: inherit;
+  &__input {
     width: inherit;
     height: 44px;
-    padding: 0 15px 0 15px;
+    padding: 0 15px;
+    font-family: $mainFont;
+    background: inherit;
     border: 1px solid $textColor_25;
     border-radius: inherit;
     outline: none;
-    font-family: $mainFont;
 
     &:hover,
-    &:focus{
+    &:focus {
       border: 1px solid $textColor_50;
     }
   }
 
-  &_focused{
+  &_focused {
     border: 1px solid $textColor_50;
   }
 
-  &__arrow{
+  &__arrow {
+    position: absolute;
+    top: 0;
+    right: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    right: 0;
-    top: 0;
     width: 44px;
     height: 44px;
     color: $textColor_50;
     cursor: pointer;
   }
 
-  &__arrow-subscription{
+  &__arrow-subscription {
+    position: absolute;
+    top: 0;
+    right: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    right: 0;
-    top: 0;
     width: 44px;
     height: 44px;
     color: $elementColor;
     cursor: pointer;
   }
-}
-
-.air-datepicker-cell.-selected- {
-  color: #fff;
-  border: none;
-  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-  border-radius: 50%
 }

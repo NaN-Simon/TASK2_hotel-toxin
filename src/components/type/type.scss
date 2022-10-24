@@ -1,14 +1,16 @@
-@import '@base';
-@import '@mixins';
+@import "@base";
+@import "@mixins";
 
-.type{
+.type {
   display: flex;
   flex-direction: column;
   width: 436px;
-  &__item{
+
+  &__item {
     display: flex;
     flex-direction: row;
   }
+
   &__h1 {
     display: flex;
     margin-bottom: 51px;
@@ -37,16 +39,17 @@
     @include font-body;
   }
 
-  &__tag{
+  &__tag {
     display: flex;
     justify-content: flex-end;
-    font-weight: 400;
-    color: $textColor_25;
-    max-width: 50px;
     min-width: 37px;
+    max-width: 50px;
     margin-right: 30px;
+    color: $textColor_25;
+    font-weight: 400;
   }
-  &__description{
+
+  &__description {
     white-space: pre-line;
   }
 }

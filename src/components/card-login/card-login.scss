@@ -1,52 +1,53 @@
-@import '@base';
-@import '@mixins';
+@import "@base";
+@import "@mixins";
 
-.card-login{
-  max-width: 380px;
+.card-login {
   min-width: 380px;
+  max-width: 380px;
   padding: 39px 30px 32px 29px;
-  border-radius: 4px;
   background: $mainBackground;
+  border-radius: 4px;
   box-shadow: $elementBoxShadow;
 
-  &__heading{
+  &__heading {
     padding-bottom: 13px;
   }
-  &__email{
+
+  &__email {
     padding-bottom: 10px;
   }
-  &__password{
+
+  &__password {
     padding-bottom: 21px;
-  } 
-  &__signin{
-    padding-bottom: 74px;
+  }
+
+  &__signin {
     width: 100%;
     height: 44px;
-  } 
+    padding-bottom: 74px;
+  }
 
-  &__login{
+  &__login {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 
-    &-title{
-      font-size: 14px;
+    &-title {
       color: $textColor;
       @include font-body;
     }
 
-    &-button{
+    &-button {
       width: 100px;
       height: 44px;
     }
-
   }
 }
 
-@media (max-width: 380px){
-  .card-login{
-    max-width: 320px;
+@media (max-width: 380px) {
+  .card-login {
     min-width: 320px;
+    max-width: 320px;
   }
 }

@@ -1,93 +1,95 @@
-@import '@base';
-@import '@mixins';
+@import "@base";
+@import "@mixins";
 
-.dropdown{
+.dropdown {
   position: relative;
-  background: $mainBackground;
   display: flex;
   flex-direction: column;
   width: inherit;
+  background: $mainBackground;
   cursor: pointer;
 
-
-  &__input{
+  &__input {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     width: inherit;
     height: 44px;
-    padding: 0px 9px 4px 14px;
+    padding: 0 9px 4px 14px;
+    font-family: $mainFont;
     background-color: $mainBackground;
     border: 1px solid $textColor_25;
     border-radius: 4px;
-    font-family: $mainFont;
-    
-    &:hover{
+
+    &:hover {
       border: 1px solid $textColor_50;
     }
 
-    &-placeholder{
-      font-size: 14px;
+    &-placeholder {
       color: $textColor_75;
+      font-size: 14px;
     }
 
-    &-arrow{
+    &-arrow {
       color: $textColor_50;
     }
   }
 
-  &__open .dropdown__drop{
+  &__open &__drop {
     display: flex;
-    border-bottom: none;
-    border-top-right-radius: 0px;
-    border-top-left-radius: 0px;
     border: 1px solid $textColor_50;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
   }
 
-  &__open .dropdown__input{
-    border: 1px solid $textColor_50;
+  &__open &__input {
+    border-top: 1px solid $textColor_50;
+    border-right: 1px solid $textColor_50;
     border-bottom: none;
-    border-bottom-right-radius: 0px;
-    border-bottom-left-radius: 0px;
+    border-left: 1px solid $textColor_50;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
   }
-  &__drop{
+
+  &__drop {
     position: absolute;
+    top: 44px;
+    z-index: 5;
     display: none;
     flex-direction: column;
+    min-width: 100%;
+    max-width: 100%;
+    font-family: $mainFont;
     background-color: $mainBackground;
     border: 1px solid $textColor_25;
     border-radius: 4px;
-    font-family: $mainFont;
     cursor: default;
-    min-width: 100%;
-    max-width: 100%;
-    top: 44px;
-    z-index: 5;
 
-    &-items{
+    &-items {
       padding-bottom: 7px;
       font-size: 15px;
       line-height: 18px;
     }
 
-    &-item{
+    &-item {
       display: flex;
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
       height: 37px;
-      padding-left: 13px;
       padding-right: 7px;
-      list-style-type: none;    
+      padding-left: 13px;
+      list-style-type: none;
     }
 
-    &-name{
+    &-name {
       @include font-h3;
+
       color: $textColor;
     }
 
-    &-counter{
+    &-counter {
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -95,16 +97,16 @@
       width: 92px;
       transition: 0.7s;
 
-      &-result{
-        padding: 0 7px 0 7px;
-        @include font-h3;
+      &-result {
+        padding: 0 7px;
         color: $textColor;
         cursor: default;
         transition: 0.7s;
+        @include font-h3;
       }
 
       &-minus,
-      &-plus{
+      &-plus {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -112,50 +114,54 @@
         height: 30px;
         color: $textColor_50;
         border: 1px solid $textColor_50;
-        border-radius: 50%;     
-        transition: 0.7s; 
-        
-        &:hover{
+        border-radius: 50%;
+        transition: 0.7s;
+
+        &:hover {
           background: $elementColor;
-          transition: 0.7s;
           cursor: pointer;
+          transition: 0.7s;
         }
       }
-      &-not-available{
-        border: 1px solid $textColor_25;
+
+      &-not-available {
         color: $textColor_25;
+        border: 1px solid $textColor_25;
         transition: 0.7s;
       }
     }
 
-    &-buttons{
+    &-buttons {
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       width: inherit;
       height: 37px;
-      padding-left: 15px;
       padding-right: 7px;
       padding-bottom: 4px;
+      padding-left: 15px;
       color: $elementColor;
-      font-family: $mainFont;
       font-weight: 700;
-      font-size: 14px;
+      font-size: 1rem;
+      font-family: $mainFont;
+      letter-spacing: -0.2px;
       cursor: default;
       transition: 0.7s;
-      letter-spacing: -0.2px;
-      
-      &--right{
+
+      &--right {
         justify-content: end;
       }
-      &-clear{
+
+      &-clear {
         cursor: pointer;
       }
-      &-accept{
+
+      &-accept {
         cursor: pointer;
       }
-      &-clear--hide{
+
+      &-clear--hide {
         display: none;
       }
     }

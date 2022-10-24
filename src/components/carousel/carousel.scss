@@ -1,85 +1,95 @@
-@import '@base';
+@import "@base";
 
-.carousel{
+.carousel {
+  position: relative;
   width: 100%;
   height: 100%;
-  position: relative;
-  border-top-left-radius: inherit;
-  border-top-right-radius: inherit;
-  border-bottom-left-radius: inherit;
-  border-bottom-right-radius: inherit;
-}
-.slick-prev{
-  position: absolute;
-  width: 43px;
-  z-index: 5;
-  height: 100%;
-  background: none;
-  border: none;
-  left: 0px;
-  top: 0px;
-  color: $mainBackground;
-  cursor: pointer;
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
-  border-top-left-radius: inherit;
-  border-top-right-radius: inherit;
-  border-radius: inherit;
-}
-.slick-arrow{
-  border-bottom-left-radius: 0px !important;
-  border-bottom-right-radius: 0px !important;
-  
-}
-.slick-next{
-  position: absolute;
-  width: 43px;
-  z-index: 5;
-  height: 100%;
-  background: none;
-  border: none;
-  right: 0px;
-  top: 0px;
-  color: $mainBackground;
-  cursor: pointer;
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
-  transform: matrix(-1, 0, 0, 1, 0, 0);
-  border-top-left-radius: inherit;
-  border-top-right-radius: inherit;
   border-radius: inherit;
 }
 
-.slick-dots{
-  display: flex;
-  flex-direction: row;
+.slick-prev {
   position: absolute;
-  right: 10px;
-  top: 128px;
-}
-
-.slick-list{
+  top: 0;
+  left: 0;
+  z-index: 5;
+  width: 43px;
+  height: 100%;
+  color: $mainBackground;
+  background: none;
+  background: linear-gradient(
+    90deg,
+    rgb(0 0 0 / 50%) 0%,
+    rgb(0 0 0 / 0%) 99.99%,
+    rgb(255 255 255 / 0%) 100%
+  );
+  border: none;
+  border-radius: inherit;
   border-top-left-radius: inherit;
   border-top-right-radius: inherit;
-  border-bottom-left-radius: inherit;
-  border-bottom-right-radius: inherit;
-}
-
-.slick-dots li {
-  list-style: none;
-}
-
-.slick-dots li button{
-  visibility: hidden;
-}
-.slick-dots li::before{
-  content: "";
-  width: 7.5px;
-  height: 7.5px;
-  border: 1px solid $mainBackground;
-  border-radius: 50%;
-  position: absolute;
   cursor: pointer;
 }
 
-.slick-dots li.slick-active::before{
-  background: $mainBackground;
+.slick {
+  &-prev.slick-arrow,
+  &-next.slick-arrow {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  &-next {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 5;
+    width: 43px;
+    height: 100%;
+    color: $mainBackground;
+    background: none;
+    background: linear-gradient(
+      90deg,
+      rgb(0 0 0 / 50%) 0%,
+      rgb(0 0 0 / 0%) 99.99%,
+      rgb(255 255 255 / 0%) 100%
+    );
+    border: none;
+    border-radius: inherit;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+    cursor: pointer;
+  }
+
+  &-dots {
+    position: absolute;
+    top: 128px;
+    right: 10px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  &-list {
+    border-radius: inherit;
+  }
+
+  &-dots li {
+    list-style: none;
+  }
+
+  &-dots li button {
+    visibility: hidden;
+  }
+
+  &-dots li::before {
+    position: absolute;
+    width: 7.5px;
+    height: 7.5px;
+    border: 1px solid $mainBackground;
+    border-radius: 50%;
+    cursor: pointer;
+    content: "";
+  }
+
+  &-dots li.slick-active::before {
+    background: $mainBackground;
+  }
 }

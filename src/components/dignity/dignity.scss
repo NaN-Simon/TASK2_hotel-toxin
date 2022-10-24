@@ -1,18 +1,18 @@
-@import '@base';
-@import '@mixins';
+@import "@base";
+@import "@mixins";
 
-.dignity{
+.dignity {
   display: flex;
   flex-direction: row;
   align-items: center;
   padding-bottom: 23px;
 
-  &__image{
+  &__image {
     width: 40px;
     height: 47px;
     color: $elementColor;
     font-size: 47px;
-  
+
     & span {
       width: inherit;
       height: inherit;
@@ -20,25 +20,28 @@
     }
   }
 
-  &__text{
+  &__text {
     display: flex;
     flex-direction: column;
-    font-family: $mainFont;
     padding-left: 17px;
+    font-family: $mainFont;
 
-    &-title{
-      @include font-body;
-      font-weight: 700;
+    &-title {
       color: $textColor_75;
+      font-weight: 700;
+      font-size: 1rem;
+      font-family: $mainFont;
+      font-style: normal;
+      line-height: 24px;
     }
-    
-    &-description{
-      @include font-body
+
+    &-description {
+      @include font-body;
     }
   }
 
-  &__subline{
-    border-bottom: 1px solid rgba(31, 32, 65, 0.1);
+  &__subline {
     margin-bottom: 17px;
+    border-bottom: 1px solid rgb(31 32 65 / 10%);
   }
 }

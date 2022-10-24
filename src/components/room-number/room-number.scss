@@ -1,43 +1,45 @@
-@import '@base';
-@import '@mixins';
+@import "@base";
+@import "@mixins";
 
-.room-number{
+.room-number {
   display: flex;
   flex-direction: row;
   align-items: end;
   font-family: $mainFont;
 
-  &__symbol{
+  &__symbol {
     padding-right: 4px;
-    font-style: normal;
+    color: $textColor;
     font-weight: 700;
     font-size: 14px;
+    font-style: normal;
     line-height: 17px;
-    color: $textColor;
   }
 
-  &__number{
+  &__number {
     padding-right: 8px;
     @include font-h1;
+
     color: $textColor;
 
-    &--small{
+    &--small {
       @include font-h2;
+
       padding: 0;
     }
-    
-    &--high{
+
+    &--high {
       font-size: 20px;
       line-height: 20px;
     }
   }
 
-  &__text{
-    font-style: normal;
+  &__text {
+    color: $elementColor;
     font-weight: 700;
     font-size: 12px;
+    font-style: normal;
     line-height: 15px;
     text-transform: uppercase;
-    color: $elementColor;
   }
 }

@@ -1,88 +1,86 @@
-@import '@base';
-@import '@mixins';
+@import "@base";
+@import "@mixins";
 
-.landing-page{
-  background: url("../pages/page-landing-page/image/image.jpg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
+.landing-page {
   width: 1440px;
   height: 830px;
   margin: 0 auto;
+  background: url("../pages/page-landing-page/image/image.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
 
-  &__wrapper{
+  &__wrapper {
     display: flex;
     justify-content: space-between;
-    height: inherit;
-    padding: 70px 0 0 140px;
-    margin: 0 auto;
-    max-width: 1440px;
     min-width: 320px;
+    max-width: 1440px;
+    height: inherit;
+    margin: 0 auto;
+    padding: 70px 0 0 140px;
   }
 
-  &__title{
-    max-width: 445px;
-    padding: 0px 132px 20px 0;
+  &__title {
     align-self: end;
+    max-width: 445px;
+    padding: 0 132px 20px 0;
     text-align: end;
 
-    & p{
-      @include font-body
+    & p {
+      @include font-body;
     }
   }
-
 }
 
-
-@media (max-width: 1439px){
-  .landing-page{
+@media (max-width: 1439px) {
+  .landing-page {
     width: 768px;
     height: 482px;
-    
-    &__wrapper{
+
+    &__wrapper {
       display: flex;
-      justify-content: center;
+      flex-flow: column wrap;
       align-items: center;
+      justify-content: center;
+      min-width: auto;
+      max-width: auto;
       height: inherit;
       margin: 0 auto;
       padding: 0;
-      max-width: auto;
-      min-width: auto;
-      flex-direction: column;
-      flex-wrap: wrap;
     }
-    
-    &__title{
+
+    &__title {
+      align-self: auto;
       max-width: auto;
       padding: 0;
-      align-self: auto;
       text-align: center;
     }
   }
 }
 
-@media (max-width: 786px){
-  .landing-page{
-    background: none;
+@media (max-width: 786px) {
+  .landing-page {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    text-align: center;
+    justify-content: center;
     width: 100%;
+    text-align: center;
+    background: none;
 
-    &__wrapper{
+    &__wrapper {
       flex-wrap: nowrap;
     }
 
-    &__title{
+    &__title {
       padding: 0 20px;
     }
   }
 }
 
-@media (max-width: 425px){
+@media (max-width: 425px) {
   .landing-page {
+    margin-top: 20px;
     margin-bottom: 60px;
   }
 }

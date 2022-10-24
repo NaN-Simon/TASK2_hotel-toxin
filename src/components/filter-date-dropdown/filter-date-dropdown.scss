@@ -1,149 +1,155 @@
-@import '@base';
+@import "@base";
 
-.date-dropdown{
+.date-dropdown {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: start;
-  position: relative;
 
-  &__couple{
+  &__couple {
     display: flex;
     flex-direction: column;
     gap: 0 20px;
     width: 100%;
     margin-bottom: 5px;
   }
-  &__inline{
+
+  &__inline {
     display: flex;
     flex-direction: row;
   }
 
-  &__start{
+  &__start {
     width: 100%;
   }
-  &__end{
+
+  &__end {
     width: 100%;
   }
 }
 
 .air-datepicker {
-  font-family: $mainFont;
-  font-size: 14px;
-  color: $textColor_50;
   width: 320px;
   margin-top: 5px;
+  color: $textColor_50;
+  font-size: 14px;
+  font-family: $mainFont;
 
   &-nav--title {
-    font-family: $mainFont;
-    font-style : normal;
-    font-weight: 700;
-    font-size  : 19px;
-    line-height: 23px;
     color: $textColor;
+    font-weight: 700;
+    font-size: 19px;
+    font-family: $mainFont;
+    font-style: normal;
+    line-height: 23px;
   }
 
   &-nav--title i {
-    font-family: $mainFont;
-    font-style : normal;
-    font-weight: 700;
-    font-size  : 19px;
-    line-height: 23px;
     color: $textColor;
+    font-weight: 700;
+    font-size: 19px;
+    font-family: $mainFont;
+    font-style: normal;
+    line-height: 23px;
   }
 
-  &-nav--action-arrow{
+  &-nav--action-arrow {
     color: $elementColor;
 
-    &:hover{
+    &:hover {
       color: $textColor_50;
-    transition: 0.5s;
+      transition: 0.5s;
     }
   }
 
-  &--content{
+  &--content {
     display: flex;
     justify-content: center;
   }
 
-  &-body{
-    &--day-names{
+  &-body {
+    &--day-names {
       width: 280px;
       height: 40px;
     }
-    
-    &--day-name{
+
+    &--day-name {
       color: $elementColor;
       font-weight: 700;
     }
 
-    &--cells.-days-{
-      width: 280px;
+    &--cells.-days- {
       grid-auto-rows: inherit;
+      width: 280px;
     }
 
-    &.-days-{
-      height: 240px;
+    &.-days- {
+      min-height: 240px;
     }
-
   }
 
-  &-cell{
-
-    &.-selected-{
+  &-cell {
+    &.-selected- {
       background: $elementColor;
-      transition: 0.5s;
       border-radius: 50%;
+      transition: 0.5s;
     }
 
-    &.-current-{
+    &.-current- {
       color: $elementColor;
       font-size: large;
     }
 
-    &.-in-range-{
-      border-radius: 0;
+    &.-in-range- {
       background: rgba($elementColor, 0.5);
-      }
+      border-radius: 0;
+    }
 
-    &.-day-{
+    &.-day- {
       width: 40px;
       height: 40px;
 
-      &:hover{
+      &:hover {
         background: $elementColor;
         border-radius: 50%;
         transition: 0.5s;
       }
-    }
 
-    &.-range-from-{
-      position: relative;
-      
-      &::after{
-        content: "";
-        background: rgba($elementColor, 0.5);
-        width: 20px;
-        height: inherit;
-        right: 0;
-        top: 0;
-        position: absolute;
-        z-index: -1;
+      &.-current- {
+        color: #fff;
+        font-size: 14px;
+        background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+        border-radius: 50%;
       }
-
     }
 
-    &.-range-to-{
+    &.-range-from- {
       position: relative;
 
-      &::after{
-        content: "";
-        background: rgba($elementColor, 0.5);
+      &::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: -1;
         width: 20px;
         height: inherit;
-        left: 0;
-        top: 0;
+        background: rgba($elementColor, 0.5);
+        content: "";
+      }
+    }
+
+    &.-range-to- {
+      position: relative;
+
+      &::after {
         position: absolute;
+        top: 0;
+        left: 0;
         z-index: -1;
+        width: 20px;
+        height: inherit;
+        background: rgba($elementColor, 0.5);
+        content: "";
       }
     }
   }
@@ -153,19 +159,18 @@
     justify-content: space-between;
   }
 
-  &-button{
-    font-family: $mainFont;
-    font-style : normal;
-    font-weight: 700;
-    font-size  : 12px;
-    line-height: 15px;
+  &-button {
+    padding: 0 15px;
     color: $elementColor;
+    font-weight: 700;
+    font-size: 12px;
+    font-family: $mainFont;
+    font-style: normal;
+    line-height: 15px;
     text-transform: uppercase;
-    padding: 0 15px 0 15px;
 
-    &:hover span{
+    &:hover span {
       color: $textColor_50;
     }
   }
-
 }

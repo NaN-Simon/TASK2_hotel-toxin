@@ -1,14 +1,13 @@
-@import '@base';
+@import "@base";
 
-.rate-button{
+.rate-button {
   user-select: none;
 
-  &__star{
+  &__star {
     color: $elementColor;
   }
 
-  &--pointer{
+  &--pointer {
     cursor: pointer;
   }
-  
 }

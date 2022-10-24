@@ -1,67 +1,63 @@
-@import '@base';
-@import '@mixins';
+@import "@base";
+@import "@mixins";
 
-.card-room{
-  width: 270px;
+.card-room {
   display: flex;
   flex-direction: column;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  width: 270px;
   background: $mainBackground;
+  border-radius: 5px;
   box-shadow: $elementBoxShadow;
-  
+
   &__description {
-    padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 20px;
-    border-bottom-left-radius: inherit;
-    border-bottom-right-radius: inherit;
+    padding-left: 20px;
     background: inherit;
+    border-bottom-right-radius: inherit;
+    border-bottom-left-radius: inherit;
   }
-  &__carousel{
+
+  &__carousel {
     width: 270px;
     height: 150px;
     margin-bottom: 21px;
-    border-top-left-radius: inherit;
-    border-top-right-radius: inherit;
-    border-bottom-left-radius: inherit;
-    border-bottom-right-radius: inherit;
     background: inherit;
+    border-radius: inherit;
   }
 
-  &__number-price{
+  &__number-price {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     margin-bottom: 10px;
   }
 
-  &__line{
-    border-bottom: 1px solid rgba(31, 32, 65, 0.1);
+  &__line {
     margin-bottom: 8px;
+    border-bottom: 1px solid rgb(31 32 65 / 10%);
   }
 
-  &__about{
+  &__about {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
-  &__review{
+  &__review {
     display: flex;
     flex-direction: row;
 
-    &-number{
-      @include font-body;
-      color: $textColor_50;
+    &-number {
       font-weight: 700;
+      font-size: 1rem;
+      font-family: $mainFont;
+      font-style: normal;
+      line-height: 24px;
     }
-    
-    &-text{
 
+    &-text {
       color: $textColor_50;
       @include font-body;
     }

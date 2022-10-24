@@ -1,37 +1,36 @@
-@import '@base';
+@import "@base";
 
-.like-button{
+.like-button {
   display: flex;
   flex-direction: column;
-  &__item{
-    display: block;
-    position: relative;
-    cursor: pointer;
-    border-radius: 30px;
 
+  &__item {
+    position: relative;
+    display: block;
+    border-radius: 30px;
+    cursor: pointer;
   }
 
-  &-inline{
+  &-inline {
     flex-direction: row;
   }
 
-  &__title{
+  &__title {
     position: absolute;
-    left: 20px;
     top: 4px;
-    font-size: 10px;
-    text-align: center;
+    left: 20px;
     width: 10px;
-    font-family: $mainFont;
     color: $textColor_25;
+    font-size: 10px;
+    font-family: $mainFont;
+    text-align: center;
+    cursor: pointer;
     transition: 0.5s;
     pointer-events: none;
-    cursor: pointer;
 
-    &-blue{
+    &-blue {
       color: $elementColor;
     }
-
   }
 
   &__input {
@@ -39,57 +38,53 @@
     display: inline-block;
     width: 40px;
     height: 20px;
+    color: $textColor_25;
     vertical-align: top;
     border: 1px solid $textColor_25;
-    color: $textColor_25;
     border-radius: 30px;
     outline: none;
     cursor: pointer;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
     transition: 0.5s;
-  
+    appearance: none;
+
     &::after {
-      content: "favorite_border";
-      display: inline-block;
-      transition: 0.5s;
-      font-size: 10px;
       position: absolute;
-      left: 4px;
       top: 4px;
+      left: 4px;
+      display: inline-block;
       color: $textColor_25;
+      font-size: 10px;
       transition: 0.5s;
+      content: "favorite_border";
     }
-  
+
     &:checked {
       position: relative;
       display: inline-block;
       width: 40px;
       height: 20px;
+      color: $elementColor;
       vertical-align: top;
       border: 1px solid $elementColor;
-      color: $elementColor;
       border-radius: 30px;
       outline: none;
       cursor: pointer;
-      appearance: none;
       transition: 0.5s;
-  
+      appearance: none;
+
       &::after {
-        content: "favorite";
-        display: inline-block;
-        transition: 0.5s;
-        font-size: 10px;
         position: absolute;
-        left: 4px;
         top: 4px;
+        left: 4px;
+        display: inline-block;
         color: $elementColor;
+        font-size: 10px;
+        transition: 0.5s;
+        content: "favorite";
       }
-  
     }
-  
-    &-blue{
+
+    &-blue {
       border: 1px solid $elementColor;
     }
   }

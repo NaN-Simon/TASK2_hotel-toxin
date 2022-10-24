@@ -5,17 +5,28 @@ head
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   title Menu
 body 
-  main.main
-    ul.menu__ui-kit
-      p UI-Kit
-      a.menu__link(href="./ui-kit-colors-and-type.html") Color&Types
-      a.menu__link(href="./ui-kit-form-elements.html") Form&Elements
-      a.menu__link(href="./ui-kit-cards.html") Cards
-      a.menu__link(href="./ui-kit-headers-footers.html") Headers&Footers
-    ul.menu__site
-      p Site
-      a.menu__link(href="./page-landing-page.html") Landing Page
-      a.menu__link(href="./page-search-room.html") Search room
-      a.menu__link(href="./page-room-details.html") Room details
-      a.menu__link(href="./page-registration.html") Registration
-      a.menu__link(href="./page-login.html") Login
+  main.menu
+    .menu__ui-kit 
+      p.menu__title UI-Kit
+      ul.menu__navigation
+        li
+          a.menu__link(href="./ui-kit-colors-and-type.html") Color&Types
+        li
+          a.menu__link(href="./ui-kit-form-elements.html") Form&Elements
+        li
+          a.menu__link(href="./ui-kit-cards.html") Cards
+        li
+          a.menu__link(href="./ui-kit-headers-footers.html") Headers&Footers
+    .menu__site 
+      p.menu__title Site
+      ul.menu__navigation
+        li
+          a.menu__link(href="./page-landing-page.html") Landing Page
+        li
+          a.menu__link(href="./page-search-room.html") Search room
+        li
+          a.menu__link(href="./page-room-details.html") Room details
+        li
+          a.menu__link(href="./page-registration.html") Registration
+        li
+          a.menu__link(href="./page-login.html") Login

@@ -1,12 +1,13 @@
-@import '@base';
-@import '@mixins';
+@import "@base";
+@import "@mixins";
 
 .paginationjs {
   display: flex;
   flex-direction: column;
   @include font-body;
+
   line-height: 14px;
-  
+
   & .paginationjs-pages li {
     border: none;
   }
@@ -18,10 +19,9 @@
     width: 40px;
     height: 40px;
     color: $textColor_50;
-    font-size: $mainFont_size;
+    font-size: 14px;
     background: $mainBackground;
   }
-  
 }
 
 .paginationjs-nav.J-paginationjs-nav {
@@ -32,9 +32,11 @@
   color: $mainBackground;
   line-height: 40px;
 }
-.paginationjs-pages{
+
+.paginationjs-pages {
   padding-bottom: 4px;
 }
+
 .paginationjs .paginationjs-pages li > a:hover {
   background: $textColor_25;
   border-radius: 50%;
@@ -46,10 +48,10 @@
   justify-content: center;
   width: 40px;
   height: 40px;
-  border-radius: 50%;
+  color: $mainBackground;
   font-weight: 700;
   background: $elementColor;
-  color: $mainBackground;
+  border-radius: 50%;
 }
 
 .paginationjs .paginationjs-pages li:first-child,
@@ -64,16 +66,16 @@
 }
 
 .paginationjs .paginationjs-pages li:last-child > a {
+  font-weight: 700;
   background: $elementGradient;
   border-radius: 50%;
-  font-weight: 700;
 }
 
 .paginationjs-nav {
-  font-family: $mainFont;
-  font-style : normal;
-  font-weight: 400;
-  font-size  : 14px;
-  line-height: 14px;
   margin-left: 6px;
+  font-weight: 400;
+  font-size: 14px;
+  font-family: $mainFont;
+  font-style: normal;
+  line-height: 14px;
 }

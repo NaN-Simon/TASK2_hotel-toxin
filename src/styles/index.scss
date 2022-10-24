@@ -1,61 +1,67 @@
-@import '@fonts';
-@import '@base';
-@import '@mixins';
-@import '../pages/ui-kit-colors-and-type/ui-kit-colors-and-type.scss';
-@import '../pages/ui-kit-form-elements/ui-kit-form-elements.scss';
-@import '../pages/ui-kit-cards/ui-kit-cards.scss';
-@import '../pages/ui-kit-headers-footers/ui-kit-headers-footers.scss';
-@import '../pages/page-landing-page/page-landing-page.scss';
-@import '../pages/page-search-room/page-search-room.scss';
-@import '../pages/page-room-details/page-room-details.scss';
-@import '../pages/page-registration/page-registration.scss';
-@import '../pages/page-login/page-login.scss';
+@import "@fonts";
+@import "@base";
+@import "@mixins";
+@import "../pages/ui-kit-colors-and-type/ui-kit-colors-and-type.scss";
+@import "../pages/ui-kit-form-elements/ui-kit-form-elements.scss";
+@import "../pages/ui-kit-cards/ui-kit-cards.scss";
+@import "../pages/ui-kit-headers-footers/ui-kit-headers-footers.scss";
+@import "../pages/page-landing-page/page-landing-page.scss";
+@import "../pages/page-search-room/page-search-room.scss";
+@import "../pages/page-room-details/page-room-details.scss";
+@import "../pages/page-registration/page-registration.scss";
+@import "../pages/page-login/page-login.scss";
 
-html{
+html {
+  font-size: 14px;
   font-family: $mainFont;
   background: $mainBackground;
-  font-size: 14px;
 }
-.main{
+
+.menu {
+  display: flex;
+  gap: 40px 100px;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  gap: 110px;
-  padding-top: 100px;
-  @include font-h2;
+  padding-top: 75px;
   font-weight: 400;
-}
-.menu{
-  &__ui-kit{
+  font-size: 1.3572rem;
+  font-family: $mainFont;
+  font-style: normal;
+  line-height: 23px;
+
+  &__title {
+    padding-bottom: 30px;
+  }
+
+  &__navigation {
     display: flex;
     flex-direction: row;
     flex-direction: column;
     gap: 30px 0;
+    list-style-type: none;
   }
 
-  &__site{
-    display: flex;
-    flex-direction: row;
-    flex-direction: column;
-    gap: 30px 0;
-  }
-
-  &__link{
-    text-decoration: none;
+  &__link {
     color: $elementColor;
     font-family: inherit;
+    text-decoration: none;
   }
 }
 
-@media (max-width: 380px){
-  .main{
+@media (max-width: 480px) {
+  .menu {
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
-  .menu__ui-kit,
-  .menu__site{
+
+  .menu__navigation {
+    text-align: center;
+  }
+
+  .menu__title {
     text-align: center;
   }
 }

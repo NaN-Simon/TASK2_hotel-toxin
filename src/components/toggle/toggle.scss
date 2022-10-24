@@ -1,18 +1,21 @@
-@import '@base';
-@import '@mixins';
+@import "@base";
+@import "@mixins";
 
-.checkbox-toggle-items{
+.checkbox-toggle-items {
   display: flex;
   flex-direction: column;
   gap: 10px 0;
   @include font-body;
+
   color: $textColor_75;
 }
+
 .checkbox-toggle-item {
   display: flex;
-  align-items: center;
   gap: 0 6px;
+  align-items: center;
 }
+
 .custom-toggle-botton {
   position: relative;
   display: inline-block;
@@ -26,34 +29,30 @@
   border-radius: 30px;
   outline: none;
   cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
   transition: 0.3s;
+  appearance: none;
 
   &::after {
-    content: "";
-    display: inline-block;
     position: absolute;
-    left: 2px;
     top: 2.5px;
+    left: 2px;
+    display: inline-block;
     width: 12px;
     height: 12px;
     background-color: $textColor_25;
     border-radius: 50%;
     transform: translateX(0);
     transition: 0.3s;
+    content: "";
   }
 
   &:checked::after {
-    transform: translateX(calc(100% + 8px));
     background-color: $elementColor;
+    transform: translateX(calc(100% + 8px));
   }
 
   &:checked {
     background-color: $mainBackground;
     border: 1.5px solid $elementColor;
   }
-
 }
-

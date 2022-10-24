@@ -1,87 +1,93 @@
-@import '@base';
-@import '@mixins';
+@import "@base";
+@import "@mixins";
 
-.date-dropdown{
+.date-dropdown {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: inherit;
-  position: relative;
 
-  &__couple{
+  &__couple {
     display: flex;
     flex-direction: column;
     gap: 0 20px;
     width: 100%;
     margin-bottom: 3px;
   }
-  &__inline{
+
+  &__inline {
     display: flex;
     flex-direction: row;
   }
 
-  &__start{
+  &__start {
     width: 100%;
   }
-  &__end{
+
+  &__end {
     width: 100%;
   }
 }
 
 .air-datepicker {
-  font-family: $mainFont;
-  font-size: 14px;
-  color: $textColor_50;
   width: 100%;
   margin-top: 5px;
+  color: $textColor_50;
+  font-size: 14px;
+  font-family: $mainFont;
 
   &-nav--title {
     height: 57px;
-    @include font-h2;
     color: $textColor;
+    @include font-h2;
   }
 
   &-nav--title i {
     @include font-h2;
-    color: $textColor;
 
+    color: $textColor;
   }
 
-  &-nav--action-arrow{
+  &-nav--action-arrow {
     color: $elementColor;
 
-    &:hover{
+    &:hover {
       color: $textColor_50;
-    transition: 0.5s;
+      transition: 0.5s;
     }
   }
 
-  &-body--day-names{
+  &-body--day-names {
     height: 40px;
     margin: 8px 0 1px;
   }
 
-  &-cell.-selected-{
-    background: $elementColor;
+  &-cell.-selected- {
+    color: #fff;
+    background: $elementGradient;
+    border: none;
+    border-radius: 50%;
     transition: 0.5s;
   }
 
-  &-cell.-day-{
+  &-cell.-day- {
     width: 40px;
     height: 40px;
   }
-  &-cell.-day-:hover{
+
+  &-cell.-day-:hover {
     background-color: $textColor_50;
     border-radius: 50%;
     transition: 0.5s;
   }
-  
-  &-body--day-name{
+
+  &-body--day-name {
     color: $elementColor;
     font-weight: 700;
   }
 
-  &-cell.-current-{
+  &-cell.-current- {
     color: $elementColor;
     font-size: large;
   }
@@ -89,18 +95,17 @@
   &-buttons {
     display: flex;
     justify-content: space-between;
-    padding-top: 17px;
+    padding-top: 7px;
     padding-bottom: 8px;
-  
-    
   }
 
-  &-button{
+  &-button {
     @include font-h3;
-    color: $elementColor;
-    padding: 0 15px 0 15px;
 
-    &:hover span{
+    padding: 0 15px;
+    color: $elementColor;
+
+    &:hover span {
       color: $textColor_50;
     }
   }
@@ -108,44 +113,41 @@
   &--pointer {
     display: none;
   }
-}
 
-.air-datepicker.-inline- {
-  box-shadow: $elementBoxShadow;
-  border: none;
+  &.-inline- {
+    border: none;
+    box-shadow: $elementBoxShadow;
+  }
+
+  &--buttons {
+    border: none;
+  }
+
+  &--content {
+    padding: 0;
+  }
+
+  &.-bottom-left-.-from-bottom-.-active- {
+    box-shadow: $elementBoxShadow;
+  }
+
+  &-nav--action {
+    padding: 0 30px;
+  }
 }
 
 nav.air-datepicker-nav {
   border: none;
 }
 
-.air-datepicker--buttons {
-  border: none;
-}
-.air-datepicker--content {
-  padding: 0;
-}
-.air-datepicker.-bottom-left-.-from-bottom-.-active- {
-  box-shadow: $elementBoxShadow;;
-}
-
-.air-datepicker-nav--action {
-  padding: 0 30px;
-}
-
-@media (max-width: 380px){
-  .date-dropdown__inline,
-  .date-dropdown__couple {
-    flex-direction: column !important;
+@media (max-width: 380px) {
+  .date-dropdown__couple.date-dropdown__inline {
+    flex-direction: column;
   }
 }
 
-@media (max-width: 425px){
-  .air-datepicker {
-    transform: 
-      scale(0.8) 
-      translateY(-41px) 
-      translateX(-37px) 
-      !important;
+@media (max-width: 425px) {
+  .air-datepicker.-inline- {
+    transform: scale(0.8) translateY(-41px) translateX(-37px);
   }
 }

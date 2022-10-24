@@ -7,7 +7,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const PAGES_DIR = path.resolve(__dirname, 'src/pages');
 const PAGES = fs.readdirSync(PAGES_DIR);
 
-console.log('pages--->', PAGES);
 let mode = 'development';
 if (process.env.NODE_ENV === 'production') {
   mode = 'production';

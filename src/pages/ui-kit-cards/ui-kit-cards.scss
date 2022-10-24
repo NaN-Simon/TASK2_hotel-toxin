@@ -1,7 +1,7 @@
-.cards{
+.cards {
   padding-top: 10px;
 
-  &__container{
+  &__container {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
@@ -10,11 +10,11 @@
     margin: 0 auto;
   }
 
-  &__card-room{
+  &__card-room {
     padding-bottom: 35px;
   }
 }
 
-.card-calendar{
+.card-calendar {
   padding-bottom: 40px;
 }

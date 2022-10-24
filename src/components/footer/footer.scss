@@ -1,169 +1,176 @@
-@import '@base';
-@import '@mixins';
+@import "@base";
+@import "@mixins";
 
-.footer{
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 0 auto;
-  
-  &__wrapper{
+
+  &__wrapper {
     display: flex;
-    justify-content: space-between;
-    max-width: 1440px;
+    justify-content: center;
+    width: 100vw;
     min-width: 320px;
+    max-width: 1440px;
     padding-top: 100px;
     padding-bottom: 100px;
     border-bottom: 1px solid $textColor_5;
   }
-  &__sub-wrapper{
+
+  &__down {
     display: flex;
     justify-content: space-between;
-    max-width: 1440px;
+    width: 100vw;
     min-width: 320px;
+    max-width: 1160px;
     padding-top: 22px;
     padding-bottom: 22px;
-    // box-shadow: $elementBoxShadowDown;
+
+    &-wrapper {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
   }
 
-  &__booking{
+  &__booking {
     display: flex;
     flex-direction: column;
     padding-right: 40px;
 
-    &-description{
+    &-description {
       display: flex;
       width: 260px;
       padding-top: 11px;
-      @include font-body;
-      font-weight: 400;
       color: $textColor_75;
+      @include font-body;
     }
   }
 
-  &__navigation{
+  &__navigation {
     display: flex;
-    justify-content: space-between;
     flex-direction: row;
+    justify-content: space-between;
     padding-right: 51px;
 
-    &-nav{
+    &-nav {
       padding-right: 57px;
-
     }
 
-    &-about{
+    &-about {
       padding-right: 92px;
     }
 
-    &-sub{
+    &-sub {
       display: flex;
       flex-direction: column;
       gap: 20px;
       width: 260px;
       color: $textColor_75;
     }
-
   }
 
-  &__copyright-text{
+  &__copyright-text {
     @include font-body;
-    font-weight: 400;
+
     color: $textColor_75;
   }
 
-  &__social{
+  &__social {
     display: flex;
     flex-direction: row;
     gap: 20px;
 
-    & img{
+    & img {
       width: 24px;
       height: 24px;
     }
   }
 
-  &__small{
-    text-align: center;
+  &__small {
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 20px 0;
+    align-items: center;
+    text-align: center;
 
-
-    &-copyright-text{
+    &-copyright-text {
       @include font-body;
-      font-weight: 400;
+
       color: $textColor_75;
     }
 
-    &-social{
+    &-social {
       display: flex;
       gap: 20px;
     }
-
   }
 }
-@media(max-width: 1140px){
-  .footer{
-    &__wrapper{
+@media (max-width: 1140px) {
+  .footer {
+    &__wrapper {
       flex-direction: column;
-      align-items: center;
       gap: 30px;
+      align-items: center;
     }
 
-    &__booking{
+    &__booking {
       align-items: center;
       padding: 0;
     }
   }
 }
-@media(max-width: 1024px){
-  .footer{
-    &__booking{
+@media (max-width: 1024px) {
+  .footer {
+    &__booking {
       align-items: center;
-      padding: 0 0 30px 0;
+      padding: 0 0 30px;
     }
 
-    &__wrapper{
-    flex-direction: column;
+    &__wrapper {
+      flex-flow: column wrap;
       align-items: center;
-      flex-wrap: wrap;
     }
 
-    &__navigation{
-      justify-content: center;
+    &__navigation {
       flex-wrap: wrap;
-      text-align: center;
       gap: 30px;
+      justify-content: center;
+      padding: 0 0 30px;
+      text-align: center;
 
-      padding: 0 0 30px 0;
-      &-nav{
-        padding: 0 0 30px 0;
+      &-nav {
+        padding: 0 0 30px;
       }
-      &-about{
-        padding: 0 0 30px 0;
+
+      &-about {
+        padding: 0 0 30px;
       }
-      &-support{
-        padding: 0 0 30px 0;
+
+      &-support {
+        padding: 0 0 30px;
       }
-      &-sub{
+
+      &-sub {
         text-align: center;
       }
     }
-
   }
 }
 
-@media (max-width: 425px){
-  .footer{
-    &__wrapper{
+@media (max-width: 425px) {
+  .footer {
+    &__wrapper {
       padding: 0;
     }
-    
-    &__navigation{
+
+    &__navigation {
       flex-direction: column;
       gap: 0;
     }
 
-    &__copyright-text{
+    &__copyright-text {
       text-align: center;
     }
   }

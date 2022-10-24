@@ -1,68 +1,66 @@
-@import '@base';
+@import "@base";
 
-.registration-page{
-  background: url("../pages/page-registration/images/image.jpg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: 1440px auto;
-  background-position-y: -70px;
+.registration-page {
   width: 1440px;
   min-height: 684px;
   max-height: 684px;
   margin: 0 auto;
+  background: url("../pages/page-registration/images/image.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-position-y: -70px;
+  background-size: 1440px auto;
 
-  &__wrapper{
+  &__wrapper {
     display: flex;
     justify-content: space-between;
-    height: inherit;
-    padding: 19px 0 0 533px;
-    margin: 0 auto;
-    max-width: 1440px;
     min-width: 320px;
+    max-width: 1440px;
+    height: inherit;
+    margin: 0 auto;
+    padding: 19px 0 0 533px;
   }
-
 }
 
-@media (max-width: 1439px){
-  .registration-page{
-    background-repeat: no-repeat;
-    background-position: left;
-    background-size: auto;
+@media (max-width: 1439px) {
+  .registration-page {
     width: 768px;
     height: 688px;
     margin: 0 auto;
-    
-    &__wrapper{
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: auto;
+
+    &__wrapper {
       display: flex;
-      justify-content: center;
+      flex-flow: column wrap;
       align-items: center;
+      justify-content: center;
+      min-width: auto;
+      max-width: none;
       height: inherit;
       margin: 0 auto;
       padding: 0;
-      max-width: none;
-      min-width: auto;
-      flex-direction: column;
-      flex-wrap: wrap;
     }
-    
-    &__title{
+
+    &__title {
+      align-self: auto;
       max-width: auto;
       padding: 0;
-      align-self: auto;
       text-align: center;
     }
   }
 }
 
-@media (max-width: 786px){
-  .registration-page{
-    background: none;
+@media (max-width: 786px) {
+  .registration-page {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    text-align: center;
+    justify-content: center;
     width: 100%;
     margin-bottom: 30px;
+    text-align: center;
+    background: none;
   }
 }

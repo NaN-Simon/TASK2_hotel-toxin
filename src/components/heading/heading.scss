@@ -1,15 +1,16 @@
-@import '@base';
-@import '@mixins';
+@import "@base";
+@import "@mixins";
 
 .heading {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   margin-top: 2px;
   margin-bottom: 6px;
 
   &__title_level_h1 {
     @include font-h1;
+
     color: $textColor;
 
     &::first-letter {
@@ -19,6 +20,7 @@
 
   &__title_level_h2 {
     @include font-h2;
+
     color: $textColor;
 
     &::first-letter {
@@ -28,14 +30,19 @@
 
   &__title_level_h3 {
     @include font-h3;
+
     color: $textColor;
   }
 
   &__description {
-    @include font-h3;
-    font-weight: 400;
     color: $textColor_75;
+    font-weight: 400;
+    font-size: 0.8572rem;
+    font-family: $mainFont;
+    font-style: normal;
+    line-height: 15px;
     letter-spacing: 0.5px;
+    text-transform: uppercase;
 
     &_lowercase {
       text-transform: lowercase;

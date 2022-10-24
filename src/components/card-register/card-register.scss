@@ -1,15 +1,15 @@
-@import '@base';
-@import '@mixins';
+@import "@base";
+@import "@mixins";
 
-.card-register{
-  max-width: 380px;
+.card-register {
   min-width: 380px;
+  max-width: 380px;
   padding: 39px 30px 30px 29px;
-  border-radius: 4px;
   background: $mainBackground;
+  border-radius: 4px;
   box-shadow: $elementBoxShadow;
 
-  &__heading{
+  &__heading {
     padding-bottom: 15px;
   }
 
@@ -20,50 +20,50 @@
   &__gender {
     width: 200px;
     padding-bottom: 21px;
-    
   }
+
   &__birthday {
     padding-bottom: 17px;
-    
   }
-  &__signin{
+
+  &__signin {
     padding-bottom: 9px;
-    
-    &-mail{
+
+    &-mail {
       padding-bottom: 7px;
     }
   }
 
-  &__spec-offers{
+  &__spec-offers {
     padding-bottom: 23px;
   }
 
-  &__to-pay{
-    padding-bottom: 74px;
+  &__to-pay {
     width: 100%;
     height: 44px;
+    padding-bottom: 74px;
   }
 
-  &__login{
+  &__login {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 
-    &-title{
+    &-title {
       @include font-body;
     }
 
-    &-button{
-    width: 100px;
-    height: 44px;
+    &-button {
+      width: 100px;
+      height: 44px;
     }
   }
 }
 
-@media (max-width: 380px){
-  .card-register{
-    max-width: 320px;
+@media (max-width: 380px) {
+  .card-register {
     min-width: 320px;
+    max-width: 320px;
   }
 }

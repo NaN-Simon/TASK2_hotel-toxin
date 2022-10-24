@@ -1,24 +1,25 @@
-@import '@base';
-@import '@mixins';
+@import "@base";
+@import "@mixins";
 
-.price-result{
+.price-result {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
-  border-bottom: 1px dotted $textColor_25;
+  justify-content: space-between;
   height: 22px;
+  border-bottom: 1px dotted $textColor_25;
 
-  &__title{
+  &__title {
     font-weight: 700;
     font-size: 19px;
-    line-height: 23px;  
-    border-bottom: 3px solid $mainBackground;
     font-style: normal;
+    line-height: 23px;
+    border-bottom: 3px solid $mainBackground;
   }
-  
-  &__price{
-    @include font-h2; 
+
+  &__price {
+    @include font-h2;
+
     border-bottom: 3px solid $mainBackground;
   }
 }

@@ -1,61 +1,65 @@
-@import '@base';
-@import '@mixins';
+@import "@base";
+@import "@mixins";
 
-.range-slider{
+.range-slider {
   margin-top: 23px;
   margin-bottom: 14px;
 
-  &.noUi-horizontal {
-    height: 6px;
-    border: 1px solid $textColor_25;
-  }
-  
-  &.noUi-connects{
-    height: 6px;
+  &.noUi {
+    &-horizontal {
+      height: 6px;
+      border: 1px solid $textColor_25;
+    }
+
+    &-connects {
+      height: 6px;
+    }
+
+    &-horizontal .noUi-handle {
+      top: -6px;
+      right: -2px;
+      width: 15px;
+      height: 15px;
+      border: none;
+      border-radius: 50%;
+    }
+
+    &-horizontal .noUi-touch-area {
+      background: $elementGradient;
+      border: 1px solid $mainBackground;
+      border-radius: 50%;
+    }
   }
 
-  &.noUi-horizontal .noUi-handle {
-    width: 15px;
-    height: 15px;
-    border: none;
-    border-radius: 50%;
-    right: -2px;
-    top: -6px;
-  }
-  &.noUi-horizontal .noUi-touch-area {
-    background: $elementGradient;
-    border-radius: 50%;
-    border: 1px solid $mainBackground;
-  }
-  & .noUi-connect{
+  & .noUi-connect {
     background: $elementGradient;
   }
 
-  &:hover .noUi-tooltip{
+  &:hover .noUi-tooltip {
     display: block;
   }
 
-  & .noUi-tooltip{
+  & .noUi-tooltip {
     display: none;
-    border: none;
-    font-family: $mainFont;
-    font-size: 10px;
     padding: 0;
     color: $textColor_75;
+    font-size: 10px;
+    font-family: $mainFont;
     background: none;
+    border: none;
   }
 
   & .noUi-handle::before,
   & .noUi-handle::after {
-    content: none
+    content: none;
   }
 }
 
-.slider__discription{
-  font-family: $mainFont;
-  font-style: normal;
+.slider__discription {
   font-weight: 400;
   font-size: 12px;
+  font-family: $mainFont;
+  font-style: normal;
   line-height: 14px;
   letter-spacing: 0.2px;
 }

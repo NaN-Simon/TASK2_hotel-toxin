@@ -1,16 +1,15 @@
-$material-design-icons-font-directory-path: '~material-design-icons-iconfont/dist/fonts/';
-@import '~material-design-icons-iconfont/src/material-design-icons';
+$material-design-icons-font-directory-path: "~material-design-icons-iconfont/dist/fonts/";
+@import "~material-design-icons-iconfont/src/material-design-icons";
 
 $textColor: #1f2041;
-$textColor_75: rgba(31, 32, 65, 0.75);
-$textColor_50: rgba(31, 32, 65, 0.50);
-$textColor_25: rgba(31, 32, 65, 0.25);
-$textColor_5: rgba(31, 32, 65, 0.05);
-$elementColor: #BC9CFF;
-$elementColor_extra: #6FCF97;
-$elementGradient: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-$elementGradientHover: linear-gradient(180deg, #6FCF97 0%, #66d2ea80 100%);
+$textColor_75: rgb(31 32 65 / 75%);
+$textColor_50: rgb(31 32 65 / 50%);
+$textColor_25: rgb(31 32 65 / 25%);
+$textColor_5: rgb(31 32 65 / 5%);
+$elementColor: #bc9cff;
+$elementColor_extra: #6fcf97;
+$elementGradient: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+$elementGradientHover: linear-gradient(180deg, #6fcf97 0%, #66d2ea80 100%);
 $elementBoxShadow: 0 0 25px rgb(0 0 0 / 20%);
-$mainBackground: #ffffff;
+$mainBackground: #fff;
 $mainFont: montserrat, arial, sans-serif;
-$mainFont_size: 14px;

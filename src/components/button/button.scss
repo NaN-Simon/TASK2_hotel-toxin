@@ -1,71 +1,70 @@
-@import '@base';
-@import '@mixins';
+@import "@base";
+@import "@mixins";
 
-.button{
+.button {
   width: inherit;
   height: inherit;
   text-decoration: none;
-}
-.button__inner{
-  
-  &-default {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 5px;
-    width: inherit;
-    height: inherit;
-    border-radius: 22px;
-    background: $elementColor;
-    transition: 0.5s;
-    cursor: pointer;
-    outline: none;
-    border: none;
-    color: $mainBackground;
-    @include font-h3;
 
-    &:hover{
+  &__inner {
+    &-default {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: inherit;
+      height: inherit;
+      padding: 0 5px;
+      color: $mainBackground;
+      background: $elementColor;
+      border: none;
+      border-radius: 22px;
+      outline: none;
+      cursor: pointer;
+      transition: 0.5s;
+      @include font-h3;
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+
+    &-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $elementColor;
+      background: none;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      transition: 0.5s;
+      @include font-h3;
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+
+    &-arrow {
+      position: absolute;
+      top: 10px;
+      right: 6px;
+    }
+
+    &-disable {
       opacity: 0.5;
     }
-  }
 
-  &-link{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.5s;
-    background: none;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    color: $elementColor;
-    @include font-h3;
-  
-    &:hover{
-      opacity: 0.5;
+    &-transparent {
+      color: $elementColor;
+      background: transparent;
+      border: 2px solid $elementColor;
+    }
+
+    &-large {
+      width: inherit;
+      height: inherit;
     }
   }
-
-  &-arrow{
-    position: absolute;
-    right: 6px;
-    top: 10px;
-  }
-
-  &-disable {
-    opacity: 0.5;
-  }
-
-  &-transparent{
-    background: transparent;
-    color: $elementColor;
-    border: 2px solid $elementColor;
-  }
-
-  &-large{
-    width: inherit;
-    height: inherit;
-  }
-
 }

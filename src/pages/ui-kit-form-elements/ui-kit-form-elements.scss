@@ -1,200 +1,199 @@
-@import '@base';
+@import "@base";
 
-.form-elements{
-
-  &__container{
+.form-elements {
+  &__container {
     display: block;
     min-width: 1158px;
     max-width: 1158px;
     margin: 0 auto;
   }
 
-  &__text-fields{
+  &__text-fields {
     display: flex;
     flex-direction: column;
 
-    &--filter-date{
+    &--filter-date {
       width: 264px;
     }
 
-    &--date-dropdown{
+    &--date-dropdown {
       padding-bottom: 15px;
     }
   }
 
-  &__checkboxes{
+  &__checkboxes {
     padding-left: 55px;
   }
 
-  &__lists{
+  &__lists {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding-bottom: 174px;
 
-    &-checkboxes-rich-list{
+    &-checkboxes-rich-list {
       padding-left: 53px;
     }
 
-    &-checkboxes-bullet-list{
+    &-checkboxes-bullet-list {
       padding-right: 53px;
-      &--wrapper{
+
+      &--wrapper {
         padding-top: 7px;
       }
     }
 
-    &-checkboxes-lists{
+    &-checkboxes-lists {
       display: flex;
-      justify-content: flex-end;
       flex-direction: column-reverse;
+      justify-content: flex-end;
     }
   }
 
-  &__extra-large-wrapper{
+  &__extra-large-wrapper {
     min-width: 712px;
     max-width: 712px;
-    
   }
-  &__large-wrapper{
+
+  &__large-wrapper {
     min-width: 320px;
     max-width: 320px;
     margin-bottom: 18px;
-    
-    &-couple{
+
+    &-couple {
       display: flex;
-      padding-bottom: 30px;
       gap: 0 20px;
+      padding-bottom: 30px;
     }
-    
-    &--extra-padding{
+
+    &--extra-padding {
       padding-bottom: 19px;
     }
-
   }
-  
-  &__medium-wrapper{
-    margin-bottom: 40px;
+
+  &__medium-wrapper {
     min-width: 266px;
     max-width: 266px;
+    margin-bottom: 40px;
 
-    &-couple{
+    &-couple {
       display: flex;
-      padding-bottom: 30px;
       gap: 0 20px;
+      padding-bottom: 30px;
     }
 
-    &--margin-botton14{
+    &--margin-botton14 {
       margin-bottom: 14px;
     }
   }
 
-  &__small-wrapper{
+  &__small-wrapper {
     min-width: 222px;
     max-width: 222px;
 
-    &-couple{
+    &-couple {
       display: flex;
-      padding-bottom: 30px;
       gap: 0 20px;
-      
-      &--like-button{
+      padding-bottom: 30px;
+
+      &--like-button {
         display: flex;
+        gap: 10px;
         padding-top: 10px;
         padding-bottom: 30px;
-        gap: 10px;
       }
     }
   }
 
-  &__feedback{
+  &__feedback {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
 
-  &__button-large{
+  &__button-large {
     width: 320px;
     height: 44px;
   }
 
-  &__button-small{
+  &__button-small {
     width: 100px;
     height: 44px;
   }
 
-  &__review{
+  &__review {
     padding-top: 11px;
   }
 
-  
-  &__text-fields-buttons{
+  &__text-fields-buttons {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     min-height: 734px;
 
-    &--checkbox-list{
+    &--checkbox-list {
       min-height: 169px;
     }
-    
-    &--radio-buttons{
+
+    &--radio-buttons {
       min-height: 89px;
     }
 
-    &--toggles{
+    &--toggles {
       padding-top: 8px;
     }
-    
-    &--special-offer{
+
+    &--special-offer {
       min-height: 112px;
     }
 
-    &--like-button{
+    &--like-button {
       min-height: 89px;
     }
 
-    &--rate-buttons{
+    &--rate-buttons {
       padding-top: 10px;
     }
   }
 
-  &__dropdowns{
+  &__dropdowns {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding-bottom: 132px;
 
-    &-rooms{
+    &-rooms {
       display: flex;
       flex-direction: column-reverse;
     }
 
-    &-guests-clear{
+    &-guests-clear {
       padding-left: 108px;
     }
   }
 
-  &__buttons{
-    &--range-slider{
+  &__buttons {
+    &--range-slider {
       min-height: 49px;
     }
 
-    &--button-container{
+    &--button-container {
       padding-top: 10px;
       padding-bottom: 23px;
     }
 
-    &--button-links{
+    &--button-links {
       gap: 20px;
     }
-    &--button-link{
-      height: 15px;
+
+    &--button-link {
       width: 61px;
+      height: 15px;
     }
   }
 
-  &__pagination-container{
-    &--heading{
+  &__pagination-container {
+    &--heading {
       padding-bottom: 10px;
     }
   }

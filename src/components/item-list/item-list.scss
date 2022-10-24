@@ -1,20 +1,20 @@
-@import '@base';
-@import '@mixins';
+@import "@base";
+@import "@mixins";
 
-.item-list{
+.item-list {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
   list-style-type: none;
-    display: flex;
-    flex-direction: column;
-    gap: 13px;
 
-  &__item{
+  &__item {
     @include font-body;
+
     color: $textColor_50;
 
-    &--bold{
+    &--bold {
       color: $textColor;
       font-weight: 700;
     }
-
   }
 }

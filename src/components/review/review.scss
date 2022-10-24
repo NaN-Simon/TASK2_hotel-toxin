@@ -1,56 +1,56 @@
-@import '@base';
-@import '@mixins';
+@import "@base";
+@import "@mixins";
 
-.review{
+.review {
   display: flex;
   flex-direction: column;
-  font-family: $mainFont;
   padding-left: 3px;
+  font-family: $mainFont;
 
-  &__data{
+  &__data {
     display: flex;
     flex-direction: row;
     padding-bottom: 10px;
 
-    &-photo{
+    &-photo {
       width: 45px;
       height: 45px;
       border-radius: 50%;
     }
 
-    &-info{
+    &-info {
       display: flex;
       flex-direction: column;
       padding-left: 10px;
       line-height: 24px;
 
-      &-name{
-        font-size: 14px;
-        font-weight: 700;
+      &-name {
         color: $textColor;
+        font-weight: 700;
+        font-size: 14px;
       }
 
-      &-status{
-        font-size: 14px;
-        font-weight: 400;
+      &-status {
         color: $textColor_75;
+        font-weight: 400;
+        font-size: 14px;
       }
     }
   }
 
-  &__feedback{
+  &__feedback {
     display: flex;
     flex-direction: row;
 
-    &-like{
+    &-like {
       padding-top: 1px;
     }
 
-    &-description{
+    &-description {
       max-width: 653px;
       margin-left: 15px;
-      @include font-body;
       color: $textColor_75;
+      @include font-body;
     }
   }
 }

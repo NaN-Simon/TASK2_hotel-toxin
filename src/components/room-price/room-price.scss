@@ -1,18 +1,17 @@
-@import '@base';
+@import "@base";
 
-.room-price{
+.room-price {
   display: flex;
   flex-direction: row;
-  font-family: $mainFont;
-  font-style: normal;
+  color: $textColor_50;
   font-weight: 700;
   font-size: 14px;
+  font-family: $mainFont;
+  font-style: normal;
   line-height: 18px;
-  color: $textColor_50;
 
-  &__text{
+  &__text {
     font-weight: 400;
     letter-spacing: -1px;
-    
   }
 }

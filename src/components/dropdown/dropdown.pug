@@ -5,9 +5,9 @@ mixin dropdown(properties = {})
       isOpen= true,
       hasButtons = false, 
       placeholder= "Сколько гостей", 
-      maxCount= 6, 
-      elements= [], 
-      plurals= [] 
+      maxCount = 6, 
+      elements = [], 
+      plurals = [] 
     } = properties
     
     let startCountSum = 0
@@ -33,13 +33,24 @@ mixin dropdown(properties = {})
       ul.dropdown__drop
         .dropdown__drop-items
           each element in elements 
+          
+            - const isNotAvailableMinus = element.startCount === 0 ? "dropdown__drop-counter-not-available" : ""
+            - const isNotAvailablePlus = element.startCount >= maxCount ? "dropdown__drop-counter-not-available" : ""
+
             li(id=element.id, data-maxcount=maxCount, data-plurals=plurals[element.id])&attributes({
               class: ["dropdown__drop-item"]}) 
               .dropdown__drop-name #{element.title}
               .dropdown__drop-counter
-                .dropdown__drop-counter-minus(id = element.id, data-type = 'minus') -
-                .dropdown__drop-counter-result(id = element.id) #{element.startCount}
-                .dropdown__drop-counter-plus(id = element.id, data-type = 'plus') +
+                .dropdown__drop-counter-minus&attributes({
+                  class: isNotAvailableMinus
+                })(
+                  id = element.id, data-type = 'minus') -
+                .dropdown__drop-counter-result(
+                  id = element.id) #{element.startCount}
+                .dropdown__drop-counter-plus&attributes({
+                  class: isNotAvailablePlus
+                })(
+                  id = element.id, data-type = 'plus') +
         .dropdown__drop-buttons&attributes({
           class: [buttonRightModifier, buttonHideModifier]
         }) 
