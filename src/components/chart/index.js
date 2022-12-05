@@ -20,7 +20,7 @@ class ChartDoughnut {
       bgBorder.push(el.bgBorder);
     });
 
-    const myChart = new Chart(this.ctx, {
+    new Chart(this.ctx, {
       type: 'doughnut',
       data: {
         datasets: [{

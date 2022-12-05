@@ -4,7 +4,7 @@ mixin bullet-items(properties = {})
       listItems = [],
     } = properties
 
-  section.bullet-list
+  .bullet-list
     ul.bullet-list__items
       each item in listItems
         li.bullet-list__title #{item.title}

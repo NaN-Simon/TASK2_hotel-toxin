@@ -47,8 +47,8 @@ class FilterDateDropdown {
     });
 
     if (this.properties.isHideInput) {
-      this.$el.querySelector('.heading').display = 'none';
-      this.$el.querySelector('.heading').style.margin = '0px';
+      // this.$el.querySelector('.heading').display = 'none';
+      // this.$el.querySelector('.heading').style.margin = '0px';
       this.$el.querySelector('.air-datepicker').style.margin = '0px';
       this.$start.style.display = 'none';
     }
@@ -63,4 +63,4 @@ class FilterDateDropdown {
 }
 
 const filterDatedropdown = document.querySelectorAll('.filter-date-dropdown');
-filterDatedropdown.forEach((selector) => {new FilterDateDropdown(selector)});
+filterDatedropdown.forEach((selector) => { new FilterDateDropdown(selector); });

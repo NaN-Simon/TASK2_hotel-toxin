@@ -9,7 +9,7 @@ mixin rate-button(properties = {})
 
     const dataProperties = JSON.stringify(properties)
 
-  section.rate-button.rate-button-js(data-properties = dataProperties) 
+  .rate-button.rate-button-js(data-properties = dataProperties) 
     - for (let i = 1; i < maxRate + 1; i++)
         if (selectedRate < i)
           .rate-button__star.material-icons= 'star_border'

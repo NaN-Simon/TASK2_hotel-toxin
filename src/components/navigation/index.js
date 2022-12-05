@@ -14,9 +14,7 @@ class Navigation {
 
   clickHandler(event) {
     this.toggleSubMenu(event);
-
   }
-  
 
   /* subItems */
 

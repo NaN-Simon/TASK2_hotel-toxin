@@ -13,7 +13,7 @@ class SearchRoom {
   setup() {
     this.clickHandler = this.clickHandler.bind(this);
     this.$filterBtn.addEventListener('click', this.clickHandler);
-    window.addEventListener('resize', (event) => {
+    window.addEventListener('resize', () => {
       this.remove();
     });
   }

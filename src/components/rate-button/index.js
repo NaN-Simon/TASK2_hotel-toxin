@@ -14,11 +14,10 @@ class RateButton {
   setup() {
     this.clickHandler = this.clickHandler.bind(this);
 
-    if (this.properties.changable){
-      this.$el.classList.add('rate-button--pointer')
+    if (this.properties.changable) {
+      this.$el.classList.add('rate-button--pointer');
       this.$el.addEventListener('click', this.clickHandler);
     }
-
   }
 
   clickHandler(event) {

@@ -19,11 +19,12 @@ mixin filter-date-dropdown(properties = {})
 
     const dataProperties = JSON.stringify(properties)
 
-  section.date-dropdown.filter-date-dropdown(data-properties = dataProperties)
-    +heading({ 
-      level: "h3", 
-      title: title,
-    })
+  .date-dropdown.filter-date-dropdown(data-properties = dataProperties)
+    if title !== ""
+      +heading({ 
+        level: "h3", 
+        title: title,
+      })
     +text-field({
       type: type, 
       hasArrow: hasArrow,

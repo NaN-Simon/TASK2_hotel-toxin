@@ -24,7 +24,7 @@ block variables
 block content
   main.form-elements
     .form-elements__container
-      section.form-elements__text-fields-buttons
+      .form-elements__text-fields-buttons
         .form-elements__text-fields
           .form-elements__large-wrapper
             +heading({ 
@@ -63,14 +63,14 @@ block content
               placeholder: "Сколько гостей",
               maxCount: 10,
               elements: [
-                { title: "Взрослые", id: "adult", startCount: 0 }, 
-                { title: "Дети", id: "kids", startCount: 0 }, 
-                { title: "Младенцы", id: "baby", startCount: 0 }
+                { title: "Взрослые", id: "fields-adult", startCount: 0 }, 
+                { title: "Дети", id: "fields-kids", startCount: 0 }, 
+                { title: "Младенцы", id: "fields-baby", startCount: 0 }
               ],
               plurals: {
-                adult: "Взрослый, Взрослых, Взрослых",
-                kids: "Ребенок, Ребенка, Детей",
-                baby: "Младенец, Младенца, Младенцев",
+                "fields-adult": "Взрослый, Взрослых, Взрослых",
+                "fields-kids": "Ребенок, Ребенка, Детей",
+                "fields-baby": "Младенец, Младенца, Младенцев",
                 },
             })
 
@@ -296,7 +296,7 @@ block content
               entries: 180,
               pages: 15,
             })
-      section.form-elements__dropdowns
+      .form-elements__dropdowns
         .form-elements__dropdowns-rooms
           .form-elements__medium-wrapper
             +heading({ 
@@ -310,14 +310,14 @@ block content
               placeholder: "Сколько гостей",
               maxCount: 10,
               elements: [
-                { title: "Спальни", id: "bedrooms", startCount: 2 }, 
-                { title: "Кровати", id: "beds", startCount: 2 }, 
-                { title: "Ванные комнаты", id: "bathrooms", startCount: 0 }
+                { title: "Спальни", id: "rooms-down-bedrooms", startCount: 2 }, 
+                { title: "Кровати", id: "rooms-down-beds", startCount: 2 }, 
+                { title: "Ванные комнаты", id: "rooms-down-bathrooms", startCount: 0 }
               ],
               plurals: {
-                bedrooms: "спальня, спальни, спален",
-                beds: "кровать, кровати, кроватей",
-                bathrooms: "ванная комната, ванные комнаты, ванных комнат",
+                "rooms-down-bedrooms": "спальня, спальни, спален",
+                "rooms-down-beds": "кровать, кровати, кроватей",
+                "rooms-down-bathrooms": "ванная комната, ванные комнаты, ванных комнат",
                 },
             })
           .form-elements__medium-wrapper.form-elements__medium-wrapper--margin-botton14
@@ -332,14 +332,14 @@ block content
               placeholder: "Сколько гостей",
               maxCount: 10,
               elements: [
-                { title: "Спальни", id: "bedrooms", startCount: 2 }, 
-                { title: "Кровати", id: "beds", startCount: 2 }, 
-                { title: "Ванные комнаты", id: "bathrooms", startCount: 0 }
+                { title: "Спальни", id: "rooms-up-bedrooms", startCount: 2 }, 
+                { title: "Кровати", id: "rooms-up-beds", startCount: 2 }, 
+                { title: "Ванные комнаты", id: "rooms-up-bathrooms", startCount: 0 }
               ],
               plurals: {
-                bedrooms: "спальня, спальни, спален",
-                beds: "кровать, кровати, кроватей",
-                bathrooms: "ванная комната, ванные комнаты, ванных комнат",
+                "rooms-up-bedrooms": "спальня, спальни, спален",
+                "rooms-up-beds": "кровать, кровати, кроватей",
+                "rooms-up-bathrooms": "ванная комната, ванные комнаты, ванных комнат",
                 },
             })
         .form-elements__dropdowns-guests-clear
@@ -355,14 +355,14 @@ block content
               placeholder: "Сколько гостей",
               maxCount: 10,
               elements: [
-                { title: "Взрослые", id: "adult", startCount: 0 }, 
-                { title: "Дети", id: "kids", startCount: 0 }, 
-                { title: "Младенцы", id: "baby", startCount: 0 }
+                { title: "Взрослые", id: "dropdowns-guests-clear-adult", startCount: 0 }, 
+                { title: "Дети", id: "dropdowns-guests-clear-kids", startCount: 0 }, 
+                { title: "Младенцы", id: "dropdowns-guests-clear-baby", startCount: 0 }
               ],
               plurals: {
-                adult: "Взрослый, Взрослых, Взрослых",
-                kids: "Ребенок, Ребенка, Детей",
-                baby: "Младенец, Младенца, Младенцев",
+                "dropdowns-guests-clear-adult": "Взрослый, Взрослых, Взрослых",
+                "dropdowns-guests-clear-kids": "Ребенок, Ребенка, Детей",
+                "dropdowns-guests-clear-baby": "Младенец, Младенца, Младенцев",
                 },
             })
         .form-elements__dropdowns-guests
@@ -378,17 +378,17 @@ block content
               placeholder: "Сколько гостей",
               maxCount: 10,
               elements: [
-                { title: "Взрослые", id: "adult", startCount: 2 }, 
-                { title: "Дети", id: "kids", startCount: 1 }, 
-                { title: "Младенцы", id: "baby", startCount: 0 }
+                { title: "Взрослые", id: "dropdowns-guests-adult", startCount: 2 }, 
+                { title: "Дети", id: "dropdowns-guests-kids", startCount: 1 }, 
+                { title: "Младенцы", id: "dropdowns-guests-baby", startCount: 0 }
               ],
               plurals: {
-                adult: "Взрослый, Взрослых, Взрослых",
-                kids: "Ребенок, Ребенка, Детей",
-                baby: "Младенец, Младенца, Младенцев",
+                "dropdowns-guests-adult": "Взрослый, Взрослых, Взрослых",
+                "dropdowns-guests-kids": "Ребенок, Ребенка, Детей",
+                "dropdowns-guests-baby": "Младенец, Младенца, Младенцев",
                 },
             })
-      section.form-elements__lists
+      .form-elements__lists
         .form-elements__lists-checkboxes-lists
           .form-elements__medium-wrapper
             +checkbox-list({	
@@ -446,7 +446,7 @@ block content
                   { title: "Время прибытия — после 13:00, а\u00A0выезд до 12:00"},
                 ]
               })
-      section.form-elements__feedback
+      .form-elements__feedback
         .form-elements__grade
           .form-elements__medium-wrapper
             +dignity({

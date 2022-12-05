@@ -15,23 +15,24 @@ mixin button(properties = {})
     const hasArrowModifire = hasArrow ? "button__inner-center" : ""
     const sizeModifire = size === "large" ? "button__inner-large" : ""
 
-  a.button(href = href)
-    if buttonType === "ButtonDefault"
-      button.button__inner-default&attributes({
-        class: [
-          isDisableModifire, 
-          isTransparentBackgroundModifire, 
-          hasArrowModifire,
-          sizeModifire,
-        ]
-      }) #{buttonName}
-        if hasArrow
-          .button__inner-arrow
-            .material-icons arrow_forward
-    if buttonType === "ButtonLink"
-      button.button__inner-link&attributes({
-        class: [isDisableModifire, hasArrowModifire]
-      }) #{buttonName}
-        if hasArrow
-          .button__inner-arrow
-            .material-icons arrow_forward
+  form.button__form(action="#") 
+    .button
+      if buttonType === "ButtonDefault"
+        button.button__inner-default&attributes({
+          class: [
+            isDisableModifire, 
+            isTransparentBackgroundModifire, 
+            hasArrowModifire,
+            sizeModifire,
+          ]
+        }) #{buttonName}
+          if hasArrow
+            span.button__inner-arrow
+              span.material-icons arrow_forward
+      if buttonType === "ButtonLink"
+        button.button__inner-link&attributes({
+          class: [isDisableModifire, hasArrowModifire]
+        }) #{buttonName}
+          if hasArrow
+            span.button__inner-arrow
+              span.material-icons arrow_forward

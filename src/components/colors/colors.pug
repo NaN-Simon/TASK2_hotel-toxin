@@ -1,15 +1,14 @@
 mixin colors(colorItems =[])
 
-  section
-    ul.colors
-      each colorItem in colorItems
-        li.colors__item
-          -
-            const colorClass = `colors__rect_${colorItem.color}` 
+  ul.colors
+    each colorItem in colorItems
+      li.colors__item
+        -
+          const colorClass = `colors__rect_${colorItem.color}` 
 
-          div&attributes({
-          class: ["colors__rect", colorClass]
-        })
-          .colors__about 
-            .colors__title #{colorItem.title}
-            .colors__code #{colorItem.colorCode}
+        div&attributes({
+        class: ["colors__rect", colorClass]
+      })
+        .colors__about 
+          .colors__title #{colorItem.title}
+          .colors__code #{colorItem.colorCode}

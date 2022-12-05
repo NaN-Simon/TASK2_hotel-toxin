@@ -1,1 +1,1 @@
-import './image.scss'
+import './image.scss';

@@ -25,9 +25,9 @@ mixin text-field(properties = {})
   .text-field
     input.text-field__input(data-type="input")&attributes(inputAttributes)
     if hasArrow
-      span(data-type="input")&attributes({class: arrowClassModifire})
+      div(data-type="input")&attributes({class: arrowClassModifire})
         .material-icons(data-type="input") expand_less
     if hasArrowSubscription
-      span(data-type="input")&attributes({class: arrowSubscriptionClassModifire})
+      div(data-type="input")&attributes({class: arrowSubscriptionClassModifire})
         .material-icons(data-type="input") arrow_forward
 

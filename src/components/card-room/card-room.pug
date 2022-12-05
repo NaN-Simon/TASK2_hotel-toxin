@@ -15,7 +15,7 @@ mixin card-room(properties = {})
       cardRoomReviewText = "Отзывов",
     } = properties 
 
-  section.card-room(id = properties.id)
+  .card-room(id = properties.id)
     .card-room__carousel
       +carousel(carouselProperties)
     .card-room__description 
@@ -30,5 +30,5 @@ mixin card-room(properties = {})
           +rate-button(rateButtonProperties)
         .card-room__review
           .card-room__review-number #{cardRoomReviewNumber}
-          .card-room__review-space &nbsp
+          .card-room__review-space &nbsp;
           .card-room__review-text #{cardRoomReviewText} 

@@ -1,13 +1,12 @@
 mixin type(typeItems =[])
 
-  section 
-    ul.type
-      each typeItem in typeItems 
-        -
-          const colorClass = `type__${typeItem.type}`
+  ul.type
+    each typeItem in typeItems 
+      -
+        const colorClass = `type__${typeItem.type}`
 
-        li&attributes({
-          class:["type__item", colorClass]
-        })
-          .type__tag #{typeItem.tag}
-          .type__description #{typeItem.description}
+      li&attributes({
+        class:["type__item", colorClass]
+      })
+        .type__tag #{typeItem.tag}
+        .type__description #{typeItem.description}

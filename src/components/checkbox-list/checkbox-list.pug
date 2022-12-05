@@ -12,7 +12,7 @@ mixin checkbox-list(properties = {})
     const openClassModifier = isOpen ? "checkbox-list__open" : ""
     const toggleClassModifier = isOpen ? "expand_more" : "expand_less"
 
-  section.checkbox-list.checkbox-list-js&attributes({
+  .checkbox-list.checkbox-list-js&attributes({
       class: openClassModifier
     }) 
     if isDropdown 
@@ -20,16 +20,16 @@ mixin checkbox-list(properties = {})
         .checkbox-list__input-title(data-type = "input") #{title}
         .checkbox-list__input-arrow(data-type = "input").material-icons #{toggleClassModifier} 
     .checkbox-list__container
-      ul.checkbox-list__items
+      .checkbox-list__items
         each item in richListItems
           label.checkbox-list__richItem
             input.checkbox-list__checkbox.material-icons(type='checkbox' name=item.name checked=item.checked)
-            .checkbox-list__box.material-icons
-            .checkbox-list__rich-container
+            span.checkbox-list__box.material-icons
+            span.checkbox-list__rich-container
               span.checkbox-list__rich-title #{item.title}
               span.checkbox-list__rich-description #{item.description}
         each item in listItems
           label.checkbox-list__item
             input.checkbox-list__checkbox.material-icons(type='checkbox' name=item.name checked=item.checked)
-            .checkbox-list__box.material-icons
+            span.checkbox-list__box.material-icons
             span.checkbox-list__title #{item.title}

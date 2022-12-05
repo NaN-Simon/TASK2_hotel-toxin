@@ -10,7 +10,7 @@ mixin radio-buttons(properties = {})
 
     const inlineClassModifire = inline ? "checkbox-radio-inline" : ""
 
-  section&attributes({
+  .radio-button&attributes({
     class: ["checkbox-radio", inlineClassModifire]
   })
     each item in listItems 

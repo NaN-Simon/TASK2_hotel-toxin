@@ -1,1 +1,1 @@
-import './card-room-search.scss'
+import './card-room-search.scss';

@@ -6,6 +6,10 @@
   height: inherit;
   text-decoration: none;
 
+  &__form{
+    width: inherit;
+    height: inherit;
+  }
   &__inner {
     &-default {
       position: relative;
@@ -16,7 +20,7 @@
       height: inherit;
       padding: 0 5px;
       color: $mainBackground;
-      background: $elementColor;
+      background: $btnGradient;
       border: none;
       border-radius: 22px;
       outline: none;

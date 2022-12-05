@@ -170,7 +170,7 @@ class Dropdown {
       }
       this.$placeholder.innerHTML = `${placeholderSum} ${placeholderInner}`;
       if (placeholderSum === 0) {
-        this.$placeholder.innerHTML = 'Сколько гостей';
+        this.$placeholder.innerHTML = this.properties.placeholder;
       }
     }
   }

@@ -25,7 +25,7 @@ mixin date-dropdown(properties = {})
     const dataProperties = JSON.stringify(properties)
 
   if hasTwoInputs 
-    section.date-dropdown.date-dropdown-js(data-properties = dataProperties, id = id)
+    .date-dropdown.date-dropdown-js(data-properties = dataProperties, id = id)
       .date-dropdown__couple&attributes({
       class: [inlineClassModifire],
     })
@@ -54,7 +54,7 @@ mixin date-dropdown(properties = {})
             dateMask: withMask,
           })
   else 
-    section.date-dropdown.date-dropdown-js(data-properties = dataProperties, id = id)
+    .date-dropdown.date-dropdown-js(data-properties = dataProperties, id = id)
       .date-dropdown__couple&attributes({
       class: [inlineClassModifire],
     })

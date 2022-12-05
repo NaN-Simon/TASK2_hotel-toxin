@@ -23,15 +23,15 @@ mixin dropdown(properties = {})
     const buttonRightModifier = startCountSum === 0 ? "dropdown__drop-buttons--right" : ""
 
 
-  section.dropdown-js(data-properties = dataProperties)
+  .dropdown-js(data-properties = dataProperties)
     .dropdown(data-type = type)&attributes({
         class: openClassModifier
       })
       .dropdown__input(data-type="input")
         span(data-type="input").dropdown__input-placeholder #{placeholder}
         span(data-type="input").dropdown__input-arrow.material-icons #{toggleClassModifier}
-      ul.dropdown__drop
-        .dropdown__drop-items
+      .dropdown__drop
+        ul.dropdown__drop-items
           each element in elements 
           
             - const isNotAvailableMinus = element.startCount === 0 ? "dropdown__drop-counter-not-available" : ""

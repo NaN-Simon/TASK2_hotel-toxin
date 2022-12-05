@@ -35,9 +35,11 @@ class Pagination {
 
   setFormatNavigator(currentPage) {
     const endPage = currentPage * 12;
-
     let startPage = currentPage;
-    currentPage > 1 ? startPage = endPage / 2 : false;
+    
+    if (currentPage > 1) {
+      startPage = endPage / 2
+    }
 
     let countEntries = this.totalNumber;
     this.totalNumber >= 100 ? countEntries = '100+' : false;
@@ -49,4 +51,4 @@ class Pagination {
 }
 
 const pagination = document.querySelectorAll('.pagination');
-pagination.forEach((selector) => {new Pagination(selector)});
+pagination.forEach((selector) => { new Pagination(selector); });

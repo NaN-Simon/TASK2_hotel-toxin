@@ -10,7 +10,7 @@ mixin toggle(properties = {})
 
     const inlineClassModifire = inline ? "checkbox-toggle-inline" : ""
 
-  section&attributes({
+  .toggle&attributes({
     class: ["checkbox-toggle-items", inlineClassModifire]
     })
     each item in listItems 
