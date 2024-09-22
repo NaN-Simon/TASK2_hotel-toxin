@@ -2,6 +2,7 @@
 
 [**Deploy проекта (24.10.2022)**](https://nan-simon-hotel-toxin-24-10-2022.netlify.app/)
 
+[**Figma**](https://www.figma.com/design/MumYcKVk9RkKZEG6dR5E3A/MetaLamp-(former-FSD)-frontend-education-program.-The-2nd-task)
 
 ## Процедура запуска
 
